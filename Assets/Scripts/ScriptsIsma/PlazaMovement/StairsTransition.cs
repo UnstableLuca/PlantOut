@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StairsTransition : MonoBehaviour
@@ -10,6 +11,10 @@ public class StairsTransition : MonoBehaviour
     [Header("Ajustes")]
     [SerializeField] private float approachSpeed = 6.0f;
     [SerializeField] private float climbSpeed = 10.0f;
+
+    [Header("Salida")]
+    [SerializeField] private Transform topExit;
+    [SerializeField] private Transform botExit;
 
     private bool isTransitioning = false;
 
@@ -24,50 +29,66 @@ public class StairsTransition : MonoBehaviour
             float distToBottom = Vector3.Distance(other.transform.position, bottomPoint.position);
             float distToTop = Vector3.Distance(other.transform.position, topPoint.position);
 
-            Transform startPos = (distToBottom < distToTop) ? bottomPoint : topPoint;
-            Transform endPos = (distToBottom < distToTop) ? topPoint : bottomPoint;
+            bool isBottom = distToBottom < distToTop;
 
-            StartCoroutine(StairSequenceRoutine(playerMovement, startPos.position, endPos.position));
+            Transform startPos = isBottom ? bottomPoint : topPoint;
+            Transform endPos = isBottom ? topPoint : bottomPoint;
+            Transform exitPos = isBottom ? topExit : botExit;
+
+            StartCoroutine(StairSequenceRoutine(playerMovement, startPos.position, endPos.position, exitPos.position));
         }
     }
 
-    private IEnumerator StairSequenceRoutine(PlayerMovement player, Vector3 start, Vector3 end)
+    private IEnumerator StairSequenceRoutine(PlayerMovement player, Vector3 start, Vector3 end, Vector3 exit)
     {
         isTransitioning = true;
 
         player.DisableMovement();
 
-        Vector3 initialPlayerPos = player.transform.position;
-        float approachDistance = Vector3.Distance(initialPlayerPos, start);
-        float approachJourney = 0.0f;
+        // FASE 1 Acercar a escalera
+        Vector3 initialPos = player.transform.position;
+        float approachDistance = Vector3.Distance(initialPos, start);
+        float approachJourney = 0f;
 
-        while(approachJourney < approachDistance)
+        while (approachJourney < approachDistance)
         {
             approachJourney += approachSpeed * Time.deltaTime;
             float percent = Mathf.Clamp01(approachJourney / approachDistance);
 
-            Vector3 nextPos = Vector3.Lerp(initialPlayerPos, start, percent);
-            player.SetExternalPosition(nextPos);
-
+            player.SetExternalPosition(Vector3.Lerp(initialPos, start, percent));
             yield return null;
         }
 
-        float totalDistance = Vector3.Distance(start, end);
-        float journey = 0f;
+        // FASE 2 Subir escalera
+        float climbDistance = Vector3.Distance(start, end);
+        float climbJourney = 0f;
 
-        while (journey < totalDistance)
+        while (climbJourney < climbDistance)
         {
-            journey += climbSpeed * Time.deltaTime;
-            float percent = Mathf.Clamp01(journey / totalDistance);
+            climbJourney += climbSpeed * Time.deltaTime;
+            float percent = Mathf.Clamp01(climbJourney / climbDistance);
 
-            player.transform.position = Vector3.Lerp(start, end, percent);
+            player.SetExternalPosition(Vector3.Lerp(start, end, percent));
             yield return null;
         }
 
-        player.SetExternalPosition(end);
+        // FASE 3 Alejarse de la escalera
+        float exitDistance = Vector3.Distance(end, exit);
+        float exitJourney = 0f;
 
+        while (exitJourney < exitDistance)
+        {
+            exitJourney += approachSpeed * Time.deltaTime;
+            float percent = Mathf.Clamp01(exitJourney / exitDistance);
+
+            player.SetExternalPosition(Vector3.Lerp(end, exit, percent));
+            yield return null;
+        }
+
+        player.SetExternalPosition(exit);
         player.EnableMovement();
 
+        yield return new WaitForSeconds(0.2f);
         isTransitioning = false;
     }
 }

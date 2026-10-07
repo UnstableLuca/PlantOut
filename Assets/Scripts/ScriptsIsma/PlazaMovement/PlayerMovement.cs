@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform mainCamera;
 
     [Header("Configuración de la Cámara")]
-    [SerializeField] private float cameraRadius = 0.0f;
-    [SerializeField] private float cameraHeightOffset = 4.0f;
+    [SerializeField] private float cameraRadius = 10.0f;
+    [SerializeField] private float cameraHeightOffset = 5.0f;
 
     [Header("Movimiento del Jugador")]
     [SerializeField] private float maxSpeed = 8.0f;
@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float minPlayerRadius = 12.5f;
     [SerializeField] private float maxPlayerRadius = 24.0f;
 
+    [Header("Físicas y gravedad")]
+    [SerializeField] private float gravity = -9.8f;
+    private Vector3 verticalVelocity;
+
+    private CharacterController controller;
     private InputActions inputActions;
     private Vector2 moveInput;
 
@@ -31,11 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canMove = true;
 
-    private void Awake()
-    {
-        inputActions = new InputActions();
-    }
-
+    #region Inputs
     private void OnEnable()
     {
         inputActions.Plaza.Enable();
@@ -61,6 +62,14 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = Vector2.zero;
     }
+    #endregion
+
+    #region Start
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        inputActions = new InputActions();
+    }
 
     private void Start()
     {
@@ -70,19 +79,22 @@ public class PlayerMovement : MonoBehaviour
         currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
         currentAngle = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
     }
+    #endregion
 
+    #region Update
     private void Update()
     {
         if (greenhouseCenter == null || mainCamera == null) return;
 
-        if (!isExternalControl)
+        // -- MOVIMIENTO --
+        if (canMove && !isExternalControl)
         {
             Vector2 inputDir = canMove ? moveInput : Vector2.zero;
 
             if (inputDir.magnitude > 1f) inputDir.Normalize();
 
             float targetTangentialVel = inputDir.x * maxSpeed;
-            float targetRadialVel = inputDir.y * maxSpeed;
+            float targetRadialVel = -inputDir.y * maxSpeed;
 
             currentTangentialVelocity = Mathf.MoveTowards(currentTangentialVelocity, targetTangentialVel, acceleration * Time.deltaTime);
             currentRadialVelocity = Mathf.MoveTowards(currentRadialVelocity, targetRadialVel, acceleration * Time.deltaTime);
@@ -90,45 +102,65 @@ public class PlayerMovement : MonoBehaviour
             float currentAngularSpeedDeg = (currentTangentialVelocity / currentPlayerRadius) * Mathf.Rad2Deg;
 
             currentAngle -= currentAngularSpeedDeg * Time.deltaTime;
-            currentPlayerRadius += currentRadialVelocity * Time.deltaTime;
+            currentPlayerRadius -= currentRadialVelocity * Time.deltaTime;
             currentPlayerRadius = Mathf.Clamp(currentPlayerRadius, minPlayerRadius, maxPlayerRadius);
 
             float playerRad = currentAngle * Mathf.Deg2Rad;
 
-            Vector3 playerPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(playerRad) * currentPlayerRadius, transform.position.y, greenhouseCenter.position.z + Mathf.Sin(playerRad) * currentPlayerRadius);
-            transform.position = playerPos;
+            Vector3 targetPosition = new Vector3(
+                greenhouseCenter.position.x + Mathf.Cos(playerRad) * currentPlayerRadius,
+                transform.position.y,
+                greenhouseCenter.position.z + Mathf.Sin(playerRad) * currentPlayerRadius
+            );
+
+            Vector3 horizontalMove = targetPosition - transform.position;
+
+            if (controller.isGrounded && verticalVelocity.y < 0)
+            {
+                verticalVelocity.y = -2.0f;
+            }
+            verticalVelocity.y += gravity * Time.deltaTime;
+
+            Vector3 finalMotion = horizontalMove + (verticalVelocity * Time.deltaTime);
+            controller.Move(finalMotion);
+
+            RecalculatePolarFromPosition();
         }
 
-        float cameraRad;
-        Vector3 cameraTarget;
-
-        if (isExternalControl)
+        // -- CAMARA --
+        if (canMove && !isExternalControl)
         {
             Vector3 playerOffset = transform.position - greenhouseCenter.position;
-            float exactPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
+            float realPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
 
-            cameraRad = exactPlayerAngleRad + Mathf.PI;
+            float cameraRad = realPlayerAngleRad + Mathf.PI;
 
-            cameraTarget = transform.position + Vector3.up * 1.0f;
+            Vector3 cameraPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius, transform.position.y + cameraHeightOffset, greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius);
+
+            mainCamera.position = cameraPos;
+
+            Vector3 cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
+            mainCamera.LookAt(cameraTarget);
+
+            Vector3 lookDir = new Vector3(playerOffset.x, 0f, playerOffset.z).normalized;
+            if (lookDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookDir);
         }
-        else
-        {
-            cameraRad = (currentAngle * Mathf.Deg2Rad) + Mathf.PI;
-            cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
-        }
 
-        Vector3 cameraPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius, transform.position.y + cameraHeightOffset, greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius);
-        mainCamera.position = cameraPos;
+    }
+    #endregion
 
-        mainCamera.LookAt(cameraTarget);
-
-        Vector3 lookDir = (transform.position - new Vector3(greenhouseCenter.position.x, transform.position.y, greenhouseCenter.position.z)).normalized;
-        if (lookDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookDir);
+    private void RecalculatePolarFromPosition()
+    {
+        Vector3 offset = transform.position - greenhouseCenter.position;
+        currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
+        currentAngle = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
     }
 
     public void SetExternalPosition(Vector3 newPos)
     {
+        controller.enabled = false;
         transform.position = newPos;
+        controller.enabled = true;
 
         Vector3 offset = transform.position - greenhouseCenter.position;
         currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
@@ -152,5 +184,17 @@ public class PlayerMovement : MonoBehaviour
         Vector3 offset = transform.position - greenhouseCenter.position;
         currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
         currentAngle = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
+    }
+
+    public void SetControlActive(bool active)
+    {
+        canMove = active;
+
+        if (!active)
+        {
+            moveInput = Vector2.zero;
+            currentTangentialVelocity = 0f;
+            currentRadialVelocity = 0f;
+        }
     }
 }
