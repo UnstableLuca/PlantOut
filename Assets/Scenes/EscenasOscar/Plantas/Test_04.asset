@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9040e0d037db046ae6dfe6527d03d7, type: 3}
+  m_Name: Test_04
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
+  plantName: Planta_Test_04
+  description: "Sergio recup\xE9rate pronto, encuentra el ibuprofeno y dale. "
+  bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
+  frontLabelTexture: {fileID: 2800000, guid: 51ee86b30f863e146b6eaeacaff51247, type: 3}
+  backLabelTexture: {fileID: 2800000, guid: 07a20daf7eaf9644eb6702934d1cd7a9, type: 3}
+  combos:
+  - '[A] + [B]'
