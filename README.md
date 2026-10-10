@@ -38,3 +38,4 @@ Sigue el desarrollo de nuestro juego y prueba el prototipo en las siguientes pla
 * **GitHub:** [[Ver repositorio de GitHub](https://github.com/UnstableLuca/PlantOut)]
 * **Twitter / X:** [[Ver la cuenta de X (Twitter)](https://x.com/plantoutgame)]
 * **YouTube:** [[Ver canal de YouTube](https://www.youtube.com/@PlantOutGame)]
+* **Web:** [[Visitar página Web](https://unstableluca.github.io/PlantOut/)]
