@@ -27,14 +27,14 @@
 ## Documentación (GDD)
 
 Puedes consultar la evolución completa de nuestro diseño de juego en el documento oficial:
-[Ver GDD](./Plant%20Out%20Game%20-%20GDD_2.pdf) 
+[Ver GDD](Plant%20Out%20Game%20-%20GDD.pdf)
 
 ---
 
 ## Enlaces y Redes Sociales
 
 Sigue el desarrollo de nuestro juego y prueba el prototipo en las siguientes plataformas:
-* **Itch.io:** [[Enlace a vuestro Itch.io](https://plant-out-game.itch.io/)]
-* **GitHub (Código fuente):** [[Enlace al repositorio](https://github.com/UnstableLuca/PlantOut)]
-* **Twitter / X:** [[Enlace a la cuenta](https://x.com/plantoutgame)]
-* **YouTube:** [[Enlace al canal del estudio](https://www.youtube.com/@PlantOutGame)]
+* **Itchio:** [[Ver página de Itch.io](https://plant-out-game.itch.io/)]
+* **GitHub:** [[Ver repositorio de GitHub](https://github.com/UnstableLuca/PlantOut)]
+* **Twitter / X:** [[Ver la cuenta ed X (Twitter)](https://x.com/plantoutgame)]
+* **YouTube:** [[Ver canal de YouTube](https://www.youtube.com/@PlantOutGame)]
