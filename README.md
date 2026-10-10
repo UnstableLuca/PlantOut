@@ -36,5 +36,5 @@ Puedes consultar la evolución completa de nuestro diseño de juego en el docume
 Sigue el desarrollo de nuestro juego y prueba el prototipo en las siguientes plataformas:
 * **Itchio:** [[Ver página de Itch.io](https://plant-out-game.itch.io/)]
 * **GitHub:** [[Ver repositorio de GitHub](https://github.com/UnstableLuca/PlantOut)]
-* **Twitter / X:** [[Ver la cuenta ed X (Twitter)](https://x.com/plantoutgame)]
+* **Twitter / X:** [[Ver la cuenta de X (Twitter)](https://x.com/plantoutgame)]
 * **YouTube:** [[Ver canal de YouTube](https://www.youtube.com/@PlantOutGame)]
