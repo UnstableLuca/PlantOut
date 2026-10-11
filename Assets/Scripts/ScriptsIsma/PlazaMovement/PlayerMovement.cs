@@ -128,24 +128,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // -- CAMARA --
-        if (canMove && !isExternalControl)
-        {
-            Vector3 playerOffset = transform.position - greenhouseCenter.position;
-            float realPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
+        // if (canMove && !isExternalControl)
+        Vector3 playerOffset = transform.position - greenhouseCenter.position;
+        float realPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
 
-            float cameraRad = realPlayerAngleRad + Mathf.PI;
+        float cameraRad = realPlayerAngleRad + Mathf.PI;
 
-            Vector3 cameraPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius, transform.position.y + cameraHeightOffset, greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius);
+        Vector3 cameraPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius, transform.position.y + cameraHeightOffset, greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius);
 
-            mainCamera.position = cameraPos;
+        mainCamera.position = cameraPos;
 
-            Vector3 cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
-            mainCamera.LookAt(cameraTarget);
+        Vector3 cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
+        mainCamera.LookAt(cameraTarget);
 
-            Vector3 lookDir = new Vector3(playerOffset.x, 0f, playerOffset.z).normalized;
-            if (lookDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookDir);
-        }
-
+        Vector3 lookDir = new Vector3(playerOffset.x, 0f, playerOffset.z).normalized;
+        if (lookDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookDir);
     }
     #endregion
 

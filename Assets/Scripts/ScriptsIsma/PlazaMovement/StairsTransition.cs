@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class StairsTransition : MonoBehaviour
@@ -55,7 +56,9 @@ public class StairsTransition : MonoBehaviour
             approachJourney += approachSpeed * Time.deltaTime;
             float percent = Mathf.Clamp01(approachJourney / approachDistance);
 
-            player.SetExternalPosition(Vector3.Lerp(initialPos, start, percent));
+            Vector3 nextPos = Vector3.Lerp(initialPos, start, percent);
+            UpdatePlayerAndCameraPosition(player, nextPos);
+
             yield return null;
         }
 
@@ -68,7 +71,9 @@ public class StairsTransition : MonoBehaviour
             climbJourney += climbSpeed * Time.deltaTime;
             float percent = Mathf.Clamp01(climbJourney / climbDistance);
 
-            player.SetExternalPosition(Vector3.Lerp(start, end, percent));
+            Vector3 nextPos = Vector3.Lerp(start, end, percent);
+            UpdatePlayerAndCameraPosition(player, nextPos);
+
             yield return null;
         }
 
@@ -81,14 +86,23 @@ public class StairsTransition : MonoBehaviour
             exitJourney += approachSpeed * Time.deltaTime;
             float percent = Mathf.Clamp01(exitJourney / exitDistance);
 
-            player.SetExternalPosition(Vector3.Lerp(end, exit, percent));
+            Vector3 nextPos = Vector3.Lerp(end, exit, percent);
+            UpdatePlayerAndCameraPosition(player, nextPos);
+
             yield return null;
         }
 
-        player.SetExternalPosition(exit);
+        UpdatePlayerAndCameraPosition(player, exit);
         player.EnableMovement();
 
         yield return new WaitForSeconds(0.2f);
         isTransitioning = false;
+    }
+
+    private void UpdatePlayerAndCameraPosition(PlayerMovement player, Vector3 pos)
+    {
+        player.SetExternalPosition(pos);
+
+        player.transform.position = pos;
     }
 }
