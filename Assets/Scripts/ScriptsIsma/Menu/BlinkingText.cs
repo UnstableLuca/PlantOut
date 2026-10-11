@@ -99,13 +99,6 @@ public class BlinkingText : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        /*
-        if (PlazaManager.Instance != null)
-        {
-            PlazaManager.Instance.SetState(GameState.MainMenu);
-        }
-        */
-
         float fadeDuration = 0.5f;
         float elapsed = 0f;
 

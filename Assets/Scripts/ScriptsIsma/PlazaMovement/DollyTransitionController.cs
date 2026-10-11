@@ -35,6 +35,9 @@ public class DollyTransitionController : MonoBehaviour
     {
         UpdateAndSmoothSpline();
 
+        splineDolly.SplineSettings.Units = PathIndexUnit.Distance;
+
+        float totalLength = splineContainer.Spline.GetLength();
         splineDolly.CameraPosition = 0f;
 
         yield return new WaitForSeconds(waitTime);
@@ -46,18 +49,20 @@ public class DollyTransitionController : MonoBehaviour
         while (elapsed < travelDuration)
         {
             elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / travelDuration);
+            float percent = Mathf.Clamp01(elapsed / travelDuration);
 
-            float smoothT = Mathf.SmoothStep(0f, 1f, t);
-
-            splineDolly.CameraPosition = smoothT;
+            splineDolly.CameraPosition = percent * totalLength;
 
             yield return null;
         }
 
-        splineDolly.CameraPosition = 1f;
+        splineDolly.CameraPosition = totalLength;
 
-        if (vcamPause != null)
+        if (PlazaManager.Instance != null)
+        {
+            PlazaManager.Instance.SetState(GameState.MainMenu);
+        }
+        else if (vcamPause != null)
         {
             vcamPause.Priority = 30;
         }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine.InputSystem;
 
 public enum GameState
 {
@@ -17,6 +18,7 @@ public class PlazaManager : MonoBehaviour
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject plazaUI;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PauseController pauseController;
 
     [Header("Camaras")]
     [SerializeField] private CinemachineCamera vcamSplash;
@@ -25,15 +27,53 @@ public class PlazaManager : MonoBehaviour
 
     public GameState CurrentState { get; private set; }
 
+    private InputActions inputActions;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        inputActions = new InputActions();
+    }
+
+    private void OnEnable()
+    {
+        inputActions.Plaza.Enable();
+        inputActions.Plaza.Pause.performed += OnPausePressed;
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Plaza.Pause.performed -= OnPausePressed;
+        inputActions.Plaza.Disable();
     }
 
     private void Start()
     {
         SetState(GameState.Splash);
+    }
+
+    private void OnPausePressed(InputAction.CallbackContext context)
+    {
+        if (CurrentState == GameState.PlazaGameplay)
+        {
+            SetState(GameState.MainMenu);
+        }
+        else if (CurrentState == GameState.MainMenu)
+        {
+            if (pauseController != null)
+            {
+                pauseController.HideMenu(() =>
+                {
+                    SetState(GameState.PlazaGameplay);
+                });
+            }
+            else
+            {
+                SetState(GameState.PlazaGameplay);
+            }
+        }
     }
 
     public void SetState(GameState newState)
@@ -47,40 +87,25 @@ public class PlazaManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Splash:
-                if (splashUI) splashUI.SetActive(true);
-                if (pauseUI) pauseUI.SetActive(false);
-                if (plazaUI) plazaUI.SetActive(false);
-
                 if (vcamSplash) vcamSplash.Priority = 20;
 
                 if (playerMovement) playerMovement.DisableMovement();
                 break;
 
             case GameState.MainMenu:
-                if (splashUI) splashUI.SetActive(false);
-                if (pauseUI) pauseUI.SetActive(true);
-                if (plazaUI) plazaUI.SetActive(false);
-
                 if (vcamPause) vcamPause.Priority = 20;
 
                 if (playerMovement) playerMovement.DisableMovement();
+
+                if (pauseController) pauseController.ShowMenu();
                 break;
 
             case GameState.PlazaGameplay:
-                if (splashUI) splashUI.SetActive(false);
-                if (pauseUI) pauseUI.SetActive(false);
-                if (plazaUI) plazaUI.SetActive(true);
-
                 if (vcamPlaza) vcamPlaza.Priority = 20;
 
                 if (playerMovement) playerMovement.EnableMovement();
                 break;
         }
-    }
-    
-    public void Button_EnterPlaza()
-    {
-        SetState(GameState.PlazaGameplay);
     }
 
     public void SetCustomCamera(CinemachineCamera targetCamera)
