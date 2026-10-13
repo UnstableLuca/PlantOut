@@ -173,4 +173,24 @@ public class SeedBag3D : MonoBehaviour
             backRenderer.material.mainTexture = backTex;
         }
     }
+
+    public void ForceDeselect()
+    {
+        isDragging = false;
+        isSelected = false;
+        isActiveBag = false;
+        currentInspectRotation = frontRotation; 
+    }
+
+    public void ReturnToShelf(Vector3 shelfPos, Vector3 targetScale)
+    {
+        isDragging = false;
+        isSelected = false;
+        isActiveBag = false;
+        currentInspectRotation = frontRotation;
+        baseTargetPos = shelfPos;
+        baseTargetScale = targetScale;
+        transform.position = shelfPos;
+        transform.localScale = targetScale;
+    }
 }
