@@ -53,7 +53,6 @@ public class MenuButton : MonoBehaviour
     private void SelectButton()
     {
         float targetX = basePositionX - shiftAmount;
-        Debug.Log($"targetX: {targetX}, baseX {basePositionX}");
         MoveToX(targetX);
     }
 
