@@ -1,8 +1,11 @@
-﻿using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
+﻿
 using System.Collections;
+using TMPro;
+using Unity.Cinemachine;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShelfCenterSelectManager : MonoBehaviour
 {
@@ -41,9 +44,34 @@ public class ShelfCenterSelectManager : MonoBehaviour
     [Header("DESCARTE")]
     public Transform puntoDescarte;
 
+    [Header("PANTALLA VERSUS")]
+    public CinemachineCamera vcamBalda;
+    public CinemachineCamera vcamMesa;
+    public GameObject panelPantallaVS;
+    public Animator animatorPantallaVS;
+    public float tiempoBlendCamara = 1.5f; 
+
+    [Header("VS Jugador 1")]
+    public TextMeshProUGUI txtNameVS1;
+    public TextMeshProUGUI txtDescVS1;
+    public TextMeshProUGUI txtCombosVS1;
+    public TextMeshProUGUI txtStatsVS1;
+
+    [Header("VS Jugador 2")]
+    public TextMeshProUGUI txtNameVS2;
+    public TextMeshProUGUI txtDescVS2;
+    public TextMeshProUGUI txtCombosVS2;
+    public TextMeshProUGUI txtStatsVS2;
+
+    [Header("Combate")]
+    public string nombreEscenaCombate = "cocos";
+
     private int turnoJugador = 1;
     private int seleccionJugador1 = -1;
-    private bool estaDescartando = false; 
+    private int seleccionJugador2 = -1;
+    private bool estaDescartando = false;
+    private bool enPantallaVS = false;
+    private bool enTransicion = false; 
 
     void Start()
     {
@@ -53,17 +81,13 @@ public class ShelfCenterSelectManager : MonoBehaviour
             ForcedInstantPosition();
             UpdateUIAndStates();
         }
-        
 
-        if (objetoPapelJugador2 != null)
-        {
-            objetoPapelJugador2.SetActive(false);
-        }
+        if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
+        if (botonConfirmarJ1 != null) botonConfirmarJ1.interactable = true;
+        if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
 
-        if (botonConfirmarJ1 != null)
-        {
-            botonConfirmarJ1.interactable = true;
-        }
+        if (vcamBalda != null) vcamBalda.Priority = 20; 
+        if (vcamMesa != null) vcamMesa.Priority = 0;
     }
 
     private void InitializeBags()
@@ -113,6 +137,8 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
     void Update()
     {
+        if (enPantallaVS || enTransicion || turnoJugador > 2) return;
+
         if (Keyboard.current != null)
         {
             if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
@@ -189,25 +215,16 @@ public class ShelfCenterSelectManager : MonoBehaviour
         }
     }
 
-    
     public void ConfirmarJugador1()
     {
         if (turnoJugador == 1)
         {
             seleccionJugador1 = currentIndex;
-
             turnoJugador = 2;
             estaDescartando = false;
 
-            if (botonConfirmarJ1 != null)
-            {
-                botonConfirmarJ1.interactable = false;
-            }
-
-            if (objetoPapelJugador2 != null)
-            {
-                objetoPapelJugador2.SetActive(true);
-            }
+            if (botonConfirmarJ1 != null) botonConfirmarJ1.interactable = false;
+            if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(true);
 
             if (animatorPapel2 != null)
             {
@@ -217,7 +234,6 @@ public class ShelfCenterSelectManager : MonoBehaviour
         }
     }
 
-    
     public void RegresarAJugador1()
     {
         if (turnoJugador == 2 && !estaDescartando)
@@ -225,15 +241,8 @@ public class ShelfCenterSelectManager : MonoBehaviour
             turnoJugador = 1;
             estaDescartando = true;
 
-            if (botonConfirmarJ1 != null)
-            {
-                botonConfirmarJ1.interactable = true;
-            }
-
-            if (animatorPapel2 != null)
-            {
-                animatorPapel2.enabled = false;
-            }
+            if (botonConfirmarJ1 != null) botonConfirmarJ1.interactable = true;
+            if (animatorPapel2 != null) animatorPapel2.enabled = false;
 
             StartCoroutine(DeslizarHaciaPuntoYDesactivar());
         }
@@ -244,35 +253,142 @@ public class ShelfCenterSelectManager : MonoBehaviour
         if (objetoPapelJugador2 == null) yield break;
 
         Transform transf = objetoPapelJugador2.transform;
-
         Vector3 posInicial = transf.position;
         Vector3 posFinal = (puntoDescarte != null) ? puntoDescarte.position : posInicial + new Vector3(10f, 0f, 0f);
 
-        float tiempoTranscurrido = 0f;
-        float duracionAnimacion = 0.4f; 
-
-        while (tiempoTranscurrido < duracionAnimacion)
+        float tiempo = 0f;
+        while (tiempo < 0.4f)
         {
-            tiempoTranscurrido += Time.deltaTime;
-            float porcentaje = Mathf.Clamp01(tiempoTranscurrido / duracionAnimacion);
-
-            transf.position = Vector3.Lerp(posInicial, posFinal, porcentaje);
+            tiempo += Time.deltaTime;
+            transf.position = Vector3.Lerp(posInicial, posFinal, Mathf.Clamp01(tiempo / 0.4f));
             yield return null;
         }
-
-        transf.position = posFinal;
 
         objetoPapelJugador2.SetActive(false);
         transf.position = posInicial;
         estaDescartando = false;
     }
+public void ConfirmarJugador2()
+    {
+        if (turnoJugador == 2 && !estaDescartando && !enPantallaVS && !enTransicion)
+        {
+            seleccionJugador2 = currentIndex;
+            StartCoroutine(SecuenciaLlegadaMesaVS());
+        }
+    }
+
+    private IEnumerator SecuenciaLlegadaMesaVS()
+    {
+        enTransicion = true;
+        turnoJugador = 3; 
+
+        for (int i = 0; i < bagControllers.Length; i++)
+        {
+            if (bagControllers[i] != null && shelfSlots[i] != null)
+            {
+                bagControllers[i].ReturnToShelf(shelfSlots[i].position, shelfScale);
+            }
+        }
+
+        if (objetoPapelJugador1 != null) objetoPapelJugador1.SetActive(false);
+        if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
+
+        yield return new WaitForSeconds(0.1f);
+
+        
+        if (vcamBalda != null) vcamBalda.Priority = 0;
+        if (vcamMesa != null) vcamMesa.Priority = 20;
+
+        yield return new WaitForSeconds(tiempoBlendCamara);
+
+        RellenarDatosPantallaVS();
+
+        if (panelPantallaVS != null) panelPantallaVS.SetActive(true);
+        yield return null; 
+
+        if (animatorPantallaVS != null)
+        {
+            animatorPantallaVS.SetTrigger("MostrarVS");
+        }
+
+        enPantallaVS = true;
+        enTransicion = false;
+    }
+
+    private void RellenarDatosPantallaVS()
+    {
+        PlantData3D planta1 = plants[seleccionJugador1];
+        PlantData3D planta2 = plants[seleccionJugador2];
+
+        if (txtNameVS1) txtNameVS1.text = planta1.plantName;
+        if (txtDescVS1) txtDescVS1.text = planta1.description;
+        if (txtCombosVS1) txtCombosVS1.text = "COMBOS:\n• " + string.Join("\n• ", planta1.combos);
+
+        if (txtNameVS2) txtNameVS2.text = planta2.plantName;
+        if (txtDescVS2) txtDescVS2.text = planta2.description;
+        if (txtCombosVS2) txtCombosVS2.text = "COMBOS:\n• " + string.Join("\n• ", planta2.combos);
+    }
 
     
-    public void ConfirmarJugador2()
+    public void BotonJugarPartida()
     {
-        if (turnoJugador == 2 && !estaDescartando)
+        SceneManager.LoadScene(nombreEscenaCombate);
+    }
+
+    public void BotonReiniciarSeleccion()
+    {
+        if (enTransicion) return; 
+        StartCoroutine(SecuenciaReiniciarSeleccion());
+    }
+
+    private IEnumerator SecuenciaReiniciarSeleccion()
+    {
+        enTransicion = true;
+        enPantallaVS = false;
+
+        if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
+
+        if (vcamMesa != null) vcamMesa.Priority = 0;
+        if (vcamBalda != null) vcamBalda.Priority = 20;
+
+        yield return new WaitForSeconds(tiempoBlendCamara);
+
+        for (int i = 0; i < bagControllers.Length; i++)
         {
-            int seleccionJugador2 = currentIndex;
+            if (bagControllers[i] != null)
+            {
+                bagControllers[i].SetIsActive(false);
+            }
         }
+
+        turnoJugador = 1;
+        currentIndex = 0;
+        seleccionJugador1 = -1;
+        seleccionJugador2 = -1;
+        estaDescartando = false;
+
+       
+        if (objetoPapelJugador1 != null)
+        {
+            objetoPapelJugador1.SetActive(true);
+        }
+        if (botonConfirmarJ1 != null)
+        {
+            botonConfirmarJ1.interactable = true;
+        }
+
+        if (objetoPapelJugador2 != null)
+        {
+            objetoPapelJugador2.SetActive(false);
+        }
+        if (animatorPapel2 != null)
+        {
+            animatorPapel2.enabled = false; 
+        }
+
+        ForcedInstantPosition();
+        UpdateUIAndStates();
+
+        enTransicion = false;
     }
 }
