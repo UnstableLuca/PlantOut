@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9befea60edae92e48b1dd1e948ec1fa1, type: 3}
+  m_Name: Carnivora
+  m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
+  personalityName: Carnivora
+  textBackground: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  textSpeed: 0.05
+  basePitch: 1
+  typingSounds:
+  - {fileID: 8300000, guid: b3909e82eef6b7148a3d6270c37dcaef, type: 3}
+  - {fileID: 8300000, guid: d4b0b21d0f8e70d4c8def9cc532498af, type: 3}
+  - {fileID: 8300000, guid: 297f8a11f5c4d0245bb6f81ff7c95039, type: 3}
+  - {fileID: 8300000, guid: 1633c51f9f4aad340bf9f4ddfb2d2073, type: 3}
+  - {fileID: 8300000, guid: 519134305598794409197a0e4423202f, type: 3}
+  - {fileID: 8300000, guid: 95ab03903cf062a4f857a9bda268294f, type: 3}
+  - {fileID: 8300000, guid: 2c33041684190894d8184be899d0b509, type: 3}

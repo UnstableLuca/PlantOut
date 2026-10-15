@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9befea60edae92e48b1dd1e948ec1fa1, type: 3}
+  m_Name: Musical
+  m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
+  personalityName: Musical
+  textBackground: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  textSpeed: 0.15
+  basePitch: 1
+  typingSounds:
+  - {fileID: 8300000, guid: e0c03703c01f38d44ae4da73c9913cee, type: 3}
+  - {fileID: 8300000, guid: e7172d6e763de334a810f794cfb72fd0, type: 3}
+  - {fileID: 8300000, guid: 1e4023d55c97eb045abbf90690377a54, type: 3}
+  - {fileID: 8300000, guid: f512341da9cf1614b8f7ab352798fdc8, type: 3}
+  - {fileID: 8300000, guid: 485565610e31ae74ebb01ed7bce46a32, type: 3}
+  - {fileID: 8300000, guid: a75e710b568f6154b8c0a663a6bce44a, type: 3}
+  - {fileID: 8300000, guid: 0de116ba9710c294eb237028ea250b4b, type: 3}
+  - {fileID: 8300000, guid: 4d337e1c338a81f4db7c99b3b891d32a, type: 3}
+  - {fileID: 8300000, guid: e65277e3cdc417b47809c359ba949b0d, type: 3}

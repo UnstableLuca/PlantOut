@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55bd3457a3691741b6730272fa2598a, type: 3}
+  m_Name: PruebaDialogo 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
+  dialogueLines:
+  - speakerName: "David Mar\xEDa"
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    bgColor: {r: 1, g: 0, b: 0, a: 1}
+    linePersonality: {fileID: 11400000, guid: 40640bfedbb584c4594e5a3fbd7e81f6, type: 2}
+    sentence: Aaron Sujar no soy oso hormiguero pero te metia la lengua en el hormiguero y no dejaba ni una hormiga.
