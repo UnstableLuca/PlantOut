@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9befea60edae92e48b1dd1e948ec1fa1, type: 3}
+  m_Name: Normal
+  m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
+  personalityName: Normal
+  textSpeed: 0.05
+  basePitch: 1
+  typingSounds:
+  - {fileID: 8300000, guid: cfc34358803c1db4f8d2c18fa460bce6, type: 3}
+  - {fileID: 8300000, guid: d5c80184dc3aa804b83b22322cc7decd, type: 3}
+  - {fileID: 8300000, guid: d5d7e8b7b356d1840bf0a50d874b8b7d, type: 3}
+  - {fileID: 8300000, guid: e805a90e6d949de439ed36a200149aac, type: 3}
+  - {fileID: 8300000, guid: 18198f14722fc8c43bed05f9a12e71a3, type: 3}
+  - {fileID: 8300000, guid: 9f370e21d20425f4aa2b4e76bc39d746, type: 3}
+  - {fileID: 8300000, guid: 61d45b6e8b1ad9245b7e52b068970d30, type: 3}
+  - {fileID: 8300000, guid: 2739510b9c17b1f43bba3834e8ddf43a, type: 3}
