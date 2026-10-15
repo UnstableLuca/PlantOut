@@ -89,6 +89,8 @@ public class PlazaManager : MonoBehaviour
             case GameState.Splash:
                 if (vcamSplash) vcamSplash.Priority = 20;
 
+                splashUI.SetActive(true);
+
                 if (playerMovement) playerMovement.DisableMovement();
                 break;
 
