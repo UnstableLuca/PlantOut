@@ -77,6 +77,26 @@ public class ShelfCenterSelectManager : MonoBehaviour
     private bool enPantallaVS = false;
     private bool enTransicion = false;
 
+    [Header("Visor Combos")]
+    public GameObject prefabIconoBoton; 
+
+    [Header("Contenedores de Combos en la UI")]
+    public Transform contenedorCombosJ1;   
+    public Transform contenedorCombosJ2;    
+    public Transform contenedorCombosVS1;   
+    public Transform contenedorCombosVS2;   
+
+    [Header("DEV MANDO ROPITA")]
+    public bool forzarModoMando = false; 
+    private bool estadoMandoAnterior = false;
+
+    
+    public void ToggleModoMando()
+    {
+        forzarModoMando = !forzarModoMando;
+        UpdateUIAndStates(); 
+    }
+
     void Start()
     {
         if (plants.Length > 0 && shelfSlots.Length >= plants.Length && spawnPoint3D != null)
@@ -155,6 +175,14 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
     void Update()
     {
+        bool mandoActualConectado = (Gamepad.current != null) || forzarModoMando;
+
+        if (mandoActualConectado != estadoMandoAnterior)
+        {
+            estadoMandoAnterior = mandoActualConectado;
+            UpdateUIAndStates(); 
+        }
+
         if (enPantallaVS || enTransicion || turnoJugador > 2) return;
 
         bool inputSiguiente = false;
@@ -220,19 +248,15 @@ public class ShelfCenterSelectManager : MonoBehaviour
         {
             if (txtPlantNameJ1 != null) txtPlantNameJ1.text = currentPlant.plantName;
             if (txtDescriptionJ1 != null) txtDescriptionJ1.text = currentPlant.description;
-            if (txtCombosJ1 != null)
-            {
-                txtCombosJ1.text = "COMBOS:\n• " + string.Join("\n• ", currentPlant.combos);
-            }
+
+            GenerarCombosVisuales(currentPlant, contenedorCombosJ1);
         }
         else if (turnoJugador == 2)
         {
             if (txtPlantNameJ2 != null) txtPlantNameJ2.text = currentPlant.plantName;
             if (txtDescriptionJ2 != null) txtDescriptionJ2.text = currentPlant.description;
-            if (txtCombosJ2 != null)
-            {
-                txtCombosJ2.text = "COMBOS:\n• " + string.Join("\n• ", currentPlant.combos);
-            }
+
+            GenerarCombosVisuales(currentPlant, contenedorCombosJ2);
         }
     }
 
@@ -385,11 +409,11 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
         if (txtNameVS1) txtNameVS1.text = planta1.plantName;
         if (txtDescVS1) txtDescVS1.text = planta1.description;
-        if (txtCombosVS1) txtCombosVS1.text = "COMBOS:\n• " + string.Join("\n• ", planta1.combos);
+        GenerarCombosVisuales(planta1, contenedorCombosVS1);
 
         if (txtNameVS2) txtNameVS2.text = planta2.plantName;
         if (txtDescVS2) txtDescVS2.text = planta2.description;
-        if (txtCombosVS2) txtCombosVS2.text = "COMBOS:\n• " + string.Join("\n• ", planta2.combos);
+        GenerarCombosVisuales(planta2, contenedorCombosVS2);
     }
 
     public void BotonJugarPartida()
@@ -452,5 +476,43 @@ public class ShelfCenterSelectManager : MonoBehaviour
         UpdateUIAndStates();
 
         enTransicion = false;
+    }
+
+    private void GenerarCombosVisuales(PlantData3D planta, Transform contenedor)
+    {
+        if (contenedor == null || prefabIconoBoton == null) return;
+
+        foreach (Transform child in contenedor)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (planta.combosVisuales == null || planta.combosVisuales.Length == 0) return;
+
+        bool usandoMando = (Gamepad.current != null) || forzarModoMando;
+        estadoMandoAnterior = usandoMando;
+
+        foreach (var combo in planta.combosVisuales)
+        {
+            Sprite[] spritesAUsar = usandoMando ? combo.botonesMando : combo.botonesTeclado;
+
+            if (spritesAUsar == null) continue;
+
+            foreach (Sprite iconoSprite in spritesAUsar)
+            {
+                if (iconoSprite != null)
+                {
+                    GameObject nuevoIcono = Instantiate(prefabIconoBoton, contenedor);
+                    nuevoIcono.transform.localScale = Vector3.one;
+
+                    Image imgComponent = nuevoIcono.GetComponent<Image>();
+                    if (imgComponent != null)
+                    {
+                        imgComponent.sprite = iconoSprite;
+                        imgComponent.preserveAspect = true;
+                    }
+                }
+            }
+        }
     }
 }

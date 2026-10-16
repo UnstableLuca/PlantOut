@@ -17,5 +17,12 @@ MonoBehaviour:
   bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: 5981fd84d56d3c4439fead4808d0c45c, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 93cccd213ab5eb348b9b0fd764788ef9, type: 3}
-  combos:
-  - '[X] + [Y] + [Z]'
+  combosVisuales:
+  - botonesTeclado:
+    - {fileID: 1590541087, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 17416562, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    botonesMando:
+    - {fileID: 1909580812, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 788321507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}

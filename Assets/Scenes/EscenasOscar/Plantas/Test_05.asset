@@ -17,5 +17,4 @@ MonoBehaviour:
   bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: b4728a776b9b9c244aa16de3c09fdba2, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 325beea940b3bf649be29e7dda101515, type: 3}
-  combos:
-  - '[B] + [A]'
+  combosVisuales: []
