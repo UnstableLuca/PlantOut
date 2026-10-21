@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 2eb51d86d68e93547968a7b3e4ab722b
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arandanos
+    second: {fileID: 2100000, guid: d6bbbcbd4892897439acca8110d9dd9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corbata
+    second: {fileID: 2100000, guid: d6ba3cc9dca5cbe4b81123eec811c9bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gafas
+    second: {fileID: 2100000, guid: 656543302cbbabc4e9b7bb269d2f2103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hombros
+    second: {fileID: 2100000, guid: 3f05f69a2607c9a43874cc192b2fbebf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nudoPerilla
+    second: {fileID: 2100000, guid: 3077ec17ea08f944f860da5799a335eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pelo
+    second: {fileID: 2100000, guid: 9479607b62f0eb144916a8f699158411, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: peques
+    second: {fileID: 2100000, guid: 0f34c540e692046428faff77ead50fd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tallo
+    second: {fileID: 2100000, guid: 26407c2312e17714ca67a45a60ecef4c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arandanos_BaseColor
+    second: {fileID: 2800000, guid: 69573739006fe744da5136d6861050fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arandanos_Metallic
+    second: {fileID: 2800000, guid: 195a1322b78263244bf1f35667ff5346, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arandanos_Normal
+    second: {fileID: 2800000, guid: 56b28349b9f28b54691e65c744d019d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: arandanos_Roughness
+    second: {fileID: 2800000, guid: 93cbc8a1da2f9b54398592d650d84140, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: corbata_BaseColor
+    second: {fileID: 2800000, guid: 23a9c97a15a2f6e418db680f2354292c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: corbata_Metallic
+    second: {fileID: 2800000, guid: 0bf87d6422fa22d4eb3769f83dbc0408, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: corbata_Normal
+    second: {fileID: 2800000, guid: ae88251e9c1bc264282de39dc42cd48f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: corbata_Roughness
+    second: {fileID: 2800000, guid: 50d1eb476aff404449090864d0ff29d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gafas_BaseColor
+    second: {fileID: 2800000, guid: f57cbd663f6b2f0408eeb033f10b04cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gafas_Metallic
+    second: {fileID: 2800000, guid: 0160d699ca3130b42b9488f971ceb838, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gafas_Normal
+    second: {fileID: 2800000, guid: 7c7c453541781fd4ca245fdd72684704, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gafas_Roughness
+    second: {fileID: 2800000, guid: 434e04a0367c761419f7935d98d92c22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hombros_BaseColor
+    second: {fileID: 2800000, guid: c9d6778b14751c74daef6deb48f112e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hombros_Metallic
+    second: {fileID: 2800000, guid: 74eb27c227c8b904bb4cc80570dcebde, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hombros_Normal
+    second: {fileID: 2800000, guid: ed3bb12b834bd234f9b849e73b1d35b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hombros_Roughness
+    second: {fileID: 2800000, guid: 82192d9f047a63b48a16692e5d838d68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: nudoPerilla_BaseColor
+    second: {fileID: 2800000, guid: 3b28ccece18c7404298dc2d5b0d2fe18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: nudoPerilla_Metallic
+    second: {fileID: 2800000, guid: a843eb711877b764e83922db7bfa094d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: nudoPerilla_Normal
+    second: {fileID: 2800000, guid: 175e3abde80146548980269e4fc8fd68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: nudoPerilla_Roughness
+    second: {fileID: 2800000, guid: bc25743ef4306ba4da8c9334841dcc85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo_BaseColor
+    second: {fileID: 2800000, guid: 17c17a2ebf4864d4a866fc430826cc7e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo_Metallic
+    second: {fileID: 2800000, guid: b87bd6ed30739394f98a6ec9911cc29e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo_Normal
+    second: {fileID: 2800000, guid: bc4c9a7c3293eff4a9cd79f0d82e171b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo_Roughness
+    second: {fileID: 2800000, guid: d3b62b0123f8e004c99472d164e900d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: peques_BaseColor
+    second: {fileID: 2800000, guid: 939852e3e93877344923c57d0ead8ad6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: peques_Metallic
+    second: {fileID: 2800000, guid: 134c5a3407a00e94e84eb1f74ca7e64c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: peques_Normal
+    second: {fileID: 2800000, guid: 6015e2327d869584f957dd4eaeb21f31, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: peques_Roughness
+    second: {fileID: 2800000, guid: 8ee9acb2ec0418041ba73f56045881c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tallo_BaseColor
+    second: {fileID: 2800000, guid: 2608888fea0c24847bc7f33e11b2dd80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tallo_Metallic
+    second: {fileID: 2800000, guid: f87f00b20c34fb9448ff4659d24c6242, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tallo_Normal
+    second: {fileID: 2800000, guid: 05ebf9e2bd5136148927d6bc9f99400d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tallo_Roughness
+    second: {fileID: 2800000, guid: 56df88899d3ee5b40b18baf083e2e043, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

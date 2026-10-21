@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 94edeedbfbe4a9942b5db11d216d03c0
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cone_005
+    second: {fileID: 2100000, guid: 468678533173e4148993643baafc9050, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cone_012
+    second: {fileID: 2100000, guid: 8212f7656f967e9418b0644eef77e450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NurbsPath_005
+    second: {fileID: 2100000, guid: 4f598b5912e728443997c62068405de8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sphere1_1
+    second: {fileID: 2100000, guid: 925b114ac45d6fc4bbadb290d63b586f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sphere2
+    second: {fileID: 2100000, guid: f691e42549699ee489b7d1e623492276, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sphere_002
+    second: {fileID: 2100000, guid: bd1c8fbd85d1ccb4f9afdfba0ac3fe33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carni1
+    second: {fileID: 2100000, guid: 6c838b116d034434c9884afd3d784184, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dientesARR
+    second: {fileID: 2100000, guid: a9424fe39a86a2a4b9dd37692cacda86, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Metallic
+    second: {fileID: 2800000, guid: d8a50dfd6f3c11345b0e7eb93119e1d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Normal
+    second: {fileID: 2800000, guid: ee12409b13a151c44aa92ec87b96d9a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Roughness
+    second: {fileID: 2800000, guid: 28c46789a840a2349a585a29c26a29b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_BaseColor
+    second: {fileID: 2800000, guid: 616b4c90bcde5284fac402f162030023, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Metallic
+    second: {fileID: 2800000, guid: a14922925048c8f4184c9601359669d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Normal
+    second: {fileID: 2800000, guid: eee1f4203b2607c498182e2e1fea511b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Roughness
+    second: {fileID: 2800000, guid: 2d6cb5826dbe5db498f2312220ce38a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_BaseColor
+    second: {fileID: 2800000, guid: 9eb7e431b4ffc684599b0c4ab4ec2720, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Metallic
+    second: {fileID: 2800000, guid: 9514494d1223bb84b8cecad545b9a41d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Normal
+    second: {fileID: 2800000, guid: a46abb2029f35f84dad93da3f717f5b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Roughness
+    second: {fileID: 2800000, guid: f7ee633cd08b82743b55ce9310663608, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_BaseColor
+    second: {fileID: 2800000, guid: 22e7b38f12218c947a158efeb9797c72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Metallic
+    second: {fileID: 2800000, guid: 579848f011c06cf43bfcbb90852b08cb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Normal
+    second: {fileID: 2800000, guid: 3d63ed64c912a594a8484975b53881a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Roughness
+    second: {fileID: 2800000, guid: 2c5016fe466e0084c997277cdaf87245, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_BaseColor
+    second: {fileID: 2800000, guid: 2152948b19c6f1d4eaa1a7201ed53092, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Metallic
+    second: {fileID: 2800000, guid: 4caac0b4206813444b1da727068b65a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Normal
+    second: {fileID: 2800000, guid: 018d6cf446896ad42964a6d5f0e0eb5f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Roughness
+    second: {fileID: 2800000, guid: de7f84af3aae13648b41c23488a057da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_BaseColor
+    second: {fileID: 2800000, guid: 615727231e87bc44fbb8c5bc4b2863e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Metallic
+    second: {fileID: 2800000, guid: 387e01eb408506d448ad74348b6fb9b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Normal
+    second: {fileID: 2800000, guid: 14bf58e5416e6e441a65db9ba0462862, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Roughness
+    second: {fileID: 2800000, guid: 566bfb759dc0d5f429b98f87237a49b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PINCHOS_BaseColor
+    second: {fileID: 2800000, guid: 5c2411060a50cc84abc444775c7ee1f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PINCHOS_Metallic
+    second: {fileID: 2800000, guid: 3f268901902e066459b9bba32189e4b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PINCHOS_Normal
+    second: {fileID: 2800000, guid: 8e5c54b6022fb2d48b6d907e3512392f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PINCHOS_Roughness
+    second: {fileID: 2800000, guid: b5b24581819bb5f4286be498972bac1f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_BaseColor
+    second: {fileID: 2800000, guid: 0849f5b9dcc1e9048b7ae31c26910562, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Metallic
+    second: {fileID: 2800000, guid: bc9fca1a7394a724cba17007ff33019a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Normal
+    second: {fileID: 2800000, guid: 205d8081b6d3d854c916f7908e94f78a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Roughness
+    second: {fileID: 2800000, guid: 409e864e1ccd1024dafa8b93a75864e9, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

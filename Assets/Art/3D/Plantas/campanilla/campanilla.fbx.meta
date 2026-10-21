@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: b425ef3928e42fa4ca701aa1417056df
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CARITAS
+    second: {fileID: 2100000, guid: fe50fe0c82f60ba41b88c0f75bd5b359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HOJITASTALLO
+    second: {fileID: 2100000, guid: a4c741abf81a36745b77e24118e80c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HojitasFlor
+    second: {fileID: 2100000, guid: 129cc50878afef649a795299b41111b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lazos
+    second: {fileID: 2100000, guid: 8b7ebb1c8a18b6647be760883de989c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PETALOS
+    second: {fileID: 2100000, guid: b843b85e038bd9e4397391fea4e836bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TALLO
+    second: {fileID: 2100000, guid: 32863743d7c07bc40990a8670c96a87d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TALLOS
+    second: {fileID: 2100000, guid: e68d2a0fa7bf32b44b45e431165f052d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CARITAS_BaseColor
+    second: {fileID: 2800000, guid: 7e22332c83e3fa341804f199567ec4ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CARITAS_Metallic
+    second: {fileID: 2800000, guid: 4f73cc26007256047aaf6b61a0789d62, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CARITAS_Normal
+    second: {fileID: 2800000, guid: 497a5bb0db94467438aaa5d7a475675c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CARITAS_Roughness
+    second: {fileID: 2800000, guid: 0670e75c949fe5c4da446c55d07a6b90, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HOJITASTALLO_BaseColor
+    second: {fileID: 2800000, guid: 364f1e3e3da46f94a93aa0cfdfeff821, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HOJITASTALLO_Metallic
+    second: {fileID: 2800000, guid: 4ea63ecdad24d2b4194769d0ac81f107, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HOJITASTALLO_Normal
+    second: {fileID: 2800000, guid: 7f3a1f82e27e97048adbb5c96d982351, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HOJITASTALLO_Roughness
+    second: {fileID: 2800000, guid: 0780355f74b4b7949aa0751e7c06b725, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HojitasFlor_BaseColor
+    second: {fileID: 2800000, guid: a3078a1a52e73ed44a129a1f2583c796, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HojitasFlor_Metallic
+    second: {fileID: 2800000, guid: 6cc71ba0caa849f4d81305ddb1926ec2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HojitasFlor_Normal
+    second: {fileID: 2800000, guid: 2d39dc21cc8a01241a9b4928a2ac7017, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: HojitasFlor_Roughness
+    second: {fileID: 2800000, guid: 2b8a7f144aef2684e8108f2d6a8c66db, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lazos_BaseColor
+    second: {fileID: 2800000, guid: 96167e331bff8ba40aec3c5fd4eef61b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lazos_Metallic
+    second: {fileID: 2800000, guid: c68bf40734252454fb1ed332e29224c7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lazos_Normal
+    second: {fileID: 2800000, guid: 6ec7ee19fcdc3704e9dc1e3c6717d856, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lazos_Roughness
+    second: {fileID: 2800000, guid: aaec9399d66014f4e8f4265fbbad6530, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PETALOS_BaseColor
+    second: {fileID: 2800000, guid: f08fcbce3d316994ea13899714928931, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PETALOS_Metallic
+    second: {fileID: 2800000, guid: e9457bdd62ae77748ad55d75ee489a73, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PETALOS_Normal
+    second: {fileID: 2800000, guid: 384ab72d07c77334695626c89da1bf7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PETALOS_Roughness
+    second: {fileID: 2800000, guid: ea9f7f2297243bb429f1eb29dc86b48f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOS_BaseColor
+    second: {fileID: 2800000, guid: 530194bf8e07f8d4c87c760b3a335f2c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOS_Metallic
+    second: {fileID: 2800000, guid: 5fdc62cb4df676049a75c1570374ed46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOS_Normal
+    second: {fileID: 2800000, guid: 14e6a8b19dc469c44812555b64d3196c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOS_Roughness
+    second: {fileID: 2800000, guid: bf9514c037d82d94c98915e8a1ea48de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_BaseColor
+    second: {fileID: 2800000, guid: 248d18e7e9cad7e48a268810cafb54b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Metallic
+    second: {fileID: 2800000, guid: 7cee8cb21f506e74780effc91f815ef3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Normal
+    second: {fileID: 2800000, guid: 7492fe2be4da6034bade479008dfe186, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLO_Roughness
+    second: {fileID: 2800000, guid: 30eed30d5b22f8f4a9a24febed01a7c6, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
