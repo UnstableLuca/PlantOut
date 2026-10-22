@@ -17,10 +17,14 @@ public class PlantData3D : ScriptableObject
     public string plantName;
     [TextArea] public string description;
 
-    [Header("Modelo 3D y Texturas")]
+    [Header("Modelo 3D y Texturas (Escena de Selección / Bolsas)")]
     public GameObject bagPrefab;
     public Texture2D frontLabelTexture;
     public Texture2D backLabelTexture;
+
+    [Header("Modelo 3D y Portada (Escena del Libro / Enciclopedia)")]
+    public GameObject bookPrefab;
+    public Texture2D bookCoverTexture;
 
     [Header("Combos Visuales (Iconos Dinámicos)")]
     public ComboVisual[] combosVisuales;
