@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Planta_Test_1
   description: Test de la planta, los pies son divertidos
+  estadisticas: 
   bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: bcd7cc57d6e27ea4da10a1ad03050ba1, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 8545ac9832129df4298438fcccf8bed8, type: 3}
+  bookPrefab: {fileID: 1539651414980989587, guid: f1fdbbbf9b0f3ea409dbfcf32e655880, type: 3}
+  coverTexture: {fileID: 0}
+  spineTexture: {fileID: 0}
+  pagesTexture: {fileID: 2800000, guid: 6d8ec98f8e497ac4d8ce70af6b1a6fd7, type: 3}
   combosVisuales:
   - botonesTeclado:
     - {fileID: -1497371589, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}

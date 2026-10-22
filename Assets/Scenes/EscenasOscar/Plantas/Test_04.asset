@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Planta_Test_04
   description: "Sergio recup\xE9rate pronto, encuentra el ibuprofeno y dale. "
+  estadisticas: 
   bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: 51ee86b30f863e146b6eaeacaff51247, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 07a20daf7eaf9644eb6702934d1cd7a9, type: 3}
-  combos:
-  - '[A] + [B]'
+  bookPrefab: {fileID: 0}
+  coverTexture: {fileID: 0}
+  spineTexture: {fileID: 0}
+  pagesTexture: {fileID: 0}
+  combosVisuales:
+  - botonesTeclado:
+    - {fileID: 1590541087, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 17416562, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    botonesMando:
+    - {fileID: 1909580812, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 788321507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}

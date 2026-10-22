@@ -3,29 +3,32 @@ using UnityEngine;
 [System.Serializable]
 public class ComboVisual
 {
-    [Header("Imágenes para Teclado / Ratón")]
+    [Header("Teclado")]
     public Sprite[] botonesTeclado;
 
-    [Header("Imágenes para Mando (Gamepad)")]
+    [Header("Mando")]
     public Sprite[] botonesMando;
 }
 
 [CreateAssetMenu(fileName = "NewPlantData3D", menuName = "Plant Selection/Plant Data 3D")]
 public class PlantData3D : ScriptableObject
 {
-    [Header("Información Básica")]
+    [Header("Información")]
     public string plantName;
     [TextArea] public string description;
 
-    [Header("Modelo 3D y Texturas (Escena de Selección / Bolsas)")]
+    [Header("Estadísticas")]
+    [TextArea] public string estadisticas; 
+
+    [Header("Modelo 3D y Texturas Bolsa")]
     public GameObject bagPrefab;
     public Texture2D frontLabelTexture;
     public Texture2D backLabelTexture;
 
-    [Header("Modelo 3D y Portada (Escena del Libro / Enciclopedia)")]
+    [Header("Modelo 3D Libro")]
     public GameObject bookPrefab;
-    public Texture2D bookCoverTexture;
+    
 
-    [Header("Combos Visuales (Iconos Dinámicos)")]
+    [Header("Combos Visuales")]
     public ComboVisual[] combosVisuales;
 }
