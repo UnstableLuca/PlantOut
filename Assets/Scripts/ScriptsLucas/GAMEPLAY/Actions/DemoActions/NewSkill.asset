@@ -70,3 +70,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hitstun: 0.4
+  extraRecoveryPerUse: 0.06
