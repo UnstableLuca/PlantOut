@@ -2,15 +2,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public enum KeyboardLayout { Player1_WASD, Player2_IJKL, Custom }
-[RequireComponent(typeof(ComboBuffer))]
+[RequireComponent(typeof(Fighter))]
 public class FighterInput : MonoBehaviour
 {
     [Header("Teclado")]
     [SerializeField] KeyboardLayout keyboardLayout = KeyboardLayout.Player1_WASD;
 
     [Tooltip("Solo con Layout = Custom. Formato del Input System, p.ej. <Keyboard>/j")]
-    [SerializeField] string customAttackLeft = "<Keyboard>/j";
-    [SerializeField] string customAttackRight = "<Keyboard>/l";
+    [SerializeField] string customMelee = "<Keyboard>/j";
+    [SerializeField] string customRanged = "<Keyboard>/l";
     [SerializeField] string customBlock = "<Keyboard>/k";
     [SerializeField] string customSkill = "<Keyboard>/i";
 
@@ -19,57 +19,60 @@ public class FighterInput : MonoBehaviour
     [Tooltip("-1 = cualquier mando. 0 = primer mando conectado, 1 = el segundo... Con dos jugadores usa 0 y 1.")]
     [SerializeField] int gamepadIndex = -1;
 
-    ComboBuffer buffer;
-    InputAction attackLeft, attackRight, block, skill;
+    Fighter fighter;
+    InputAction melee, ranged, block, skill;
 
     void Awake()
     {
-        buffer = GetComponent<ComboBuffer>();
+        fighter = GetComponent<Fighter>();
 
-        GetKeys(out string l, out string r, out string b, out string s);
+        GetKeys(out string m, out string r, out string b, out string s);
 
-        // Mando: X = izquierda, B = derecha, A = bloquear (mantener), Y = habilidad
-        attackLeft = Make("AttackLeft", l, "<Gamepad>/buttonWest");
-        attackRight = Make("AttackRight", r, "<Gamepad>/buttonEast");
+        // Mando: X = melee, B = rango, A = bloquear (mantener), Y = habilidad (mantener)
+        melee = Make("Melee", m, "<Gamepad>/buttonWest");
+        ranged = Make("Ranged", r, "<Gamepad>/buttonEast");
         block = Make("Block", b, "<Gamepad>/buttonSouth");
         skill = Make("Skill", s, "<Gamepad>/buttonNorth");
     }
 
     void OnEnable()
     {
-        attackLeft.performed += OnAttackLeft;
-        attackRight.performed += OnAttackRight;
+        melee.performed += OnMelee;
+        ranged.performed += OnRanged;
         block.performed += OnBlockPressed;
         block.canceled += OnBlockReleased;
-        skill.performed += OnSkill;
+        skill.performed += OnSkillPressed;
+        skill.canceled += OnSkillReleased;
 
-        attackLeft.Enable();
-        attackRight.Enable();
+        melee.Enable();
+        ranged.Enable();
         block.Enable();
         skill.Enable();
     }
 
     void OnDisable()
     {
-        attackLeft.Disable();
-        attackRight.Disable();
+        melee.Disable();
+        ranged.Disable();
         block.Disable();
         skill.Disable();
 
-        attackLeft.performed -= OnAttackLeft;
-        attackRight.performed -= OnAttackRight;
+        melee.performed -= OnMelee;
+        ranged.performed -= OnRanged;
         block.performed -= OnBlockPressed;
         block.canceled -= OnBlockReleased;
-        skill.performed -= OnSkill;
+        skill.performed -= OnSkillPressed;
+        skill.canceled -= OnSkillReleased;
     }
 
     void OnDestroy()
     {
-        attackLeft?.Dispose();
-        attackRight?.Dispose();
+        melee?.Dispose();
+        ranged?.Dispose();
         block?.Dispose();
         skill?.Dispose();
     }
+
 
 
     InputAction Make(string actionName, string keyboardBinding, string gamepadBinding)
@@ -80,20 +83,20 @@ public class FighterInput : MonoBehaviour
         return action;
     }
 
-    void GetKeys(out string left, out string right, out string blockKey, out string skillKey)
+    void GetKeys(out string meleeKey, out string rangedKey, out string blockKey, out string skillKey)
     {
         switch (keyboardLayout)
         {
             case KeyboardLayout.Player1_WASD:
-                left = "<Keyboard>/a"; right = "<Keyboard>/d";
+                meleeKey = "<Keyboard>/d"; rangedKey = "<Keyboard>/a";
                 blockKey = "<Keyboard>/s"; skillKey = "<Keyboard>/w";
                 break;
             case KeyboardLayout.Player2_IJKL:
-                left = "<Keyboard>/j"; right = "<Keyboard>/l";
+                meleeKey = "<Keyboard>/j"; rangedKey = "<Keyboard>/l";
                 blockKey = "<Keyboard>/k"; skillKey = "<Keyboard>/i";
                 break;
             default:
-                left = customAttackLeft; right = customAttackRight;
+                meleeKey = customMelee; rangedKey = customRanged;
                 blockKey = customBlock; skillKey = customSkill;
                 break;
         }
@@ -108,9 +111,10 @@ public class FighterInput : MonoBehaviour
         return true;
     }
 
-    void OnAttackLeft(InputAction.CallbackContext ctx) { if (Accept(ctx)) buffer.PressAttack(AttackSide.Left); }
-    void OnAttackRight(InputAction.CallbackContext ctx) { if (Accept(ctx)) buffer.PressAttack(AttackSide.Right); }
-    void OnBlockPressed(InputAction.CallbackContext ctx) { if (Accept(ctx)) buffer.PressBlock(); }
-    void OnBlockReleased(InputAction.CallbackContext ctx) { if (Accept(ctx)) buffer.ReleaseBlock(); }
-    void OnSkill(InputAction.CallbackContext ctx) { if (Accept(ctx)) buffer.PressSkill(); }
+    void OnMelee(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestAttack(AttackKind.Melee); }
+    void OnRanged(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestAttack(AttackKind.Ranged); }
+    void OnBlockPressed(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestBlockPress(); }
+    void OnBlockReleased(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestBlockRelease(); }
+    void OnSkillPressed(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestSkillPress(); }
+    void OnSkillReleased(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestSkillRelease(); }
 }

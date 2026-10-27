@@ -4,6 +4,7 @@ using UnityEngine;
 public class AttackAction : PlayerAction
 {
     [Header("Golpe")]
+    public AttackKind kind = AttackKind.Melee;
     public float damage = 10f;
     [Tooltip("0 es sin stun")]
     public float hitstun = 0;
@@ -14,12 +15,6 @@ public class AttackAction : PlayerAction
     [Tooltip("Lo que sube la barra por golpear bicho")]
     public float barGainOnBugHit = 0.05f;
 
-    public override void Execute(in ActionContext ctx)
-    {
-        //IMPORTANTE LOS TRIGGERS SE TIENEN QUE NOMBRAR animationTrigger con Left o Right puesto al final dependiendo de la direcion
-        if (!string.IsNullOrEmpty(animationTrigger))
-            ctx.Owner.PlayAnimation(animationTrigger + ctx.Side);
-    }
 
     public override void OnPhaseEnter(in ActionContext ctx, ActionPhase phase)
     {
@@ -28,6 +23,7 @@ public class AttackAction : PlayerAction
         IDamageable target = ctx.ResolveTarget();
         if (target == null) return;
 
+        float finalDamage = ctx.Owner.ModifyAttackDamage(kind, damage);
         var hit = new HitData(ctx.Owner, damage, hitstun, isSkill: false);
         BlockResult result = target.ReceiveHit(hit);
 

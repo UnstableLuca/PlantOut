@@ -2,6 +2,8 @@ public enum ActionPhase { Startup, Active, Recovery }
 
 public enum AttackSide { Left, Right }
 
+public enum AttackKind { Melee, Ranged }
+
 public enum BlockResult { None, Blocked, Parried }
 
 
@@ -16,13 +18,14 @@ public readonly struct HitData
     public readonly float Damage;
     public readonly float Hitstun; // 0 para no stun
     public readonly bool IsSkill;
-
-    public HitData(IDamageable source, float damage, float hitstun, bool isSkill)
+    public readonly bool Parryable; // false = se puede bloquear pero no parrear
+    public HitData(IDamageable source, float damage, float hitstun, bool isSkill, bool parryable = true)
     {
         Source = source;
         Damage = damage;
         Hitstun = hitstun;
         IsSkill = isSkill;
+        Parryable = parryable;
     }
 }
 public interface IFighter : IDamageable
@@ -33,7 +36,9 @@ public interface IFighter : IDamageable
     bool TrySpendUses(int uses);
     void AddBar(float amount);
 
-    IDamageable GetTarget(AttackSide side);
+    IDamageable GetAutoTarget();
+
+    float ModifyAttackDamage(AttackKind kind, float baseDamage);
 
     void PlayAnimation(string trigger);
 
@@ -45,19 +50,14 @@ public readonly struct ActionContext
 {
     public readonly IFighter Owner;
     public readonly double Now; //Time.timeAsDouble
-    public readonly int ComboLenght;
-    public readonly AttackSide Side;
 
-    public ActionContext(IFighter owner, double now,
-                        int comboLength = 1, AttackSide side = AttackSide.Right)
+    public ActionContext(IFighter owner, double now)
     {
         Owner = owner;
         Now = now;
-        ComboLenght = comboLength;
-        Side = side;
     }
 
-    public IDamageable ResolveTarget() => Owner.GetTarget(Side);
+    public IDamageable ResolveTarget() => Owner.GetAutoTarget();
 
 }
 

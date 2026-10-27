@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public enum FighterState { Idle, Acting, Blocking, Stunned }
+public enum FighterState { Idle, Acting, Blocking, Stunned, Channeling}
 
 public readonly struct HitReport
 {
@@ -13,7 +14,8 @@ public readonly struct HitReport
     public readonly BlockResult Result;
     public readonly bool IsSkill;
 
-    public HitReport(Fighter victim, IDamageable source, float rawDamage, float finalDamage, BlockResult result, bool isSkill)
+    public HitReport(Fighter victim, IDamageable source, float rawDamage,
+                    float finalDamage, BlockResult result, bool isSkill)
     {
         Victim = victim;
         Source = source;
@@ -26,12 +28,14 @@ public readonly struct HitReport
 public class Fighter : MonoBehaviour, IFighter
 {
     [Header("Acciones")]
-    [SerializeField] AttackAction attack;
-    [SerializeField] SkillAction skill;
+    [SerializeField] AttackAction meleeAttack;
+    [SerializeField] AttackAction rangedAttack;
     [SerializeField] BlockAction block;
 
+    [Header("Habilidades")]
+    [SerializeField] SkillController skills;
+
     [Header("Lados")]
-    [Tooltip("Lado que mira al rival. El otro lado es por donde llegan los bichos.")]
     [SerializeField] AttackSide rivalSide = AttackSide.Right;
 
     [Header("Barra de habilidad")]
@@ -41,8 +45,11 @@ public class Fighter : MonoBehaviour, IFighter
     [Tooltip("Stun que sufre el atacante cuando le parreas")]
     [SerializeField] float parryStunOnAttacker = 0.5f;
 
-    [Header("Opcional")]
+    [Header("Animaciones")]
     [SerializeField] Animator animator;
+    [SerializeField] string hitTrigger = "Hit";
+    [SerializeField] string parryTrigger = "Parry";
+    [SerializeField] string blockEndTrigger = "BlockEnd";
 
     //ESTADOS PUBLICOS
 
@@ -75,19 +82,23 @@ public class Fighter : MonoBehaviour, IFighter
     readonly List<IDamageable> leftBugs = new List<IDamageable>();
     readonly List<IDamageable> rightBugs = new List<IDamageable>();
 
+    bool Armored => skills != null && skills.SuperArmor;
+
+    void Awake()
+    {
+        if (skills == null) skills = GetComponent<SkillController>();
+    }
     //INPUTS
 
-    public bool RequestAttack(AttackSide side) 
-        => attack != null && TryStart(attack, side, 1);
+    public bool RequestAttack(AttackKind kind)
+    {
+        AttackAction action = kind == AttackKind.Melee ? meleeAttack : rangedAttack;
+        return action != null && TryStart(action);
+    }
 
-    /// <param name="comboLength">Longitud del combo detectado = usos de barra que gasta.</param>
 
-    public bool RequestSkill(AttackSide side, int comboLength)
-        => RequestSkill(skill, side, comboLength);
-
-    public bool RequestSkill(SkillAction action, AttackSide side, int comboLength)
-        => action != null && TryStart(action, side, comboLength);
-
+    public void RequestSkillPress() { if (skills != null) skills.OnSkillPressed(); }
+    public void RequestSkillRelease() { if (skills != null) skills.OnSkillReleased(); }
     public bool RequestBlockPress()
     {
         if (block == null) return false;
@@ -105,9 +116,9 @@ public class Fighter : MonoBehaviour, IFighter
 
     //EJEC DE ACCIONES
 
-    bool TryStart(PlayerAction action, AttackSide side, int comboLength)
+    bool TryStart(PlayerAction action)
     {
-        var ctx = new ActionContext(this, Time.timeAsDouble, comboLength, side);
+        var ctx = new ActionContext(this, Time.timeAsDouble);
         if (!action.CanExecute(ctx)) return false;
 
         currentAction = action;
@@ -163,6 +174,12 @@ public class Fighter : MonoBehaviour, IFighter
     }
     void Interrupt()
     {
+        if (state == FighterState.Channeling)
+        {
+            state = FighterState.Idle;
+            if (skills != null) skills.OnChannelInterrupted();
+        }
+
         if (currentAction == null) return;
 
         PlayerAction a = currentAction;
@@ -173,16 +190,31 @@ public class Fighter : MonoBehaviour, IFighter
     }
     public void Stun(float duration)
     {
+        if (Armored) return;
+
         Interrupt();
         state = FighterState.Stunned;
         stunEnd = Math.Max(stunEnd, Time.timeAsDouble + duration);
+    }
+    //CHANELLINIG
+
+    public bool BeginChannel()
+    {
+        if (state != FighterState.Idle) return false;
+        state = FighterState.Channeling;
+        return true;
+    }
+
+    public void EndChannel()
+    {
+        if (state == FighterState.Channeling) state = FighterState.Idle;
     }
 
     //IFIGHTER
 
     public void PlayAnimation(string trigger)
     {
-        if (animator != null) animator.SetTrigger(trigger);
+        if (animator != null && !string.IsNullOrEmpty(trigger)) animator.SetTrigger(trigger);
     }
     public void BeginBlock(double pressTime)
     {
@@ -197,6 +229,7 @@ public class Fighter : MonoBehaviour, IFighter
         state = FighterState.Idle;
         currentAction = null;
         lockUntil = Time.timeAsDouble + (block != null ? block.recovery : 0f);
+        PlayAnimation(blockEndTrigger);
     }
     public bool TrySpendUses(int uses)
     {
@@ -213,16 +246,25 @@ public class Fighter : MonoBehaviour, IFighter
         SkillBarChanged?.Invoke(SkillBar);
     }
 
+    public float ModifyAttackDamage(AttackKind kind, float baseDamage)
+        => skills != null ? skills.ModifyAttackDamage(kind, baseDamage) : baseDamage;
+
+    public IDamageable GetAutoTarget()
+    {
+        AttackSide bugSide = rivalSide == AttackSide.Left ? AttackSide.Right : AttackSide.Left;
+        return GetTarget(bugSide) ?? GetTarget(rivalSide);
+    }
+
     public IDamageable GetTarget(AttackSide side)
     {
         if (side == rivalSide)
             return IsAlive(Rival) ? Rival : null;
-        
+
         List<IDamageable> lane = side == AttackSide.Left ? leftBugs : rightBugs;
         while (lane.Count > 0)
         {
             if (IsAlive(lane[0])) return lane[0];
-            lane.RemoveAt(0);
+            lane.RemoveAt(0);   
         }
         return null;
     }
@@ -237,16 +279,26 @@ public class Fighter : MonoBehaviour, IFighter
         if (state == FighterState.Blocking && block != null)
         {
             result = block.Evaluate(blockPressTime, Time.timeAsDouble);
-            damage = block.ModifyDamage(result, damage);
-            AddBar(block.BarReward(result));
+            if (result == BlockResult.Parried && !hit.Parryable) result = BlockResult.Blocked;
 
-            if (result == BlockResult.Parried && hit.Source is Fighter attacker && attacker != this)
-                attacker.Stun(parryStunOnAttacker);
+            damage = block.ModifyDamage(result, damage);
+            if (hit.Parryable) AddBar(block.BarReward(result));   // los ticks de la ultimate no dan barra
+
+            if (result == BlockResult.Parried)
+            {
+                PlayAnimation(parryTrigger);
+                if (hit.Source is Fighter attacker && attacker != this)
+                    attacker.Stun(parryStunOnAttacker);
+            }
         }
         else
         {
-            if (hit.Hitstun > 0f) Stun(hit.Hitstun);
-            else Interrupt();
+            if (!Armored)
+            {
+                if (hit.Hitstun > 0f) Stun(hit.Hitstun);
+                else Interrupt();
+            }
+            PlayAnimation(hitTrigger);
         }
 
         HitReceived?.Invoke(new HitReport(this, hit.Source, hit.Damage, damage, result, hit.IsSkill));
