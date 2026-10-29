@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53da9c1cd037c924292549a893e03497, type: 3}
+  m_Name: CarnivoraMelee
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAction
+  startup: 0.1
+  active: 0.05
+  recovery: 0.3
+  animationTrigger: Melee
+  kind: 0
+  damage: 10
+  hitstun: 0.25
+  barGainOnRivalHit: 0.15
+  barGainOnBugHit: 0.05
