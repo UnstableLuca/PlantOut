@@ -1,18 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class SeedBag3D : MonoBehaviour
 {
-    private bool isFlipped = false;
-
-    private Quaternion frontRotation = Quaternion.Euler(0, 0, 0);
-    private Quaternion backRotation = Quaternion.Euler(0, 180, 0);
-
-    [Header("Inspección")]
-    public float rotationSpeed = 0.5f;
-    public float returnSpeed = 8f;
-
-    [Header("Stand By")]
+    [Header("Stand By (Flotación)")]
     public float floatSpeed = 2f;
     public float floatAmount = 0.05f;
 
@@ -21,9 +11,7 @@ public class SeedBag3D : MonoBehaviour
     private float currentTransitionSpeed = 8f;
     private bool isActiveBag = false;
 
-    private bool isDragging = false;
-    private bool isSelected = false;
-    private Quaternion currentInspectRotation;
+    private Quaternion targetRotation;
 
     [Header("Texturas")]
     private Texture2D frontTex;
@@ -39,15 +27,13 @@ public class SeedBag3D : MonoBehaviour
 
         if (frontObj != null) frontRenderer = frontObj.GetComponent<Renderer>();
         if (backObj != null) backRenderer = backObj.GetComponent<Renderer>();
-
-        
     }
 
     void Start()
     {
         baseTargetPos = transform.position;
         baseTargetScale = transform.localScale;
-        currentInspectRotation = transform.localRotation;
+        targetRotation = Quaternion.Euler(0, 90, 0);
     }
 
     public void SetupTextures(Texture2D front, Texture2D back)
@@ -60,11 +46,9 @@ public class SeedBag3D : MonoBehaviour
     public void SetIsActive(bool active)
     {
         isActiveBag = active;
-        if (!active)
+        if (active)
         {
-            isDragging = false;
-            isSelected = false;
-            currentInspectRotation = isFlipped ? backRotation : frontRotation;
+            targetRotation = Quaternion.Euler(0, 90, 0);
         }
     }
 
@@ -86,79 +70,17 @@ public class SeedBag3D : MonoBehaviour
 
         if (isActiveBag)
         {
-            HandleMouseInteraction();
-
-            if (isDragging || isSelected)
-            {
-                finalPos = baseTargetPos + new Vector3(0f, 0.3f, -0.2f);
-            }
-            else
-            {
-                float floatOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
-                finalPos = baseTargetPos + new Vector3(0f, floatOffset, 0f);
-            }
-        }
-        else
-        {
-            Quaternion backgroundRot = isFlipped ? backRotation : frontRotation;
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, backgroundRot, Time.deltaTime * currentTransitionSpeed);
+            // Solo mantiene la animación de flotación en el punto de spawn
+            float floatOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
+            finalPos = baseTargetPos + new Vector3(0f, floatOffset, 0f);
         }
 
+        // Movimiento y escala suaves hacia la posición objetivo
         transform.position = Vector3.Lerp(transform.position, finalPos, Time.deltaTime * currentTransitionSpeed);
         transform.localScale = Vector3.Lerp(transform.localScale, baseTargetScale, Time.deltaTime * currentTransitionSpeed);
-    }
 
-    private void HandleMouseInteraction()
-    {
-        if (Camera.main == null || Mouse.current == null)
-            return;
-
-        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(mouseScreenPos);
-
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.transform == transform || hit.transform.IsChildOf(transform))
-                {
-                    isDragging = true;
-                    isSelected = true;
-                }
-                else
-                {
-                    isSelected = false;
-                }
-            }
-        }
-
-        if (!Mouse.current.leftButton.isPressed)
-        {
-            isDragging = false;
-            isSelected = false;
-        }
-
-        Quaternion targetRot = isFlipped ? backRotation : frontRotation;
-
-        if (isDragging)
-        {
-            Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-            currentInspectRotation *= Quaternion.Euler(-mouseDelta.y * rotationSpeed, mouseDelta.x * rotationSpeed, 0f);
-            targetRot = currentInspectRotation;
-        }
-        else
-        {
-            currentInspectRotation = Quaternion.Slerp(currentInspectRotation, targetRot, Time.deltaTime * returnSpeed);
-        }
-
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, currentInspectRotation, Time.deltaTime * 15f);
-    }
-
-    public void ToggleFlip()
-    {
-        isFlipped = !isFlipped;
-        currentInspectRotation = isFlipped ? backRotation : frontRotation;
+        // Mantiene la rotación fija y orientada correctamente
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 15f);
     }
 
     private void UpdateTextures()
@@ -166,31 +88,42 @@ public class SeedBag3D : MonoBehaviour
         if (frontRenderer != null && frontTex != null)
         {
             frontRenderer.material.mainTexture = frontTex;
+
+            // Ajustar automáticamente la proporción para que no se deforme
+            float aspectRatio = (float)frontTex.width / frontTex.height;
+            Vector3 currentScale = frontRenderer.transform.localScale;
+
+            // Suponiendo que el eje Y es la altura fija y ajustamos el ancho (Eje X o Z según tu modelo)
+            // Cambia 'x' por 'z' si tu plano está orientado en el otro sentido
+            currentScale.x = currentScale.y * aspectRatio;
+            frontRenderer.transform.localScale = currentScale;
         }
 
         if (backRenderer != null && backTex != null)
         {
             backRenderer.material.mainTexture = backTex;
+
+            float aspectRatioBack = (float)backTex.width / backTex.height;
+            Vector3 currentScaleBack = backRenderer.transform.localScale;
+            currentScaleBack.x = currentScaleBack.y * aspectRatioBack;
+            backRenderer.transform.localScale = currentScaleBack;
         }
     }
 
     public void ForceDeselect()
     {
-        isDragging = false;
-        isSelected = false;
         isActiveBag = false;
-        currentInspectRotation = frontRotation; 
+        targetRotation = Quaternion.Euler(0, 90, 0);
     }
 
     public void ReturnToShelf(Vector3 shelfPos, Vector3 targetScale)
     {
-        isDragging = false;
-        isSelected = false;
         isActiveBag = false;
-        currentInspectRotation = frontRotation;
+        targetRotation = Quaternion.Euler(0, 90, 0);
         baseTargetPos = shelfPos;
         baseTargetScale = targetScale;
         transform.position = shelfPos;
         transform.localScale = targetScale;
+        transform.rotation = targetRotation;
     }
 }

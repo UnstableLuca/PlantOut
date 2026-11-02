@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Planta_Test_03
   description: Esto es un test para la tercera planta
-  bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
-  frontLabelTexture: {fileID: 2800000, guid: 7e7d9cf464367ff469267be86fcbc035, type: 3}
-  backLabelTexture: {fileID: 2800000, guid: 97cb2fbdbc1ab664b8a975d98486db67, type: 3}
-  combos:
-  - '[Q] + [W] + [E]'
+  estadisticas: 
+  bagPrefab: {fileID: 5540187161602159575, guid: 15fe3b1420c18c44090cd83586458962, type: 3}
+  frontLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
+  backLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
+  bookPrefab: {fileID: 0}
+  combosVisuales: []

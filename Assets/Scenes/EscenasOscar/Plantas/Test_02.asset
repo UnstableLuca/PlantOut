@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Planta_Test_2
   description: Esto es otra planta de semillas ahhh
-  bagPrefab: {fileID: 3163804064940288296, guid: 2f18a181cda43474b8e87786f78983b6, type: 3}
-  frontLabelTexture: {fileID: 2800000, guid: 5981fd84d56d3c4439fead4808d0c45c, type: 3}
-  backLabelTexture: {fileID: 2800000, guid: 93cccd213ab5eb348b9b0fd764788ef9, type: 3}
+  estadisticas: 
+  bagPrefab: {fileID: 5540187161602159575, guid: 15fe3b1420c18c44090cd83586458962, type: 3}
+  frontLabelTexture: {fileID: 2800000, guid: 5fa152c140b0d3940a6829098890a673, type: 3}
+  backLabelTexture: {fileID: 2800000, guid: 5fa152c140b0d3940a6829098890a673, type: 3}
+  bookPrefab: {fileID: 0}
   combosVisuales:
   - botonesTeclado:
     - {fileID: 1590541087, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
