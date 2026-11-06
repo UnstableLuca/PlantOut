@@ -77,24 +77,37 @@ public class ShelfCenterSelectManager : MonoBehaviour
     private bool enPantallaVS = false;
     private bool enTransicion = false;
 
+    private bool sistemaIniciado = false;
+
     [Header("Visor Combos")]
-    public GameObject prefabIconoBoton; 
+    public GameObject prefabIconoBoton;
 
     [Header("Contenedores de Combos en la UI")]
-    public Transform contenedorCombosJ1;   
-    public Transform contenedorCombosJ2;    
-    public Transform contenedorCombosVS1;   
-    public Transform contenedorCombosVS2;   
+    public Transform contenedorCombosJ1;
+    public Transform contenedorCombosJ2;
+    public Transform contenedorCombosVS1;
+    public Transform contenedorCombosVS2;
 
     [Header("DEV MANDO ROPITA")]
-    public bool forzarModoMando = false; 
+    public bool forzarModoMando = false;
     private bool estadoMandoAnterior = false;
 
-    
+
+    [Header("ANIMATOR DEL CAJÓN / MUEBLE")]
+    public Animator animatorCajon;
+
+    [Header("Referencias de Salida / Jugador")]
+    public MonoBehaviour scriptMovimientoJugador;
+    public CinemachineCamera vcamJugadorPrincipal;
+
+    [Header("Control de Interacción Externa")]
+    public InteractableObject interactableReference;
+
+
     public void ToggleModoMando()
     {
         forzarModoMando = !forzarModoMando;
-        UpdateUIAndStates(); 
+        UpdateUIAndStates();
     }
 
     void Start()
@@ -102,15 +115,59 @@ public class ShelfCenterSelectManager : MonoBehaviour
         if (plants.Length > 0 && shelfSlots.Length >= plants.Length && spawnPoint3D != null)
         {
             InitializeBags();
-            ForcedInstantPosition();
+            ForcedInstantPositionForStart();
             UpdateUIAndStates();
         }
 
         if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
         if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
 
-        if (vcamBalda != null) vcamBalda.Priority = 20;
+        if (vcamBalda != null) vcamBalda.Priority = 0;
         if (vcamMesa != null) vcamMesa.Priority = 0;
+
+        sistemaIniciado = false;
+    }
+
+    private void ForcedInstantPositionForStart()
+    {
+        if (bagInstances == null) return;
+
+        for (int i = 0; i < bagInstances.Length; i++)
+        {
+            if (bagInstances[i] == null) continue;
+
+            Vector3 targetPos = shelfSlots[i].position;
+            Vector3 targetScale = shelfScale;
+
+            if (bagControllers[i] != null)
+            {
+                bagControllers[i].SetIsActive(false);
+                bagControllers[i].SetTargetTransform(targetPos, transitionSpeed, targetScale);
+            }
+            bagInstances[i].transform.position = targetPos;
+            bagInstances[i].transform.localScale = targetScale;
+        }
+    }
+
+    public void IniciarSistemaSeleccion()
+    {
+        if (sistemaIniciado) return;
+        sistemaIniciado = true;
+
+        // Asegurar que el papel del Jugador 1 está visible al entrar
+        if (objetoPapelJugador1 != null) objetoPapelJugador1.SetActive(true);
+        if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
+
+        // Activar la animación del cajón abriéndose
+        if (animatorCajon != null)
+        {
+            animatorCajon.enabled = true;
+            animatorCajon.SetBool("sistemaIniciado", true);
+        }
+
+        ForcedInstantPosition();
+
+        if (vcamBalda != null) vcamBalda.Priority = 20;
 
         StartCoroutine(EstablecerFocoInicialJ1());
     }
@@ -175,12 +232,14 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
     void Update()
     {
+        if (!sistemaIniciado) return;
+
         bool mandoActualConectado = (Gamepad.current != null) || forzarModoMando;
 
         if (mandoActualConectado != estadoMandoAnterior)
         {
             estadoMandoAnterior = mandoActualConectado;
-            UpdateUIAndStates(); 
+            UpdateUIAndStates();
         }
 
         if (enPantallaVS || enTransicion || turnoJugador > 2) return;
@@ -300,7 +359,6 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
             if (animatorPapel2 != null)
             {
-                animatorPapel2.enabled = true;
                 animatorPapel2.SetTrigger("Salir");
             }
 
@@ -323,8 +381,6 @@ public class ShelfCenterSelectManager : MonoBehaviour
                 botonConfirmarJ1.interactable = true;
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(botonConfirmarJ1.gameObject);
             }
-
-            if (animatorPapel2 != null) animatorPapel2.enabled = false;
 
             StartCoroutine(DeslizarHaciaPuntoYDesactivar());
         }
@@ -467,16 +523,13 @@ public class ShelfCenterSelectManager : MonoBehaviour
         {
             objetoPapelJugador2.SetActive(false);
         }
-        if (animatorPapel2 != null)
-        {
-            animatorPapel2.enabled = false;
-        }
 
         ForcedInstantPosition();
         UpdateUIAndStates();
 
         enTransicion = false;
     }
+
 
     private void GenerarCombosVisuales(PlantData3D planta, Transform contenedor)
     {
@@ -515,4 +568,59 @@ public class ShelfCenterSelectManager : MonoBehaviour
             }
         }
     }
+
+    public void SalirDeLaEstanteria()
+    {
+        StartCoroutine(SecuenciaSalirDeEstanteria());
+    }
+
+
+    private IEnumerator SecuenciaSalirDeEstanteria()
+    {
+        enTransicion = true;
+
+        if (objetoPapelJugador1 != null) objetoPapelJugador1.SetActive(false);
+        if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
+        if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
+
+        if (bagControllers != null)
+        {
+            for (int i = 0; i < bagControllers.Length; i++)
+            {
+                if (bagControllers[i] != null && shelfSlots[i] != null)
+                {
+                    bagControllers[i].ReturnToShelf(shelfSlots[i].position, shelfScale);
+                }
+            }
+        }
+
+        if (vcamBalda != null) vcamBalda.Priority = 0;
+        if (vcamMesa != null) vcamMesa.Priority = 0;
+
+        if (animatorCajon != null)
+        {
+            animatorCajon.SetBool("sistemaIniciado", false); 
+        }
+
+        yield return new WaitForSeconds(tiempoBlendCamara);
+
+        sistemaIniciado = false;
+        turnoJugador = 1;
+        currentIndex = 0;
+        seleccionJugador1 = -1;
+        seleccionJugador2 = -1;
+        estaDescartando = false;
+        enTransicion = false;
+
+        if (objetoPapelJugador1 != null)
+        {
+            objetoPapelJugador1.SetActive(true);
+        }
+
+        if (interactableReference != null)
+        {
+            interactableReference.NotifyInteractionEnded();
+        }
+    }
 }
+
