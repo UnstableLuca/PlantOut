@@ -19,5 +19,8 @@ MonoBehaviour:
   kind: 1
   damage: 10
   hitstun: 0.2
+  canTargetBugs: 1
+  projectilePrefab: {fileID: 1699449789479858264, guid: 370d93f6749f81646a28222267adb319, type: 3}
+  projectileSpeed: 25
   barGainOnRivalHit: 0.15
   barGainOnBugHit: 0.05

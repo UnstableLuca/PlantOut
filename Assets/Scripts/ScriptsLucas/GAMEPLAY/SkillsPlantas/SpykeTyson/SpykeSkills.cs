@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-    
+
 public class SpykeSkills : SkillController
 {
     [Header("Brazos (mantener con 1-4 cargas)")]
@@ -37,10 +37,21 @@ public class SpykeSkills : SkillController
     [SerializeField] float postUltimateCooldown = 4f;
 
     [Header("Animaciones (triggers del Animator; vacio = no se lanza)")]
-    [SerializeField] string armGrowTrigger = "ArmGrow";
+    [Tooltip("Opcional. Con el Blend Tree de brazos no hace falta: dejalo vacio para no duplicar la animacion")]
+    [SerializeField] string armGrowTrigger = "";
     [SerializeField] string spikesTrigger = "Spikes";
     [SerializeField] string ultimateTrigger = "Ultimate";
     [SerializeField] string ultimateEndTrigger = "UltimateEnd";
+
+    [Header("Blend de brazos (Blend Tree 1D en el Animator)")]
+    [Tooltip("Si se deja vacio busca el Animator en los hijos")]
+    [SerializeField] Animator animator;
+    [Tooltip("Parametro float del Animator: 0 = sin brazos extra ... 4 = los cuatro")]
+    [SerializeField] string armsParameter = "Arms";
+    [Tooltip("Brazos por segundo que avanza el blend. 3 = cada brazo tarda ~0.33 s en crecer")]
+    [SerializeField, Min(0.1f)] float armBlendSpeed = 3f;
+
+    float blendedArms;
 
     [Header("Visuales opcionales")]
     [Tooltip("Brazos extra en orden de aparicion (melee, rango, melee, rango)")]
@@ -68,7 +79,6 @@ public class SpykeSkills : SkillController
     int totalTicks;
     float tickDamage;
 
-    // ---------- Estado publico (UI, animacion) ----------
 
     public int Arms => arms;
     public float ArmsTimeLeft => armsTimer;
@@ -87,10 +97,10 @@ public class SpykeSkills : SkillController
     protected override void Awake()
     {
         base.Awake();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
         RefreshVisuals();
     }
 
-    //  INPUT
 
     public override void OnSkillPressed()
     {
@@ -132,11 +142,10 @@ public class SpykeSkills : SkillController
         else if (phase == Phase.Ultimate) EndUltimate();   // con superarmadura no deberia pasar
     }
 
-    //  UPDATE
-
     void Update()
     {
         float dt = Time.deltaTime;
+        UpdateArmsBlend(dt);
 
         if (armsTimer > 0f)
         {
@@ -176,7 +185,6 @@ public class SpykeSkills : SkillController
         }
     }
 
-    //  BRAZOS
 
     void GrowArm()
     {
@@ -231,7 +239,7 @@ public class SpykeSkills : SkillController
         ArmsChanged?.Invoke(arms);
     }
 
-    //  PINCHOS
+
 
     bool TryCastSpikes()
     {
@@ -255,7 +263,6 @@ public class SpykeSkills : SkillController
         SpikesChanged?.Invoke(false);
     }
 
-    //  ULTI
 
     void StartUltimate()
     {
@@ -307,10 +314,9 @@ public class SpykeSkills : SkillController
         UltimateChanged?.Invoke(false);
     }
 
-    //  MODIFICADORES / UTILIDADES
-
     public override float ModifyAttackDamage(AttackKind kind, float baseDamage)
     {
+        // Brazos en orden melee -> rango -> melee -> rango
         int matching = countOnlyMatchingArms
             ? (kind == AttackKind.Melee ? (arms + 1) / 2 : arms / 2)
             : arms;
@@ -333,6 +339,14 @@ public class SpykeSkills : SkillController
 
         SetArms(0);
         EndSpikes();
+    }
+
+    void UpdateArmsBlend(float dt)
+    {
+        blendedArms = Mathf.MoveTowards(blendedArms, arms, armBlendSpeed * dt);
+
+        if (animator != null && !string.IsNullOrEmpty(armsParameter))
+            animator.SetFloat(armsParameter, blendedArms);
     }
 
     static float At(float[] values, int index, float fallback = 0f)

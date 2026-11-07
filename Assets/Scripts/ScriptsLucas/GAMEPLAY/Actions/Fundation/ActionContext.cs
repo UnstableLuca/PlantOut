@@ -1,47 +1,65 @@
+using UnityEngine;
+
 public enum ActionPhase { Startup, Active, Recovery }
 
 public enum AttackSide { Left, Right }
 
 public enum AttackKind { Melee, Ranged }
 
-public enum BlockResult { None, Blocked, Parried }
+public enum BlockResult { None, Blocked, Parried, Ignored }
 
 
 public interface IDamageable
 {
     BlockResult ReceiveHit(in HitData hit);
+
+    Transform AimPoint { get; }
+}
+
+public interface IShootable
+{
+    bool CanBeTargeted { get; }
 }
 
 public readonly struct HitData
 {
-    public readonly IDamageable Source; //las plantas o los bichos
+    public readonly IDamageable Source;   // un Fighter o un bicho
     public readonly float Damage;
-    public readonly float Hitstun; // 0 para no stun
+    public readonly float Hitstun;        // 0 si no quieres stun
     public readonly bool IsSkill;
-    public readonly bool Parryable; // false = se puede bloquear pero no parrear
-    public HitData(IDamageable source, float damage, float hitstun, bool isSkill, bool parryable = true)
+    public readonly bool Parryable;       // false: se puede bloquear pero nunca parrear (p.ej. ticks de la ultimate)
+    public readonly AttackKind Kind;      // los bichos solo mueren por disparos (Ranged)
+
+    public HitData(IDamageable source, float damage, float hitstun, bool isSkill,
+                   bool parryable = true, AttackKind kind = AttackKind.Melee)
     {
         Source = source;
         Damage = damage;
         Hitstun = hitstun;
         IsSkill = isSkill;
         Parryable = parryable;
+        Kind = kind;
     }
 }
+
+
 public interface IFighter : IDamageable
 {
-    bool CanAct { get; }
+    bool CanAct { get; }             // false en stun, canalizando, accion en curso, etc.
 
-    float SkillBar { get; }
+    float SkillBar { get; }          // 1.0 = una carga
     bool TrySpendUses(int uses);
     void AddBar(float amount);
 
-    IDamageable GetAutoTarget();
+    Transform ProjectileOrigin { get; }
+
+    IDamageable GetAutoTarget(bool includeBugs);
 
     float ModifyAttackDamage(AttackKind kind, float baseDamage);
 
     void PlayAnimation(string trigger);
 
+    // El Fighter guarda pressTime para comparar luego con BlockAction.Evaluate
     void BeginBlock(double pressTime);
     void EndBlock();
 }
@@ -49,15 +67,12 @@ public interface IFighter : IDamageable
 public readonly struct ActionContext
 {
     public readonly IFighter Owner;
-    public readonly double Now; //Time.timeAsDouble
+    public readonly double Now;          // Time.timeAsDouble en el momento del input
 
     public ActionContext(IFighter owner, double now)
     {
         Owner = owner;
         Now = now;
     }
-
-    public IDamageable ResolveTarget() => Owner.GetAutoTarget();
-
+    public IDamageable ResolveTarget(bool includeBugs) => Owner.GetAutoTarget(includeBugs);
 }
-

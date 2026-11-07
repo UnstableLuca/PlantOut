@@ -19,5 +19,8 @@ MonoBehaviour:
   kind: 0
   damage: 10
   hitstun: 0.25
+  canTargetBugs: 0
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 25
   barGainOnRivalHit: 0.15
   barGainOnBugHit: 0.05

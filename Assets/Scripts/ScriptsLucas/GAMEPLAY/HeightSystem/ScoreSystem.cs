@@ -1,16 +1,16 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class ScoreSystem : MonoBehaviour
 {
-        [SerializeField] Fighter player1;
-        [SerializeField] Fighter player2;
+    [SerializeField] Fighter player1;
+    [SerializeField] Fighter player2;
 
     [Header("Puntos")]
     [SerializeField] float parryBonus = 5f;
-    [Tooltip("Si un bicho golpea se lo lleva el rival los puntos")]
-    [SerializeField] bool bugDamageScoresForRival = true;
+    [Tooltip("Puntos que pierde una planta por cada punto de dano de un bicho (0 = los bichos no quitan puntos)")]
+    [SerializeField, Min(0f)] float bugPenaltyScale = 1f;
 
     [Header("Comeback")]
     [Tooltip("Multiplicador de puntos del que va perdiendo cuando el deficit es maximo")]
@@ -27,25 +27,40 @@ public class ScoreSystem : MonoBehaviour
         if (player1 != null) player1.HitReceived += OnHit;
         if (player2 != null) player2.HitReceived += OnHit;
     }
+
     void OnDisable()
     {
         if (player1 != null) player1.HitReceived -= OnHit;
         if (player2 != null) player2.HitReceived -= OnHit;
     }
 
-    //PUNTOS
+    //  PUNTOS
+
     void OnHit(HitReport r)
     {
-        Fighter scorer = null;
-        if (r.Source is Fighter attacker) scorer = attacker;
-        else if (bugDamageScoresForRival) scorer = r.Victim.Rival;
-
-        if (scorer != null && r.FinalDamage > 0f) AddPoints(scorer, r.FinalDamage);
+        if (r.Source is Bug)
+        {
+            // Un bicho no puntua para nadie: le quita puntos a la planta que golpea
+            if (r.FinalDamage > 0f && bugPenaltyScale > 0f)
+                RemovePoints(r.Victim, r.FinalDamage * bugPenaltyScale);
+        }
+        else if (r.Source is Fighter attacker && r.FinalDamage > 0f)
+        {
+            AddPoints(attacker, r.FinalDamage);
+        }
 
         if (r.Result == BlockResult.Parried && parryBonus > 0f) AddPoints(r.Victim, parryBonus);
     }
 
-    /// <summary>Suma puntos aplicando el multiplicador de comeback del jugador.</summary>
+    public void RemovePoints(Fighter f, float points)
+    {
+        if (f == player1) score1 = Mathf.Max(0f, score1 - points);
+        else if (f == player2) score2 = Mathf.Max(0f, score2 - points);
+        else return;
+
+        ScoresChanged?.Invoke();
+    }
+
     public void AddPoints(Fighter f, float rawPoints)
     {
         float gained = rawPoints * GetMultiplier(f);   // multiplicador con el marcador de ANTES de sumar
@@ -57,12 +72,11 @@ public class ScoreSystem : MonoBehaviour
         ScoresChanged?.Invoke();
     }
 
-    //CONSULTAR
+
     public float GetPoints(Fighter f) => f == player1 ? score1 : score2;
 
     Fighter Other(Fighter f) => f == player1 ? player2 : player1;
 
-    /// <summary>Proporcion de puntos de f (0..1, 0.5 = empate), suavizada con softStart.</summary>
     float Ratio(Fighter f)
     {
         if (f != player1 && f != player2) return 0.5f;
@@ -72,14 +86,12 @@ public class ScoreSystem : MonoBehaviour
         float denom = mine + theirs + 2f * softStart;
         return denom <= 0f ? 0.5f : (mine + softStart) / denom;
     }
+
     public float GetDeficit(Fighter f) => Mathf.Clamp01((0.5f - Ratio(f)) * 2f);
 
-    /// <summary> 0 = vas perdiendo o empatado, 1 = ventaja maxima.</summary>
     public float GetLead(Fighter f) => Mathf.Clamp01((Ratio(f) - 0.5f) * 2f);
 
-    /// <summary>1 = sin bonus, hasta maxMultiplier con deficit maximo (continuo, sin escalones).</summary>
     public float GetMultiplier(Fighter f) => Mathf.Lerp(1f, maxMultiplier, GetDeficit(f));
 
-    /// <summary>-1 (gana el jugador 2 de lejos) .. 0 (empate) .. +1 (gana el jugador 1). Para el mapa de progresion.</summary>
     public float Advantage => Ratio(player1) * 2f - 1f;
 }
