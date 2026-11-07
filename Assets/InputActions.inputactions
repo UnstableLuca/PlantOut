@@ -234,6 +234,17 @@
                     "action": "Dialogue Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ec5fa7b-8bdf-43e0-b9b2-39a8a8defe5c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dialogue Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
