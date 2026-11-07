@@ -1,5 +1,5 @@
-
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +26,14 @@ public class BookShelfManager : MonoBehaviour
     [Header("DEV MANDO")]
     public bool forzarModoMando = false;
 
+    [Header("Cámaras e Interacción")]
+    public CinemachineCamera vcamLibros;
+    public float tiempoBlendCamara = 1.5f;
+    public InteractableObject interactableReference; 
+
+    [Header("Canvas de Salida (UI)")]
+    public GameObject canvasSalirEstanteria; 
+
     private BookItem3D[] bookControllers;
     private Animator[] bookAnimators;
     private Vector3[] initialShelfPositions;
@@ -34,6 +42,7 @@ public class BookShelfManager : MonoBehaviour
     private bool enMesa;
     private bool libroAbierto;
     private bool enTransicion;
+    private bool sistemaIniciado = false; 
 
     private bool estadoMandoAnterior;
 
@@ -46,18 +55,23 @@ public class BookShelfManager : MonoBehaviour
         CacheReferences();
 
         currentIndex = 0;
-
         estadoMandoAnterior = UsarMandoActual;
-
         ActualizarModoControl();
 
         ForcedInstantPosition();
+
+        if (vcamLibros != null) vcamLibros.Priority = 0;
+
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false);
+
+        sistemaIniciado = false; 
     }
 
 
     private void Update()
     {
-       
+        if (!sistemaIniciado) return;
+
         bool mandoActualConectado = UsarMandoActual;
 
         if (mandoActualConectado != estadoMandoAnterior)
@@ -84,7 +98,86 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
+
     
+    public void IniciarSistemaLibros()
+    {
+        if (sistemaIniciado) return;
+        sistemaIniciado = true;
+
+        if (vcamLibros != null)
+        {
+            vcamLibros.Priority = 20;
+        }
+
+        if (canvasSalirEstanteria != null)
+        {
+            canvasSalirEstanteria.SetActive(true);
+        }
+
+        ForcedInstantPosition();
+    }
+
+    public void SalirDeLaEstanteriaLibros()
+    {
+        StartCoroutine(SecuenciaSalirDeEstanteriaLibros());
+    }
+
+    private IEnumerator SecuenciaSalirDeEstanteriaLibros()
+    {
+        enTransicion = true;
+
+        if (canvasSalirEstanteria != null)
+        {
+            canvasSalirEstanteria.SetActive(false);
+        }
+
+        if (enMesa)
+        {
+            if (bookControllers[currentIndex] != null)
+                bookControllers[currentIndex].MostrarTextosPagina(false);
+
+            if (bookAnimators[currentIndex] != null)
+                bookAnimators[currentIndex].SetTrigger("Cerrar");
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        if (bookObjectsInScene != null)
+        {
+            for (int i = 0; i < bookObjectsInScene.Length; i++)
+            {
+                if (bookObjectsInScene[i] == null) continue;
+
+                if (bookControllers[i] != null)
+                {
+                    bookControllers[i].MostrarTextosPagina(false);
+                    bookControllers[i].SetTargetTransform(initialShelfPositions[i], transitionSpeed, shelfScale);
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(0.6f);
+
+        if (vcamLibros != null) vcamLibros.Priority = 0;
+
+        yield return new WaitForSeconds(tiempoBlendCamara);
+
+        enMesa = false;
+        libroAbierto = false;
+        currentIndex = 0;
+        sistemaIniciado = false;
+        enTransicion = false;
+
+        ForcedInstantPosition();
+
+        if (interactableReference != null)
+        {
+            interactableReference.NotifyInteractionEnded();
+        }
+    }
+
+
 
     public void ToggleModoMando()
     {
@@ -92,8 +185,6 @@ public class BookShelfManager : MonoBehaviour
 
         estadoMandoAnterior = UsarMandoActual;
         ActualizarModoControl();
-
-       
     }
 
 
@@ -118,6 +209,7 @@ public class BookShelfManager : MonoBehaviour
         bool siguiente = false;
         bool anterior = false;
         bool confirmar = false;
+        bool volver = false;
 
         if (Keyboard.current != null)
         {
@@ -136,6 +228,10 @@ public class BookShelfManager : MonoBehaviour
             confirmar =
                 teclado[teclaConfirmarYAbir].wasPressedThisFrame ||
                 confirmar;
+
+            volver =
+                teclado[teclaVolverOCerrar].wasPressedThisFrame ||
+                volver;
         }
 
         if (Gamepad.current != null)
@@ -155,6 +251,10 @@ public class BookShelfManager : MonoBehaviour
             confirmar =
                 mando.buttonSouth.wasPressedThisFrame ||
                 confirmar;
+
+            volver =
+                mando.buttonEast.wasPressedThisFrame ||
+                volver;
         }
 
         if (siguiente)
@@ -163,6 +263,8 @@ public class BookShelfManager : MonoBehaviour
             PreviousBook();
         else if (confirmar)
             StartCoroutine(SecuenciaMoverALaMesa());
+        else if (volver)
+            SalirDeLaEstanteriaLibros(); 
     }
 
     private void ProcesarControlesMesa()
@@ -207,7 +309,7 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
-    
+
 
     private void CacheReferences()
     {
@@ -245,7 +347,7 @@ public class BookShelfManager : MonoBehaviour
             if (libro == null)
                 continue;
 
-            bool esActual = i == currentIndex && !enMesa;
+            bool esActual = i == currentIndex && !enMesa && sistemaIniciado;
 
             Vector3 posicion = esActual
                 ? initialShelfPositions[i] +
@@ -302,7 +404,7 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
-   
+
 
     public void NextBook()
     {
@@ -331,7 +433,7 @@ public class BookShelfManager : MonoBehaviour
         UpdateShelfPositions();
     }
 
-    
+
 
     private IEnumerator SecuenciaMoverALaMesa()
     {

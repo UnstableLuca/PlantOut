@@ -92,7 +92,6 @@ public class ShelfCenterSelectManager : MonoBehaviour
     public bool forzarModoMando = false;
     private bool estadoMandoAnterior = false;
 
-
     [Header("ANIMATOR DEL CAJÓN / MUEBLE")]
     public Animator animatorCajon;
 
@@ -103,6 +102,8 @@ public class ShelfCenterSelectManager : MonoBehaviour
     [Header("Control de Interacción Externa")]
     public InteractableObject interactableReference;
 
+    [Header("Canvas de Salida (UI)")]
+    public GameObject canvasSalirEstanteria; 
 
     public void ToggleModoMando()
     {
@@ -121,6 +122,7 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
         if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
         if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false); 
 
         if (vcamBalda != null) vcamBalda.Priority = 0;
         if (vcamMesa != null) vcamMesa.Priority = 0;
@@ -154,11 +156,11 @@ public class ShelfCenterSelectManager : MonoBehaviour
         if (sistemaIniciado) return;
         sistemaIniciado = true;
 
-        // Asegurar que el papel del Jugador 1 está visible al entrar
         if (objetoPapelJugador1 != null) objetoPapelJugador1.SetActive(true);
         if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
 
-        // Activar la animación del cajón abriéndose
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(true);
+
         if (animatorCajon != null)
         {
             animatorCajon.enabled = true;
@@ -579,6 +581,8 @@ public class ShelfCenterSelectManager : MonoBehaviour
     {
         enTransicion = true;
 
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false);
+
         if (objetoPapelJugador1 != null) objetoPapelJugador1.SetActive(false);
         if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
         if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
@@ -599,7 +603,7 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
         if (animatorCajon != null)
         {
-            animatorCajon.SetBool("sistemaIniciado", false); 
+            animatorCajon.SetBool("sistemaIniciado", false);
         }
 
         yield return new WaitForSeconds(tiempoBlendCamara);
@@ -623,4 +627,3 @@ public class ShelfCenterSelectManager : MonoBehaviour
         }
     }
 }
-
