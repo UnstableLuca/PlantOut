@@ -2,7 +2,7 @@
 - Project name: PlantOut
 - Unity version: Unity 6000.6.4f1
 - Active game object:
-  - Name: BugPlaceholder
+  - Name: SpykeTyson
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
