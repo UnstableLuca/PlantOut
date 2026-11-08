@@ -29,10 +29,10 @@ public class BookShelfManager : MonoBehaviour
     [Header("Cámaras e Interacción")]
     public CinemachineCamera vcamLibros;
     public float tiempoBlendCamara = 1.5f;
-    public InteractableObject interactableReference; 
+    public InteractableObject interactableReference;
 
     [Header("Canvas de Salida (UI)")]
-    public GameObject canvasSalirEstanteria; 
+    public GameObject canvasSalirEstanteria;
 
     private BookItem3D[] bookControllers;
     private Animator[] bookAnimators;
@@ -42,7 +42,7 @@ public class BookShelfManager : MonoBehaviour
     private bool enMesa;
     private bool libroAbierto;
     private bool enTransicion;
-    private bool sistemaIniciado = false; 
+    private bool sistemaIniciado = false;
 
     private bool estadoMandoAnterior;
 
@@ -64,7 +64,7 @@ public class BookShelfManager : MonoBehaviour
 
         if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false);
 
-        sistemaIniciado = false; 
+        sistemaIniciado = false;
     }
 
 
@@ -99,7 +99,7 @@ public class BookShelfManager : MonoBehaviour
     }
 
 
-    
+
     public void IniciarSistemaLibros()
     {
         if (sistemaIniciado) return;
@@ -262,45 +262,28 @@ public class BookShelfManager : MonoBehaviour
         else if (anterior)
             PreviousBook();
         else if (confirmar)
-            StartCoroutine(SecuenciaMoverALaMesa());
+            StartCoroutine(SecuenciaMoverYAbrirEnMesa()); 
         else if (volver)
-            SalirDeLaEstanteriaLibros(); 
+            SalirDeLaEstanteriaLibros();
     }
 
     private void ProcesarControlesMesa()
     {
-        bool confirmar = false;
         bool volver = false;
 
         if (Keyboard.current != null)
         {
             Keyboard teclado = Keyboard.current;
-
-            confirmar =
-                teclado[teclaConfirmarYAbir].wasPressedThisFrame;
-
-            volver =
-                teclado[teclaVolverOCerrar].wasPressedThisFrame;
+            volver = teclado[teclaVolverOCerrar].wasPressedThisFrame;
         }
 
         if (Gamepad.current != null)
         {
             Gamepad mando = Gamepad.current;
-
-            confirmar =
-                mando.buttonSouth.wasPressedThisFrame ||
-                confirmar;
-
-            volver =
-                mando.buttonEast.wasPressedThisFrame ||
-                volver;
+            volver = mando.buttonEast.wasPressedThisFrame || volver;
         }
 
-        if (confirmar && !libroAbierto)
-        {
-            StartCoroutine(SecuenciaAbrirLibro());
-        }
-        else if (volver)
+        if (volver)
         {
             if (libroAbierto)
                 StartCoroutine(SecuenciaCerrarYRegresarABalda());
@@ -435,7 +418,7 @@ public class BookShelfManager : MonoBehaviour
 
 
 
-    private IEnumerator SecuenciaMoverALaMesa()
+    private IEnumerator SecuenciaMoverYAbrirEnMesa()
     {
         if (spawnPointMesa == null || !HayLibroActual())
             yield break;
@@ -453,18 +436,8 @@ public class BookShelfManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.4f);
-        enTransicion = false;
-    }
 
-    private IEnumerator SecuenciaAbrirLibro()
-    {
-        if (!HayLibroActual() || spawnPointMesa == null)
-            yield break;
-
-        enTransicion = true;
-
-        bookObjectsInScene[currentIndex].transform.position =
-            spawnPointMesa.position;
+        bookObjectsInScene[currentIndex].transform.position = spawnPointMesa.position;
 
         if (bookAnimators[currentIndex] != null)
             bookAnimators[currentIndex].SetTrigger("Abrir");
