@@ -8,4 +8,256 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: SpykeAvatarMask
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000u
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Driver1
+    m_Weight: 1
+  - m_Path: Armature/Driver1/Driver1_end
+    m_Weight: 1
+  - m_Path: Armature/Driver2
+    m_Weight: 1
+  - m_Path: Armature/Driver2/Driver2_end
+    m_Weight: 1
+  - m_Path: Armature/Hips
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L/Extra1DownSpike.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L/Extra2DownSpike.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L/MainDownSpike.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L/UltDownRSpike.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L/UltDownLSpike.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R/Extra1DownSpike.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R/Extra2DownSpike.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R/MainDownSpike.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R/UltDownLSpike.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R/UltDownRSpike.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.L/ForearmUp.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.L/ForearmUp.L/ForearmUp.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.R/ForearmUp.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/ArmUp.R/ForearmUp.R/ForearmUp.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.L/HatPetalBottomBack.002.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.L/HatPetalBottomBack.002.L/HatPetalBottomBack.002.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.R/HatPetalBottomBack.002.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomBack.001.R/HatPetalBottomBack.002.R/HatPetalBottomBack.002.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.L/HatPetalBottomFront.002.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.L/HatPetalBottomFront.002.L/HatPetalBottomFront.002.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.R/HatPetalBottomFront.002.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.001.R/HatPetalBottomFront.002.R/HatPetalBottomFront.002.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.003
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalBottomFront.003/HatPetalBottomFront.003_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopBack.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopBack.L/HatPetalTopBack.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopBack.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopBack.R/HatPetalTopBack.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront/HatPetalBottomFront.002
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront/HatPetalBottomFront.002/HatPetalBottomFront.002_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront.L/HatPetalTopFront.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/HatPetalTopFront.R/HatPetalTopFront.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Mustache.L
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Mustache.L/Mustache.L_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Mustache.R
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Mustache.R/Mustache.R_end
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Pistils
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Pistils/Pistils.001
+    m_Weight: 1
+  - m_Path: Armature/Hips/Hips.001/Spine.001/Spine.002/Head/Pistils/Pistils.001/Pistils.001_end
+    m_Weight: 1
+  - m_Path: bigote
+    m_Weight: 1
+  - m_Path: brazoDerecho1
+    m_Weight: 1
+  - m_Path: brazoDerecho2
+    m_Weight: 1
+  - m_Path: brazoDerecho101
+    m_Weight: 1
+  - m_Path: brazoDerecho102
+    m_Weight: 1
+  - m_Path: brazoDerecho103
+    m_Weight: 1
+  - m_Path: brazoDerecho104
+    m_Weight: 1
+  - m_Path: brazoDerecho105
+    m_Weight: 1
+  - m_Path: brazoDerecho106
+    m_Weight: 1
+  - m_Path: BrazoIzquierdo1
+    m_Weight: 1
+  - m_Path: brazoIzquierdo2
+    m_Weight: 1
+  - m_Path: cuerpo01
+    m_Weight: 1
+  - m_Path: floresabajo
+    m_Weight: 1
+  - m_Path: floresabajo01
+    m_Weight: 1
+  - m_Path: floresabajo02
+    m_Weight: 1
+  - m_Path: floresabajo03
+    m_Weight: 1
+  - m_Path: floresabajo04
+    m_Weight: 1
+  - m_Path: floresabajo05
+    m_Weight: 1
+  - m_Path: floresabajo06
+    m_Weight: 1
+  - m_Path: floresabajo07
+    m_Weight: 1
+  - m_Path: floresabajo08
+    m_Weight: 1
+  - m_Path: floresabajo09
+    m_Weight: 1
+  - m_Path: floresabajo10
+    m_Weight: 1
+  - m_Path: floresabajo11
+    m_Weight: 1
+  - m_Path: ojos
+    m_Weight: 1
+  - m_Path: pinchosBrazoDerecho1
+    m_Weight: 1
+  - m_Path: pinchosBrazoDerecho101
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo2
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo201
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo202
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo203
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo204
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo205
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo206
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo207
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo208
+    m_Weight: 1
+  - m_Path: PinchosBrazoIzquierdo209
+    m_Weight: 1

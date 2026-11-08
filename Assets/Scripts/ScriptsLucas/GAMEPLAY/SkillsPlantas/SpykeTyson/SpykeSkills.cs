@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-
 public class SpykeSkills : SkillController
 {
     [Header("Brazos (mantener con 1-4 cargas)")]
@@ -43,15 +42,13 @@ public class SpykeSkills : SkillController
     [SerializeField] string ultimateTrigger = "Ultimate";
     [SerializeField] string ultimateEndTrigger = "UltimateEnd";
 
-    [Header("Blend de brazos (Blend Tree 1D en el Animator)")]
+    [Header("Animator: brazos y carga")]
     [Tooltip("Si se deja vacio busca el Animator en los hijos")]
     [SerializeField] Animator animator;
-    [Tooltip("Parametro float del Animator: 0 = sin brazos extra ... 4 = los cuatro")]
-    [SerializeField] string armsParameter = "Arms";
-    [Tooltip("Brazos por segundo que avanza el blend. 3 = cada brazo tarda ~0.33 s en crecer")]
-    [SerializeField, Min(0.1f)] float armBlendSpeed = 3f;
-
-    float blendedArms;
+    [Tooltip("Parametro Int del Animator con los brazos extra (0-4). La capa de brazos encadena los clips de crecimiento")]
+    [SerializeField] string armCountParameter = "ArmCount";
+    [Tooltip("Parametro Bool del Animator: true mientras mantienes la habilidad cargando brazos")]
+    [SerializeField] string chargingParameter = "Charging";
 
     [Header("Visuales opcionales")]
     [Tooltip("Brazos extra en orden de aparicion (melee, rango, melee, rango)")]
@@ -79,6 +76,7 @@ public class SpykeSkills : SkillController
     int totalTicks;
     float tickDamage;
 
+    // ---------- Estado publico (UI, animacion) ----------
 
     public int Arms => arms;
     public float ArmsTimeLeft => armsTimer;
@@ -101,6 +99,7 @@ public class SpykeSkills : SkillController
         RefreshVisuals();
     }
 
+    //  INPUT
 
     public override void OnSkillPressed()
     {
@@ -126,6 +125,7 @@ public class SpykeSkills : SkillController
         if (!fighter.BeginChannel()) return;
 
         phase = Phase.Holding;
+        SetCharging(true);
         holdTimer = 0f;
         addedThisCast = 0;
     }
@@ -142,10 +142,11 @@ public class SpykeSkills : SkillController
         else if (phase == Phase.Ultimate) EndUltimate();   // con superarmadura no deberia pasar
     }
 
+    //  UPDATE
+
     void Update()
     {
         float dt = Time.deltaTime;
-        UpdateArmsBlend(dt);
 
         if (armsTimer > 0f)
         {
@@ -185,6 +186,7 @@ public class SpykeSkills : SkillController
         }
     }
 
+    //  BRAZOS
 
     void GrowArm()
     {
@@ -206,6 +208,7 @@ public class SpykeSkills : SkillController
         phase = Phase.Idle;
         fighter.EndChannel();
 
+        SetCharging(false);
         int added = addedThisCast;
         addedThisCast = 0;
 
@@ -236,10 +239,11 @@ public class SpykeSkills : SkillController
         if (arms == 0) armsTimer = 0f;
 
         RefreshVisuals();
+        PushArmsToAnimator();
         ArmsChanged?.Invoke(arms);
     }
 
-
+    //  PINCHOS
 
     bool TryCastSpikes()
     {
@@ -263,6 +267,7 @@ public class SpykeSkills : SkillController
         SpikesChanged?.Invoke(false);
     }
 
+    //  ULTIMATE
 
     void StartUltimate()
     {
@@ -314,6 +319,8 @@ public class SpykeSkills : SkillController
         UltimateChanged?.Invoke(false);
     }
 
+    //  MODIFICADORES / UTILIDADES
+
     public override float ModifyAttackDamage(AttackKind kind, float baseDamage)
     {
         // Brazos en orden melee -> rango -> melee -> rango
@@ -340,13 +347,16 @@ public class SpykeSkills : SkillController
         SetArms(0);
         EndSpikes();
     }
-
-    void UpdateArmsBlend(float dt)
+    void PushArmsToAnimator()
     {
-        blendedArms = Mathf.MoveTowards(blendedArms, arms, armBlendSpeed * dt);
+        if (animator != null && !string.IsNullOrEmpty(armCountParameter))
+            animator.SetInteger(armCountParameter, arms);
+    }
 
-        if (animator != null && !string.IsNullOrEmpty(armsParameter))
-            animator.SetFloat(armsParameter, blendedArms);
+    void SetCharging(bool value)
+    {
+        if (animator != null && !string.IsNullOrEmpty(chargingParameter))
+            animator.SetBool(chargingParameter, value);
     }
 
     static float At(float[] values, int index, float fallback = 0f)
