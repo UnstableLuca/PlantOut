@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
   personalityName: Normal
+  textBackground: {fileID: 21300000, guid: 493f14d2424e6614ca50377c7eba1b1b, type: 3}
   textSpeed: 0.05
   basePitch: 1
   typingSounds:

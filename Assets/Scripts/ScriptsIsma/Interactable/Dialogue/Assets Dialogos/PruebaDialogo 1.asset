@@ -15,6 +15,6 @@ MonoBehaviour:
   dialogueLines:
   - speakerName: "David Mar\xEDa"
     nameColor: {r: 1, g: 1, b: 1, a: 1}
-    bgColor: {r: 1, g: 0, b: 0, a: 1}
-    linePersonality: {fileID: 11400000, guid: 40640bfedbb584c4594e5a3fbd7e81f6, type: 2}
+    bgColor: {r: 0, g: 0.9764706, b: 1, a: 1}
+    linePersonality: {fileID: 11400000, guid: 89672dbee5dbf7243adad584510f9413, type: 2}
     sentence: Aaron Sujar no soy oso hormiguero pero te metia la lengua en el hormiguero y no dejaba ni una hormiga.

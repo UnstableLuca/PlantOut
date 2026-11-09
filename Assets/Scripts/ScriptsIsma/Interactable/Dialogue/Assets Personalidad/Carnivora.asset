@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carnivora
   m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
   personalityName: Carnivora
-  textBackground: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  textBackground: {fileID: 21300000, guid: 33217a70718eeba4bbf91b7be6df3fe7, type: 3}
   textSpeed: 0.05
   basePitch: 1
   typingSounds:

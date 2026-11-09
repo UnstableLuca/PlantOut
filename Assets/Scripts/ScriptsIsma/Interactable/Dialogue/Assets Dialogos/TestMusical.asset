@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   dialogueLines:
   - speakerName: testmusica
-    nameColor: {r: 0, g: 0, b: 0, a: 1}
-    bgColor: {r: 1, g: 1, b: 1, a: 1}
-    linePersonality: {fileID: 11400000, guid: 077c841e277b9f84c97e818d8a8a5ad8, type: 2}
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    bgColor: {r: 0.7179495, g: 0, b: 1, a: 1}
+    linePersonality: {fileID: 11400000, guid: 5a3fdf860e657d34dbb7e4ebd55eb4b9, type: 2}
     sentence: adfsaffaafafafafafafafaafafafafafafaf
   - speakerName: testmusica
-    nameColor: {r: 0, g: 0, b: 0, a: 1}
-    bgColor: {r: 1, g: 1, b: 1, a: 1}
-    linePersonality: {fileID: 11400000, guid: 077c841e277b9f84c97e818d8a8a5ad8, type: 2}
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    bgColor: {r: 0.7176471, g: 0, b: 1, a: 1}
+    linePersonality: {fileID: 11400000, guid: 5a3fdf860e657d34dbb7e4ebd55eb4b9, type: 2}
     sentence: linea 2 hola hola hola empieza tiempo de cope

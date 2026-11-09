@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Detective
   m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
   personalityName: Detective
-  textBackground: {fileID: 21300000, guid: e6ac33524e082d4479686e8d1c476a90, type: 3}
+  textBackground: {fileID: 21300000, guid: 493f14d2424e6614ca50377c7eba1b1b, type: 3}
   textSpeed: 0.05
   basePitch: 2
   typingSounds:
