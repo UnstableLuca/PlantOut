@@ -11,7 +11,20 @@ public class SeedBag3D : MonoBehaviour
     private float currentTransitionSpeed = 8f;
     private bool isActiveBag = false;
 
-    private Quaternion targetRotation;
+    [Header("Rotación con ratón")]
+    [Tooltip("Grados de rotación aplicados por cada punto de movimiento del ratón.")]
+    public float mouseRotationSensitivity = 0.5f;
+
+    [Tooltip("Velocidad con la que la bolsa alcanza suavemente la rotación del ratón.")]
+    public float rotationSmoothSpeed = 18f;
+
+    [Tooltip("Velocidad con la que vuelve a su orientación original al soltar el ratón.")]
+    public float returnRotationSpeed = 5f;
+
+    private Quaternion originalRotation;
+    private Quaternion dragTargetRotation;
+    private bool isDraggingRotation = false;
+    private bool restoringRotation = false;
 
     [Header("Texturas")]
     private Texture2D frontTex;
@@ -20,20 +33,26 @@ public class SeedBag3D : MonoBehaviour
     private Renderer frontRenderer;
     private Renderer backRenderer;
 
-    void Awake()
+    private void Awake()
     {
         Transform frontObj = transform.Find("EtiquetaFrontal");
         Transform backObj = transform.Find("EtiquetaTrasera");
 
-        if (frontObj != null) frontRenderer = frontObj.GetComponent<Renderer>();
-        if (backObj != null) backRenderer = backObj.GetComponent<Renderer>();
+        if (frontObj != null)
+            frontRenderer = frontObj.GetComponent<Renderer>();
+
+        if (backObj != null)
+            backRenderer = backObj.GetComponent<Renderer>();
     }
 
-    void Start()
+    private void Start()
     {
         baseTargetPos = transform.position;
         baseTargetScale = transform.localScale;
-        targetRotation = Quaternion.Euler(0, 90, 0);
+
+        // Guardamos la orientación inicial de la bolsa.
+        originalRotation = transform.rotation;
+        dragTargetRotation = originalRotation;
     }
 
     public void SetupTextures(Texture2D front, Texture2D back)
@@ -46,10 +65,6 @@ public class SeedBag3D : MonoBehaviour
     public void SetIsActive(bool active)
     {
         isActiveBag = active;
-        if (active)
-        {
-            targetRotation = Quaternion.Euler(0, 90, 0);
-        }
     }
 
     public void SetTargetTransform(Vector3 pos, float speed, Vector3 targetScale)
@@ -64,23 +79,96 @@ public class SeedBag3D : MonoBehaviour
         SetTargetTransform(pos, speed, transform.localScale);
     }
 
-    void Update()
+    private void Update()
     {
+        // Movimiento de posición y escala.
+        // El ratón nunca modifica la posición de la bolsa.
         Vector3 finalPos = baseTargetPos;
 
         if (isActiveBag)
         {
-            // Solo mantiene la animación de flotación en el punto de spawn
             float floatOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
-            finalPos = baseTargetPos + new Vector3(0f, floatOffset, 0f);
+            finalPos += new Vector3(0f, floatOffset, 0f);
         }
 
-        // Movimiento y escala suaves hacia la posición objetivo
-        transform.position = Vector3.Lerp(transform.position, finalPos, Time.deltaTime * currentTransitionSpeed);
-        transform.localScale = Vector3.Lerp(transform.localScale, baseTargetScale, Time.deltaTime * currentTransitionSpeed);
+        float transitionFactor = 1f - Mathf.Exp(-currentTransitionSpeed * Time.deltaTime);
 
-        // Mantiene la rotación fija y orientada correctamente
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 15f);
+        transform.position = Vector3.Lerp(
+            transform.position,
+            finalPos,
+            transitionFactor
+        );
+
+        transform.localScale = Vector3.Lerp(
+            transform.localScale,
+            baseTargetScale,
+            transitionFactor
+        );
+
+        // Rotación suave mientras se arrastra.
+        if (isDraggingRotation)
+        {
+            float rotationFactor = 1f - Mathf.Exp(-rotationSmoothSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                dragTargetRotation,
+                rotationFactor
+            );
+        }
+        // Retorno automático al soltar el ratón.
+        else if (restoringRotation)
+        {
+            float returnFactor = 1f - Mathf.Exp(-returnRotationSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                originalRotation,
+                returnFactor
+            );
+
+            if (Quaternion.Angle(transform.rotation, originalRotation) < 0.1f)
+            {
+                transform.rotation = originalRotation;
+                restoringRotation = false;
+            }
+        }
+    }
+
+    public void StartRotation()
+    {
+        isDraggingRotation = true;
+        restoringRotation = false;
+        dragTargetRotation = transform.rotation;
+    }
+
+    public void StopRotation()
+    {
+        if (!isDraggingRotation)
+            return;
+
+        isDraggingRotation = false;
+        restoringRotation = true;
+    }
+
+    public void RotateWithMouse(float mouseX, float mouseY)
+    {
+        if (!isDraggingRotation)
+            return;
+
+        Quaternion yaw = Quaternion.AngleAxis(
+            -mouseX * mouseRotationSensitivity,
+            Vector3.up
+        );
+
+        dragTargetRotation = yaw * dragTargetRotation;
+
+        Quaternion pitch = Quaternion.AngleAxis(
+            mouseY * mouseRotationSensitivity,
+            dragTargetRotation * Vector3.right
+        );
+
+        dragTargetRotation = pitch * dragTargetRotation;
     }
 
     private void UpdateTextures()
@@ -89,12 +177,8 @@ public class SeedBag3D : MonoBehaviour
         {
             frontRenderer.material.mainTexture = frontTex;
 
-            // Ajustar automáticamente la proporción para que no se deforme
             float aspectRatio = (float)frontTex.width / frontTex.height;
             Vector3 currentScale = frontRenderer.transform.localScale;
-
-            // Suponiendo que el eje Y es la altura fija y ajustamos el ancho (Eje X o Z según tu modelo)
-            // Cambia 'x' por 'z' si tu plano está orientado en el otro sentido
             currentScale.x = currentScale.y * aspectRatio;
             frontRenderer.transform.localScale = currentScale;
         }
@@ -113,17 +197,23 @@ public class SeedBag3D : MonoBehaviour
     public void ForceDeselect()
     {
         isActiveBag = false;
-        targetRotation = Quaternion.Euler(0, 90, 0);
+        isDraggingRotation = false;
+        restoringRotation = true;
+        dragTargetRotation = originalRotation;
     }
 
     public void ReturnToShelf(Vector3 shelfPos, Vector3 targetScale)
     {
         isActiveBag = false;
-        targetRotation = Quaternion.Euler(0, 90, 0);
+        isDraggingRotation = false;
+
         baseTargetPos = shelfPos;
         baseTargetScale = targetScale;
+
+        restoringRotation = true;
+        dragTargetRotation = originalRotation;
+
         transform.position = shelfPos;
         transform.localScale = targetScale;
-        transform.rotation = targetRotation;
     }
 }

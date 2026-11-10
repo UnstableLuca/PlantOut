@@ -19,4 +19,12 @@ MonoBehaviour:
   frontLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
   bookPrefab: {fileID: 0}
-  combosVisuales: []
+  combosVisuales:
+  - botonesTeclado:
+    - {fileID: -1497371589, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 1197226507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    botonesMando:
+    - {fileID: -725581648, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: -666183619, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
