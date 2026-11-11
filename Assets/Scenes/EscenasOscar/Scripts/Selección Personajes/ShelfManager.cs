@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ShelfCenterSelectManager : MonoBehaviour
+public class ShelfManager : MonoBehaviour
 {
     [Header("Plantas")]
     public PlantData3D[] plants;
@@ -25,6 +25,9 @@ public class ShelfCenterSelectManager : MonoBehaviour
     public float transitionSpeed = 8f;
     public Vector3 shelfScale = Vector3.one;
     public Vector3 activeCenterScale = new Vector3(2.9887f, 2.9887f, 2.9887f);
+
+    [Header("Rotación con Ratón")]
+    public float rotationSpeed = 0.4f; 
 
     [Header("PAPEL Y UI JUGADOR 1")]
     public Button botonConfirmarJ1;
@@ -103,7 +106,7 @@ public class ShelfCenterSelectManager : MonoBehaviour
     public InteractableObject interactableReference;
 
     [Header("Canvas de Salida (UI)")]
-    public GameObject canvasSalirEstanteria; 
+    public GameObject canvasSalirEstanteria;
 
     public void ToggleModoMando()
     {
@@ -122,7 +125,7 @@ public class ShelfCenterSelectManager : MonoBehaviour
 
         if (objetoPapelJugador2 != null) objetoPapelJugador2.SetActive(false);
         if (panelPantallaVS != null) panelPantallaVS.SetActive(false);
-        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false); 
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false);
 
         if (vcamBalda != null) vcamBalda.Priority = 0;
         if (vcamMesa != null) vcamMesa.Priority = 0;
@@ -242,6 +245,25 @@ public class ShelfCenterSelectManager : MonoBehaviour
         {
             estadoMandoAnterior = mandoActualConectado;
             UpdateUIAndStates();
+        }
+
+        if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+        {
+            bool sobreUI = UnityEngine.EventSystems.EventSystem.current != null &&
+                           UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+
+            if (!sobreUI)
+            {
+                Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+                if (bagInstances != null && currentIndex >= 0 && currentIndex < bagInstances.Length && bagInstances[currentIndex] != null)
+                {
+                    float rotX = mouseDelta.x * rotationSpeed;
+                    float rotY = -mouseDelta.y * rotationSpeed;
+
+                    bagInstances[currentIndex].transform.Rotate(Vector3.up, -rotX, Space.World);
+                    bagInstances[currentIndex].transform.Rotate(Vector3.right, rotY, Space.World);
+                }
+            }
         }
 
         if (enPantallaVS || enTransicion || turnoJugador > 2) return;

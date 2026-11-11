@@ -321,9 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b8aa09662fe6541880a121037bbba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeedBag3D
-  rotationSpeed: 0.5
   floatSpeed: 2
   floatAmount: 0.05
+  mouseRotationSensitivity: 0.5
+  rotationSmoothSpeed: 5.8
+  returnRotationSpeed: 2.82
 --- !u!64 &5902477870994615053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -341,7 +343,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
