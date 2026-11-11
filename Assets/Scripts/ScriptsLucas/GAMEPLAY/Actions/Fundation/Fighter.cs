@@ -59,6 +59,9 @@ public class Fighter : MonoBehaviour, IFighter
     [SerializeField] string hitTrigger = "Hit";             // leve retroceso al recibir dano
     [SerializeField] string parryTrigger = "Parry";         // se libera de la guardia
     [SerializeField] string blockEndTrigger = "BlockEnd";   // baja la guardia al soltar
+    [SerializeField] string stunTrigger = "";
+
+    [SerializeField, Min(0f)] float stunAnimMinDuration = 0.5f; 
 
     // ---------- Estado publico ----------
 
@@ -68,6 +71,8 @@ public class Fighter : MonoBehaviour, IFighter
     public AttackSide RivalSide => rivalSide;
     public Transform ProjectileOrigin => projectileOrigin != null ? projectileOrigin : transform;
     public Transform AimPoint => aimPoint != null ? aimPoint : transform;
+
+    public float ActionSpeed => Time.timeAsDouble < slowEnd ? slowFactor : 1f;
     public int MaxSkillUses => maxSkillUses;
     public float SkillBar { get; private set; }
     public bool CanAct => InputEnabled && state == FighterState.Idle && Time.timeAsDouble >= lockUntil;
@@ -84,10 +89,13 @@ public class Fighter : MonoBehaviour, IFighter
     ActionPhase phase;
     double actionStart;
     float actionDuration;
+    float actionSpeed = 1f;
 
     double blockPressTime;
     double lockUntil;     // anti-spam tras soltar el bloqueo
     double stunEnd;
+    double slowEnd;
+    float slowFactor = 1f;
 
     readonly List<IDamageable> leftBugs = new List<IDamageable>();
     readonly List<IDamageable> rightBugs = new List<IDamageable>();
@@ -136,6 +144,7 @@ public class Fighter : MonoBehaviour, IFighter
         currentCtx = ctx;
         actionStart = ctx.Now;
         actionDuration = action.GetTotalDuration(ctx);
+        actionSpeed = ActionSpeed;
         phase = ActionPhase.Startup;
         state = FighterState.Acting;
 
@@ -210,9 +219,15 @@ public class Fighter : MonoBehaviour, IFighter
         Interrupt();
         state = FighterState.Stunned;
         stunEnd = Math.Max(stunEnd, Time.timeAsDouble + duration);
+        if (duration >= stunAnimMinDuration) PlayAnimation(stunTrigger);
     }
 
-
+    public void ApplySlow(float factor, float duration)
+    {
+        bool active = Time.timeAsDouble < slowEnd;
+        slowFactor = active ? Mathf.Min(slowFactor, factor) : factor;
+        slowEnd = Math.Max(slowEnd, Time.timeAsDouble + duration);
+    }
 
     public bool BeginChannel()
     {
@@ -324,13 +339,15 @@ public class Fighter : MonoBehaviour, IFighter
         }
         else
         {
-            // TODO clash/flurry?
-            if (!Armored)
+            if(hit.Interrupts)
             {
-                if (hit.Hitstun > 0f) Stun(hit.Hitstun);
-                else Interrupt();
+                if (!Armored)
+                {
+                    if (hit.Hitstun > 0f) Stun(hit.Hitstun);
+                    else Interrupt();
+                }
+                PlayAnimation(hitTrigger);
             }
-            PlayAnimation(hitTrigger);
         }
 
         HitReceived?.Invoke(new HitReport(this, hit.Source, hit.Damage, damage, result, hit.IsSkill));
@@ -351,7 +368,6 @@ public class Fighter : MonoBehaviour, IFighter
         rightBugs.Remove(bug);
     }
 
-    // Un objeto de Unity destruido no es null al verlo como interfaz: hay que comprobarlo asi
     static bool IsAlive(IDamageable d)
         => d != null && (!(d is UnityEngine.Object o) || o);
 }

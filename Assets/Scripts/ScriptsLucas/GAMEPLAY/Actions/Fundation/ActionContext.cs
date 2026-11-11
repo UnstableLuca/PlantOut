@@ -27,11 +27,13 @@ public readonly struct HitData
     public readonly float Damage;
     public readonly float Hitstun;        // 0 si no quieres stun
     public readonly bool IsSkill;
+    
     public readonly bool Parryable;       // false: se puede bloquear pero nunca parrear (p.ej. ticks de la ultimate)
     public readonly AttackKind Kind;      // los bichos solo mueren por disparos (Ranged)
+    public readonly bool Interrupts;
 
     public HitData(IDamageable source, float damage, float hitstun, bool isSkill,
-                   bool parryable = true, AttackKind kind = AttackKind.Melee)
+                   bool parryable = true, AttackKind kind = AttackKind.Melee, bool interrupts = true)
     {
         Source = source;
         Damage = damage;
@@ -39,6 +41,7 @@ public readonly struct HitData
         IsSkill = isSkill;
         Parryable = parryable;
         Kind = kind;
+        Interrupts = interrupts;
     }
 }
 

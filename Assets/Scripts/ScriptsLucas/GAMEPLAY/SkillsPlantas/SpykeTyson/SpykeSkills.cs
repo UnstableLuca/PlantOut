@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+
 public class SpykeSkills : SkillController
 {
     [Header("Brazos (mantener con 1-4 cargas)")]
@@ -76,7 +77,7 @@ public class SpykeSkills : SkillController
     int totalTicks;
     float tickDamage;
 
-    // ---------- Estado publico (UI, animacion) ----------
+    //  Estado publico
 
     public int Arms => arms;
     public float ArmsTimeLeft => armsTimer;
@@ -114,14 +115,12 @@ public class SpykeSkills : SkillController
             return;
         }
 
-        // Sin cargas, o ya con todos los brazos: no hay nada que mantener, directo a pinchos
         if (charges == 0 || arms >= maxArms)
         {
             TryCastSpikes();
             return;
         }
 
-        // 1-4 cargas: empieza a mantener. Si sueltas antes del primer brazo, son pinchos.
         if (!fighter.BeginChannel()) return;
 
         phase = Phase.Holding;
@@ -137,7 +136,6 @@ public class SpykeSkills : SkillController
 
     public override void OnChannelInterrupted()
     {
-        // Te golpean: se corta el casteo, los brazos ya salidos se quedan (y su contador empieza)
         if (phase == Phase.Holding) FinishHold(allowTap: false);
         else if (phase == Phase.Ultimate) EndUltimate();   // con superarmadura no deberia pasar
     }
@@ -163,7 +161,7 @@ public class SpykeSkills : SkillController
         switch (phase)
         {
             case Phase.Holding:
-                holdTimer += dt;
+                holdTimer += dt * fighter.ActionSpeed;   // ralentizado = los brazos tardan mas en salir
                 while (phase == Phase.Holding && holdTimer >= holdPerArm)
                 {
                     holdTimer -= holdPerArm;
@@ -220,7 +218,6 @@ public class SpykeSkills : SkillController
     {
         if (armsTimer > 0f)
         {
-            // Ya habia brazos: se suma tiempo por cada brazo nuevo (el ultimo suma mas)
             float bonus = 0f;
             for (int k = arms - added + 1; k <= arms; k++)
                 bonus += k >= maxArms ? timeBonusFourthArm : timeBonusPerArm;
@@ -244,7 +241,6 @@ public class SpykeSkills : SkillController
     }
 
     //  PINCHOS
-
     bool TryCastSpikes()
     {
         if (Time.timeAsDouble < spikeReadyAt) return false;
@@ -347,6 +343,7 @@ public class SpykeSkills : SkillController
         SetArms(0);
         EndSpikes();
     }
+
     void PushArmsToAnimator()
     {
         if (animator != null && !string.IsNullOrEmpty(armCountParameter))
