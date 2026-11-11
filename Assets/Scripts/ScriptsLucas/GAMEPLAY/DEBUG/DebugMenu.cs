@@ -1,11 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/// <summary>
-/// Menu de debug para fijar la barra de habilidad de cada Fighter.
-/// F1 lo muestra/oculta. Solo funciona en el editor y en builds de desarrollo.
-/// Ponlo en un GameObject vacio y arrastra los Fighters al array.
-/// </summary>
 public class DebugMenu : MonoBehaviour
 {
     [SerializeField] Fighter[] fighters;
@@ -17,7 +12,6 @@ public class DebugMenu : MonoBehaviour
 
     void Awake()
     {
-        // En una build final no existe
         if (!Application.isEditor && !Debug.isDebugBuild) enabled = false;
     }
 
@@ -69,6 +63,5 @@ public class DebugMenu : MonoBehaviour
             if (f != null) SetBar(f, full ? f.MaxSkillUses : 0f);
     }
 
-    // El Fighter no expone un setter; AddBar con la diferencia hace lo mismo (y respeta el limite 0..max)
-    static void SetBar(Fighter f, float value) => f.AddBar(value - f.SkillBar);
+    static void SetBar(Fighter f, float value) => f.AddBarPassive(value - f.SkillBar);
 }

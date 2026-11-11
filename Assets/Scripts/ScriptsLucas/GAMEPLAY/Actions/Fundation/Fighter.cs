@@ -60,7 +60,6 @@ public class Fighter : MonoBehaviour, IFighter
     [SerializeField] string parryTrigger = "Parry";         // se libera de la guardia
     [SerializeField] string blockEndTrigger = "BlockEnd";   // baja la guardia al soltar
     [SerializeField] string stunTrigger = "";
-
     [SerializeField, Min(0f)] float stunAnimMinDuration = 0.5f; 
 
     // ---------- Estado publico ----------
@@ -100,6 +99,35 @@ public class Fighter : MonoBehaviour, IFighter
     readonly List<IDamageable> leftBugs = new List<IDamageable>();
     readonly List<IDamageable> rightBugs = new List<IDamageable>();
 
+    //Efectos en el tiempo / DOT (Damage Over Time)
+
+    const double EffectTick = 0.5;
+
+    class Dot
+    {
+        public IDamageable source;
+        public float dps;
+        public double end;
+        public double nextTick;
+        public float endDamage;
+    }
+
+    class Swarm
+    {
+        public IDamageable source;
+        public int count;
+        public float dpsPerBug;
+        public double end;
+        public double nextTick;
+        public AttackKind shakeKind;
+        public int bugsPerPress;
+    }
+
+    readonly List<Dot> bleeds = new List<Dot>();
+    Swarm swarm;
+
+    public int SwarmCount => swarm != null ? swarm.count : 0;
+    public event Action<int> SwarmChanged;
     bool Armored => skills != null && skills.SuperArmor;
 
     void Awake()
@@ -111,6 +139,14 @@ public class Fighter : MonoBehaviour, IFighter
 
     public bool RequestAttack(AttackKind kind)
     {
+        if (skills != null && skills.InterceptAttack(kind)) return true;
+
+        if (swarm != null && InputEnabled && kind == swarm.shakeKind)
+        {
+            ShakeSwarm(swarm.bugsPerPress);
+            return true;
+        }
+
         AttackAction action = kind == AttackKind.Melee ? meleeAttack : rangedAttack;
         return action != null && TryStart(action);
     }
@@ -120,6 +156,7 @@ public class Fighter : MonoBehaviour, IFighter
 
     public bool RequestBlockPress()
     {
+        if (skills != null && skills.InterceptBlockPress()) return true;
         if (block == null) return false;
 
         var ctx = new ActionContext(this, Time.timeAsDouble);
@@ -154,6 +191,8 @@ public class Fighter : MonoBehaviour, IFighter
 
     void Update()
     {
+        TickEffects();
+
         switch (state)
         {
             case FighterState.Acting:
@@ -222,6 +261,8 @@ public class Fighter : MonoBehaviour, IFighter
         if (duration >= stunAnimMinDuration) PlayAnimation(stunTrigger);
     }
 
+    //CHANELLING
+
     public void ApplySlow(float factor, float duration)
     {
         bool active = Time.timeAsDouble < slowEnd;
@@ -271,7 +312,12 @@ public class Fighter : MonoBehaviour, IFighter
         return true;
     }
 
-    public void AddBar(float amount) => SetBar(SkillBar + amount);
+    public void AddBar(float amount)
+    {
+        if (skills != null && !skills.AllowsBarGain) return;
+        SetBar(SkillBar + amount);
+    }
+    public void AddBarPassive(float amount) => SetBar(SkillBar + amount);
 
     void SetBar(float value)
     {
@@ -328,6 +374,9 @@ public class Fighter : MonoBehaviour, IFighter
             if (result == BlockResult.Parried && !hit.Parryable) result = BlockResult.Blocked;
 
             damage = block.ModifyDamage(result, damage);
+            if (result == BlockResult.Blocked && hit.BlockScale >= 0f) damage = hit.Damage * hit.BlockScale;
+            if (result == BlockResult.Parried && hit.ParryScale >= 0f) damage = hit.Damage * hit.ParryScale;
+
             if (hit.Parryable) AddBar(block.BarReward(result));   // los ticks de la ultimate no dan barra
 
             if (result == BlockResult.Parried)
@@ -368,6 +417,104 @@ public class Fighter : MonoBehaviour, IFighter
         rightBugs.Remove(bug);
     }
 
+    public void CollectBugs(List<IDamageable> into)
+    {
+        into.Clear();
+        foreach (var b in leftBugs) if (IsAlive(b)) into.Add(b);
+        foreach (var b in rightBugs) if (IsAlive(b)) into.Add(b);
+    }
+
+    //DOT
+
+    public void TakeDirectDamage(IDamageable source, float damage, bool isSkill)
+    {
+        if (damage <= 0f) return;
+        HitReceived?.Invoke(new HitReport(this, source, damage, damage, BlockResult.None, isSkill));
+    }
+
+    public void ApplyBleed(IDamageable source, float dps, float duration, float endDamage)
+    {
+        double now = Time.timeAsDouble;
+        bleeds.Add(new Dot
+        {
+            source = source,
+            dps = dps,
+            end = now + duration,
+            nextTick = now + EffectTick,
+            endDamage = endDamage
+        });
+    }
+
+    public void ApplySwarm(IDamageable source, int count, float dpsPerBug, float duration,
+                           AttackKind shakeKind, int bugsPerPress)
+    {
+        double now = Time.timeAsDouble;
+        swarm = new Swarm
+        {
+            source = source,
+            count = count,
+            dpsPerBug = dpsPerBug,
+            end = now + duration,
+            nextTick = now + EffectTick,
+            shakeKind = shakeKind,
+            bugsPerPress = Mathf.Max(1, bugsPerPress)
+        };
+        SwarmChanged?.Invoke(swarm.count);
+    }
+
+    void ShakeSwarm(int amount)
+    {
+        if (swarm == null) return;
+
+        swarm.count -= amount;
+        if (swarm.count <= 0) swarm = null;
+        SwarmChanged?.Invoke(SwarmCount);
+    }
+
+    public void ClearEffects()
+    {
+        bleeds.Clear();
+        slowEnd = 0;
+        if (swarm != null)
+        {
+            swarm = null;
+            SwarmChanged?.Invoke(0);
+        }
+    }
+
+    void TickEffects()
+    {
+        double now = Time.timeAsDouble;
+
+        for (int i = bleeds.Count - 1; i >= 0; i--)
+        {
+            Dot b = bleeds[i];
+
+            while (b.nextTick <= now && b.nextTick <= b.end)
+            {
+                TakeDirectDamage(b.source, b.dps * (float)EffectTick, true);
+                b.nextTick += EffectTick;
+            }
+
+            if (now >= b.end)
+            {
+                TakeDirectDamage(b.source, b.endDamage, true);   // dano extra al terminar
+                bleeds.RemoveAt(i);
+            }
+        }
+
+        while (swarm != null && swarm.nextTick <= now && swarm.nextTick <= swarm.end)
+        {
+            TakeDirectDamage(swarm.source, swarm.count * swarm.dpsPerBug * (float)EffectTick, true);
+            if (swarm != null) swarm.nextTick += EffectTick;
+        }
+
+        if (swarm != null && now >= swarm.end)
+        {
+            swarm = null;
+            SwarmChanged?.Invoke(0);
+        }
+    }
     static bool IsAlive(IDamageable d)
         => d != null && (!(d is UnityEngine.Object o) || o);
 }

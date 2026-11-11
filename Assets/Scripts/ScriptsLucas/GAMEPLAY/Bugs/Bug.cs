@@ -32,7 +32,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     [SerializeField] float arriveSpeed = 4f;
 
     [Header("Muerte")]
-    [Tooltip("Puntos que se lleva quien lo mata")]
+    [Tooltip("Puntos que se lleva quien lo mata (los reparte el BugSpawner)")]
     public float killPoints = 5f;
     [SerializeField] float deathDelay = 0.2f;
 
@@ -48,6 +48,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     Fighter target;
     AttackSide side;
     Vector3 hoverPos;
+    Vector3 homeHoverPos;   // el punto original, para volver a el tras el modo caza
     Vector3 strikePos;
     float timer;
     float stateTime;
@@ -71,6 +72,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
         target = targetPlant;
         side = bugSide;
         hoverPos = hoverPosition;
+        homeHoverPos = hoverPosition;
         strikePos = strikePosition;
         bobPhase = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
         state = BugState.Arriving;
@@ -129,6 +131,16 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     //  FASES
 
+    public void SetHoverPoint(Vector3 point) => hoverPos = point;
+
+    public void ResetHoverPoint() => hoverPos = homeHoverPos;
+
+    public void Eat(Fighter eater)
+    {
+        if (state == BugState.Dead) return;
+        Die(eater);
+    }
+
     void BeginIdle()
     {
         state = BugState.Idle;
@@ -163,6 +175,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     void Strike()
     {
+        // Mismo HitData que el rival: la planta puede bloquearlo o parrearlo
         BlockResult result = target.ReceiveHit(new HitData(this, damage, hitstun, isSkill: false));
 
         if (result == BlockResult.Parried)
@@ -219,7 +232,6 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     void OnDestroy()
     {
-        // Por si lo destruye otra cosa (cambio de escena...) sin pasar por Die
         if (state != BugState.Dead && target != null) target.UnregisterBug(this);
     }
 }

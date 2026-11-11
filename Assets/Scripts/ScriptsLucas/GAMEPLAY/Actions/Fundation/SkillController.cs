@@ -9,8 +9,13 @@ public abstract class SkillController : MonoBehaviour
 
     public virtual bool SuperArmor => false;
 
+    public virtual bool AllowsBarGain => true;
+
     public abstract void OnSkillPressed();
     public abstract void OnSkillReleased();
+
+    public virtual bool InterceptAttack(AttackKind kind) => false;
+    public virtual bool InterceptBlockPress() => false;
 
     public virtual void OnChannelInterrupted() { }
 

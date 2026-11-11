@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
@@ -69,6 +70,39 @@ public class BugSpawner : MonoBehaviour
             lane.alive--;
             if (score != null && killer is Fighter f) score.AddPoints(f, b.killPoints);
         };
+    }
+
+    public int AliveTotal
+    {
+        get
+        {
+            int n = 0;
+            foreach (var lane in lanes) n += lane.alive;
+            return n;
+        }
+    }
+
+    public void SummonBugs(Fighter plant, int count, float interval)
+    {
+        if (bugPrefab == null || count <= 0) return;
+
+        foreach (var lane in lanes)
+            if (lane.fighter == plant)
+            {
+                StartCoroutine(SummonRoutine(lane, count, interval));
+                return;
+            }
+    }
+
+    IEnumerator SummonRoutine(Lane lane, int count, float interval)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (lane.fighter == null || lane.spawnPoint == null || lane.attackPoint == null) yield break;
+
+            Spawn(lane);
+            if (i < count - 1) yield return new WaitForSeconds(interval);
+        }
     }
 
     void ScheduleNext(Lane lane)
