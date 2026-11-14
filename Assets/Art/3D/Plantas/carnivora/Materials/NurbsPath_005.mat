@@ -26,11 +26,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 0849f5b9dcc1e9048b7ae31c26910562, type: 3}
+        m_Texture: {fileID: 2800000, guid: e76a194cb874a194994f36fa78c2b201, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 205d8081b6d3d854c916f7908e94f78a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3667b4a99ade8f742bb0fbf04fe0349d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0849f5b9dcc1e9048b7ae31c26910562, type: 3}
+        m_Texture: {fileID: 2800000, guid: e76a194cb874a194994f36fa78c2b201, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -108,12 +108,12 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimSmoothness: 0.05
-    - _RimThreshold: 0.7
+    - _RimSmoothness: 0.001
+    - _RimThreshold: 0.75
     - _ScreenSpaceReflections: 1
     - _ScreenSpaceReflectionsContributeTransparent: 1
     - _ShadowSmoothness: 0.01
-    - _ShadowThreshold: 0.356
+    - _ShadowThreshold: 0.5
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -134,7 +134,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8681189034759227440
+--- !u!114 &6070420305545755742
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

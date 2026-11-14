@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4800275629410052852
+--- !u!114 &-3026205272688355012
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,11 +39,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 616b4c90bcde5284fac402f162030023, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab26e1b750f2aab45a11776eafe9c619, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: eee1f4203b2607c498182e2e1fea511b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 83cb65c32a1cb9a4a9649f3eddf64033, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 616b4c90bcde5284fac402f162030023, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab26e1b750f2aab45a11776eafe9c619, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -121,12 +121,12 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimSmoothness: 0.05
-    - _RimThreshold: 0.7
+    - _RimSmoothness: 0.001
+    - _RimThreshold: 0.75
     - _ScreenSpaceReflections: 1
     - _ScreenSpaceReflectionsContributeTransparent: 1
     - _ShadowSmoothness: 0.01
-    - _ShadowThreshold: 0.356
+    - _ShadowThreshold: 0.5
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

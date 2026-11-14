@@ -498,6 +498,7 @@ public class ShelfManager : MonoBehaviour
 
     public void BotonJugarPartida()
     {
+        // Añadir la asignacion de seleccion
         SceneManager.LoadScene(nombreEscenaCombate);
     }
 

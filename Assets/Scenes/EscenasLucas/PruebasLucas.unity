@@ -343,7 +343,7 @@ MonoBehaviour:
   score: {fileID: 0}
   fighter: {fileID: 0}
   maxDropPercent: 0.1
-  referernceHeight: 10
+  referenceHeight: 10
   smoothTime: 1.5
 --- !u!114 &158074323
 MonoBehaviour:
@@ -370,6 +370,8 @@ MonoBehaviour:
   hitTrigger: Hit
   parryTrigger: Parry
   blockEndTrigger: BlockEnd
+  stunTrigger: 
+  stunAnimMinDuration: 0.5
 --- !u!114 &158074324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,14 +399,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158074320}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9063079, z: 0, w: 0.42261827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.47, y: -3.15037, z: -4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1592075252}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 130, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &158074326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,7 +937,7 @@ MonoBehaviour:
   score: {fileID: 1081508108}
   fighter: {fileID: 0}
   maxDropPercent: 0.1
-  referernceHeight: 10
+  referenceHeight: 10
   smoothTime: 1.5
 --- !u!114 &682717253
 MonoBehaviour:
@@ -1015,6 +1017,8 @@ MonoBehaviour:
   hitTrigger: Hit
   parryTrigger: Parry
   blockEndTrigger: BlockEnd
+  stunTrigger: 
+  stunAnimMinDuration: 0.5
 --- !u!114 &682717255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,19 +1427,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03599992
+      value: -3.8931537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.19
+      value: 2.58037
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04400018
+      value: -0.00070524216
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1443,7 +1447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94edeedbfbe4a9942b5db11d216d03c0, type: 3}
       propertyPath: m_LocalRotation.z
