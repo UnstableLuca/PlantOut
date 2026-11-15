@@ -28,7 +28,6 @@ public class PlantData3D : ScriptableObject
     [Header("Modelo 3D Libro")]
     public GameObject bookPrefab;
     
-
     [Header("Combos Visuales")]
     public ComboVisual[] combosVisuales;
 
