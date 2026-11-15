@@ -31,4 +31,7 @@ public class PlantData3D : ScriptableObject
 
     [Header("Combos Visuales")]
     public ComboVisual[] combosVisuales;
+
+    [Header("Prefab de Combate / Juego")]
+    public GameObject plantPrefab; 
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9040e0d037db046ae6dfe6527d03d7, type: 3}
   m_Name: Test_02
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
-  plantName: Planta_Test_2
-  description: Esto es otra planta de semillas ahhh
+  plantName: Carnivora
+  description: Planta carnivora
   estadisticas: 
   bagPrefab: {fileID: 5540187161602159575, guid: 15fe3b1420c18c44090cd83586458962, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: 5fa152c140b0d3940a6829098890a673, type: 3}
@@ -28,3 +28,4 @@ MonoBehaviour:
     - {fileID: 1909580812, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: 788321507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  plantPrefab: {fileID: 919132149155446097, guid: 1b26e15a0ec8d9f4982cc0d37c0b18c6, type: 3}

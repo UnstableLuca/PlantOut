@@ -108,6 +108,9 @@ public class ShelfManager : MonoBehaviour
     [Header("Canvas de Salida (UI)")]
     public GameObject canvasSalirEstanteria;
 
+    [HideInInspector] public GameObject prefabSeleccionadoJ1;
+    [HideInInspector] public GameObject prefabSeleccionadoJ2;
+
     public void ToggleModoMando()
     {
         forzarModoMando = !forzarModoMando;
@@ -369,6 +372,14 @@ public class ShelfManager : MonoBehaviour
         if (turnoJugador == 1)
         {
             seleccionJugador1 = currentIndex;
+
+            if (plants[seleccionJugador1] != null)
+            {
+                prefabSeleccionadoJ1 = plants[seleccionJugador1].plantPrefab;
+
+                GameSessionData.PlayerLeftPrefab = plants[seleccionJugador1].plantPrefab;
+            }
+
             turnoJugador = 2;
             estaDescartando = false;
 
@@ -436,6 +447,14 @@ public class ShelfManager : MonoBehaviour
         if (turnoJugador == 2 && !estaDescartando && !enPantallaVS && !enTransicion)
         {
             seleccionJugador2 = currentIndex;
+
+            if (plants[seleccionJugador2] != null)
+            {
+                prefabSeleccionadoJ2 = plants[seleccionJugador2].plantPrefab;
+
+                GameSessionData.PlayerRightPrefab = plants[seleccionJugador2].plantPrefab;
+            }
+
             StartCoroutine(SecuenciaLlegadaMesaVS());
         }
     }
@@ -498,7 +517,6 @@ public class ShelfManager : MonoBehaviour
 
     public void BotonJugarPartida()
     {
-        // Añadir la asignacion de seleccion
         SceneManager.LoadScene(nombreEscenaCombate);
     }
 
