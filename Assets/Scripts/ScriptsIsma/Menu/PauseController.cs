@@ -28,6 +28,10 @@ public class PauseController : MonoBehaviour
     private Coroutine activeAnimationRoutine;
     private bool isVisible = false;
 
+    [Header("Destinos del jugador")]
+    public GameObject partidaRapida;
+    public GameObject guiaCombos;
+
     private void Awake()
     {
         menuCanvasGroup = GetComponent<CanvasGroup>();
@@ -50,7 +54,7 @@ public class PauseController : MonoBehaviour
         if (activeAnimationRoutine != null) StopCoroutine(activeAnimationRoutine);
 
         ResetToHiddenState();
-        
+
         gameObject.SetActive(true);
         activeAnimationRoutine = StartCoroutine(AnimateInRoutine());
     }
@@ -115,7 +119,7 @@ public class PauseController : MonoBehaviour
         Vector2 startPos = new Vector2(buttonOffscreenX, btn.anchoredPosition.y);
         Vector2 targetPos = new Vector2(buttonTargetX, btn.anchoredPosition.y);
 
-        while(elapsed < buttonSlideDuration)
+        while (elapsed < buttonSlideDuration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.SmoothStep(0f, 1f, elapsed / buttonSlideDuration);
@@ -217,6 +221,57 @@ public class PauseController : MonoBehaviour
                 PlazaManager.Instance.SetState(GameState.PlazaGameplay);
             }
         });
+    }
+
+    public void OnClick_PartidaRapida()
+    {
+        if (!isVisible) return;
+
+        ExecuteTeleportAndResume(partidaRapida);
+    }
+
+    public void OnClick_GuiaPlantas()
+    {
+        if (!isVisible) return;
+
+        ExecuteTeleportAndResume(guiaCombos);
+    }
+
+    private void ExecuteTeleportAndResume(GameObject destination)
+    {
+        if (destination != null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+
+            if (player != null)
+            {
+                StartCoroutine(TeleportRoutine(player, destination.transform));
+            }
+            
+        }
+        
+
+        HideMenu(() =>
+        {
+            if (PlazaManager.Instance != null)
+            {
+                PlazaManager.Instance.SetState(GameState.PlazaGameplay);
+            }
+        });
+    }
+
+    private IEnumerator TeleportRoutine(GameObject player, Transform targetTransform)
+    {
+        CharacterController cc = player.GetComponent<CharacterController>();
+
+        if (cc != null) cc.enabled = false;
+
+        player.transform.position = targetTransform.position;
+        player.transform.rotation = targetTransform.rotation;
+
+        yield return null;
+
+        if (cc != null) cc.enabled = true;
     }
     #endregion
 }
