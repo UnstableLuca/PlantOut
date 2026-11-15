@@ -1,97 +1,101 @@
 using System;
 using UnityEngine;
 
-
 public class ScoreSystem : MonoBehaviour
 {
-    [SerializeField] Fighter player1;
-    [SerializeField] Fighter player2;
+    [Header("Jugadores")]
+    [SerializeField] Fighter playerLeft;
+    [SerializeField] Fighter playerRight;
 
-    [Header("Puntos")]
-    [SerializeField] float parryBonus = 5f;
-    [Tooltip("Puntos que pierde una planta por cada punto de dano de un bicho (0 = los bichos no quitan puntos)")]
+    [Header("Puntuación")]
+    [Tooltip("Diferencia máxima de puntos para normalizar altura y ventajas de comeback")]
+    [SerializeField, Min(1f)] float maxScoreSpread = 500f;
+    [Tooltip("Multiplicador de penalización cuando te golpea un bicho")]
     [SerializeField, Min(0f)] float bugPenaltyScale = 1f;
 
-    [Header("Comeback")]
-    [Tooltip("Multiplicador de puntos del que va perdiendo cuando el deficit es maximo")]
-    [SerializeField, Min(1f)] float maxMultiplier = 1.5f;
-    [Tooltip("Puntos 'virtuales' que amortiguan el inicio: con pocos puntos un solo golpe no dispara el deficit")]
-    [SerializeField, Min(0f)] float softStart = 20f;
+    [Header("Altura visual (opcional)")]
+    [SerializeField] PlantHeight heightLeft;
+    [SerializeField] PlantHeight heightRight;
 
-    float score1, score2;
+    private float scoreLeft;
+    private float scoreRight;
 
-    public event Action ScoresChanged;
+    public float ScoreLeft => scoreLeft;
+    public float ScoreRight => scoreRight;
+
+    /// <summary>Positivo = gana izquierda, Negativo = gana derecha.</summary>
+    public float ScoreDelta => scoreLeft - scoreRight;
+
+    public event Action<float, float> ScoreChanged;
 
     void OnEnable()
     {
-        if (player1 != null) player1.HitReceived += OnHit;
-        if (player2 != null) player2.HitReceived += OnHit;
+        if (playerLeft != null) playerLeft.HitReceived += OnHitReceived;
+        if (playerRight != null) playerRight.HitReceived += OnHitReceived;
     }
 
     void OnDisable()
     {
-        if (player1 != null) player1.HitReceived -= OnHit;
-        if (player2 != null) player2.HitReceived -= OnHit;
+        if (playerLeft != null) playerLeft.HitReceived -= OnHitReceived;
+        if (playerRight != null) playerRight.HitReceived -= OnHitReceived;
     }
 
-    //  PUNTOS
-
-    void OnHit(HitReport r)
+    void Start()
     {
-        if (r.Source is Bug)
+        UpdateVisualHeights();
+        ScoreChanged?.Invoke(scoreLeft, scoreRight);
+    }
+
+    private void OnHitReceived(HitReport report)
+    {
+        if (report.FinalDamage <= 0f) return;
+
+        // Si el atacante es un Fighter, suma puntos al atacante
+        if (report.Source is Fighter attacker)
         {
-            // Un bicho no puntua para nadie: le quita puntos a la planta que golpea
-            if (r.FinalDamage > 0f && bugPenaltyScale > 0f)
-                RemovePoints(r.Victim, r.FinalDamage * bugPenaltyScale);
+            AddPoints(attacker, report.FinalDamage);
         }
-        else if (r.Source is Fighter attacker && r.FinalDamage > 0f)
+        // Si el atacante es un bicho, resta puntos a la víctima
+        else if (report.Source is Bug && report.Victim != null)
         {
-            AddPoints(attacker, r.FinalDamage);
+            AddPoints(report.Victim, -report.FinalDamage * bugPenaltyScale);
         }
-
-        if (r.Result == BlockResult.Parried && parryBonus > 0f) AddPoints(r.Victim, parryBonus);
     }
 
-    public void RemovePoints(Fighter f, float points)
+    public void AddPoints(Fighter target, float points)
     {
-        if (f == player1) score1 = Mathf.Max(0f, score1 - points);
-        else if (f == player2) score2 = Mathf.Max(0f, score2 - points);
-        else return;
+        if (target == null || Mathf.Approximately(points, 0f)) return;
 
-        ScoresChanged?.Invoke();
+        if (target == playerLeft) scoreLeft += points;
+        else if (target == playerRight) scoreRight += points;
+
+        UpdateVisualHeights();
+        ScoreChanged?.Invoke(scoreLeft, scoreRight);
     }
 
-    public void AddPoints(Fighter f, float rawPoints)
+    /// <summary>
+    /// Devuelve 0..1 indicando cuánto va ganando 'plant' respecto a su rival (0 = empatado o perdiendo).
+    /// </summary>
+    public float GetLead(Fighter plant)
     {
-        float gained = rawPoints * GetMultiplier(f);   // multiplicador con el marcador de ANTES de sumar
-
-        if (f == player1) score1 += gained;
-        else if (f == player2) score2 += gained;
-        else return;
-
-        ScoresChanged?.Invoke();
+        if (plant == null) return 0f;
+        float diff = plant == playerLeft ? (scoreLeft - scoreRight) : (scoreRight - scoreLeft);
+        if (diff <= 0f) return 0f;
+        return Mathf.Clamp01(diff / maxScoreSpread);
     }
 
-
-    public float GetPoints(Fighter f) => f == player1 ? score1 : score2;
-
-    Fighter Other(Fighter f) => f == player1 ? player2 : player1;
-
-    float Ratio(Fighter f)
+    private void UpdateVisualHeights()
     {
-        if (f != player1 && f != player2) return 0.5f;
-
-        float mine = GetPoints(f);
-        float theirs = GetPoints(Other(f));
-        float denom = mine + theirs + 2f * softStart;
-        return denom <= 0f ? 0.5f : (mine + softStart) / denom;
+        float normalized = Mathf.Clamp((scoreLeft - scoreRight) / maxScoreSpread, -1f, 1f);
+        if (heightLeft != null) heightLeft.SetNormalizedHeight(normalized);
+        if (heightRight != null) heightRight.SetNormalizedHeight(-normalized);
     }
 
-    public float GetDeficit(Fighter f) => Mathf.Clamp01((0.5f - Ratio(f)) * 2f);
-
-    public float GetLead(Fighter f) => Mathf.Clamp01((Ratio(f) - 0.5f) * 2f);
-
-    public float GetMultiplier(Fighter f) => Mathf.Lerp(1f, maxMultiplier, GetDeficit(f));
-
-    public float Advantage => Ratio(player1) * 2f - 1f;
+    public void ResetScores()
+    {
+        scoreLeft = 0f;
+        scoreRight = 0f;
+        UpdateVisualHeights();
+        ScoreChanged?.Invoke(scoreLeft, scoreRight);
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MaxilonSkills : SkillController
 {
+    #region Variables
     [Header("Invocar bichos (0 cargas)")]
     [Tooltip("Vacio = lo busca en la escena")]
     [SerializeField] BugSpawner spawner;
@@ -95,17 +96,23 @@ public class MaxilonSkills : SkillController
 
     public event Action<bool> HuntingChanged;
     public event Action<int> BugsEaten;
+    #endregion
 
+    #region Awake
     protected override void Awake()
     {
         base.Awake();
         if (animator == null) animator = GetComponentInChildren<Animator>();
+        if (animator == null && fighter != null) animator = fighter.CharacterAnimator;
         SetCloudVisuals(false);
     }
+    #endregion
 
-    //  INPUT
+    #region Input
     public override void OnSkillPressed()
     {
+        if (fighter == null) return;
+
         // En modo caza, mantener la habilidad sirve para salir
         if (hunting)
         {
@@ -169,6 +176,7 @@ public class MaxilonSkills : SkillController
         EatCloud(kind == AttackKind.Melee ? 0 : 1);
         return true;
     }
+
     public override bool InterceptBlockPress()
     {
         if (!hunting) return false;
@@ -187,11 +195,13 @@ public class MaxilonSkills : SkillController
 
         phase = Phase.Idle;
     }
+    #endregion
 
-    //  UPDATE
-
+    #region Update
     void Update()
     {
+        if (fighter == null) return;
+
         float dt = Time.deltaTime * fighter.ActionSpeed;
 
         switch (phase)
@@ -248,9 +258,9 @@ public class MaxilonSkills : SkillController
         phase = Phase.Idle;
         fighter.EndChannel();
     }
+    #endregion
 
-    //  INVOCAR Y MODO CAZA
-
+    #region Summon & Hunt
     bool TrySummon()
     {
         if (hunting || Time.time < summonBlockedUntil) return false;
@@ -362,9 +372,9 @@ public class MaxilonSkills : SkillController
         fighter.AddBar(eaten * barPerBug);
         BugsEaten?.Invoke(eaten);
     }
+    #endregion
 
-    //  ESCUPITAJO
-
+    #region Spit
     void Spit(int spitLevel)
     {
         // Mantiene el bloqueo un momento tras escupir
@@ -394,9 +404,9 @@ public class MaxilonSkills : SkillController
         if (rival == null) return;
         rival.ReceiveHit(new HitData(fighter, spitDamage, stun, isSkill: true, parryable: true, kind: AttackKind.Ranged));
     }
+    #endregion
 
-    //  ULTIMATE
-
+    #region Ultimate
     void StartUltimate()
     {
         if (!fighter.BeginChannel()) return;
@@ -436,9 +446,9 @@ public class MaxilonSkills : SkillController
             rival.ApplySwarm(fighter, swarmBugs, swarmDpsPerBug, swarmDuration,
                              swarmShakeButton, bugsRemovedPerPress);
     }
+    #endregion
 
-    //  UTILIDADES
-
+    #region Modifiers/Utilities
     public override void ResetState()
     {
         if (hunting) ExitHunt();
@@ -474,4 +484,5 @@ public class MaxilonSkills : SkillController
         if (values == null || values.Length == 0) return fallback;
         return values[Mathf.Clamp(index, 0, values.Length - 1)];
     }
+    #endregion
 }

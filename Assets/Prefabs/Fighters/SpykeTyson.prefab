@@ -5238,10 +5238,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7525820261735896961}
   - component: {fileID: 2555486722475978962}
-  - component: {fileID: 1248780732145896001}
-  - component: {fileID: 3550908703594730685}
-  - component: {fileID: 3927522178749850255}
-  - component: {fileID: 6661877967092983608}
+  - component: {fileID: 5098483841926769579}
+  - component: {fileID: 4178520877010896298}
   m_Layer: 0
   m_Name: SpykeTyson
   m_TagString: Untagged
@@ -5289,7 +5287,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1248780732145896001
+--- !u!114 &5098483841926769579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5298,17 +5296,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5844649462466783695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6648f8d5ad4904f40bd04c57cf78bc0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 20dd18c0f5b7ce748816afa071fb4837, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FighterInput
-  keyboardLayout: 0
-  customMelee: <Keyboard>/j
-  customRanged: <Keyboard>/l
-  customBlock: <Keyboard>/k
-  customSkill: <Keyboard>/i
-  useGamepad: 1
-  gamepadIndex: -1
---- !u!114 &3550908703594730685
+  m_EditorClassIdentifier: Assembly-CSharp::PlantCharacterModule
+  meleeAsset: {fileID: 11400000, guid: a428a60b16d01924db293517740be194, type: 2}
+  rangedAsset: {fileID: 11400000, guid: 8203a1835d7fa924cbe2db2eb424dd74, type: 2}
+  blockAsset: {fileID: 11400000, guid: a8449f3516d9baa488992f496ffe9405, type: 2}
+  skillController: {fileID: 4178520877010896298}
+  modelAnimator: {fileID: 2555486722475978962}
+  aimPoint: {fileID: 1050258267202724607}
+  projectileOrigin: {fileID: 5527136093444906683}
+  stemTransform: {fileID: 2301922028852747586}
+--- !u!114 &4178520877010896298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5317,34 +5316,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5844649462466783695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158e40c288fd0b14c9f9066665d7a810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fighter
-  meleeAttack: {fileID: 11400000, guid: d4c66e49c35bb014fa2ef50eda331f52, type: 2}
-  rangedAttack: {fileID: 11400000, guid: 514a65a062cf633448dcaa9dd199cca2, type: 2}
-  block: {fileID: 11400000, guid: 2549112c62b50b445a31e8703dc788c8, type: 2}
-  skills: {fileID: 3927522178749850255}
-  projectileOrigin: {fileID: 7350385580432424253}
-  aimPoint: {fileID: 0}
-  rivalSide: 1
-  maxSkillUses: 5
-  parryStunOnAttacker: 0.5
-  animator: {fileID: 2555486722475978962}
-  hitTrigger: Hit
-  parryTrigger: Parry
-  blockEndTrigger: BlockEnd
-  stunTrigger: 
-  stunAnimMinDuration: 0.5
---- !u!114 &3927522178749850255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5844649462466783695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 009f3ad0c43e9d146bce4d72e7f71357, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a9abbd60c1747c4fa74ba3cd3f9e4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpykeSkills
   maxArms: 4
@@ -5377,34 +5349,15 @@ MonoBehaviour:
   ultimateTickInterval: 0.1
   afterUltimateTime: 4
   postUltimateCooldown: 4
-  armGrowTrigger: ArmGrow
+  armGrowTrigger: 
   spikesTrigger: Spikes
   ultimateTrigger: Ultimate
   ultimateEndTrigger: UltimateEnd
-  animator: {fileID: 0}
+  animator: {fileID: 2555486722475978962}
   armCountParameter: ArmCount
   chargingParameter: Charging
   armVisuals: []
-  spikeVisuals:
-  - {fileID: 6063322505546851289}
-  - {fileID: 3459075734366312984}
---- !u!114 &6661877967092983608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5844649462466783695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8af3adf3f2e7e048959306e55730e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlantHeight
-  score: {fileID: 0}
-  fighter: {fileID: 0}
-  maxDropPercent: 0.1
-  referenceHeight: 10
-  smoothTime: 1.5
+  spikeVisuals: []
 --- !u!1 &5869337826806631559
 GameObject:
   m_ObjectHideFlags: 0

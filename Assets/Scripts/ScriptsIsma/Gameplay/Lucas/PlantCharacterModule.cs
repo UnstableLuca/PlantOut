@@ -7,19 +7,28 @@ public class PlantCharacterModule : MonoBehaviour
     public PlayerAction rangedAsset;
     public PlayerAction blockAsset;
 
-    [Header("Configuración")]
-    [Tooltip("Desmarcar solo en Belladona.")]
-    public bool canGainStandardEnergy = true;
+    [Header("Habilidades de Planta")]
+    public SkillController skillController;
 
-    [Header("Referencias")]
+    [Header("Referencias del Prefab")]
     public Animator modelAnimator;
-    public Transform firePoint;
+    [Tooltip("Punto donde impactan los proyectiles rivales en esta planta")]
+    public Transform aimPoint;
+    [Tooltip("Punto desde donde salen los proyectiles de esta planta")]
+    public Transform projectileOrigin;
+    [Tooltip("Malla del tallo separada para PlantHeight (opcional)")]
     public Transform stemTransform;
 
     public Fighter ParentFighter {  get; private set; }
 
-    private void Start()
+    private void Awake()
     {
+        if (modelAnimator == null)
+            modelAnimator = GetComponentInChildren<Animator>();
+
+        if (skillController == null)
+            skillController = GetComponentInChildren<SkillController>();
+
         ParentFighter = GetComponentInParent<Fighter>();
         if (ParentFighter != null)
         {
@@ -28,11 +37,13 @@ public class PlantCharacterModule : MonoBehaviour
                 rangedAsset,
                 blockAsset,
                 modelAnimator,
-                firePoint,
+                aimPoint,
+                projectileOrigin,
                 stemTransform,
-                canGainStandardEnergy
-                );
+                skillController
+            );
 
+            // Voltear visualmente si es el jugador de la derecha
             if (!ParentFighter.isLeftPlayer)
             {
                 Vector3 scale = transform.localScale;

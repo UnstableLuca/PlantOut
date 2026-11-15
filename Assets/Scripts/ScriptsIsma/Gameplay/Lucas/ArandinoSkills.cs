@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using UnityEngine;
+
 public class ArandinoSkills : SkillController
 {
+    #region Variables
     [Header("Palillo (0 cargas / toque rapido)")]
     [Tooltip("Prefab del palillo (con el componente Projectile). Vacio = el efecto es instantaneo")]
     [SerializeField] Projectile toothpickPrefab;
@@ -67,7 +69,7 @@ public class ArandinoSkills : SkillController
     bool launched;
     double toothpickReadyAt;
 
-    //  Estado publico (UI, animacion) 
+    // Estado publico (UI, animacion)
 
     public int Berries => berries;
     public bool IsGrowingUltimate => phase == Phase.UltimateGrow;
@@ -77,18 +79,21 @@ public class ArandinoSkills : SkillController
     public event Action UltimateExploded;
 
     public override bool SuperArmor => phase == Phase.UltimateGrow && !ultimateInterruptible;
+    #endregion
 
+    #region Awake
     protected override void Awake()
     {
         base.Awake();
         if (animator == null) animator = GetComponentInChildren<Animator>();
+        if (animator == null && fighter != null) animator = fighter.CharacterAnimator;
     }
+    #endregion
 
-    //  INPUT
-
+    #region Input
     public override void OnSkillPressed()
     {
-        if (phase != Phase.Idle || !fighter.CanAct) return;
+        if (fighter == null || phase != Phase.Idle || !fighter.CanAct) return;
 
         int charges = Mathf.FloorToInt(fighter.SkillBar + 0.0001f);
 
@@ -148,11 +153,13 @@ public class ArandinoSkills : SkillController
 
         phase = Phase.Idle;
     }
+    #endregion
 
-    //  UPDATE
-
+    #region Update
     void Update()
     {
+        if (fighter == null) return;
+
         float dt = Time.deltaTime * fighter.ActionSpeed;   // ralentizado = todo tarda mas
 
         switch (phase)
@@ -200,9 +207,9 @@ public class ArandinoSkills : SkillController
         phase = Phase.Idle;
         fighter.EndChannel();
     }
+    #endregion
 
-    //  PALILLO
-
+    #region Toothpick
     bool TryToothpick()
     {
         if (Time.timeAsDouble < toothpickReadyAt) return false;
@@ -240,9 +247,9 @@ public class ArandinoSkills : SkillController
         if (rival.ReceiveHit(hit) == BlockResult.None)
             rival.ApplySlow(slowFactor, slowDuration);
     }
+    #endregion
 
-    //  ARANDANOS
-
+    #region Berries
     void StartSwing()
     {
         phase = Phase.Swinging;
@@ -294,9 +301,9 @@ public class ArandinoSkills : SkillController
         if (rival == null) return;
         rival.ReceiveHit(new HitData(fighter, damage, stun, isSkill: true, parryable: true, kind: AttackKind.Ranged));
     }
+    #endregion
 
-    //  ULTIMATE
-
+    #region Ultimate
     void StartUltimate()
     {
         if (!fighter.BeginChannel()) return;
@@ -322,9 +329,9 @@ public class ArandinoSkills : SkillController
         // El coste: Arandino queda aturdido mientras vuelven a crecer los arandanos
         fighter.Stun(selfStunDuration);
     }
+    #endregion
 
-    //  UTILIDADES
-
+    #region Modifiers/Utilities
     public override void ResetState()
     {
         StopAllCoroutines();
@@ -359,4 +366,5 @@ public class ArandinoSkills : SkillController
         if (values == null || values.Length == 0) return fallback;
         return values[Mathf.Clamp(index, 0, values.Length - 1)];
     }
+    #endregion
 }

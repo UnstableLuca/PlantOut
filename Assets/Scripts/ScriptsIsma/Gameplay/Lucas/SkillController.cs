@@ -1,11 +1,15 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Fighter))]
 public class SkillController : MonoBehaviour
 {
     protected Fighter fighter;
 
-    protected virtual void Awake() => fighter = GetComponent<Fighter>();
+    protected virtual void Awake()
+    {
+        fighter = GetComponentInParent<Fighter>();
+        if (fighter == null)
+            fighter = GetComponent<Fighter>();
+    }
 
     public virtual bool SuperArmor => false;
 

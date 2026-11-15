@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
+
 public class RosarosSkills : SkillController
 {
+    #region Variables
     [Header("Sol (pasiva)")]
     [Tooltip("Vacio = lo busca en la escena")]
     [SerializeField] SunSystem sun;
@@ -71,7 +73,7 @@ public class RosarosSkills : SkillController
 
     bool sunSearched;
 
-    // ---------- Estado publico (UI) ----------
+    // Estado publico (UI)
 
     public int Level => level;
     public bool StormActive => stormActive;
@@ -93,17 +95,21 @@ public class RosarosSkills : SkillController
 
     /// <summary>Rosaros no recarga energia de ninguna otra forma que el sol.</summary>
     public override bool AllowsBarGain => false;
+    #endregion
 
+    #region Awake
     protected override void Awake()
     {
         base.Awake();
         if (animator == null) animator = GetComponentInChildren<Animator>();
+        if (animator == null && fighter != null) animator = fighter.CharacterAnimator;
     }
+    #endregion
 
-    //  INPUT
+    #region Input
     public override void OnSkillPressed()
     {
-        if (phase != Phase.Idle || !fighter.CanAct) return;
+        if (fighter == null || phase != Phase.Idle || !fighter.CanAct) return;
 
         int charges = Mathf.FloorToInt(fighter.SkillBar + 0.0001f);
 
@@ -144,11 +150,13 @@ public class RosarosSkills : SkillController
 
         phase = Phase.Idle;
     }
+    #endregion
 
-    //  UPDATE
-
+    #region Update
     void Update()
     {
+        if (fighter == null) return;
+
         // Pasiva: la barra sube con el sol (y con nada mas)
         if (fighter.InputEnabled && barPerSecondAtFullSun > 0f)
             fighter.AddBarPassive(SunLevel * barPerSecondAtFullSun * Time.deltaTime);
@@ -204,9 +212,9 @@ public class RosarosSkills : SkillController
         phase = Phase.Idle;
         fighter.EndChannel();
     }
+    #endregion
 
-    //  AROS
-
+    #region Rings
     void StartStrikes()
     {
         phase = Phase.Striking;
@@ -234,9 +242,9 @@ public class RosarosSkills : SkillController
                              At(bleedDurationByLevel, strikeLevel),
                              At(bleedEndDamageByLevel, strikeLevel));
     }
+    #endregion
 
-    //  ULTIMATE
-
+    #region Ultimate
     void StartUltimate()
     {
         if (!fighter.BeginChannel()) return;
@@ -301,9 +309,9 @@ public class RosarosSkills : SkillController
                                      kind: AttackKind.Ranged, interrupts: petalsInterrupt,
                                      blockScale: 1f, parryScale: 0.5f));
     }
+    #endregion
 
-    //  UTILIDADES
-
+    #region Modifiers/Utilities
     public override void ResetState()
     {
         phase = Phase.Idle;
@@ -343,4 +351,5 @@ public class RosarosSkills : SkillController
         if (values == null || values.Length == 0) return fallback;
         return values[Mathf.Clamp(index, 0, values.Length - 1)];
     }
+    #endregion
 }

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class Bug : MonoBehaviour, IDamageable, IShootable
 {
     [Header("Idle (flota cerca de la planta)")]
@@ -37,13 +38,13 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     [SerializeField] float deathDelay = 0.2f;
 
     [Header("Visual (opcional)")]
-    [Tooltip("Hijo blanco que se enciende y apaga durante el aviso (silueta blanca o sprite blanco)")]
-    [SerializeField] GameObject flashOverlay;
     [Tooltip("Parametros: bool Telegraph; triggers Swoop, Hurt, Die")]
     [SerializeField] Animator animator;
 
     enum BugState { Arriving, Idle, Telegraph, Swoop, Stunned, Dead }
 
+    private Outline outline;
+    
     BugState state = BugState.Arriving;
     Fighter target;
     AttackSide side;
@@ -76,7 +77,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
         strikePos = strikePosition;
         bobPhase = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
         state = BugState.Arriving;
-        SetFlash(false);
+        outline = GetComponent<Outline>();
     }
 
     void Update()
@@ -201,7 +202,7 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     {
         if (flashOn == on) return;
         flashOn = on;
-        if (flashOverlay != null) flashOverlay.SetActive(on);
+        if (outline != null) outline.enabled = on;
     }
 
     //  IDamageable

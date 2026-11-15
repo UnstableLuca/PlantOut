@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
 {
+    public static BugSpawner Instance { get; private set; }
+
     [Serializable]
     public class Lane
     {
@@ -11,14 +14,14 @@ public class BugSpawner : MonoBehaviour
         public Transform spawnPoint;    // de donde sale el bicho
         [Tooltip("Donde flota el bicho cerca de la planta")]
         public Transform attackPoint;
-        [Tooltip("Donde pica para golpear a la planta. Vacio = la posicion de la planta")]
+        [Tooltip("Donde pica para golpear a la planta. Vacio = el AimPoint o posicion de la planta")]
         public Transform strikePoint;
 
         [NonSerialized] public float nextSpawn;
         [NonSerialized] public int alive;
     }
 
-    [SerializeField] Bug bugPrefab;
+    [SerializeField] List<Bug> bugPrefabs;
     [Tooltip("Opcional: para dar puntos al matar bichos y para el sesgo hacia el que va ganando")]
     [SerializeField] ScoreSystem score;
     [SerializeField] Lane[] lanes;
@@ -33,7 +36,19 @@ public class BugSpawner : MonoBehaviour
     [Tooltip("Multiplica el intervalo del que va ganando por hasta este valor (<1 = mas bichos para el lider). 1 = sin sesgo")]
     [SerializeField, Range(0.3f, 1f)] float leaderIntervalFactor = 0.7f;
 
+    private int idx = 0;
+
     public bool Running { get; set; } = true;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+    }
 
     void Start()
     {
@@ -43,7 +58,7 @@ public class BugSpawner : MonoBehaviour
 
     void Update()
     {
-        if (!Running || bugPrefab == null) return;
+        if (!Running || bugPrefabs == null) return;
 
         foreach (var lane in lanes)
         {
@@ -59,9 +74,14 @@ public class BugSpawner : MonoBehaviour
     {
         // El lado de los bichos es el contrario al que mira al rival
         AttackSide side = lane.fighter.RivalSide == AttackSide.Left ? AttackSide.Right : AttackSide.Left;
+        idx++;
 
-        Bug bug = Instantiate(bugPrefab, lane.spawnPoint.position, lane.spawnPoint.rotation);
-        Vector3 strike = lane.strikePoint != null ? lane.strikePoint.position : lane.fighter.transform.position;
+        Bug bug = Instantiate(bugPrefabs[idx%2], lane.spawnPoint.position, lane.spawnPoint.rotation);
+        Vector3 fallbackStrike = lane.fighter.AimPoint != null
+            ? lane.fighter.AimPoint.position
+            : lane.fighter.transform.position;
+        Vector3 strike = lane.strikePoint != null ? lane.strikePoint.position : fallbackStrike;
+
         bug.Init(lane.fighter, side, lane.attackPoint.position, strike);
 
         lane.alive++;
@@ -84,7 +104,7 @@ public class BugSpawner : MonoBehaviour
 
     public void SummonBugs(Fighter plant, int count, float interval)
     {
-        if (bugPrefab == null || count <= 0) return;
+        if (bugPrefabs == null || count <= 0) return;
 
         foreach (var lane in lanes)
             if (lane.fighter == plant)

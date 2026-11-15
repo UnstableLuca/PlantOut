@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public enum KeyboardLayout { Player1_WASD, Player2_IJKL, Custom }
+
 [RequireComponent(typeof(Fighter))]
 public class FighterInput : MonoBehaviour
 {
@@ -19,20 +21,60 @@ public class FighterInput : MonoBehaviour
     [Tooltip("-1 = cualquier mando. 0 = primer mando conectado, 1 = el segundo... Con dos jugadores usa 0 y 1.")]
     [SerializeField] int gamepadIndex = -1;
 
-    Fighter fighter;
-    InputAction melee, ranged, block, skill;
+    private Fighter fighter;
+    private InputActions inputActions;
+    private InputAction melee, ranged, block, skill;
 
     void Awake()
     {
         fighter = GetComponent<Fighter>();
+        inputActions = new InputActions();
 
-        GetKeys(out string m, out string r, out string b, out string s);
+        // Obtiene el Action Map "Combat" del asset InputActions
+        InputActionMap combatMap = inputActions.asset.FindActionMap("Combat", throwIfNotFound: true);
 
-        // Mando: X = melee, B = rango, A = bloquear (mantener), Y = habilidad (mantener)
-        melee = Make("Melee", m, "<Gamepad>/buttonWest");
-        ranged = Make("Ranged", r, "<Gamepad>/buttonEast");
-        block = Make("Block", b, "<Gamepad>/buttonSouth");
-        skill = Make("Skill", s, "<Gamepad>/buttonNorth");
+        melee = combatMap.FindAction("Melee", throwIfNotFound: true);
+        ranged = combatMap.FindAction("Ranged", throwIfNotFound: true);
+        block = combatMap.FindAction("Block", throwIfNotFound: true);
+        skill = combatMap.FindAction("Skill", throwIfNotFound: true);
+
+        // Si se usa Layout Custom, añadimos sus bindings personalizados al asset en tiempo de ejecución
+        if (keyboardLayout == KeyboardLayout.Custom)
+        {
+            if (!string.IsNullOrEmpty(customMelee)) melee.AddBinding(customMelee);
+            if (!string.IsNullOrEmpty(customRanged)) ranged.AddBinding(customRanged);
+            if (!string.IsNullOrEmpty(customBlock)) block.AddBinding(customBlock);
+            if (!string.IsNullOrEmpty(customSkill)) skill.AddBinding(customSkill);
+        }
+
+        ConfigureDevices();
+    }
+
+    private void ConfigureDevices()
+    {
+        var devicesList = new System.Collections.Generic.List<InputDevice>();
+
+        if (Keyboard.current != null)
+            devicesList.Add(Keyboard.current);
+
+        if (useGamepad)
+        {
+            var gamepads = Gamepad.all;
+            if (gamepadIndex >= 0 && gamepadIndex < gamepads.Count)
+            {
+                devicesList.Add(gamepads[gamepadIndex]);
+            }
+            else if (gamepadIndex < 0)
+            {
+                for (int i = 0; i < gamepads.Count; i++)
+                    devicesList.Add(gamepads[i]);
+            }
+        }
+
+        if (devicesList.Count > 0)
+        {
+            inputActions.devices = new ReadOnlyArray<InputDevice>(devicesList.ToArray());
+        }
     }
 
     void OnEnable()
@@ -44,18 +86,12 @@ public class FighterInput : MonoBehaviour
         skill.performed += OnSkillPressed;
         skill.canceled += OnSkillReleased;
 
-        melee.Enable();
-        ranged.Enable();
-        block.Enable();
-        skill.Enable();
+        inputActions.asset.FindActionMap("Combat").Enable();
     }
 
     void OnDisable()
     {
-        melee.Disable();
-        ranged.Disable();
-        block.Disable();
-        skill.Disable();
+        inputActions.asset.FindActionMap("Combat").Disable();
 
         melee.performed -= OnMelee;
         ranged.performed -= OnRanged;
@@ -67,48 +103,39 @@ public class FighterInput : MonoBehaviour
 
     void OnDestroy()
     {
-        melee?.Dispose();
-        ranged?.Dispose();
-        block?.Dispose();
-        skill?.Dispose();
+        inputActions?.Dispose();
     }
 
-
-
-    InputAction Make(string actionName, string keyboardBinding, string gamepadBinding)
-    {
-        var action = new InputAction(actionName, InputActionType.Button);
-        if (!string.IsNullOrEmpty(keyboardBinding)) action.AddBinding(keyboardBinding);
-        if (useGamepad) action.AddBinding(gamepadBinding);
-        return action;
-    }
-
-    void GetKeys(out string meleeKey, out string rangedKey, out string blockKey, out string skillKey)
-    {
-        switch (keyboardLayout)
-        {
-            case KeyboardLayout.Player1_WASD:
-                meleeKey = "<Keyboard>/d"; rangedKey = "<Keyboard>/a";
-                blockKey = "<Keyboard>/s"; skillKey = "<Keyboard>/w";
-                break;
-            case KeyboardLayout.Player2_IJKL:
-                meleeKey = "<Keyboard>/j"; rangedKey = "<Keyboard>/l";
-                blockKey = "<Keyboard>/k"; skillKey = "<Keyboard>/i";
-                break;
-            default:
-                meleeKey = customMelee; rangedKey = customRanged;
-                blockKey = customBlock; skillKey = customSkill;
-                break;
-        }
-    }
-    bool Accept(InputAction.CallbackContext ctx)
+    private bool Accept(InputAction.CallbackContext ctx)
     {
         if (ctx.control.device is Gamepad pad)
         {
+            if (!useGamepad) return false;
             if (gamepadIndex < 0) return true;
             return gamepadIndex < Gamepad.all.Count && Gamepad.all[gamepadIndex] == pad;
         }
-        return true;
+
+        if (ctx.control.device is Keyboard)
+        {
+            string path = "<Keyboard>/" + ctx.control.name.ToLower();
+
+            switch (keyboardLayout)
+            {
+                case KeyboardLayout.Player1_WASD:
+                    return path == "<Keyboard>/d" || path == "<Keyboard>/a" ||
+                           path == "<Keyboard>/s" || path == "<Keyboard>/w";
+
+                case KeyboardLayout.Player2_IJKL:
+                    return path == "<Keyboard>/j" || path == "<Keyboard>/l" ||
+                           path == "<Keyboard>/k" || path == "<Keyboard>/i";
+
+                case KeyboardLayout.Custom:
+                    return path == customMelee.ToLower() || path == customRanged.ToLower() ||
+                           path == customBlock.ToLower() || path == customSkill.ToLower();
+            }
+        }
+
+        return false;
     }
 
     void OnMelee(InputAction.CallbackContext ctx) { if (Accept(ctx)) fighter.RequestAttack(AttackKind.Melee); }

@@ -2,66 +2,75 @@ using UnityEngine;
 
 public class PlantHeight : MonoBehaviour
 {
-    [SerializeField] ScoreSystem score;
-    [Tooltip("Si se deja vacio usa el Fighter de este mismo objeto")]
-    [SerializeField] Fighter fighter;
+    [Header("Altura por Puntuación")]
+    [SerializeField] float minHeightOffset = -1.5f;
+    [SerializeField] float maxHeightOffset = 1.5f;
+    [SerializeField] float smoothSpeed = 4f;
 
-    [Header("Bajada")]
-    [Tooltip("Maxima bajada como fraccion de la altura de referencia (0.10 = 10%)")]
-    [SerializeField, Range(0f, 0.5f)] float maxDropPercent = 0.10f;
-    [Tooltip("Altura en unidades de mundo sobre la que se calcula el porcentaje (p.ej. la altura de la pantalla)")]
-    [SerializeField, Min(0.1f)] float referenceHeight = 10f;
-    [Tooltip("Mas alto = bajada mas lenta y progresiva")]
-    [SerializeField, Min(0.05f)] float smoothTime = 1.5f;
+    [Header("Tallo (Opcional: inyectado por PlantCharacterModule)")]
+    [SerializeField] Transform stemTransform;
+    [SerializeField] float baseStemScaleY = 1f;
+    [SerializeField] float stemScalePerUnit = 0.5f;
 
-    Vector3 basePos;
-    float dropY;
-    float dropVelocity;
+    [Header("Escenario / Cinemáticas")]
+    [SerializeField] float stageOffsetY = 0f;
 
-    // Cinematica: desplazamiento suave hacia un punto de escenario
-    bool hasStage;
-    Vector3 stagePos;
-    float stageSmooth = 0.4f;
-    Vector3 offset;
-    Vector3 offsetVelocity;
+    private Vector3 baseLocalPosition;
+    private float targetHeightOffset = 0f;
+    private float currentHeightOffset = 0f;
+    private bool onStage = false;
+
+    public Transform StemTransform => stemTransform;
 
     void Awake()
     {
-        if (fighter == null) fighter = GetComponent<Fighter>();
+        baseLocalPosition = transform.localPosition;
     }
 
-    void Start()
+    public void SetStemTransform(Transform stem)
     {
-        basePos = transform.position;
-        dropY = basePos.y;
+        stemTransform = stem;
+        if (stemTransform != null)
+        {
+            baseStemScaleY = stemTransform.localScale.y;
+        }
     }
 
-    public Vector3 BasePosition => basePos;
-
-    public void GoToStage(Vector3 worldPosition, float smooth)
+    /// <summary>
+    /// Recibe un valor normalizado entre -1 (perdiendo al máximo) y +1 (ganando al máximo).
+    /// </summary>
+    public void SetNormalizedHeight(float normalized)
     {
-        hasStage = true;
-        stagePos = worldPosition;
-        stageSmooth = Mathf.Max(0.01f, smooth);
+        normalized = Mathf.Clamp(normalized, -1f, 1f);
+        targetHeightOffset = normalized >= 0f
+            ? normalized * maxHeightOffset
+            : -normalized * minHeightOffset;
     }
 
-    public void LeaveStage(float smooth)
+    public void GoToStage()
     {
-        hasStage = false;
-        stageSmooth = Mathf.Max(0.01f, smooth);
+        onStage = true;
     }
 
-    void LateUpdate()
+    public void LeaveStage()
     {
-        float targetY = basePos.y;
-        if (score != null && fighter != null)
-            targetY -= maxDropPercent * referenceHeight * score.GetDeficit(fighter);
+        onStage = false;
+    }
 
-        dropY = Mathf.SmoothDamp(dropY, targetY, ref dropVelocity, smoothTime);
+    void Update()
+    {
+        float desiredY = onStage ? stageOffsetY : targetHeightOffset;
+        currentHeightOffset = Mathf.Lerp(currentHeightOffset, desiredY, Time.deltaTime * smoothSpeed);
 
-        Vector3 targetOffset = hasStage ? stagePos - basePos : Vector3.zero;
-        offset = Vector3.SmoothDamp(offset, targetOffset, ref offsetVelocity, stageSmooth);
+        Vector3 pos = baseLocalPosition;
+        pos.y += currentHeightOffset;
+        transform.localPosition = pos;
 
-        transform.position = new Vector3(basePos.x + offset.x, dropY + offset.y, basePos.z + offset.z);
+        if (stemTransform != null)
+        {
+            Vector3 scale = stemTransform.localScale;
+            scale.y = Mathf.Max(0.1f, baseStemScaleY + currentHeightOffset * stemScalePerUnit);
+            stemTransform.localScale = scale;
+        }
     }
 }

@@ -3,65 +3,99 @@ using UnityEngine.InputSystem;
 
 public class DebugMenu : MonoBehaviour
 {
-    [SerializeField] Fighter[] fighters;
+    [Header("Jugadores")]
+    [SerializeField] Fighter playerLeft;
+    [SerializeField] Fighter playerRight;
+
+    [Header("Sistemas Opcionales")]
+    [SerializeField] ScoreSystem scoreSystem;
+    [SerializeField] BugSpawner bugSpawner;
+
+    [Header("Activación")]
     [SerializeField] Key toggleKey = Key.F1;
-    [Tooltip("Escala de la interfaz (sube si se ve pequena)")]
-    [SerializeField, Range(1f, 3f)] float uiScale = 1.5f;
+    [SerializeField] bool visible = false;
 
-    bool visible;
-
-    void Awake()
-    {
-        if (!Application.isEditor && !Debug.isDebugBuild) enabled = false;
-    }
+    private Rect windowRect = new Rect(20, 20, 320, 420);
 
     void Update()
     {
-        var kb = Keyboard.current;
-        if (kb != null && kb[toggleKey].wasPressedThisFrame) visible = !visible;
+        if (Keyboard.current != null && Keyboard.current[toggleKey].wasPressedThisFrame)
+        {
+            visible = !visible;
+        }
     }
 
     void OnGUI()
     {
-        if (!visible || fighters == null) return;
+        if (!visible) return;
+        windowRect = GUI.Window(90210, windowRect, DrawWindow, "Debug Combate (F1)");
+    }
 
-        GUI.matrix = Matrix4x4.Scale(new Vector3(uiScale, uiScale, 1f));
+    private void DrawWindow(int id)
+    {
+        GUILayout.Space(5);
 
-        GUILayout.BeginArea(new Rect(10, 10, 300, 600), GUI.skin.box);
-        GUILayout.Label("DEBUG  (" + toggleKey + " para cerrar)");
+        DrawFighterSection("Jugador Izquierda", playerLeft);
+        GUILayout.Space(10);
+        DrawFighterSection("Jugador Derecha", playerRight);
 
-        foreach (var f in fighters)
+        GUILayout.Space(12);
+        GUILayout.Label("<b>Escena</b>", new GUIStyle(GUI.skin.label) { richText = true });
+
+        if (scoreSystem != null && GUILayout.Button("Resetear Puntuación"))
         {
-            if (f == null) continue;
-
-            GUILayout.Space(6);
-            GUILayout.Label($"{f.name}   estado: {f.State}");
-            GUILayout.Label($"Barra: {f.SkillBar:0.00} / {f.MaxSkillUses}");
-
-            float current = f.SkillBar;
-            float slider = GUILayout.HorizontalSlider(current, 0f, f.MaxSkillUses);
-            if (!Mathf.Approximately(slider, current)) SetBar(f, slider);
-
-            GUILayout.BeginHorizontal();
-            for (int i = 0; i <= f.MaxSkillUses; i++)
-                if (GUILayout.Button(i.ToString())) SetBar(f, i);
-            GUILayout.EndHorizontal();
+            scoreSystem.ResetScores();
         }
 
-        GUILayout.Space(10);
+        if (bugSpawner != null && GUILayout.Button("Invocar 2 Bichos por Lado"))
+        {
+            if (playerLeft != null) bugSpawner.SummonBugs(playerLeft, 2, 0.5f);
+            if (playerRight != null) bugSpawner.SummonBugs(playerRight, 2, 0.5f);
+        }
+
+        GUI.DragWindow();
+    }
+
+    private void DrawFighterSection(string title, Fighter f)
+    {
+        if (f == null)
+        {
+            GUILayout.Label($"{title}: No asignado");
+            return;
+        }
+
+        GUILayout.Label($"<b>{title}</b> ({f.State})", new GUIStyle(GUI.skin.label) { richText = true });
+        GUILayout.Label($"HP: {f.currentHealth:F0}/{f.maxHealth:F0} | Barra: {f.SkillBar:F2}/{f.MaxSkillUses}");
+
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Llenar todas")) SetAll(true);
-        if (GUILayout.Button("Vaciar todas")) SetAll(false);
+        if (GUILayout.Button("+1 Barra"))
+        {
+            f.AddBarPassive(1f);
+        }
+        if (GUILayout.Button("Barra Max"))
+        {
+            f.AddBarPassive(f.MaxSkillUses);
+        }
+        if (GUILayout.Button("Curar"))
+        {
+            f.currentHealth = f.maxHealth;
+        }
         GUILayout.EndHorizontal();
 
-        GUILayout.EndArea();
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Melee"))
+        {
+            f.RequestAttack(AttackKind.Melee);
+        }
+        if (GUILayout.Button("Ranged"))
+        {
+            f.RequestAttack(AttackKind.Ranged);
+        }
+        if (GUILayout.Button("Skill"))
+        {
+            f.RequestSkillPress();
+            f.RequestSkillRelease();
+        }
+        GUILayout.EndHorizontal();
     }
-
-    void SetAll(bool full)
-    {
-        foreach (var f in fighters)
-            if (f != null) SetBar(f, full ? f.MaxSkillUses : 0f);
-    }
-
-    static void SetBar(Fighter f, float value) => f.AddBarPassive(value - f.SkillBar);
 }

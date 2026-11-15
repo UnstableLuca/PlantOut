@@ -1758,6 +1758,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6070083516063639374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1996607644491471342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527515700581362354}
+  m_Layer: 0
+  m_Name: MouthPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1527515700581362354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996607644491471342}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.007, y: 0.066, z: 1.395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1211627104022479241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013817025708258955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,6 +4180,37 @@ Transform:
   - {fileID: 813584362522127127}
   m_Father: {fileID: 3017000844966467825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4374594706843561731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4005849677785802115}
+  m_Layer: 0
+  m_Name: CloudRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4005849677785802115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374594706843561731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.605, y: 1.805, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4094217725133771698}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4378768123541670763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,6 +4410,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4094217725133771698}
   - component: {fileID: 7005454192877239945}
+  - component: {fileID: 6587993102195572573}
+  - component: {fileID: 4479614638768508509}
   m_Layer: 0
   m_Name: Maxilon
   m_TagString: Untagged
@@ -4363,7 +4427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4538947174743976917}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
@@ -4371,6 +4435,9 @@ Transform:
   - {fileID: 5919012352116154660}
   - {fileID: 3258969540312814218}
   - {fileID: 7862560664572873993}
+  - {fileID: 9055310051976816638}
+  - {fileID: 3767913899808896282}
+  - {fileID: 4005849677785802115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7005454192877239945
@@ -4395,6 +4462,81 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6587993102195572573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538947174743976917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20dd18c0f5b7ce748816afa071fb4837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantCharacterModule
+  meleeAsset: {fileID: 11400000, guid: c145e77b0727615458360fe80d98a99e, type: 2}
+  rangedAsset: {fileID: 11400000, guid: d9c20724a7e9cb4459be39f99723a8fe, type: 2}
+  blockAsset: {fileID: 11400000, guid: 41dc498cd6abf3f49a1e370406273e8e, type: 2}
+  skillController: {fileID: 4479614638768508509}
+  modelAnimator: {fileID: 7005454192877239945}
+  aimPoint: {fileID: 2347141179094861310}
+  projectileOrigin: {fileID: 5034412799696814490}
+  stemTransform: {fileID: 7862560664572873993}
+--- !u!114 &4479614638768508509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538947174743976917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b84f4e254bca0478553b80af1acc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaxilonSkills
+  spawner: {fileID: 0}
+  ownBugs: 5
+  rivalBugs: 2
+  summonInterval: 1
+  burpLockTime: 0.8
+  cloudLeft: {fileID: 3767913899808896282}
+  cloudRight: {fileID: 4005849677785802115}
+  cloudTop: {fileID: 9055310051976816638}
+  cloudRadius: 1.2
+  cloudVisuals: []
+  exitHuntHold: 0.5
+  barPerBug: 1
+  attractInterval: 0.5
+  spitPrefab: {fileID: 0}
+  mouthPoint: {fileID: 1527515700581362354}
+  spitSpeed: 25
+  maxLevels: 4
+  holdPerLevel: 0.5
+  stunByLevel:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  spitDamage: 0
+  spitLockTime: 0.4
+  giantBallPrefab: {fileID: 0}
+  ballSpeed: 15
+  ultimateWindup: 0.8
+  swarmBugs: 10
+  swarmDpsPerBug: 20
+  swarmDuration: 10
+  swarmShakeButton: 0
+  bugsRemovedPerPress: 1
+  animator: {fileID: 7005454192877239945}
+  huntingParameter: Hunting
+  chargingParameter: Charging
+  burpTrigger: Burp
+  eatLeftTrigger: EatLeft
+  eatRightTrigger: EatRight
+  eatUpTrigger: EatUp
+  spitTrigger: Spit
+  ultimateTrigger: UltimateThrow
 --- !u!1 &4559330558157275901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,7 +4943,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 1.0031072, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1527515700581362354}
   m_Father: {fileID: 7632314395813935871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5408876147924233759
@@ -6676,6 +6819,37 @@ Transform:
   - {fileID: 1409687130362929206}
   m_Father: {fileID: 6608301611681377175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7483770081863690248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3767913899808896282}
+  m_Layer: 0
+  m_Name: CloudLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3767913899808896282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483770081863690248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.759, y: 1.719, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4094217725133771698}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7490058297028683109
 GameObject:
   m_ObjectHideFlags: 0
@@ -7582,6 +7756,37 @@ Transform:
   m_Children:
   - {fileID: 712401939296473722}
   m_Father: {fileID: 1937772252793266981}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8214204459861991831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9055310051976816638}
+  m_Layer: 0
+  m_Name: CloudUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9055310051976816638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214204459861991831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4094217725133771698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8229548581776913089
 GameObject:

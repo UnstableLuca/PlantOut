@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SpykeSkills : SkillController
 {
+    #region Variables
     [Header("Brazos (mantener con 1-4 cargas)")]
     [SerializeField, Min(1)] int maxArms = 4;
     [Tooltip("Segundos mantenidos por cada brazo")]
@@ -92,16 +93,18 @@ public class SpykeSkills : SkillController
     public event Action<bool> UltimateChanged;
 
     public override bool SuperArmor => phase == Phase.Ultimate;
+    #endregion
 
+    #region Awake & Start
     protected override void Awake()
     {
         base.Awake();
         if (animator == null) animator = GetComponentInChildren<Animator>();
         RefreshVisuals();
     }
+    #endregion
 
-    //  INPUT
-
+    #region Input
     public override void OnSkillPressed()
     {
         if (phase != Phase.Idle || !fighter.CanAct) return;
@@ -139,9 +142,9 @@ public class SpykeSkills : SkillController
         if (phase == Phase.Holding) FinishHold(allowTap: false);
         else if (phase == Phase.Ultimate) EndUltimate();   // con superarmadura no deberia pasar
     }
+    #endregion
 
-    //  UPDATE
-
+    #region Update
     void Update()
     {
         float dt = Time.deltaTime;
@@ -183,9 +186,9 @@ public class SpykeSkills : SkillController
                 break;
         }
     }
+    #endregion
 
-    //  BRAZOS
-
+    #region Arms
     void GrowArm()
     {
         if (!fighter.TrySpendUses(1))
@@ -239,8 +242,9 @@ public class SpykeSkills : SkillController
         PushArmsToAnimator();
         ArmsChanged?.Invoke(arms);
     }
+    #endregion
 
-    //  PINCHOS
+    #region Spikes
     bool TryCastSpikes()
     {
         if (Time.timeAsDouble < spikeReadyAt) return false;
@@ -262,9 +266,9 @@ public class SpykeSkills : SkillController
         SetSpikesVisible(false);
         SpikesChanged?.Invoke(false);
     }
+    #endregion
 
-    //  ULTIMATE
-
+    #region Ultimate
     void StartUltimate()
     {
         if (!fighter.BeginChannel()) return;
@@ -314,9 +318,9 @@ public class SpykeSkills : SkillController
         fighter.PlayAnimation(ultimateEndTrigger);
         UltimateChanged?.Invoke(false);
     }
+    #endregion
 
-    //  MODIFICADORES / UTILIDADES
-
+    #region Modifiers/Utilities
     public override float ModifyAttackDamage(AttackKind kind, float baseDamage)
     {
         // Brazos en orden melee -> rango -> melee -> rango
@@ -377,4 +381,5 @@ public class SpykeSkills : SkillController
         foreach (var go in spikeVisuals)
             if (go != null) go.SetActive(visible);
     }
+    #endregion
 }
