@@ -3,7 +3,32 @@ guid: bfd082156410d1e41aaa1cb369ad84ae
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: b1d10e87c10900a45afa0e1be5e8a4a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: fd55006bda8dac146b7813b10e7f4100, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 096614a97d1ab1749aba89d9f300b042, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: cfa68cb36669810418ee323632668647, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: libroArandino_BaseColor
+    second: {fileID: 2800000, guid: ab778501b676429468a3747f3eb1182f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
