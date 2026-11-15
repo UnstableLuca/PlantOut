@@ -6,7 +6,7 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Arms Mask
+  m_Name: Arm4 Mask
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000u
   m_Elements:
   - m_Path: 
@@ -32,17 +32,17 @@ AvatarMask:
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L/Extra1DownSpike.L_end
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L/Extra2DownSpike.L_end
@@ -80,9 +80,9 @@ AvatarMask:
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R/Extra1DownSpike.R_end
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     m_Weight: 0
   - m_Path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R/Extra2DownSpike.R_end
