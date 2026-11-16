@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &510140408701344703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.76108
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.05013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.87936
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      propertyPath: m_Name
+      value: Arandanos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7186736117994887266}
+  m_SourcePrefab: {fileID: 100100000, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+--- !u!1 &852596699497653998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bfd082156410d1e41aaa1cb369ad84ae, type: 3}
+  m_PrefabInstance: {fileID: 510140408701344703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7186736117994887266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852596699497653998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9401ef989b1734cbfc69ce92614321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BookItem3D
+  paginas:
+  - tituloCaraIzquierda: 
+    descripcionCaraIzquierda: 
+    estadisticasCaraIzquierda: 
+    combosCaraIzquierda: []
+    mostrarVideoIzquierda: 0
+    clipVideoIzquierda: {fileID: 0}
+    tituloCaraDerecha: 
+    descripcionCaraDerecha: 
+    estadisticasCaraDerecha: 
+    combosCaraDerecha: []
+    mostrarVideoDerecha: 0
+    clipVideoDerecha: {fileID: 0}
+  textoNombreIzquierda: {fileID: 0}
+  textoDescripcionIzquierda: {fileID: 0}
+  textoEstadisticasIzquierda: {fileID: 0}
+  contenedorCombosUIIzquierda: {fileID: 0}
+  videoPlayerIzquierda: {fileID: 0}
+  rawImageVideoIzquierda: {fileID: 0}
+  textoNombreDerecha: {fileID: 0}
+  textoDescripcionDerecha: {fileID: 0}
+  textoEstadisticasDerecha: {fileID: 0}
+  contenedorCombosUIDerecha: {fileID: 0}
+  videoPlayerDerecha: {fileID: 0}
+  rawImageVideoDerecha: {fileID: 0}
+  botonPasarPaginaDerecha: {fileID: 0}
+  panelInfoPaginas: {fileID: 0}
+  iconoBotonPrefab: {fileID: 0}
+  forzarModoMando: 0

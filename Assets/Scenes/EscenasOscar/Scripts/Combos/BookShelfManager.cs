@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 
 public class BookShelfManager : MonoBehaviour
 {
-    [Header("Libros")]
+    [Header("Libros (Soporta 6 en escena - Arrastra los Slots)")]
     public GameObject[] bookObjectsInScene;
 
-    [Header("Punto")]
+    [Header("Punto de Mesa")]
     public Transform spawnPointMesa;
 
     [Header("Escala")]
@@ -19,7 +19,7 @@ public class BookShelfManager : MonoBehaviour
     [Header("Hover")]
     public float shelfHoverHeight = 0.15f;
 
-    [Header("Controles abrir libro")]
+    [Header("Controles generales")]
     public Key teclaConfirmarYAbir = Key.Enter;
     public Key teclaVolverOCerrar = Key.Escape;
 
@@ -46,9 +46,7 @@ public class BookShelfManager : MonoBehaviour
 
     private bool estadoMandoAnterior;
 
-    public bool UsarMandoActual =>
-        forzarModoMando || Gamepad.current != null;
-
+    public bool UsarMandoActual => forzarModoMando || Gamepad.current != null;
 
     private void Start()
     {
@@ -61,12 +59,10 @@ public class BookShelfManager : MonoBehaviour
         ForcedInstantPosition();
 
         if (vcamLibros != null) vcamLibros.Priority = 0;
-
         if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(false);
 
         sistemaIniciado = false;
     }
-
 
     private void Update()
     {
@@ -80,9 +76,7 @@ public class BookShelfManager : MonoBehaviour
             ActualizarModoControl();
         }
 
-        if (enTransicion ||
-            bookObjectsInScene == null ||
-            bookObjectsInScene.Length == 0)
+        if (enTransicion || bookObjectsInScene == null || bookObjectsInScene.Length == 0)
         {
             return;
         }
@@ -98,22 +92,13 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
-
-
     public void IniciarSistemaLibros()
     {
         if (sistemaIniciado) return;
         sistemaIniciado = true;
 
-        if (vcamLibros != null)
-        {
-            vcamLibros.Priority = 20;
-        }
-
-        if (canvasSalirEstanteria != null)
-        {
-            canvasSalirEstanteria.SetActive(true);
-        }
+        if (vcamLibros != null) vcamLibros.Priority = 20;
+        if (canvasSalirEstanteria != null) canvasSalirEstanteria.SetActive(true);
 
         ForcedInstantPosition();
     }
@@ -128,17 +113,14 @@ public class BookShelfManager : MonoBehaviour
         enTransicion = true;
 
         if (canvasSalirEstanteria != null)
-        {
             canvasSalirEstanteria.SetActive(false);
-        }
 
         if (enMesa)
         {
             if (bookControllers[currentIndex] != null)
                 bookControllers[currentIndex].MostrarTextosPagina(false);
 
-            if (bookAnimators[currentIndex] != null)
-                bookAnimators[currentIndex].SetTrigger("Cerrar");
+            DispararAnimacion(currentIndex, "Cerrar");
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -152,7 +134,6 @@ public class BookShelfManager : MonoBehaviour
                 if (bookControllers[i] != null)
                 {
                     bookControllers[i].MostrarTextosPagina(false);
-                    bookControllers[i].SetTargetTransform(initialShelfPositions[i], transitionSpeed, shelfScale);
                 }
             }
         }
@@ -160,7 +141,6 @@ public class BookShelfManager : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
 
         if (vcamLibros != null) vcamLibros.Priority = 0;
-
         yield return new WaitForSeconds(tiempoBlendCamara);
 
         enMesa = false;
@@ -177,22 +157,16 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
-
-
     public void ToggleModoMando()
     {
         forzarModoMando = !forzarModoMando;
-
         estadoMandoAnterior = UsarMandoActual;
         ActualizarModoControl();
     }
 
-
-
     private void ActualizarModoControl()
     {
-        if (bookControllers == null)
-            return;
+        if (bookControllers == null) return;
 
         foreach (BookItem3D libro in bookControllers)
         {
@@ -202,7 +176,6 @@ public class BookShelfManager : MonoBehaviour
             }
         }
     }
-
 
     private void ProcesarControlesBalda()
     {
@@ -214,47 +187,19 @@ public class BookShelfManager : MonoBehaviour
         if (Keyboard.current != null)
         {
             Keyboard teclado = Keyboard.current;
-
-            siguiente =
-                teclado.rightArrowKey.wasPressedThisFrame ||
-                teclado.dKey.wasPressedThisFrame ||
-                siguiente;
-
-            anterior =
-                teclado.leftArrowKey.wasPressedThisFrame ||
-                teclado.aKey.wasPressedThisFrame ||
-                anterior;
-
-            confirmar =
-                teclado[teclaConfirmarYAbir].wasPressedThisFrame ||
-                confirmar;
-
-            volver =
-                teclado[teclaVolverOCerrar].wasPressedThisFrame ||
-                volver;
+            siguiente = teclado.rightArrowKey.wasPressedThisFrame || teclado.dKey.wasPressedThisFrame;
+            anterior = teclado.leftArrowKey.wasPressedThisFrame || teclado.aKey.wasPressedThisFrame;
+            confirmar = teclado[teclaConfirmarYAbir].wasPressedThisFrame;
+            volver = teclado[teclaVolverOCerrar].wasPressedThisFrame;
         }
 
         if (Gamepad.current != null)
         {
             Gamepad mando = Gamepad.current;
-
-            siguiente =
-                mando.dpad.right.wasPressedThisFrame ||
-                mando.dpad.down.wasPressedThisFrame ||
-                siguiente;
-
-            anterior =
-                mando.dpad.left.wasPressedThisFrame ||
-                mando.dpad.up.wasPressedThisFrame ||
-                anterior;
-
-            confirmar =
-                mando.buttonSouth.wasPressedThisFrame ||
-                confirmar;
-
-            volver =
-                mando.buttonEast.wasPressedThisFrame ||
-                volver;
+            siguiente = mando.dpad.right.wasPressedThisFrame || mando.dpad.down.wasPressedThisFrame || siguiente;
+            anterior = mando.dpad.left.wasPressedThisFrame || mando.dpad.up.wasPressedThisFrame || anterior;
+            confirmar = mando.buttonSouth.wasPressedThisFrame || confirmar;
+            volver = mando.buttonEast.wasPressedThisFrame || volver;
         }
 
         if (siguiente)
@@ -262,28 +207,43 @@ public class BookShelfManager : MonoBehaviour
         else if (anterior)
             PreviousBook();
         else if (confirmar)
-            StartCoroutine(SecuenciaMoverYAbrirEnMesa()); 
+            StartCoroutine(SecuenciaMoverYAbrirEnMesa());
         else if (volver)
             SalirDeLaEstanteriaLibros();
     }
 
     private void ProcesarControlesMesa()
     {
+        bool siguientePagina = false;
+        bool paginaAnterior = false;
         bool volver = false;
 
         if (Keyboard.current != null)
         {
             Keyboard teclado = Keyboard.current;
+            siguientePagina = teclado.rightArrowKey.wasPressedThisFrame || teclado.dKey.wasPressedThisFrame;
+            paginaAnterior = teclado.leftArrowKey.wasPressedThisFrame || teclado.aKey.wasPressedThisFrame;
             volver = teclado[teclaVolverOCerrar].wasPressedThisFrame;
         }
 
         if (Gamepad.current != null)
         {
             Gamepad mando = Gamepad.current;
+            siguientePagina = mando.dpad.right.wasPressedThisFrame || mando.rightShoulder.wasPressedThisFrame || siguientePagina;
+            paginaAnterior = mando.dpad.left.wasPressedThisFrame || mando.leftShoulder.wasPressedThisFrame || paginaAnterior;
             volver = mando.buttonEast.wasPressedThisFrame || volver;
         }
 
-        if (volver)
+        if (siguientePagina && libroAbierto)
+        {
+            IntentarAvanzarPaginaDesdeUI();
+        }
+        else if (paginaAnterior && libroAbierto)
+        {
+            bool cambioExitoso = bookControllers[currentIndex].CambiarPagina(-1);
+            if (cambioExitoso) DispararAnimacion(currentIndex, "PasarPaginaAtras");
+        }
+        else if (volver)
         {
             if (libroAbierto)
                 StartCoroutine(SecuenciaCerrarYRegresarABalda());
@@ -292,7 +252,26 @@ public class BookShelfManager : MonoBehaviour
         }
     }
 
+    public void IntentarAvanzarPaginaDesdeUI()
+    {
+        if (!enMesa || !libroAbierto) return;
 
+        bool cambioExitoso = bookControllers[currentIndex].CambiarPagina(1);
+        if (cambioExitoso) DispararAnimacion(currentIndex, "PasarPaginaAdelante");
+    }
+
+  
+    private static readonly string[] triggersLibro = { "Abrir", "Cerrar", "PasarPaginaAdelante", "PasarPaginaAtras" };
+
+    private void DispararAnimacion(int indice, string trigger)
+    {
+        if (bookAnimators == null || indice < 0 || indice >= bookAnimators.Length) return;
+        Animator anim = bookAnimators[indice];
+        if (anim == null) return;
+
+        foreach (string t in triggersLibro) anim.ResetTrigger(t);
+        anim.SetTrigger(trigger);
+    }
 
     private void CacheReferences()
     {
@@ -304,14 +283,18 @@ public class BookShelfManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            GameObject libro = bookObjectsInScene[i];
+            GameObject slotObj = bookObjectsInScene[i];
+            if (slotObj == null) continue;
 
-            if (libro == null)
-                continue;
+            initialShelfPositions[i] = slotObj.transform.position;
 
-            initialShelfPositions[i] = libro.transform.position;
-            bookControllers[i] = libro.GetComponent<BookItem3D>();
-            bookAnimators[i] = libro.GetComponentInChildren<Animator>();
+            bookControllers[i] = slotObj.GetComponentInChildren<BookItem3D>(true);
+            bookAnimators[i] = slotObj.GetComponentInChildren<Animator>(true);
+
+            if (bookAnimators[i] == null)
+                Debug.LogWarning($"[BookShelfManager] El slot '{slotObj.name}' no tiene Animator en sus hijos.", slotObj);
+            if (bookControllers[i] == null)
+                Debug.LogWarning($"[BookShelfManager] El slot '{slotObj.name}' no tiene BookItem3D en sus hijos.", slotObj);
 
             if (bookControllers[i] != null)
                 bookControllers[i].MostrarTextosPagina(false);
@@ -320,127 +303,84 @@ public class BookShelfManager : MonoBehaviour
 
     private void ForcedInstantPosition()
     {
-        if (bookObjectsInScene == null)
-            return;
+        if (bookObjectsInScene == null) return;
 
         for (int i = 0; i < bookObjectsInScene.Length; i++)
         {
-            GameObject libro = bookObjectsInScene[i];
-
-            if (libro == null)
-                continue;
+            GameObject slotObj = bookObjectsInScene[i];
+            if (slotObj == null) continue;
 
             bool esActual = i == currentIndex && !enMesa && sistemaIniciado;
 
-            Vector3 posicion = esActual
-                ? initialShelfPositions[i] +
-                  new Vector3(0f, shelfHoverHeight, 0f)
-                : initialShelfPositions[i];
+            Vector3 posicion = esActual ? initialShelfPositions[i] + new Vector3(0f, shelfHoverHeight, 0f) : initialShelfPositions[i];
 
-            Vector3 escala = esActual
-                ? activeCenterScale
-                : shelfScale;
-
-            if (bookControllers[i] != null)
-            {
-                bookControllers[i].SetIsActive(
-                    esActual, activeCenterScale, shelfHoverHeight);
-
-                bookControllers[i].SetTargetTransform(
-                    posicion, transitionSpeed, escala);
-            }
-
-            libro.transform.position = posicion;
-            libro.transform.localScale = escala;
+            slotObj.transform.position = posicion;
+            slotObj.transform.localScale = shelfScale;
         }
     }
 
     private void UpdateShelfPositions()
     {
-        if (enMesa || bookObjectsInScene == null)
-            return;
+        if (enMesa || bookObjectsInScene == null) return;
 
         for (int i = 0; i < bookObjectsInScene.Length; i++)
         {
-            if (bookObjectsInScene[i] == null)
-                continue;
+            GameObject slotObj = bookObjectsInScene[i];
+            if (slotObj == null) continue;
 
             bool esActual = i == currentIndex;
 
-            Vector3 posicion = esActual
-                ? initialShelfPositions[i] +
-                  new Vector3(0f, shelfHoverHeight, 0f)
-                : initialShelfPositions[i];
+            Vector3 posicion = esActual ? initialShelfPositions[i] + new Vector3(0f, shelfHoverHeight, 0f) : initialShelfPositions[i];
 
-            Vector3 escala = esActual
-                ? activeCenterScale
-                : shelfScale;
-
-            if (bookControllers[i] != null)
-            {
-                bookControllers[i].SetIsActive(
-                    esActual, activeCenterScale, shelfHoverHeight);
-
-                bookControllers[i].SetTargetTransform(
-                    posicion, transitionSpeed, escala);
-            }
+            slotObj.transform.position = Vector3.Lerp(slotObj.transform.position, posicion, Time.deltaTime * transitionSpeed);
+            slotObj.transform.localScale = Vector3.Lerp(slotObj.transform.localScale, shelfScale, Time.deltaTime * transitionSpeed);
         }
     }
 
-
-
     public void NextBook()
     {
-        if (bookObjectsInScene == null ||
-            bookObjectsInScene.Length == 0 ||
-            enMesa || enTransicion)
-            return;
+        if (bookObjectsInScene == null || bookObjectsInScene.Length == 0 || enMesa || enTransicion) return;
 
-        currentIndex =
-            (currentIndex + 1) % bookObjectsInScene.Length;
-
+        currentIndex = (currentIndex + 1) % bookObjectsInScene.Length;
         UpdateShelfPositions();
     }
 
     public void PreviousBook()
     {
-        if (bookObjectsInScene == null ||
-            bookObjectsInScene.Length == 0 ||
-            enMesa || enTransicion)
-            return;
+        if (bookObjectsInScene == null || bookObjectsInScene.Length == 0 || enMesa || enTransicion) return;
 
-        currentIndex =
-            (currentIndex - 1 + bookObjectsInScene.Length) %
-            bookObjectsInScene.Length;
-
+        currentIndex = (currentIndex - 1 + bookObjectsInScene.Length) % bookObjectsInScene.Length;
         UpdateShelfPositions();
     }
 
-
-
     private IEnumerator SecuenciaMoverYAbrirEnMesa()
     {
-        if (spawnPointMesa == null || !HayLibroActual())
-            yield break;
+        if (spawnPointMesa == null || !HayLibroActual()) yield break;
 
         enTransicion = true;
         enMesa = true;
         libroAbierto = false;
 
-        if (bookControllers[currentIndex] != null)
+        GameObject slotObj = bookObjectsInScene[currentIndex];
+
+        float tiempoTranscurrido = 0f;
+        Vector3 posInicial = slotObj.transform.position;
+        Vector3 escalaInicial = slotObj.transform.localScale;
+
+        while (tiempoTranscurrido < 0.4f)
         {
-            bookControllers[currentIndex].SetTargetTransform(
-                spawnPointMesa.position,
-                transitionSpeed,
-                activeCenterScale * 1.3f);
+            tiempoTranscurrido += Time.deltaTime;
+            float t = tiempoTranscurrido / 0.4f;
+
+            slotObj.transform.position = Vector3.Lerp(posInicial, spawnPointMesa.position, t);
+            slotObj.transform.localScale = Vector3.Lerp(escalaInicial, activeCenterScale, t);
+            yield return null;
         }
 
-        yield return new WaitForSeconds(0.4f);
+        slotObj.transform.position = spawnPointMesa.position;
+        slotObj.transform.localScale = activeCenterScale;
 
-        bookObjectsInScene[currentIndex].transform.position = spawnPointMesa.position;
-
-        if (bookAnimators[currentIndex] != null)
-            bookAnimators[currentIndex].SetTrigger("Abrir");
+        DispararAnimacion(currentIndex, "Abrir");
 
         yield return new WaitForSeconds(0.3f);
 
@@ -453,8 +393,7 @@ public class BookShelfManager : MonoBehaviour
 
     private IEnumerator SecuenciaCerrarYRegresarABalda()
     {
-        if (!HayLibroActual())
-            yield break;
+        if (!HayLibroActual()) yield break;
 
         enTransicion = true;
         libroAbierto = false;
@@ -462,20 +401,28 @@ public class BookShelfManager : MonoBehaviour
         if (bookControllers[currentIndex] != null)
             bookControllers[currentIndex].MostrarTextosPagina(false);
 
-        if (bookAnimators[currentIndex] != null)
-            bookAnimators[currentIndex].SetTrigger("Cerrar");
+        DispararAnimacion(currentIndex, "Cerrar");
 
         yield return new WaitForSeconds(0.5f);
 
-        if (bookControllers[currentIndex] != null)
+        GameObject slotObj = bookObjectsInScene[currentIndex];
+
+        float tiempoTranscurrido = 0f;
+        Vector3 posInicial = slotObj.transform.position;
+        Vector3 escalaInicial = slotObj.transform.localScale;
+
+        while (tiempoTranscurrido < 0.6f)
         {
-            bookControllers[currentIndex].SetTargetTransform(
-                initialShelfPositions[currentIndex],
-                transitionSpeed,
-                shelfScale);
+            tiempoTranscurrido += Time.deltaTime;
+            float t = tiempoTranscurrido / 0.6f;
+
+            slotObj.transform.position = Vector3.Lerp(posInicial, initialShelfPositions[currentIndex], t);
+            slotObj.transform.localScale = Vector3.Lerp(escalaInicial, shelfScale, t);
+            yield return null;
         }
 
-        yield return new WaitForSeconds(0.6f);
+        slotObj.transform.position = initialShelfPositions[currentIndex];
+        slotObj.transform.localScale = shelfScale;
 
         enMesa = false;
         enTransicion = false;
@@ -484,8 +431,7 @@ public class BookShelfManager : MonoBehaviour
 
     private IEnumerator SecuenciaRegresarABaldaDirecto()
     {
-        if (!HayLibroActual())
-            yield break;
+        if (!HayLibroActual()) yield break;
 
         enTransicion = true;
         libroAbierto = false;
@@ -493,12 +439,11 @@ public class BookShelfManager : MonoBehaviour
         if (bookControllers[currentIndex] != null)
         {
             bookControllers[currentIndex].MostrarTextosPagina(false);
-
-            bookControllers[currentIndex].SetTargetTransform(
-                initialShelfPositions[currentIndex],
-                transitionSpeed,
-                shelfScale);
         }
+
+        GameObject slotObj = bookObjectsInScene[currentIndex];
+        slotObj.transform.position = initialShelfPositions[currentIndex];
+        slotObj.transform.localScale = shelfScale;
 
         yield return new WaitForSeconds(0.6f);
 
