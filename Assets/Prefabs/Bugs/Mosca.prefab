@@ -136,7 +136,7 @@ Animator:
   m_GameObject: {fileID: 271411636471443513}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fb2adc547ba119348971e17054f5841f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 513dcca2632c4b44a8117395b946337f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -189,7 +189,7 @@ MonoBehaviour:
   onlyRangedKills: 1
   swoopSpeed: 14
   damage: 8
-  hitstun: 0.3
+  hitstun: 0
   parryStun: 1.2
   arriveSpeed: 4
   killPoints: 5

@@ -184,7 +184,6 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
             state = BugState.Stunned;
             stateTime = 0f;
             timer = parryStun;
-            if (animator != null) animator.SetTrigger("Hurt");
         }
         else
         {

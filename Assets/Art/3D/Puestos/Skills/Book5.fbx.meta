@@ -3,7 +3,32 @@ guid: 52918e8a34ed2c743b53b5046e9b78d5
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: 41852cf502ad46445aa5ec39ffaebbc4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 8a6b97815eab5854f83440e2d31635b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 8311d0246bd31074cbef1bd5ff923e4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: d529cbaab5b9af04ca8282217352e2c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: libroBelladona_BaseColor
+    second: {fileID: 2800000, guid: 3bf09d7c68068bd46a82faec48469a7a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

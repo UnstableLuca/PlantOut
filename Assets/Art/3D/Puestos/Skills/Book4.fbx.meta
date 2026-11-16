@@ -3,7 +3,32 @@ guid: db57c0e4a6b5b2649af5f1e789c2074e
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: cdf2a01e430c0b349a16efaec27eefb9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 69f668ad44d3d074fa6b7e5a7b51d671, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: d397341ec5de8ac449084c9037a9d228, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: db40b4217b2041f4ab11d1f2afef7b7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: libroRosaros_BaseColor
+    second: {fileID: 2800000, guid: 356e71b22695b4645b3cc61411512733, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

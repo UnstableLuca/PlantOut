@@ -3,7 +3,42 @@ guid: 575eccf2e7f55194fa593b24ea861f04
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: libro
+    second: {fileID: 2100000, guid: 78a0b9c725f311d4a96cf05257b20790, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: libroPeasum
+    second: {fileID: 2100000, guid: febc91da28320aa478e1f4a65fca706b, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: 4ccc5c106b1a79a4db8230ebce7631eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: b0768856db4b77c449dbd62b8a85e11c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: afe2186b42438e74abb6e72f5c41e306, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: f131c5d5fab151041a2c788632a8c2d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: libroPeasum_BaseColor
+    second: {fileID: 2800000, guid: f50d82e1cef222545b2980ac47cc7bb2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

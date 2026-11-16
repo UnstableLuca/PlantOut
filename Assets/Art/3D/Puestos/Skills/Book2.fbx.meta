@@ -3,7 +3,42 @@ guid: 8604338211073f449911a00236842da0
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: libro
+    second: {fileID: 2100000, guid: 46ce51fbf1f6f1845a78b6ccf284cbeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: libroMaxilon
+    second: {fileID: 2100000, guid: 228c7e5412296b546951d89fa3c736f4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: 168c4d419b81b0845a911ec67430bce2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 39e3b3239d41ffa448cda50e816df122, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 2f1dd4dbea04b8d478268add53b76f8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 35c2e3622da43d740ad57e3562195d80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: libroMaxilon_BaseColor
+    second: {fileID: 2800000, guid: ce3b667565c45714cbf50ed3a530a274, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
