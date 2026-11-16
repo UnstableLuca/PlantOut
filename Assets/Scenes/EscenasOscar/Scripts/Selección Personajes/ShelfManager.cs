@@ -8,23 +8,18 @@ using UnityEngine.UI;
 
 public class ShelfManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct ShelfSlotData
-    {
-        public Transform slotTransform;     // Posición de la balda en la estantería
-        public PlantData3D plantData;       // Datos y prefab de la planta/saco específico para esta balda
-    }
-
-    [Header("Estantería (Balda a Balda)")]
-    public ShelfSlotData[] shelfSlotsData;  // Array que vincula cada balda con su planta específica
+    [Header("Plantas")]
+    public PlantData3D[] plants;
     private int currentIndex = 0;
+
+    [Header("Baldas")]
+    public Transform[] shelfSlots;
 
     [Header("Punto de Inspección")]
     public Transform spawnPoint3D;
 
     private GameObject[] bagInstances;
     private SeedBag3D[] bagControllers;
-    private PlantData3D[] plants;           // Extraído automáticamente de los slots para mantener la compatibilidad
 
     [Header("Movimiento y Escala")]
     public float transitionSpeed = 8f;
@@ -32,7 +27,7 @@ public class ShelfManager : MonoBehaviour
     public Vector3 activeCenterScale = new Vector3(2.9887f, 2.9887f, 2.9887f);
 
     [Header("Rotación con Ratón")]
-    public float rotationSpeed = 0.4f;
+    public float rotationSpeed = 0.4f; 
 
     [Header("PAPEL Y UI JUGADOR 1")]
     public Button botonConfirmarJ1;
@@ -124,9 +119,8 @@ public class ShelfManager : MonoBehaviour
 
     void Start()
     {
-        if (shelfSlotsData != null && shelfSlotsData.Length > 0 && spawnPoint3D != null)
+        if (plants.Length > 0 && shelfSlots.Length >= plants.Length && spawnPoint3D != null)
         {
-            ExtraerDatosPlantas();
             InitializeBags();
             ForcedInstantPositionForStart();
             UpdateUIAndStates();
@@ -142,15 +136,6 @@ public class ShelfManager : MonoBehaviour
         sistemaIniciado = false;
     }
 
-    private void ExtraerDatosPlantas()
-    {
-        plants = new PlantData3D[shelfSlotsData.Length];
-        for (int i = 0; i < shelfSlotsData.Length; i++)
-        {
-            plants[i] = shelfSlotsData[i].plantData;
-        }
-    }
-
     private void ForcedInstantPositionForStart()
     {
         if (bagInstances == null) return;
@@ -159,7 +144,7 @@ public class ShelfManager : MonoBehaviour
         {
             if (bagInstances[i] == null) continue;
 
-            Vector3 targetPos = shelfSlotsData[i].slotTransform.position;
+            Vector3 targetPos = shelfSlots[i].position;
             Vector3 targetScale = shelfScale;
 
             if (bagControllers[i] != null)
@@ -210,19 +195,14 @@ public class ShelfManager : MonoBehaviour
 
     private void InitializeBags()
     {
-        bagInstances = new GameObject[shelfSlotsData.Length];
-        bagControllers = new SeedBag3D[shelfSlotsData.Length];
+        bagInstances = new GameObject[plants.Length];
+        bagControllers = new SeedBag3D[plants.Length];
 
-        for (int i = 0; i < shelfSlotsData.Length; i++)
+        for (int i = 0; i < plants.Length; i++)
         {
-            PlantData3D data = shelfSlotsData[i].plantData;
-            Transform slot = shelfSlotsData[i].slotTransform;
-
-            if (data != null && data.bagPrefab != null && slot != null)
+            if (plants[i].bagPrefab != null && shelfSlots[i] != null)
             {
-                Quaternion rotacionAjustada = slot.rotation * Quaternion.Euler(0f, 180f, 0f);
-
-                GameObject bag = Instantiate(data.bagPrefab, slot.position, rotacionAjustada);
+                GameObject bag = Instantiate(plants[i].bagPrefab, shelfSlots[i].position, shelfSlots[i].rotation);
                 bagInstances[i] = bag;
 
                 SeedBag3D controller = bag.GetComponent<SeedBag3D>();
@@ -230,7 +210,7 @@ public class ShelfManager : MonoBehaviour
 
                 if (controller != null)
                 {
-                    controller.SetupTextures(data.frontLabelTexture, data.backLabelTexture);
+                    controller.SetupTextures(plants[i].frontLabelTexture, plants[i].backLabelTexture);
                 }
             }
         }
@@ -245,7 +225,7 @@ public class ShelfManager : MonoBehaviour
             if (bagInstances[i] == null) continue;
 
             bool isCurrent = (i == currentIndex);
-            Vector3 targetPos = isCurrent ? spawnPoint3D.position : shelfSlotsData[i].slotTransform.position;
+            Vector3 targetPos = isCurrent ? spawnPoint3D.position : shelfSlots[i].position;
             Vector3 targetScale = isCurrent ? activeCenterScale : shelfScale;
 
             if (bagControllers[i] != null)
@@ -334,12 +314,6 @@ public class ShelfManager : MonoBehaviour
     {
         if (turnoJugador == 2 && estaDescartando) return;
         if (plants.Length == 0) return;
-
-        if (bagControllers[currentIndex] != null)
-        {
-            bagControllers[currentIndex].ForceDeselect();
-        }
-
         currentIndex = (currentIndex + 1) % plants.Length;
         UpdateUIAndStates();
     }
@@ -348,12 +322,6 @@ public class ShelfManager : MonoBehaviour
     {
         if (turnoJugador == 2 && estaDescartando) return;
         if (plants.Length == 0) return;
-
-        if (bagControllers[currentIndex] != null)
-        {
-            bagControllers[currentIndex].ForceDeselect();
-        }
-
         currentIndex = (currentIndex - 1 + plants.Length) % plants.Length;
         UpdateUIAndStates();
     }
@@ -388,7 +356,7 @@ public class ShelfManager : MonoBehaviour
 
             bool isCurrent = (i == currentIndex);
 
-            Vector3 targetPos = isCurrent ? spawnPoint3D.position : shelfSlotsData[i].slotTransform.position;
+            Vector3 targetPos = isCurrent ? spawnPoint3D.position : shelfSlots[i].position;
             Vector3 targetScale = isCurrent ? activeCenterScale : shelfScale;
 
             if (bagControllers[i] != null)
@@ -408,6 +376,7 @@ public class ShelfManager : MonoBehaviour
             if (plants[seleccionJugador1] != null)
             {
                 prefabSeleccionadoJ1 = plants[seleccionJugador1].plantPrefab;
+
                 GameSessionData.PlayerLeftPrefab = plants[seleccionJugador1].plantPrefab;
             }
 
@@ -482,6 +451,7 @@ public class ShelfManager : MonoBehaviour
             if (plants[seleccionJugador2] != null)
             {
                 prefabSeleccionadoJ2 = plants[seleccionJugador2].plantPrefab;
+
                 GameSessionData.PlayerRightPrefab = plants[seleccionJugador2].plantPrefab;
             }
 
@@ -496,9 +466,9 @@ public class ShelfManager : MonoBehaviour
 
         for (int i = 0; i < bagControllers.Length; i++)
         {
-            if (bagControllers[i] != null && shelfSlotsData[i].slotTransform != null)
+            if (bagControllers[i] != null && shelfSlots[i] != null)
             {
-                bagControllers[i].ReturnToShelf(shelfSlotsData[i].slotTransform.position, shelfScale);
+                bagControllers[i].ReturnToShelf(shelfSlots[i].position, shelfScale);
             }
         }
 
@@ -603,6 +573,7 @@ public class ShelfManager : MonoBehaviour
         enTransicion = false;
     }
 
+
     private void GenerarCombosVisuales(PlantData3D planta, Transform contenedor)
     {
         if (contenedor == null || prefabIconoBoton == null) return;
@@ -646,6 +617,7 @@ public class ShelfManager : MonoBehaviour
         StartCoroutine(SecuenciaSalirDeEstanteria());
     }
 
+
     private IEnumerator SecuenciaSalirDeEstanteria()
     {
         enTransicion = true;
@@ -660,9 +632,9 @@ public class ShelfManager : MonoBehaviour
         {
             for (int i = 0; i < bagControllers.Length; i++)
             {
-                if (bagControllers[i] != null && shelfSlotsData[i].slotTransform != null)
+                if (bagControllers[i] != null && shelfSlots[i] != null)
                 {
-                    bagControllers[i].ReturnToShelf(shelfSlotsData[i].slotTransform.position, shelfScale);
+                    bagControllers[i].ReturnToShelf(shelfSlots[i].position, shelfScale);
                 }
             }
         }
