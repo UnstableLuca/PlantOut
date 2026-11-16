@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d9040e0d037db046ae6dfe6527d03d7, type: 3}
-  m_Name: Test_01
+  m_Name: Campanilla
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Campanilla
   description: Planta campanilla
   estadisticas: 
-  bagPrefab: {fileID: 5540187161602159575, guid: 15fe3b1420c18c44090cd83586458962, type: 3}
+  bagPrefab: {fileID: 7791348099067685974, guid: b57529880e2a2244ea5c42f5888aef64, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: 2cd0bb11adbd2884b8d6ff5fa0badafb, type: 3}
   backLabelTexture: {fileID: 2800000, guid: 2cd0bb11adbd2884b8d6ff5fa0badafb, type: 3}
   bookPrefab: {fileID: 1539651414980989587, guid: f1fdbbbf9b0f3ea409dbfcf32e655880, type: 3}
