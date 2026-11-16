@@ -488,11 +488,7 @@ public class Fighter : MonoBehaviour, IFighter
     #region Altered States
     public void Stun(float duration)
     {
-        if (duration <= 0f)
-        {
-            CharacterAnimator.SetBool("Stunned", false);
-            return;
-        }
+        if (duration <= 0f) return;
 
         if (state == FighterState.Acting) InterruptCurrentAction();
         else if (state == FighterState.Blocking) EndBlock();

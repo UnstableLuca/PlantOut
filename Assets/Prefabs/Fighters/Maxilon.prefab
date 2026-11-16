@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 535716055232263302}
   - component: {fileID: 8279463419808788557}
   m_Layer: 0
-  m_Name: Stem
+  m_Name: Tallo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2358,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3608946341682412223}
-  - component: {fileID: 5358589679804792318}
   m_Layer: 0
   m_Name: Saliva.004
   m_TagString: Untagged
@@ -2382,44 +2381,6 @@ Transform:
   - {fileID: 369034588533860382}
   m_Father: {fileID: 8110422301271088778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5358589679804792318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473268633899366999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59aae6687156794d9cc65a1894169c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtivusStudio.SimplifiedDynamicBone.SimplifiedDynamicBone
-  tail1: {fileID: 3608946341682412223}
-  tail2: {fileID: 369034588533860382}
-  tail3: {fileID: 699092311756624304}
-  autoFindChildren: 1
-  preset: 0
-  inertia: 0
-  stiffness: 1
-  stretch: 0
-  velocity: 0
-  useConeLimit: 0
-  tail1ConeOffset: {x: 0, y: 0, z: 0}
-  tail2ConeOffset: {x: 0, y: 0, z: 0}
-  tail1ConeAngle: 70
-  tail2ConeAngle: 90
-  resetToInitialPose: 1
-  maxDeltaTime: 0.033
-  liveUpdateValues: 1
-  drawGizmos: 1
-  returnForce: 90
-  damping: 14
-  velocityPreservation: 0.1
-  inertiaForce: 0
-  maxVelocity: 5
-  p2Motion: 0.25
-  p3Motion: 0.45
-  maxStretch: 0
 --- !u!1 &2543761746574073960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3751,7 +3712,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201220418849279893}
-  - component: {fileID: 8405032917861415949}
   m_Layer: 0
   m_Name: Saliva
   m_TagString: Untagged
@@ -3775,44 +3735,6 @@ Transform:
   - {fileID: 156129772299161924}
   m_Father: {fileID: 3111751236805731989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8405032917861415949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815259646744906666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59aae6687156794d9cc65a1894169c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtivusStudio.SimplifiedDynamicBone.SimplifiedDynamicBone
-  tail1: {fileID: 1201220418849279893}
-  tail2: {fileID: 156129772299161924}
-  tail3: {fileID: 4400544929369202075}
-  autoFindChildren: 1
-  preset: 0
-  inertia: 0
-  stiffness: 1
-  stretch: 0
-  velocity: 0
-  useConeLimit: 0
-  tail1ConeOffset: {x: 0, y: 0, z: 0}
-  tail2ConeOffset: {x: 0, y: 0, z: 0}
-  tail1ConeAngle: 70
-  tail2ConeAngle: 90
-  resetToInitialPose: 1
-  maxDeltaTime: 0.033
-  liveUpdateValues: 1
-  drawGizmos: 1
-  returnForce: 90
-  damping: 14
-  velocityPreservation: 0.1
-  inertiaForce: 0
-  maxVelocity: 5
-  p2Motion: 0.25
-  p3Motion: 0.45
-  maxStretch: 0
 --- !u!1 &3821924708023066952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,7 +3967,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6255658842267372492}
-  - component: {fileID: 2172992556601685137}
   m_Layer: 0
   m_Name: Saliva.002
   m_TagString: Untagged
@@ -4069,44 +3990,6 @@ Transform:
   - {fileID: 5168785045145168652}
   m_Father: {fileID: 8110422301271088778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2172992556601685137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4028291382175000229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59aae6687156794d9cc65a1894169c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtivusStudio.SimplifiedDynamicBone.SimplifiedDynamicBone
-  tail1: {fileID: 6255658842267372492}
-  tail2: {fileID: 5168785045145168652}
-  tail3: {fileID: 1304562737020733281}
-  autoFindChildren: 1
-  preset: 0
-  inertia: 0
-  stiffness: 1
-  stretch: 0
-  velocity: 0
-  useConeLimit: 0
-  tail1ConeOffset: {x: 0, y: 0, z: 0}
-  tail2ConeOffset: {x: 0, y: 0, z: 0}
-  tail1ConeAngle: 70
-  tail2ConeAngle: 90
-  resetToInitialPose: 1
-  maxDeltaTime: 0.033
-  liveUpdateValues: 1
-  drawGizmos: 1
-  returnForce: 90
-  damping: 14
-  velocityPreservation: 0.1
-  inertiaForce: 0
-  maxVelocity: 5
-  p2Motion: 0.25
-  p3Motion: 0.45
-  maxStretch: 0
 --- !u!1 &4102869463785253021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,7 +4507,7 @@ MonoBehaviour:
   exitHuntHold: 0.5
   barPerBug: 1
   attractInterval: 0.5
-  spitPrefab: {fileID: 5626363036309696205, guid: acdbef568f6580140a18a828f566c23d, type: 3}
+  spitPrefab: {fileID: 0}
   mouthPoint: {fileID: 1527515700581362354}
   spitSpeed: 25
   maxLevels: 4
@@ -7851,7 +7734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7988342190727027920}
-  - component: {fileID: 7460501191957699858}
   m_Layer: 0
   m_Name: Saliva.006
   m_TagString: Untagged
@@ -7875,44 +7757,6 @@ Transform:
   - {fileID: 712401939296473722}
   m_Father: {fileID: 1937772252793266981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7460501191957699858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8198647078324072749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59aae6687156794d9cc65a1894169c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtivusStudio.SimplifiedDynamicBone.SimplifiedDynamicBone
-  tail1: {fileID: 7988342190727027920}
-  tail2: {fileID: 712401939296473722}
-  tail3: {fileID: 2086560664534413624}
-  autoFindChildren: 1
-  preset: 0
-  inertia: 0
-  stiffness: 1
-  stretch: 0
-  velocity: 0
-  useConeLimit: 0
-  tail1ConeOffset: {x: 0, y: 0, z: 0}
-  tail2ConeOffset: {x: 0, y: 0, z: 0}
-  tail1ConeAngle: 70
-  tail2ConeAngle: 90
-  resetToInitialPose: 1
-  maxDeltaTime: 0.033
-  liveUpdateValues: 1
-  drawGizmos: 1
-  returnForce: 90
-  damping: 14
-  velocityPreservation: 0.1
-  inertiaForce: 0
-  maxVelocity: 5
-  p2Motion: 0.25
-  p3Motion: 0.45
-  maxStretch: 0
 --- !u!1 &8214204459861991831
 GameObject:
   m_ObjectHideFlags: 0

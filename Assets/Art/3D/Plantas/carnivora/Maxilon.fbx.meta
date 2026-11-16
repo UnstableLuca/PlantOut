@@ -64,6 +64,226 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: tallobebe.001
     second: {fileID: 2100000, guid: 8cb6185aaa756b2449eecda7639f1c1a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_BaseColor
+    second: {fileID: 2800000, guid: fa1e8d725d539b74c97c972f87909a46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Metallic
+    second: {fileID: 2800000, guid: bfcc84d601571b24799767c5f56fe6b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Normal
+    second: {fileID: 2800000, guid: 221d5e1c1fd1d0e4a97760f67623feb8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BABAS_Roughness
+    second: {fileID: 2800000, guid: 6b728a57a3ac31547a952423966baa0e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_BaseColor
+    second: {fileID: 2800000, guid: ab26e1b750f2aab45a11776eafe9c619, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Metallic
+    second: {fileID: 2800000, guid: ad33f4fa3bdb2ab4aa0abb50ab393cf2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Normal
+    second: {fileID: 2800000, guid: 83cb65c32a1cb9a4a9649f3eddf64033, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAABAJO_Roughness
+    second: {fileID: 2800000, guid: 325283f570c3cb1458a65e7736466e18, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_BaseColor
+    second: {fileID: 2800000, guid: a90563dcdbc2c864789fb6163307a05e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Metallic
+    second: {fileID: 2800000, guid: 11aaf00971e86c446a2ab5d961232617, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Normal
+    second: {fileID: 2800000, guid: 646ff4915677fb94eb96f334a79ae7f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CABEZAARRIBA_Roughness
+    second: {fileID: 2800000, guid: ab9b7a8d74875fe48b5d52f1f80f34ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_BaseColor
+    second: {fileID: 2800000, guid: bec7de82451e835448c4afd75d31d6d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Metallic
+    second: {fileID: 2800000, guid: 38706638287ed2346b2bfa71c58dfffb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Normal
+    second: {fileID: 2800000, guid: c9e18b60f861b414f9b847762a2d1607, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CUERNOS_Roughness
+    second: {fileID: 2800000, guid: 72df67df8361d4546a8702e9089968d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_BaseColor
+    second: {fileID: 2800000, guid: 28d986f71d5cb2042aaa9984643fad2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Metallic
+    second: {fileID: 2800000, guid: 16bea8fb7b03d5044a28adaedda46501, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Normal
+    second: {fileID: 2800000, guid: 50bdd5a6aca22d841b658c944e6c6af3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESABAJO_Roughness
+    second: {fileID: 2800000, guid: 6bc7ffaa911434540a36ee8b20ed5587, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_BaseColor
+    second: {fileID: 2800000, guid: c05167c28c7495840a68f4ed287decb2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Metallic
+    second: {fileID: 2800000, guid: 544976acf1a8cfc4db995888b488f997, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Normal
+    second: {fileID: 2800000, guid: 1ff6dd7a6b654e04493fda1374c4fb0f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DIENTESARRIBA_Roughness
+    second: {fileID: 2800000, guid: 1a5dcd549fc9b2040b1215e157ba354c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOCARNI_BaseColor
+    second: {fileID: 2800000, guid: e76a194cb874a194994f36fa78c2b201, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOCARNI_Metallic
+    second: {fileID: 2800000, guid: 0216afc1257a05c46b355485fcf12fee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOCARNI_Normal
+    second: {fileID: 2800000, guid: 3667b4a99ade8f742bb0fbf04fe0349d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TALLOCARNI_Roughness
+    second: {fileID: 2800000, guid: 6388add4e4f6c9a4397aa9b30ac2a63f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaAbjoBbe_BaseColor
+    second: {fileID: 2800000, guid: 63f5d8bdab2de584a94fe39eb587095f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaAbjoBbe_Metallic
+    second: {fileID: 2800000, guid: c333d82b12e7df94b96c7cdc4ae0e93e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaAbjoBbe_Normal
+    second: {fileID: 2800000, guid: ee763d801be7cea4185019786257db65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaAbjoBbe_Roughness
+    second: {fileID: 2800000, guid: 69f0892f22359fe4f979501288ee22ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaArribabebe_BaseColor
+    second: {fileID: 2800000, guid: 784d6e310e5e60c4e9985b3577eb342c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaArribabebe_Metallic
+    second: {fileID: 2800000, guid: d7327bcde2d8f274aa59c0f23e63be04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaArribabebe_Normal
+    second: {fileID: 2800000, guid: 704d2665f03e95d49a118ba6db0ab877, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cabezaArribabebe_Roughness
+    second: {fileID: 2800000, guid: 501ba4c450f5a964f884d75754fde286, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hojaCarni_BaseColor
+    second: {fileID: 2800000, guid: 29b3defa69d536c40a7cfa0400d23ca2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hojaCarni_Metallic
+    second: {fileID: 2800000, guid: fbaf05212361cac4ba0f9a1d4681a4cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hojaCarni_Normal
+    second: {fileID: 2800000, guid: 724bceefb791cdc4797adbd299e5a2fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hojaCarni_Roughness
+    second: {fileID: 2800000, guid: 13607308d050b6f40ba8fa8018ef434c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: talloBebe_BaseColor
+    second: {fileID: 2800000, guid: a1357022a09bfe44284ae88065aaafbe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: talloBebe_Metallic
+    second: {fileID: 2800000, guid: 2505ba3812cd763499af43ee4c4a25f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: talloBebe_Normal
+    second: {fileID: 2800000, guid: 578e77b420af6604580ca654de9a5df7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: talloBebe_Roughness
+    second: {fileID: 2800000, guid: ebff6fa1ea5f5ff448e67a0dfb14266e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -81,8 +301,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importAnimatedCustomProperties: 1
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -481,35 +701,6 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000u
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: block1
-      takeName: block1
-      internalID: 3524355542498964751
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

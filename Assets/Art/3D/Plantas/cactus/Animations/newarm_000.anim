@@ -17,7 +17,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.29662806, y: -0.47384703, z: 0.44138825, w: 0.7018954}
+        value: {x: -0.00026831025, y: 0.010047827, z: -0.02665482, w: 0.9995941}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -27,13 +27,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.28108758, y: 0.4679207, z: -0.42740062, w: 0.72067237}
+        value: {x: 0.0002972373, y: 0.010023771, z: 0.028431978, w: 0.9995454}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -43,13 +43,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.2899078, y: -0.46631494, z: -0.48053068, w: 0.6838085}
+        value: {x: 0.0059867166, y: 0.0000003774252, z: 0.000000005588036, w: 0.99998206}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -59,13 +59,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.2919885, y: 0.47187322, z: 0.45621517, w: 0.6956624}
+        value: {x: -0.00015716266, y: 0.010823463, z: -0.007803567, w: 0.99991095}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -75,13 +75,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.546497, y: -0.050472576, z: -0.024663966, w: 0.8355748}
+        value: {x: -0.029210545, y: 0.009660159, z: 0.00029255988, w: 0.99952656}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -91,13 +91,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.5597454, y: 0.037521325, z: 0.024296664, w: 0.8274581}
+        value: {x: -0.0007761034, y: -0.010020552, z: 0.07710884, w: 0.9969721}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -107,13 +107,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.55029017, y: -0.008738365, z: -0.039724972, w: 0.8339822}
+        value: {x: 0.006396059, y: -0.010206323, z: -0.09135506, w: 0.99574554}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -123,13 +123,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.51963574, y: 0.00191167, z: 0.044409677, w: 0.85323083}
+        value: {x: 0.020378014, y: 0.0013810359, z: 0.014635093, w: 0.9996842}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -139,13 +139,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.30901724, y: 0.45963132, z: -0.39662582, w: 0.732076}
+        value: {x: -0.07646996, y: -0.009636641, z: -0.00074922445, w: 0.9970251}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -155,13 +155,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.2799314, y: -0.46543247, z: 0.3522361, w: 0.76219475}
+        value: {x: 0.056739528, y: -0.009580605, z: 0.007270223, w: 0.9983166}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
@@ -171,103 +171,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.30598947, y: 0.4517562, z: 0.4373732, w: 0.71483666}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.26445335, y: -0.4729528, z: -0.3595894, w: 0.75965494}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.54123735, y: 0.03048136, z: 0.027754236, w: 0.8398587}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.45808634, y: -0.014489473, z: -0.01829622, w: 0.8886013}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.5016347, y: 0.005558489, z: -0.02030424, w: 0.86482334}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.4604389, y: -0.0015794858, z: 0.031569514, w: 0.8871284}
-        inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -276,7 +180,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.013299301, y: 0.22404222, z: -0.2587818}
+        value: {x: -0.0063994527, y: 0.43008584, z: -0.0048951507}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -286,13 +190,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.000002861023, y: 0.37316608, z: 0.0000023841858}
+        value: {x: 0.001144886, y: 0.20239282, z: -0.005305052}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -302,13 +206,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.035319358, y: 0.2354544, z: 0.17930982}
+        value: {x: -0.012907028, y: 0.20027566, z: 0.02004826}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -318,13 +222,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.00000166893, y: 0.38876295, z: -0.0000076293945}
+        value: {x: 0.008965969, y: 0.18688035, z: 0.0019145012}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -334,13 +238,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.2455015, y: 0.2189015, z: -0.048662715}
+        value: {x: 0.017637253, y: 0.2141496, z: 0.0077733994}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -350,13 +254,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0, y: 0.37881088, z: 0.0000023841858}
+        value: {x: 0.010864317, y: 0.43670544, z: -0.03756238}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -366,13 +270,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.1921801, y: 0.24047998, z: -0.026108295}
+        value: {x: -0.0031428337, y: 0.19714594, z: -0.032064676}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -382,13 +286,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0000019073486, y: 0.39532566, z: 0.00000062584877}
+        value: {x: 0.0064692497, y: 0.23499727, z: 0.026504993}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -398,13 +302,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.018699571, y: 0.39001763, z: -0.23932254}
+        value: {x: 0.044598937, y: 0.1957593, z: -0.008797169}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -414,13 +318,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.00000047683716, y: 0.34239268, z: -0.00000071525574}
+        value: {x: -0.03481865, y: 0.20753908, z: -0.009439945}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -430,110 +334,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.012913406, y: 0.3068803, z: 0.19726233}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.0000014305115, y: 0.31419516, z: -0.0000029206276}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.23204914, y: 0.31688803, z: -0.0009555612}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.00000047683716, y: 0.33365393, z: 0.00000017881393}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -0.18148538, y: 0.22293034, z: -0.016416738}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.0000014305115, y: 0.35440826, z: -0.00000047683716}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.027877746, y: 0.027877748, z: 0.02787775}
+        value: {x: 1.0000001, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -543,13 +351,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 1, y: 1.0000001, z: 0.99999994}
+        value: {x: 0.99999976, y: 0.9999999, z: 0.9999999}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -559,13 +367,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.027877746, y: 0.027877746, z: 0.027877746}
+        value: {x: 1.0000001, y: 1, z: 1.0000001}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -575,13 +383,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.9999999, y: 1, z: 1}
+        value: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -591,87 +399,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.027877748, y: 0.027877744, z: 0.027877748}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.027877744, y: 0.02787775, z: 0.027877746}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.027877748, y: 0.027877746, z: 0.027877746}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -687,13 +415,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.027877748, y: 0.027877746, z: 0.027877746}
+        value: {x: 1, y: 1, z: 0.99999976}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -703,13 +431,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 1, y: 1.0000001, z: 1}
+        value: {x: 0.99999976, y: 0.9999998, z: 0.9999999}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -719,13 +447,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.027877746, y: 0.027877742, z: 0.027877744}
+        value: {x: 1, y: 0.9999999, z: 0.99999994}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -735,39 +463,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.027877744, y: 0.027877746, z: 0.02787775}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -783,7 +479,23 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.0000001, y: 1, z: 0.99999994}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
   m_FloatCurves:
   - serializedVersion: 2
     curve:
@@ -939,557 +651,7 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 1027372312
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2838966526
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 730135394
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 665100504
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2552904041
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2820500664
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1931313770
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2430430331
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2073796986
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2050421225
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1831022336
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 4104479183
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2100886236
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2326581222
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2517582303
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2993475365
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2552904041
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2820500664
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1931313770
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2430430331
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1027372312
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2838966526
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 730135394
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 665100504
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2100886236
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2326581222
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2517582303
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2993475365
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1831022336
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 4104479183
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2073796986
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2050421225
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1027372312
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2838966526
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 730135394
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 665100504
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2552904041
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2820500664
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1931313770
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2430430331
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2073796986
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2050421225
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 1831022336
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 4104479183
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2100886236
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2326581222
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2517582303
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 2993475365
-      attribute: 3
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 7
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 8
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 9
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 10
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 11
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 12
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 13
-      script: {fileID: 0}
-      typeID: 95
-      customType: 8
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-      metaData: 0
+    genericBindings: []
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -1665,7 +827,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.013299301
+        value: -0.0063994527
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1676,7 +838,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1686,7 +848,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.22404222
+        value: 0.43008584
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1697,7 +859,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1707,7 +869,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2587818
+        value: -0.0048951507
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1718,7 +880,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1728,7 +890,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.000002861023
+        value: 0.001144886
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1739,7 +901,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1749,7 +911,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.37316608
+        value: 0.20239282
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1760,7 +922,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1770,7 +932,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000023841858
+        value: -0.005305052
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1781,7 +943,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1791,7 +953,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.035319358
+        value: -0.012907028
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1802,7 +964,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1812,7 +974,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2354544
+        value: 0.20027566
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1823,7 +985,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1833,7 +995,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.17930982
+        value: 0.02004826
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1844,7 +1006,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1854,7 +1016,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000166893
+        value: 0.008965969
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1865,7 +1027,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1875,7 +1037,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.38876295
+        value: 0.18688035
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1886,7 +1048,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1896,7 +1058,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0000076293945
+        value: 0.0019145012
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1907,7 +1069,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1917,7 +1079,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2455015
+        value: 0.017637253
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1928,7 +1090,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1938,7 +1100,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2189015
+        value: 0.2141496
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1949,7 +1111,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1959,7 +1121,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.048662715
+        value: 0.0077733994
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1970,7 +1132,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1980,7 +1142,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0
+        value: 0.010864317
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1991,7 +1153,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2001,7 +1163,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.37881088
+        value: 0.43670544
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2012,7 +1174,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2022,7 +1184,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000023841858
+        value: -0.03756238
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2033,7 +1195,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2043,7 +1205,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1921801
+        value: -0.0031428337
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2054,7 +1216,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2064,7 +1226,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.24047998
+        value: 0.19714594
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2075,7 +1237,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2085,7 +1247,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.026108295
+        value: -0.032064676
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2096,7 +1258,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2106,7 +1268,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0000019073486
+        value: 0.0064692497
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2117,7 +1279,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2127,7 +1289,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.39532566
+        value: 0.23499727
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2138,7 +1300,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2148,7 +1310,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000062584877
+        value: 0.026504993
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2159,7 +1321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2169,7 +1331,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.018699571
+        value: 0.044598937
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2180,7 +1342,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2190,7 +1352,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.39001763
+        value: 0.1957593
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2201,7 +1363,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2211,7 +1373,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.23932254
+        value: -0.008797169
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2222,7 +1384,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2232,7 +1394,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.00000047683716
+        value: -0.03481865
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2243,7 +1405,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2253,7 +1415,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.34239268
+        value: 0.20753908
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2264,7 +1426,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2274,7 +1436,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.00000071525574
+        value: -0.009439945
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2285,469 +1447,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.012913406
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.3068803
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.19726233
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0000014305115
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.31419516
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0000029206276
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.23204914
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.31688803
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0009555612
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.00000047683716
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.33365393
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.00000017881393
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.18148538
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.22293034
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.016416738
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.0000014305115
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.35440826
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.00000047683716
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877748
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.02787775
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2767,8 +1467,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2778,7 +1478,28 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.99999994
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2789,7 +1510,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2799,7 +1520,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.027877746
+        value: 0.99999976
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2810,49 +1531,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2872,29 +1551,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2904,7 +1562,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9999999
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2915,469 +1573,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877748
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877744
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877748
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877744
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.02787775
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877748
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.99999994
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877748
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3397,8 +1593,155 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0000001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9999998
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3419,7 +1762,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3429,7 +1772,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.027877746
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3440,7 +1783,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3450,7 +1793,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.027877742
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3461,7 +1804,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3471,7 +1814,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.027877744
+        value: 0.99999976
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3482,7 +1825,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3492,7 +1835,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.99999976
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3503,7 +1846,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3513,7 +1856,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9999998
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3524,7 +1867,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3534,7 +1877,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9999999
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3545,70 +1888,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877744
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027877746
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.02787775
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3629,7 +1909,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3639,7 +1919,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9999999
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3650,7 +1930,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3671,7 +1951,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3681,7 +1961,133 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.29662806
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0000001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.99999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00026831025
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3692,7 +2098,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3702,7 +2108,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.47384703
+        value: 0.010047827
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3713,7 +2119,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3723,7 +2129,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.44138825
+        value: -0.02665482
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3734,7 +2140,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3744,7 +2150,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.7018954
+        value: 0.9995941
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3755,7 +2161,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3765,7 +2171,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.28108758
+        value: 0.0002972373
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3776,7 +2182,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3786,7 +2192,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4679207
+        value: 0.010023771
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3797,7 +2203,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3807,7 +2213,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.42740062
+        value: 0.028431978
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3818,7 +2224,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3828,7 +2234,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.72067237
+        value: 0.9995454
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3839,7 +2245,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3849,7 +2255,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2899078
+        value: 0.0059867166
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3860,7 +2266,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3870,7 +2276,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.46631494
+        value: 0.0000003774252
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3881,7 +2287,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3891,7 +2297,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.48053068
+        value: 0.000000005588036
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3902,7 +2308,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3912,7 +2318,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.6838085
+        value: 0.99998206
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3923,7 +2329,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3933,7 +2339,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2919885
+        value: -0.00015716266
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3944,7 +2350,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3954,7 +2360,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.47187322
+        value: 0.010823463
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3965,7 +2371,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3975,7 +2381,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.45621517
+        value: -0.007803567
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3986,7 +2392,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -3996,7 +2402,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.6956624
+        value: 0.99991095
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4007,7 +2413,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4017,7 +2423,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.546497
+        value: -0.029210545
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4028,7 +2434,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4038,7 +2444,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.050472576
+        value: 0.009660159
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4049,7 +2455,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4059,7 +2465,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.024663966
+        value: 0.00029255988
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4070,7 +2476,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4080,7 +2486,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.8355748
+        value: 0.99952656
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4091,7 +2497,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4101,7 +2507,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5597454
+        value: -0.0007761034
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4112,7 +2518,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4122,7 +2528,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.037521325
+        value: -0.010020552
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4133,7 +2539,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4143,7 +2549,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.024296664
+        value: 0.07710884
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4154,7 +2560,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4164,7 +2570,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.8274581
+        value: 0.9969721
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4175,7 +2581,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4185,7 +2591,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.55029017
+        value: 0.006396059
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4196,7 +2602,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4206,7 +2612,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.008738365
+        value: -0.010206323
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4217,7 +2623,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4227,7 +2633,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.039724972
+        value: -0.09135506
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4238,7 +2644,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4248,7 +2654,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.8339822
+        value: 0.99574554
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4259,7 +2665,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4269,7 +2675,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.51963574
+        value: 0.020378014
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4280,7 +2686,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4290,7 +2696,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00191167
+        value: 0.0013810359
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4301,7 +2707,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4311,7 +2717,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.044409677
+        value: 0.014635093
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4322,7 +2728,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4332,7 +2738,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.85323083
+        value: 0.9996842
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4343,7 +2749,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4353,7 +2759,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.30901724
+        value: -0.07646996
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4364,7 +2770,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4374,7 +2780,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.45963132
+        value: -0.009636641
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4385,7 +2791,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4395,7 +2801,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.39662582
+        value: -0.00074922445
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4406,7 +2812,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4416,7 +2822,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.732076
+        value: 0.9970251
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4427,7 +2833,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4437,7 +2843,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2799314
+        value: 0.056739528
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4448,7 +2854,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4458,7 +2864,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.46543247
+        value: -0.009580605
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4469,7 +2875,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4479,7 +2885,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.3522361
+        value: 0.007270223
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4490,7 +2896,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -4500,7 +2906,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.76219475
+        value: 0.9983166
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4511,511 +2917,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.30598947
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.4517562
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.4373732
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.71483666
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.26445335
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.4729528
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.3595894
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.75965494
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.54123735
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.03048136
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.027754236
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.8398587
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.45808634
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.014489473
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.01829622
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.8886013
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.5016347
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.005558489
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.02030424
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.86482334
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.4604389
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0015794858
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.031569514
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.8871284
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5026,9 +2928,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -66.31501
-        inSlope: 0
-        outSlope: 0
+        value: 0.6860312
+        inSlope: 0.00000885129
+        outSlope: 0.00000885129
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5037,7 +2939,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5047,9 +2949,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8.213619
-        inSlope: -0.000008583069
-        outSlope: -0.000008583069
+        value: 0.0000432559
+        inSlope: 0.0000056710533
+        outSlope: 0.0000056710533
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5058,7 +2960,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5068,9 +2970,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.9899586
-        inSlope: 0.000002413988
-        outSlope: 0.000002413988
+        value: 0.00000089931865
+        inSlope: -0.000002023467
+        outSlope: -0.000002023467
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5079,7 +2981,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/MainDownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5089,9 +2991,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 67.59434
-        inSlope: -0.000017166138
-        outSlope: -0.000017166138
+        value: -0.008329321
+        inSlope: -0.0000044507906
+        outSlope: -0.0000044507906
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5100,7 +3002,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5110,9 +3012,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 13.548568
-        inSlope: 0.0000021457672
-        outSlope: 0.0000021457672
+        value: 1.2404044
+        inSlope: -0.000004827976
+        outSlope: -0.000004827976
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5121,7 +3023,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5131,9 +3033,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 12.4561615
-        inSlope: 0
-        outSlope: 0
+        value: -0.8943745
+        inSlope: -0.000009387732
+        outSlope: -0.000009387732
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5142,7 +3044,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownL.L/UltForearmDownL.L/UltDownRSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5152,9 +3054,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 66.51581
-        inSlope: 0
-        outSlope: 0
+        value: -3.3479254
+        inSlope: -0.0000123381615
+        outSlope: -0.0000123381615
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5163,7 +3065,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5173,9 +3075,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -8.411963
-        inSlope: 0.0000150203705
-        outSlope: 0.0000150203705
+        value: 1.1074281
+        inSlope: -0.000013947487
+        outSlope: -0.000013947487
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5184,7 +3086,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5194,9 +3096,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -10.976639
-        inSlope: 0
-        outSlope: 0
+        value: 0.0011757519
+        inSlope: -0.0000018565916
+        outSlope: -0.0000018565916
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5205,7 +3107,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L/UltDownLSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5215,9 +3117,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -62.487267
-        inSlope: 0
-        outSlope: 0
+        value: -0.000043352356
+        inSlope: -0.000005454024
+        outSlope: -0.000005454024
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5226,7 +3128,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5236,532 +3138,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -5.3275704
-        inSlope: -0.00001180172
-        outSlope: -0.00001180172
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 9.1924925
-        inSlope: -0.0000064373016
-        outSlope: -0.0000064373016
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/UltArmDownR.L/UltForearmDownR.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 56.58511
-        inSlope: 0.000008583069
-        outSlope: 0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -47.087185
-        inSlope: -0.000008583069
-        outSlope: -0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 37.92884
-        inSlope: -0.000017166138
-        outSlope: -0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.29592776
-        inSlope: -0.000002682209
-        outSlope: -0.000002682209
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 66.166176
-        inSlope: -0.000017166138
-        outSlope: -0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -61.5336
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -57.6334
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -42.131527
-        inSlope: -0.000008583069
-        outSlope: -0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -46.265312
-        inSlope: -0.000017166138
-        outSlope: -0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -1.3924625
-        inSlope: 0.000014483929
-        outSlope: 0.000014483929
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 67.40154
-        inSlope: 0.000017166138
-        outSlope: 0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 65.584984
-        inSlope: 0.000017166138
-        outSlope: 0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -60.16078
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 3.4549
-        inSlope: -0.000011265278
-        outSlope: -0.000011265278
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -4.691435
-        inSlope: -0.0000042915344
-        outSlope: -0.0000042915344
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 54.789238
-        inSlope: 0.000017166138
-        outSlope: 0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 2.6113005
-        inSlope: -0.0000064373016
-        outSlope: -0.0000064373016
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 5.4295864
-        inSlope: -0.000012874603
-        outSlope: -0.000012874603
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 65.1531
-        inSlope: 0.000017166138
-        outSlope: 0.000017166138
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 11.148165
-        inSlope: -0.0000042915344
-        outSlope: -0.0000042915344
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 10.92189
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -54.552013
-        inSlope: -0.000008583069
-        outSlope: -0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.88800114
-        inSlope: 0.000001475215
-        outSlope: 0.000001475215
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -1.9012289
+        value: 1.1518259
         inSlope: -0.0000021457672
         outSlope: -0.0000021457672
         tangentMode: 0
@@ -5771,8 +3148,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R
+    attribute: localEulerAngles.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5782,9 +3159,30 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 54.79072
-        inSlope: 0.000008583069
-        outSlope: 0.000008583069
+        value: -3.0549338
+        inSlope: 0.000004827976
+        outSlope: 0.000004827976
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra1ArmDown.L/Extra1ForearmDown.L/Extra1DownSpike.L
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0013873087
+        inSlope: 0.0000027924834
+        outSlope: 0.0000027924834
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5793,7 +3191,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5803,9 +3201,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 47.90663
-        inSlope: 0
-        outSlope: 0
+        value: 1.1491627
+        inSlope: 0.000016361475
+        outSlope: 0.000016361475
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5814,7 +3212,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5824,9 +3222,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -30.965197
-        inSlope: 0.0000042915344
-        outSlope: 0.0000042915344
+        value: 3.2586815
+        inSlope: 0.0000016093254
+        outSlope: 0.0000016093254
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5835,7 +3233,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.L/MainForearmDown.L/Extra2ArmDown.L/Extra2ForearmDown.L/Extra2DownSpike.L
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5845,7 +3243,238 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -5.67239
+        value: 2.3327394
+        inSlope: -0.000013947487
+        outSlope: -0.000013947487
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1925401
+        inSlope: -0.000010561198
+        outSlope: -0.000010561198
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.6813878
+        inSlope: -0.00001475215
+        outSlope: -0.00001475215
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/MainDownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 6.5129232
+        inSlope: 0.0000021457672
+        outSlope: 0.0000021457672
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.0556101
+        inSlope: 0.000015825033
+        outSlope: 0.000015825033
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.7744332
+        inSlope: -0.000008717179
+        outSlope: -0.000008717179
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownR.R/UltForearmDownR.R/UltDownRSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -8.771795
+        inSlope: 0.000012874603
+        outSlope: 0.000012874603
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.1074483
+        inSlope: -0.000009119511
+        outSlope: -0.000009119511
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0011689954
+        inSlope: -0.0000133455615
+        outSlope: -0.0000133455615
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.z
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/UltArmDownL.R/UltForearmDownL.R/UltDownLSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.00012379717
+        inSlope: 0.0000038854378
+        outSlope: 0.0000038854378
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.x
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.1517287
+        inSlope: -0.000010460615
+        outSlope: -0.000010460615
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAngles.y
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 8.845249
         inSlope: -0.000008583069
         outSlope: -0.000008583069
         tangentMode: 0
@@ -5855,50 +3484,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -65.66696
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 53.268566
-        inSlope: 0.000008583069
-        outSlope: 0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra1ArmDown.R/Extra1ForearmDown.R/Extra1DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5908,9 +3495,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -56.370586
-        inSlope: -0.000008583069
-        outSlope: -0.000008583069
+        value: 0.6229833
+        inSlope: 0.0000057667494
+        outSlope: 0.0000057667494
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5919,7 +3506,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5929,9 +3516,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 43.07034
-        inSlope: 0.000008583069
-        outSlope: 0.000008583069
+        value: -1.2317076
+        inSlope: 0.0000064373016
+        outSlope: 0.0000064373016
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5940,7 +3527,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -5950,9 +3537,9 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 39.040733
-        inSlope: 0.000017166138
-        outSlope: 0.000017166138
+        value: -10.490593
+        inSlope: -0.000017166138
+        outSlope: -0.000017166138
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -5961,70 +3548,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 3.5344665
-        inSlope: 0.0000069737434
-        outSlope: 0.0000069737434
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.x
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -65.57216
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.y
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -52.938908
-        inSlope: 0.000008583069
-        outSlope: 0.000008583069
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAngles.z
-    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R
+    path: Armature/Hips/Hips.001/Spine.001/MainArmDown.R/MainForearmDown.R/Extra2ArmDown.R/Extra2ForearmDown.R/Extra2DownSpike.R
     classID: 4
     script: {fileID: 0}
     flags: 0
