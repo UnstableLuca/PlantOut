@@ -40,10 +40,9 @@ public class SpykeSkills : SkillController
     [Header("Animaciones (triggers del Animator; vacio = no se lanza)")]
     [Tooltip("Opcional. Con el Blend Tree de brazos no hace falta: dejalo vacio para no duplicar la animacion")]
     [SerializeField] string armGrowTrigger = "";
-    [SerializeField] string spikesTrigger = "Spike";
+    [SerializeField] string spikesTrigger = "Spikes";
     [SerializeField] string ultimateTrigger = "Ultimate";
     [SerializeField] string ultimateEndTrigger = "UltimateEnd";
-    [SerializeField] string spikesActiveParameter = "SpikesActive";
 
     [Header("Animator: brazos y carga")]
     [Tooltip("Si se deja vacio busca el Animator en los hijos")]
@@ -378,12 +377,9 @@ public class SpykeSkills : SkillController
 
     void SetSpikesVisible(bool visible)
     {
-        if (spikeVisuals != null)
-            foreach (var go in spikeVisuals)
-                if (go != null) go.SetActive(visible);
-
-        if (animator != null && !string.IsNullOrEmpty(spikesActiveParameter))
-            animator.SetBool(spikesActiveParameter, visible);
+        if (spikeVisuals == null) return;
+        foreach (var go in spikeVisuals)
+            if (go != null) go.SetActive(visible);
     }
     #endregion
 }
