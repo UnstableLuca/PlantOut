@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d9040e0d037db046ae6dfe6527d03d7, type: 3}
-  m_Name: Test_03
+  m_Name: SpykeTyson
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
-  plantName: Guisantes
-  description: Planta de guisantes
+  plantName: Spyke Tyson
+  description: Pues no se me ocurre nada
   estadisticas: 
-  bagPrefab: {fileID: 5540187161602159575, guid: 15fe3b1420c18c44090cd83586458962, type: 3}
-  frontLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
-  backLabelTexture: {fileID: 2800000, guid: 9145611ad300bad4fb2380263c3a6905, type: 3}
+  bagPrefab: {fileID: 7134466717081774863, guid: 1c81668baacd51540a89e24f460ecb62, type: 3}
+  frontLabelTexture: {fileID: 2800000, guid: 43fff48a0bd82bc4f82713fa6f52bc34, type: 3}
+  backLabelTexture: {fileID: 2800000, guid: 43fff48a0bd82bc4f82713fa6f52bc34, type: 3}
   bookPrefab: {fileID: 0}
   combosVisuales:
   - botonesTeclado:
@@ -28,4 +28,4 @@ MonoBehaviour:
     - {fileID: -725581648, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: -666183619, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
-  plantPrefab: {fileID: 919132149155446097, guid: 357a6a365055f2e40a362124d7f67f1f, type: 3}
+  plantPrefab: {fileID: 5844649462466783695, guid: 990bc29cde81e0f468f38c486a9957ee, type: 3}
