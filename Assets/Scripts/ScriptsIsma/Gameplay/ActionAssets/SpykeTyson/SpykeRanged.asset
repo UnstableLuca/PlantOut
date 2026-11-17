@@ -15,12 +15,12 @@ MonoBehaviour:
   startup: 0.08
   active: 0.1
   recovery: 0.2
-  animationTrigger: 
+  animationTrigger: Ranged
   kind: 1
   damage: 10
   hitstun: 0
   canTargetBugs: 1
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 4849704266873732753, guid: c2217ca769cb4934886d06233a2a2f5f, type: 3}
   projectileSpeed: 25
   barGainOnRivalHit: 0.15
   barGainOnBugHit: 0.05
