@@ -974,7 +974,7 @@ Transform:
   m_GameObject: {fileID: 6176539604456518056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.75668, y: 0, z: -78.32478}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -992,7 +992,7 @@ Animator:
   m_GameObject: {fileID: 6176539604456518056}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dd545b0865f47204291698daa68c0058, type: 3}
-  m_Controller: {fileID: 9100000, guid: 513dcca2632c4b44a8117395b946337f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d2823141b3433449abbc894effad93b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
