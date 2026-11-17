@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,8 +11,6 @@ public struct PaginaLibro
     [Header("Cara Izquierda")]
     public string tituloCaraIzquierda;
     [TextArea(2, 4)] public string descripcionCaraIzquierda;
-    [TextArea(2, 3)] public string estadisticasCaraIzquierda;
-    public ComboVisual[] combosCaraIzquierda;
 
     [Header("Soporte de Vídeo - Cara Izquierda")]
     public bool mostrarVideoIzquierda;
@@ -20,8 +19,6 @@ public struct PaginaLibro
     [Header("Cara Derecha")]
     public string tituloCaraDerecha;
     [TextArea(2, 4)] public string descripcionCaraDerecha;
-    [TextArea(2, 3)] public string estadisticasCaraDerecha;
-    public ComboVisual[] combosCaraDerecha;
 
     [Header("Soporte de Vídeo - Cara Derecha")]
     public bool mostrarVideoDerecha;
@@ -39,16 +36,13 @@ public class BookItem3D : MonoBehaviour
     [Header("UI - Izquierda (Cara 1, 3, 5)")]
     public TextMeshProUGUI textoNombreIzquierda;
     public TextMeshProUGUI textoDescripcionIzquierda;
-    public TextMeshProUGUI textoEstadisticasIzquierda;
-    public Transform contenedorCombosUIIzquierda;
     public VideoPlayer videoPlayerIzquierda;
     public GameObject rawImageVideoIzquierda;
+    public Button botonRetrocederPaginaIzquierda;
 
     [Header("UI - Derecha (Cara 2, 4, 6)")]
     public TextMeshProUGUI textoNombreDerecha;
     public TextMeshProUGUI textoDescripcionDerecha;
-    public TextMeshProUGUI textoEstadisticasDerecha;
-    public Transform contenedorCombosUIDerecha;
     public VideoPlayer videoPlayerDerecha;
     public GameObject rawImageVideoDerecha;
     public Button botonPasarPaginaDerecha;
@@ -58,15 +52,24 @@ public class BookItem3D : MonoBehaviour
     public GameObject iconoBotonPrefab;
     public bool forzarModoMando = false;
 
-    private BookShelfManager shelfManagerRef;
+    [Header("Transición de UI")]
+    public CanvasGroup grupoCanvasInfo;
+    public bool reiniciarPaginaAlAbrir = true;
 
-    private bool isActiveBook = false;
     private bool modoMandoActual = false;
     private bool modoControlRecibidoDelManager = false;
+    private int tokenFade = 0;
+
+    private BookShelfManager shelfManagerRef;
+
+    public int PaginaActual => paginaActual;
+    public int TotalPaginas => paginas != null ? paginas.Length : 0;
 
     void Awake()
     {
         bookRenderers = GetComponentsInChildren<Renderer>();
+
+        ResolverCanvasGroup();
 
         if (panelInfoPaginas != null)
             panelInfoPaginas.SetActive(false);
@@ -74,9 +77,19 @@ public class BookItem3D : MonoBehaviour
         shelfManagerRef = Object.FindAnyObjectByType<BookShelfManager>();
 
         if (botonPasarPaginaDerecha != null)
-        {
             botonPasarPaginaDerecha.onClick.AddListener(OnBotonPasarPaginaClicked);
-        }
+
+        if (botonRetrocederPaginaIzquierda != null)
+            botonRetrocederPaginaIzquierda.onClick.AddListener(OnBotonRetrocederPaginaClicked);
+    }
+
+    void OnDestroy()
+    {
+        if (botonPasarPaginaDerecha != null)
+            botonPasarPaginaDerecha.onClick.RemoveListener(OnBotonPasarPaginaClicked);
+
+        if (botonRetrocederPaginaIzquierda != null)
+            botonRetrocederPaginaIzquierda.onClick.RemoveListener(OnBotonRetrocederPaginaClicked);
     }
 
     void Start()
@@ -86,6 +99,22 @@ public class BookItem3D : MonoBehaviour
             paginaActual = 0;
             ConfigurarContenidoPagina();
         }
+    }
+
+    private void ResolverCanvasGroup()
+    {
+        if (grupoCanvasInfo != null) return;
+
+        GameObject raiz = panelInfoPaginas;
+
+        if (raiz == null && textoNombreIzquierda != null && textoNombreIzquierda.transform.parent != null)
+            raiz = textoNombreIzquierda.transform.parent.gameObject;
+
+        if (raiz == null) return;
+
+        grupoCanvasInfo = raiz.GetComponent<CanvasGroup>();
+        if (grupoCanvasInfo == null)
+            grupoCanvasInfo = raiz.AddComponent<CanvasGroup>();
     }
 
     public void SetupBookTextures(Texture2D coverTex, Texture2D spineTex, Texture2D pagesTex)
@@ -129,6 +158,8 @@ public class BookItem3D : MonoBehaviour
         }
     }
 
+  
+
     public void ConfigurarContenidoPagina()
     {
         if (paginas == null || paginas.Length == 0) return;
@@ -136,10 +167,8 @@ public class BookItem3D : MonoBehaviour
         paginaActual = Mathf.Clamp(paginaActual, 0, paginas.Length - 1);
         PaginaLibro pData = paginas[paginaActual];
 
-        // --- Lado Izquierdo ---
         if (textoNombreIzquierda != null) textoNombreIzquierda.text = pData.tituloCaraIzquierda;
         if (textoDescripcionIzquierda != null) textoDescripcionIzquierda.text = pData.descripcionCaraIzquierda;
-        if (textoEstadisticasIzquierda != null) textoEstadisticasIzquierda.text = pData.estadisticasCaraIzquierda;
 
         if (videoPlayerIzquierda != null)
         {
@@ -156,10 +185,8 @@ public class BookItem3D : MonoBehaviour
             }
         }
 
-        // --- Lado Derecho ---
         if (textoNombreDerecha != null) textoNombreDerecha.text = pData.tituloCaraDerecha;
         if (textoDescripcionDerecha != null) textoDescripcionDerecha.text = pData.descripcionCaraDerecha;
-        if (textoEstadisticasDerecha != null) textoEstadisticasDerecha.text = pData.estadisticasCaraDerecha;
 
         if (videoPlayerDerecha != null)
         {
@@ -177,37 +204,100 @@ public class BookItem3D : MonoBehaviour
         }
 
         if (!modoControlRecibidoDelManager)
-        {
             modoMandoActual = Gamepad.current != null || forzarModoMando;
-        }
 
-        GenerarIconosCombos(modoMandoActual, pData.combosCaraIzquierda, contenedorCombosUIIzquierda);
-        GenerarIconosCombos(modoMandoActual, pData.combosCaraDerecha, contenedorCombosUIDerecha);
+
+        ActualizarVisibilidadBotonesPagina();
+    }
+
+    private void ActualizarVisibilidadBotonesPagina()
+    {
+        if (botonPasarPaginaDerecha != null)
+            botonPasarPaginaDerecha.gameObject.SetActive(paginaActual < TotalPaginas - 1);
+
+        if (botonRetrocederPaginaIzquierda != null)
+            botonRetrocederPaginaIzquierda.gameObject.SetActive(paginaActual > 0);
+    }
+
+   
+
+    public bool PuedeCambiarPagina(int direccion)
+    {
+        if (paginas == null || paginas.Length <= 1) return false;
+        int nueva = paginaActual + direccion;
+        return nueva >= 0 && nueva < paginas.Length;
     }
 
     public bool CambiarPagina(int direccion)
     {
-        if (paginas == null || paginas.Length <= 1) return false;
+        if (!PuedeCambiarPagina(direccion)) return false;
 
-        int nuevaPagina = paginaActual + direccion;
-
-        if (nuevaPagina >= 0 && nuevaPagina < paginas.Length)
-        {
-            paginaActual = nuevaPagina;
-            ConfigurarContenidoPagina();
-            return true;
-        }
-
-        return false;
+        paginaActual += direccion;
+        ConfigurarContenidoPagina();
+        return true;
     }
 
     private void OnBotonPasarPaginaClicked()
     {
-        if (shelfManagerRef != null)
-        {
-            shelfManagerRef.IntentarAvanzarPaginaDesdeUI();
-        }
+        if (shelfManagerRef == null) shelfManagerRef = Object.FindAnyObjectByType<BookShelfManager>();
+        if (shelfManagerRef != null) shelfManagerRef.IntentarAvanzarPaginaDesdeUI();
     }
+
+    private void OnBotonRetrocederPaginaClicked()
+    {
+        if (shelfManagerRef == null) shelfManagerRef = Object.FindAnyObjectByType<BookShelfManager>();
+        if (shelfManagerRef != null) shelfManagerRef.IntentarRetrocederPaginaDesdeUI();
+    }
+
+   
+
+    private void FijarAlpha(float alpha)
+    {
+        if (grupoCanvasInfo == null) return;
+        grupoCanvasInfo.alpha = alpha;
+        bool visible = alpha >= 1f;
+        grupoCanvasInfo.interactable = visible;
+        grupoCanvasInfo.blocksRaycasts = visible;
+    }
+
+    private IEnumerator FadeUI(float objetivo, float duracion)
+    {
+        if (grupoCanvasInfo == null) yield break;
+
+        int miToken = ++tokenFade; 
+
+        grupoCanvasInfo.interactable = false;
+        grupoCanvasInfo.blocksRaycasts = false;
+
+        float inicio = grupoCanvasInfo.alpha;
+        float t = 0f;
+
+        while (t < duracion)
+        {
+            if (miToken != tokenFade) yield break;
+            t += Time.deltaTime;
+            grupoCanvasInfo.alpha = Mathf.Lerp(inicio, objetivo, t / duracion);
+            yield return null;
+        }
+
+        if (miToken != tokenFade) yield break;
+        FijarAlpha(objetivo);
+    }
+
+    public IEnumerator OcultarUIAnimado(float duracion)
+    {
+        yield return FadeUI(0f, duracion);
+
+        if (videoPlayerIzquierda != null) videoPlayerIzquierda.Stop();
+        if (videoPlayerDerecha != null) videoPlayerDerecha.Stop();
+    }
+
+    public IEnumerator MostrarUIAnimado(float duracion)
+    {
+        yield return FadeUI(1f, duracion);
+    }
+
+   
 
     public void ActualizarIconosControl(bool usandoMando)
     {
@@ -216,9 +306,7 @@ public class BookItem3D : MonoBehaviour
 
         if (paginas != null && paginas.Length > 0)
         {
-            PaginaLibro pData = paginas[paginaActual];
-            GenerarIconosCombos(usandoMando, pData.combosCaraIzquierda, contenedorCombosUIIzquierda);
-            GenerarIconosCombos(usandoMando, pData.combosCaraDerecha, contenedorCombosUIDerecha);
+            PaginaLibro pData = paginas[Mathf.Clamp(paginaActual, 0, paginas.Length - 1)];
         }
     }
 
@@ -227,11 +315,9 @@ public class BookItem3D : MonoBehaviour
         if (contenedor == null) return;
 
         foreach (Transform child in contenedor)
-        {
             Destroy(child.gameObject);
-        }
 
-        if (combosPagina == null) return;
+        if (combosPagina == null || iconoBotonPrefab == null) return;
 
         foreach (ComboVisual combo in combosPagina)
         {
@@ -257,28 +343,32 @@ public class BookItem3D : MonoBehaviour
         }
     }
 
-    public void SetIsActive(bool active, Vector3 activeScale, float hoverHeight)
-    {
-        isActiveBook = active;
-    }
-
+    public void SetIsActive(bool active, Vector3 activeScale, float hoverHeight) { }
     public void SetTargetTransform(Vector3 pos, float speed, Vector3 targetScaleVal) { }
 
+   
     public void MostrarTextosPagina(bool mostrar)
     {
+        tokenFade++; 
+
         if (!mostrar)
         {
             if (videoPlayerIzquierda != null) videoPlayerIzquierda.Stop();
             if (videoPlayerDerecha != null) videoPlayerDerecha.Stop();
+            FijarAlpha(0f);
             if (panelInfoPaginas != null) panelInfoPaginas.SetActive(false);
             return;
         }
 
-        paginaActual = 0;
-        ConfigurarContenidoPagina();
+        if (reiniciarPaginaAlAbrir) paginaActual = 0;
 
         if (panelInfoPaginas != null) panelInfoPaginas.SetActive(true);
+        FijarAlpha(0f);
+        ConfigurarContenidoPagina();
+
+        if (grupoCanvasInfo != null && isActiveAndEnabled)
+            StartCoroutine(FadeUI(1f, 0.2f));
+        else
+            FijarAlpha(1f);
     }
-
-
 }
