@@ -690,13 +690,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3309042049136563874, guid: 62f55f4754998cf49816ce4390c08db4, type: 3}
+      propertyPath: m_fontSize
+      value: 36.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3483951600526973189, guid: 62f55f4754998cf49816ce4390c08db4, type: 3}
       propertyPath: m_Name
       value: InterfazPartida
       objectReference: {fileID: 0}
     - target: {fileID: 3483951600526973189, guid: 62f55f4754998cf49816ce4390c08db4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621822978682960302, guid: 62f55f4754998cf49816ce4390c08db4, type: 3}
+      propertyPath: m_fontSize
+      value: 36.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
