@@ -15,7 +15,7 @@ MonoBehaviour:
   startup: 0.08
   active: 0.1
   recovery: 0.2
-  animationTrigger: 
+  animationTrigger: Ranged
   kind: 1
   damage: 10
   hitstun: 0
