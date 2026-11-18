@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MatchSetupManager : MonoBehaviour
 {
@@ -10,6 +12,16 @@ public class MatchSetupManager : MonoBehaviour
     [Header("Prefabs por defecto")]
     public GameObject defaultLeftPrefab;
     public GameObject defaultRightPrefab;
+
+
+    public Transform leftBars;
+    public Transform rightBars;
+
+
+    public TMP_Text leftNameText;
+    public TMP_Text rightNameText;
+    public Image leftNameBox;
+    public Image rightNameBox;
 
     private void Awake()
     {
@@ -24,6 +36,9 @@ public class MatchSetupManager : MonoBehaviour
             fighterL.SetRival(fighterR);
             fighterR.SetRival(fighterL);
         }
+
+        SetupSideUI(leftBars, prefabL, fighterL, leftNameText, leftNameBox);
+        SetupSideUI(rightBars, prefabR, fighterR, rightNameText, rightNameBox);
     }
 
     private Fighter SpawnCharacter(Transform playerRoot, GameObject characterPrefab, bool isLeft)
@@ -59,5 +74,38 @@ public class MatchSetupManager : MonoBehaviour
         }
 
         return fighter;
+    }
+
+    private void SetupSideUI(Transform barsRoot, GameObject characterPrefab, Fighter fighter,
+                         TMP_Text nameText, Image nameBox)
+    {
+        if (barsRoot == null || characterPrefab == null) return;
+
+        CharacterUI match = null;
+
+        foreach (SkillBarUI bar in barsRoot.GetComponentsInChildren<SkillBarUI>(true))
+        {
+            bool isMine = match == null
+                          && bar.Character != null
+                          && bar.Character.characterPrefab == characterPrefab;
+
+            bar.gameObject.SetActive(isMine);
+
+            if (isMine)
+            {
+                bar.Bind(fighter);
+                match = bar.Character;
+            }
+        }
+
+        if (match == null)
+        {
+            Debug.LogWarning($"[MatchSetupManager] Ninguna barra en '{barsRoot.name}' tiene un CharacterUI " +
+                             $"cuyo Character Prefab sea '{characterPrefab.name}'.");
+            return;
+        }
+
+        if (nameText != null) nameText.text = match.plantName;
+        if (nameBox != null) nameBox.color = match.backgroundColor;
     }
 }
