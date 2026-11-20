@@ -15,3 +15,9 @@ MonoBehaviour:
   backgroundColor: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
   plantName: Maxilon
   characterPrefab: {fileID: 4538947174743976917, guid: 6e1152841c7dc78418d8dfd1efac04ca, type: 3}
+  image: {fileID: 21300000, guid: 5fa152c140b0d3940a6829098890a673, type: 3}
+  hitWords:
+  - {fileID: 21300000, guid: b3377c56341dc5144b55b6715a77c953, type: 3}
+  - {fileID: 21300000, guid: d6ada783d68fcc945b93df34ca99c4de, type: 3}
+  hitWordPosition: {x: -800, y: 15}
+  hitWordSize: {x: 100, y: 100}

@@ -56,13 +56,20 @@ public readonly struct HitReport
     public readonly Fighter Victim;
     public readonly float FinalDamage;
     public readonly BlockResult Result;
+    public readonly bool IsDamageOverTime;
+    public readonly AttackKind Kind;
+    public readonly bool IsSkill;
 
-    public HitReport(IDamageable source, Fighter victim, float finalDamage, BlockResult result)
+    public HitReport(IDamageable source, Fighter victim, float finalDamage, BlockResult result,
+                    bool isDamageOverTime = false, AttackKind kind = AttackKind.Melee, bool isSkill = false)
     {
         Source = source;
         Victim = victim;
         FinalDamage = finalDamage;
         Result = result;
+        IsDamageOverTime = isDamageOverTime;
+        Kind = kind;
+        IsSkill = isSkill;
     }
 }
 

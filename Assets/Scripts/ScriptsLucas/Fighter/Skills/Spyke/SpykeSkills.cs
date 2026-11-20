@@ -251,6 +251,7 @@ public class SpykeSkills : SkillController
         if (Time.timeAsDouble < spikeReadyAt) return false;
 
         spikeTimer = At(spikeDurationByArms, arms);
+        fighter.ApplyBuff(Fighter.StatusEffect.AttackUp, spikeTimer);
         spikeMultiplier = At(spikeMultiplierByArms, arms, 1f);
         spikeReadyAt = Time.timeAsDouble + spikeCooldown;
 
@@ -263,6 +264,7 @@ public class SpykeSkills : SkillController
     void EndSpikes()
     {
         spikeTimer = 0f;
+        fighter.ClearBuff(Fighter.StatusEffect.AttackUp);
         spikeMultiplier = 1f;
         SetSpikesVisible(false);
         SpikesChanged?.Invoke(false);
@@ -310,6 +312,8 @@ public class SpykeSkills : SkillController
         armsTimer = afterUltimateTime;
 
         spikeTimer = afterUltimateTime;
+        fighter.ApplyBuff(Fighter.StatusEffect.AttackUp, spikeTimer);
+
         spikeMultiplier = At(spikeMultiplierByArms, maxArms, 1f);
         SetSpikesVisible(true);
         SpikesChanged?.Invoke(true);

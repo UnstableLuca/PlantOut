@@ -12,4 +12,11 @@ public class CharacterUI : ScriptableObject
     public GameObject characterPrefab;
 
     public Sprite image;
+    [Header("Palabras de golpe a distancia")]
+    [Tooltip("Imagenes que pueden salir al acertar un disparo (se elige una al azar)")]
+    public Sprite[] hitWords;
+    [Tooltip("Posicion en el Canvas cuando la planta esta a la IZQUIERDA (anclas en el centro). A la derecha se refleja en X")]
+    public Vector2 hitWordPosition = new Vector2(-800f, 15f);
+    [Tooltip("Tamano del recuadro de la palabra (la imagen mantiene su proporcion)")]
+    public Vector2 hitWordSize = new Vector2(100f, 100f);
 }

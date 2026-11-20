@@ -7,6 +7,8 @@ public class Fighter : MonoBehaviour, IFighter
 {
     #region Variables
     public enum FighterState { Idle, Acting, Blocking, Channeling, Stunned }
+
+    public enum StatusEffect { Stun, AttackUp, DefenseUp, Slow, Swarm, Bleed }
     
     [Header("Identidad y Combate")]
     [SerializeField] Fighter rival;
@@ -49,6 +51,16 @@ public class Fighter : MonoBehaviour, IFighter
     private float stunTimer = 0f;
     private float slowTimer = 0f;
     private float actionSpeed = 1f;
+
+    private float stunDuration;
+    private float slowDuration;
+    private float swarmDuration;
+    private float bleedUntil;
+    private float bleedDuration;
+    private float attackUpUntil;
+    private float attackUpDuration;
+    private float defenseUpUntil;
+    private float defenseUpDuration;
 
     // Enjambre (Ultimate de Maxilón)
     private bool hasSwarm = false;
@@ -433,7 +445,7 @@ public class Fighter : MonoBehaviour, IFighter
         }
 
         // Notificar a ScoreSystem
-        HitReceived?.Invoke(new HitReport(hit.Source, this, finalDamage, result));
+        HitReceived?.Invoke(new HitReport(hit.Source, this, finalDamage, result, false, hit.Kind, hit.IsSkill));
 
         // Si entró limpio, evaluar interrupciones y stun
         if (result == BlockResult.None)
@@ -482,13 +494,17 @@ public class Fighter : MonoBehaviour, IFighter
         else if (state == FighterState.Channeling) skillController?.OnChannelInterrupted();
 
         state = FighterState.Stunned;
-        stunTimer = Mathf.Max(stunTimer, duration);
+        float newStun = Mathf.Max(stunTimer, duration);
+        if (newStun > stunTimer) stunDuration = newStun;
+        stunTimer = newStun;
         if (CharacterAnimator != null) CharacterAnimator.SetBool("Stunned", true);
     }
 
     public void ApplySlow(float factor, float duration)
     {
-        actionSpeed = Mathf.Clamp(factor, 0.1f, 2f);
+        float newSlow = Mathf.Max(slowTimer, duration);
+        if (newSlow > slowTimer) slowDuration = newSlow;
+        slowTimer = newSlow;
         slowTimer = Mathf.Max(slowTimer, duration);
     }
 
@@ -497,6 +513,12 @@ public class Fighter : MonoBehaviour, IFighter
         if (duration <= 0f && endBurstDamage <= 0f) return;
         Coroutine c = StartCoroutine(BleedRoutine(source, dps, duration, endBurstDamage));
         activeBleeds.Add(c);
+        float until = Time.time + Mathf.Max(0f, duration);
+        if (until > bleedUntil)
+        {
+            bleedUntil = until;
+            bleedDuration = Mathf.Max(0.01f, duration);
+        }
     }
 
     private IEnumerator BleedRoutine(IDamageable source, float dps, float duration, float endBurst)
@@ -522,6 +544,7 @@ public class Fighter : MonoBehaviour, IFighter
         swarmBugsRemaining = Mathf.Max(1, bugCount);
         swarmDpsPerBug = dpsPerBug;
         swarmTimer = duration;
+        swarmDuration = duration;
         swarmTickAccum = 0f;
         swarmShakeKind = shakeButton;
         swarmRemovePerPress = Mathf.Max(1, removePerPress);
@@ -560,6 +583,10 @@ public class Fighter : MonoBehaviour, IFighter
             if (c != null) StopCoroutine(c);
         activeBleeds.Clear();
 
+        bleedUntil = 0f;
+        attackUpUntil = 0f;
+        defenseUpUntil = 0f;
+
         ClearSwarm();
 
         stunTimer = 0f;
@@ -583,9 +610,65 @@ public class Fighter : MonoBehaviour, IFighter
     private void ApplyDirectDotDamage(IDamageable source, float amount)
     {
         if (amount <= 0f) return;
-        HitReceived?.Invoke(new HitReport(source, this, amount, BlockResult.None));
+        HitReceived?.Invoke(new HitReport(source, this, amount, BlockResult.None, true));
     }
-#endregion
+
+    public void ApplyBuff(StatusEffect effect, float duration)
+    {
+        if (duration <= 0f) return;
+        float until = Time.time + duration;
+
+        if (effect == StatusEffect.AttackUp) { attackUpUntil = until; attackUpDuration = duration; }
+        else if (effect == StatusEffect.DefenseUp) { defenseUpUntil = until; defenseUpDuration = duration; }
+    }
+
+    public void ClearBuff(StatusEffect effect)
+    {
+        if (effect == StatusEffect.AttackUp) attackUpUntil = 0f;
+        else if (effect == StatusEffect.DefenseUp) defenseUpUntil = 0f;
+    }
+
+    public bool TryGetStatus(StatusEffect effect, out float remaining, out float duration)
+    {
+        switch (effect)
+        {
+            case StatusEffect.Stun:
+                remaining = state == FighterState.Stunned ? stunTimer : 0f;
+                duration = stunDuration;
+                break;
+            case StatusEffect.AttackUp:
+                remaining = attackUpUntil - Time.time;
+                duration = attackUpDuration;
+                break;
+            case StatusEffect.DefenseUp:
+                remaining = defenseUpUntil - Time.time;
+                duration = defenseUpDuration;
+                break;
+            case StatusEffect.Slow:
+                remaining = slowTimer;
+                duration = slowDuration;
+                break;
+            case StatusEffect.Swarm:
+                remaining = hasSwarm ? swarmTimer : 0f;
+                duration = swarmDuration;
+                break;
+            case StatusEffect.Bleed:
+                remaining = bleedUntil - Time.time;
+                duration = bleedDuration;
+                break;
+            default:
+                remaining = 0f;
+                duration = 0f;
+                break;
+        }
+        return remaining > 0f && duration > 0f;
+    }
+
+    public int GetStatusLevel(StatusEffect effect)
+    {
+        return effect == StatusEffect.Swarm && hasSwarm ? swarmBugsRemaining : 0;
+    }
+    #endregion
 
     #region Bugs
     public void RegisterBug(AttackSide side, IDamageable bug)
