@@ -107,3 +107,5 @@ MonoBehaviour:
   hitDistance: 0.25
   maxLifetime: 3
   rotateToDirection: 1
+  tipAxis: 2
+  extraRotation: {x: 0, y: 0, z: 0}

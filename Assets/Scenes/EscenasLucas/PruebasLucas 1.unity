@@ -440,6 +440,68 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &365841471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365841472}
+  m_Layer: 0
+  m_Name: BugFloat_L (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &365841472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365841471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4.4, y: 2, z: -4.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871050814}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &400080733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400080734}
+  m_Layer: 0
+  m_Name: BugFloat_R (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400080734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400080733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.4, y: 2.68, z: -4.6}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871050814}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &403181804 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3475287912332816822, guid: 62f55f4754998cf49816ce4390c08db4, type: 3}
@@ -788,7 +850,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1527500202}
+  - {fileID: 365841472}
   - {fileID: 1616233881}
+  - {fileID: 400080734}
   - {fileID: 275435838}
   - {fileID: 821404944}
   m_Father: {fileID: 732366644}
@@ -812,16 +876,21 @@ MonoBehaviour:
   lanes:
   - fighter: {fileID: 1400611812}
     spawnPoint: {fileID: 275435838}
+    extraSpawnPoints: []
     attackPoint: {fileID: 1527500202}
+    extraAttackPoints: []
     strikePoint: {fileID: 0}
   - fighter: {fileID: 1179532890}
     spawnPoint: {fileID: 821404944}
+    extraSpawnPoints: []
     attackPoint: {fileID: 1616233881}
+    extraAttackPoints: []
     strikePoint: {fileID: 0}
   firstSpawnDelay: 5
   minInterval: 6
   maxInterval: 12
   maxAlivePerLane: 2
+  crowdOffset: 0.5
   leaderIntervalFactor: 0.7
 --- !u!114 &892733718
 MonoBehaviour:
@@ -1825,7 +1894,7 @@ Transform:
   m_GameObject: {fileID: 1527500201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.4, y: 2, z: -4.6}
+  m_LocalPosition: {x: -4.4, y: 3.78, z: -4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

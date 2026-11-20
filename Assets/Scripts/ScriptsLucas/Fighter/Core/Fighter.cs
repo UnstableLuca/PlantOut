@@ -123,7 +123,7 @@ public class Fighter : MonoBehaviour, IFighter
             if (stunTimer <= 0f)
             {
                 state = FighterState.Idle;
-                if (CharacterAnimator != null) CharacterAnimator.SetBool("Stunned", true);
+                if (CharacterAnimator != null) CharacterAnimator.SetBool("Stunned", false);
                 if (blockHeld) TryStartBlock();
             }
         }
@@ -470,7 +470,7 @@ public class Fighter : MonoBehaviour, IFighter
             {
                 Stun(hit.Hitstun);
             }
-            else if (finalDamage > 0f && CharacterAnimator != null)
+            else if (!hasSuperArmor && finalDamage > 0f && CharacterAnimator != null)
             {
                 CharacterAnimator.SetTrigger("Hit");
             }
@@ -485,7 +485,7 @@ public class Fighter : MonoBehaviour, IFighter
     {
         if (duration <= 0f)
         {
-            CharacterAnimator.SetBool("Stunned", false);
+            if (CharacterAnimator != null) CharacterAnimator.SetBool("Stunned", false);
             return;
         }
 

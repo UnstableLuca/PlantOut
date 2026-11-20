@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class SpykeSkills : SkillController
 {
-    #region Variables
     [Header("Brazos (mantener con 1-4 cargas)")]
     [SerializeField, Min(1)] int maxArms = 4;
     [Tooltip("Segundos mantenidos por cada brazo")]
@@ -44,6 +43,9 @@ public class SpykeSkills : SkillController
     [SerializeField] string ultimateTrigger = "Ultimate";
     [SerializeField] string ultimateEndTrigger = "UltimateEnd";
     [SerializeField] string spikesActiveParameter = "SpikesActive";
+    
+    [Tooltip("Capas de brazos del Animator. Se apagan durante la ultimate para que su animacion mueva todos los brazos")]
+    [SerializeField] string[] armLayerNames = { "Arm1 Layer", "Arm2 Layer", "Arm3 Layer", "Arm4 Layer" };
 
     [Header("Animator: brazos y carga")]
     [Tooltip("Si se deja vacio busca el Animator en los hijos")]
@@ -94,18 +96,13 @@ public class SpykeSkills : SkillController
     public event Action<bool> UltimateChanged;
 
     public override bool SuperArmor => phase == Phase.Ultimate;
-    #endregion
 
-    #region Awake & Start
     protected override void Awake()
     {
         base.Awake();
         if (animator == null) animator = GetComponentInChildren<Animator>();
         RefreshVisuals();
     }
-    #endregion
-
-    #region Input
     public override void OnSkillPressed()
     {
         if (phase != Phase.Idle || !fighter.CanAct) return;
@@ -143,9 +140,7 @@ public class SpykeSkills : SkillController
         if (phase == Phase.Holding) FinishHold(allowTap: false);
         else if (phase == Phase.Ultimate) EndUltimate();   // con superarmadura no deberia pasar
     }
-    #endregion
 
-    #region Update
     void Update()
     {
         float dt = Time.deltaTime;
@@ -187,9 +182,7 @@ public class SpykeSkills : SkillController
                 break;
         }
     }
-    #endregion
 
-    #region Arms
     void GrowArm()
     {
         if (!fighter.TrySpendUses(1))
@@ -243,9 +236,6 @@ public class SpykeSkills : SkillController
         PushArmsToAnimator();
         ArmsChanged?.Invoke(arms);
     }
-    #endregion
-
-    #region Spikes
     bool TryCastSpikes()
     {
         if (Time.timeAsDouble < spikeReadyAt) return false;
@@ -269,9 +259,6 @@ public class SpykeSkills : SkillController
         SetSpikesVisible(false);
         SpikesChanged?.Invoke(false);
     }
-    #endregion
-
-    #region Ultimate
     void StartUltimate()
     {
         if (!fighter.BeginChannel()) return;
@@ -285,6 +272,7 @@ public class SpykeSkills : SkillController
         tickDamage = ultimateDamage / totalTicks;
 
         fighter.PlayAnimation(ultimateTrigger);
+        SetArmLayersWeight(0f);
         UltimateChanged?.Invoke(true);
     }
 
@@ -309,6 +297,7 @@ public class SpykeSkills : SkillController
 
         // Al acabar: todos los brazos con pinchos un rato, y habilidades en cooldown
         SetArms(maxArms);
+        SetArmLayersWeight(1f);
         armsTimer = afterUltimateTime;
 
         spikeTimer = afterUltimateTime;
@@ -323,9 +312,7 @@ public class SpykeSkills : SkillController
         fighter.PlayAnimation(ultimateEndTrigger);
         UltimateChanged?.Invoke(false);
     }
-    #endregion
 
-    #region Modifiers/Utilities
     public override float ModifyAttackDamage(AttackKind kind, float baseDamage)
     {
         // Brazos en orden melee -> rango -> melee -> rango
@@ -350,7 +337,18 @@ public class SpykeSkills : SkillController
         skillsReadyAt = 0;
 
         SetArms(0);
+        SetArmLayersWeight(1f);
         EndSpikes();
+    }
+    void SetArmLayersWeight(float weight)
+    {
+        if (animator == null || armLayerNames == null) return;
+
+        foreach (string layerName in armLayerNames)
+        {
+            int index = animator.GetLayerIndex(layerName);
+            if (index >= 0) animator.SetLayerWeight(index, weight);
+        }
     }
 
     void PushArmsToAnimator()
@@ -389,5 +387,4 @@ public class SpykeSkills : SkillController
         if (animator != null && !string.IsNullOrEmpty(spikesActiveParameter))
             animator.SetBool(spikesActiveParameter, visible);
     }
-    #endregion
 }

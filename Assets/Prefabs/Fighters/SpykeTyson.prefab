@@ -6365,7 +6365,7 @@ MonoBehaviour:
   - 2.5
   spikeCooldown: 4
   ultimateDamage: 200
-  ultimateDuration: 4
+  ultimateDuration: 8
   ultimateTickInterval: 0.1
   afterUltimateTime: 4
   postUltimateCooldown: 4
