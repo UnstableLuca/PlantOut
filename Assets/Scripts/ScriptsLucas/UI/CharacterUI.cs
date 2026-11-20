@@ -10,4 +10,6 @@ public class CharacterUI : ScriptableObject
     [System.NonSerialized] public GameObject rightEnergyBarPrefab;
 
     public GameObject characterPrefab;
+
+    public Sprite image;
 }

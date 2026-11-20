@@ -65,7 +65,10 @@ public class DebugMenu : MonoBehaviour
         }
 
         GUILayout.Label($"<b>{title}</b> ({f.State})", new GUIStyle(GUI.skin.label) { richText = true });
-        GUILayout.Label($"HP: {f.currentHealth:F0}/{f.maxHealth:F0} | Barra: {f.SkillBar:F2}/{f.MaxSkillUses}");
+        string puntos = scoreSystem != null
+            ? (f.isLeftPlayer ? scoreSystem.ScoreLeft : scoreSystem.ScoreRight).ToString("F0")
+            : "-";
+        GUILayout.Label($"Puntos: {puntos} | Barra: {f.SkillBar:F2}/{f.MaxSkillUses}");
 
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("+1 Barra"))
@@ -75,10 +78,6 @@ public class DebugMenu : MonoBehaviour
         if (GUILayout.Button("Barra Max"))
         {
             f.AddBarPassive(f.MaxSkillUses);
-        }
-        if (GUILayout.Button("Curar"))
-        {
-            f.currentHealth = f.maxHealth;
         }
         GUILayout.EndHorizontal();
 

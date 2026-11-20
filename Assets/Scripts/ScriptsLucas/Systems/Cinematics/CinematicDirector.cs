@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using UnityEngine;
 
 public class CinematicDirector : MonoBehaviour
@@ -19,6 +20,8 @@ public class CinematicDirector : MonoBehaviour
     private bool matchActive = false;
 
     public bool MatchActive => matchActive;
+    public event Action IntroFinished;
+    public event Action OutroFinished;
 
     void Awake()
     {
@@ -46,6 +49,7 @@ public class CinematicDirector : MonoBehaviour
 
         SetGameplayEnabled(true);
         matchActive = true;
+        IntroFinished?.Invoke();
     }
 
     public void PlayWinnerOutro(Fighter winner)
@@ -53,6 +57,11 @@ public class CinematicDirector : MonoBehaviour
         if (!matchActive) return;
         matchActive = false;
         StartCoroutine(OutroSequence(winner));
+    }
+    public void RestartMatch()
+    {
+        StopAllCoroutines();
+        StartCoroutine(IntroSequence());
     }
 
     private IEnumerator OutroSequence(Fighter winner)
@@ -71,7 +80,8 @@ public class CinematicDirector : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(outroDuration);
+        yield return new WaitForSeconds(outroDuration); 
+        OutroFinished?.Invoke();
     }
 
     private void SetGameplayEnabled(bool enabled)

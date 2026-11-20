@@ -38,6 +38,8 @@ public class BugSpawner : MonoBehaviour
 
     private int idx = 0;
 
+    private readonly List<Bug> spawned = new List<Bug>();
+
     public bool Running { get; set; } = true;
 
     void Awake()
@@ -84,9 +86,12 @@ public class BugSpawner : MonoBehaviour
 
         bug.Init(lane.fighter, side, lane.attackPoint.position, strike);
 
+        spawned.Add(bug);
+
         lane.alive++;
         bug.Died += (b, killer) =>
         {
+            spawned.Remove(b);
             lane.alive--;
             if (score != null && killer is Fighter f) score.AddPoints(f, b.killPoints);
         };
@@ -112,6 +117,20 @@ public class BugSpawner : MonoBehaviour
                 StartCoroutine(SummonRoutine(lane, count, interval));
                 return;
             }
+    }
+    public void ClearAll()
+    {
+        StopAllCoroutines();
+        foreach (Bug b in spawned)
+            if (b != null) Destroy(b.gameObject);
+        spawned.Clear();
+        foreach (var lane in lanes) lane.alive = 0;
+    }
+
+    public void RestartSchedule()
+    {
+        foreach (var lane in lanes)
+            lane.nextSpawn = Time.time + firstSpawnDelay + UnityEngine.Random.Range(0f, minInterval);
     }
 
     IEnumerator SummonRoutine(Lane lane, int count, float interval)

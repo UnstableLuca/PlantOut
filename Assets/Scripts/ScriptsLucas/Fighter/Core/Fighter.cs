@@ -20,10 +20,6 @@ public class Fighter : MonoBehaviour, IFighter
     [SerializeField, Min(1)] int maxSkillUses = 5;
     [SerializeField, Range(0f, 5f)] float skillBar = 0f;
 
-    [Header("Estadísticas Base")]
-    public float maxHealth = 1000f;
-    public float currentHealth;
-
     // Acciones Base (Inyectadas por PlantCharacterModule desde el prefab hijo)
     private PlayerAction meleeAction;
     private PlayerAction rangedAction;
@@ -72,7 +68,6 @@ public class Fighter : MonoBehaviour, IFighter
 
     // Eventos para ScoreSystem, UI y Habilidades
     public event Action<HitReport> HitReceived;
-    public event Action<float, float> OnHealthChanged;
     public event Action<float> OnSkillBarChanged;
     #endregion
 
@@ -91,21 +86,18 @@ public class Fighter : MonoBehaviour, IFighter
 
     public bool CanAct =>
         inputEnabled &&
-        currentHealth > 0f &&
         state == FighterState.Idle;
     #endregion
 
     #region Awake, Start & Update
     void Awake()
     {
-        currentHealth = maxHealth;
         AimPoint = defaultAimPoint != null ? defaultAimPoint : transform;
         ProjectileOrigin = defaultProjectileOrigin != null ? defaultProjectileOrigin : transform;
     }
 
     void Start()
     {
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
         OnSkillBarChanged?.Invoke(skillBar);
     }
 
@@ -180,7 +172,7 @@ public class Fighter : MonoBehaviour, IFighter
     #region Inputs
     public void RequestAttack(AttackKind kind)
     {
-        if (!inputEnabled || currentHealth <= 0f) return;
+        if (!inputEnabled) return;
 
         // Si tiene encima el enjambre de Maxilón, pulsar el botón indicado quita bichos
         if (hasSwarm && kind == swarmShakeKind)
@@ -207,7 +199,7 @@ public class Fighter : MonoBehaviour, IFighter
 
     public void RequestBlockPress()
     {
-        if (!inputEnabled || currentHealth <= 0f) return;
+        if (!inputEnabled) return;
 
         blockHeld = true;
 
@@ -230,13 +222,13 @@ public class Fighter : MonoBehaviour, IFighter
 
     public void RequestSkillPress()
     {
-        if (!inputEnabled || currentHealth <= 0f) return;
+        if (!inputEnabled) return;
         skillController?.OnSkillPressed();
     }
 
     public void RequestSkillRelease()
     {
-        if (!inputEnabled || currentHealth <= 0f) return;
+        if (!inputEnabled) return;
         skillController?.OnSkillReleased();
     }
     #endregion
@@ -409,8 +401,6 @@ public class Fighter : MonoBehaviour, IFighter
 
     public BlockResult ReceiveHit(in HitData hit)
     {
-        if (currentHealth <= 0f) return BlockResult.Ignored;
-
         BlockResult result = BlockResult.None;
         float finalDamage = hit.Damage;
 
@@ -440,13 +430,6 @@ public class Fighter : MonoBehaviour, IFighter
                 float reward = blockAction != null ? blockAction.blockBarReward : 0.1f;
                 AddBar(reward);
             }
-        }
-
-        // Aplicar daño
-        if (finalDamage > 0f)
-        {
-            currentHealth = Mathf.Max(0f, currentHealth - finalDamage);
-            OnHealthChanged?.Invoke(currentHealth, maxHealth);
         }
 
         // Notificar a ScoreSystem
@@ -519,7 +502,7 @@ public class Fighter : MonoBehaviour, IFighter
     private IEnumerator BleedRoutine(IDamageable source, float dps, float duration, float endBurst)
     {
         float elapsed = 0f;
-        while (elapsed < duration && currentHealth > 0f)
+        while (elapsed < duration)
         {
             yield return new WaitForSeconds(1f);
             elapsed += 1f;
@@ -527,7 +510,7 @@ public class Fighter : MonoBehaviour, IFighter
                 ApplyDirectDotDamage(source, dps);
         }
 
-        if (endBurst > 0f && currentHealth > 0f)
+        if (endBurst > 0f)
             ApplyDirectDotDamage(source, endBurst);
     }
 
@@ -569,11 +552,37 @@ public class Fighter : MonoBehaviour, IFighter
         swarmBugsRemaining = 0;
     }
 
+    public void ClearEffects(bool resetBar)
+    {
+        InterruptCurrentAction();
+
+        foreach (Coroutine c in activeBleeds)
+            if (c != null) StopCoroutine(c);
+        activeBleeds.Clear();
+
+        ClearSwarm();
+
+        stunTimer = 0f;
+        slowTimer = 0f;
+        actionSpeed = 1f;
+
+        blockHeld = false;
+        EndBlock();
+        state = FighterState.Idle;
+        if (CharacterAnimator != null) CharacterAnimator.SetBool("Stunned", false);
+
+        skillController?.ResetState();
+
+        if (resetBar)
+        {
+            skillBar = 0f;
+            OnSkillBarChanged?.Invoke(skillBar);
+        }
+    }
+
     private void ApplyDirectDotDamage(IDamageable source, float amount)
     {
-        if (currentHealth <= 0f || amount <= 0f) return;
-        currentHealth = Mathf.Max(0f, currentHealth - amount);
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (amount <= 0f) return;
         HitReceived?.Invoke(new HitReport(source, this, amount, BlockResult.None));
     }
 #endregion
