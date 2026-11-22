@@ -5,6 +5,11 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bolsaSemillasPeasum
+    second: {fileID: 2100000, guid: f6c80a1db4a5f0f4dbe6939fbd448b0e, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: bolsaSemillasPeasum_BaseColor
