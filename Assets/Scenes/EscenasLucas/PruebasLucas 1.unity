@@ -1869,7 +1869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &915874280
 Transform:
   m_ObjectHideFlags: 0
@@ -3263,9 +3263,9 @@ MonoBehaviour:
   maxHeightOffset: 1
   smoothSpeed: 4
   stemTransform: {fileID: 0}
-  baseStemScaleY: 1
-  stemScalePerUnit: 0.5
-  anchorStemToGround: 1
+  baseStemScaleY: 1.19
+  stemScalePerUnit: 0
+  anchorStemToGround: 0
   stageOffsetY: 0
 --- !u!1 &1416144653
 GameObject:
@@ -4724,8 +4724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetupManager
   playerLeft: {fileID: 1400611807}
   playerRight: {fileID: 1179532887}
-  defaultLeftPrefab: {fileID: 5844649462466783695, guid: 990bc29cde81e0f468f38c486a9957ee, type: 3}
-  defaultRightPrefab: {fileID: 4538947174743976917, guid: 6e1152841c7dc78418d8dfd1efac04ca, type: 3}
+  defaultLeftPrefab: {fileID: 4538947174743976917, guid: 6e1152841c7dc78418d8dfd1efac04ca, type: 3}
+  defaultRightPrefab: {fileID: 5844649462466783695, guid: 990bc29cde81e0f468f38c486a9957ee, type: 3}
   leftBars: {fileID: 628997031}
   rightBars: {fileID: 2122506809}
   leftNameText: {fileID: 651258148}

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movimiento del Jugador")]
     [SerializeField] private float maxSpeed = 8.0f;
     [SerializeField] private float acceleration = 25.0f;
+    [SerializeField] private float rotationSpeed = 12.0f;
     [SerializeField] private float minPlayerRadius = 12.5f;
     [SerializeField] private float maxPlayerRadius = 24.0f;
 
@@ -33,14 +34,15 @@ public class PlayerMovement : MonoBehaviour
     private float currentRadialVelocity = 0.0f;
 
     private bool isExternalControl = false;
-
     private bool canMove = true;
+
+    private Animator animator;
+    private float speed = 0.0f;
 
     #region Inputs
     private void OnEnable()
     {
         inputActions.Plaza.Enable();
-
         inputActions.Plaza.Move.performed += OnMovePerformed;
         inputActions.Plaza.Move.canceled += OnMoveCanceled;
     }
@@ -49,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
     {
         inputActions.Plaza.Move.performed -= OnMovePerformed;
         inputActions.Plaza.Move.canceled -= OnMoveCanceled;
-
         inputActions.Plaza.Disable();
     }
 
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         inputActions = new InputActions();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -114,6 +116,15 @@ public class PlayerMovement : MonoBehaviour
             );
 
             Vector3 horizontalMove = targetPosition - transform.position;
+            horizontalMove.y = 0f; // Aseguramos que sea puramente horizontal
+            speed = horizontalMove.magnitude;
+
+            // Rotación hacia la dirección de movimiento
+            if (horizontalMove.sqrMagnitude > 0.00001f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(horizontalMove.normalized);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
 
             if (controller.isGrounded && verticalVelocity.y < 0)
             {
@@ -126,23 +137,30 @@ public class PlayerMovement : MonoBehaviour
 
             RecalculatePolarFromPosition();
         }
+        else
+        {
+            speed = 0f; // Si no puede moverse, aseguramos que la animación vuelva a Idle
+        }
 
         // -- CAMARA --
-        // if (canMove && !isExternalControl)
         Vector3 playerOffset = transform.position - greenhouseCenter.position;
         float realPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
 
         float cameraRad = realPlayerAngleRad + Mathf.PI;
 
-        Vector3 cameraPos = new Vector3(greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius, transform.position.y + cameraHeightOffset, greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius);
+        Vector3 cameraPos = new Vector3(
+            greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius,
+            transform.position.y + cameraHeightOffset,
+            greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius
+        );
 
         mainCamera.position = cameraPos;
 
         Vector3 cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
         mainCamera.LookAt(cameraTarget);
 
-        Vector3 lookDir = new Vector3(playerOffset.x, 0f, playerOffset.z).normalized;
-        if (lookDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(lookDir);
+        // Animate
+        Animate();
     }
     #endregion
 
@@ -159,9 +177,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = newPos;
         controller.enabled = true;
 
-        Vector3 offset = transform.position - greenhouseCenter.position;
-        currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
-        currentAngle = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
+        RecalculatePolarFromPosition();
     }
 
     public void DisableMovement()
@@ -178,9 +194,7 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
         isExternalControl = false;
 
-        Vector3 offset = transform.position - greenhouseCenter.position;
-        currentPlayerRadius = Mathf.Clamp(new Vector2(offset.x, offset.z).magnitude, minPlayerRadius, maxPlayerRadius);
-        currentAngle = Mathf.Atan2(offset.z, offset.x) * Mathf.Rad2Deg;
+        RecalculatePolarFromPosition();
     }
 
     public void SetControlActive(bool active)
@@ -193,5 +207,11 @@ public class PlayerMovement : MonoBehaviour
             currentTangentialVelocity = 0f;
             currentRadialVelocity = 0f;
         }
+    }
+
+    public void Animate()
+    {
+        float realSpeed = Time.deltaTime > 0 ? speed / Time.deltaTime : 0f;
+        animator.SetFloat("Speed", realSpeed);
     }
 }
