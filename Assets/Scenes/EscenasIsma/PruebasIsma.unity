@@ -16089,6 +16089,10 @@ PrefabInstance:
       value: PruebasLucas 1
       objectReference: {fileID: 0}
     - target: {fileID: 689420679292738362, guid: 8e4c8a81b28325a419ab820c63d26aa1, type: 3}
+      propertyPath: saltarNoDisponibles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689420679292738362, guid: 8e4c8a81b28325a419ab820c63d26aa1, type: 3}
       propertyPath: vcamJugadorPrincipal
       value: 
       objectReference: {fileID: 1933740145}
