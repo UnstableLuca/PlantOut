@@ -21,13 +21,9 @@ MonoBehaviour:
   bookPrefab: {fileID: 1539651414980989587, guid: f1fdbbbf9b0f3ea409dbfcf32e655880, type: 3}
   combosVisuales:
   - botonesTeclado:
-    - {fileID: -1497371589, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
-    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
-    - {fileID: 1197226507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 21300000, guid: c08cde3206fef3a4199c3ae6f938e821, type: 3}
     botonesMando:
-    - {fileID: -725581648, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
-    - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
-    - {fileID: -666183619, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+    - {fileID: 21300000, guid: 005d70972f53d344488d3627a3654a06, type: 3}
   - botonesTeclado:
     - {fileID: -1497371589, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}

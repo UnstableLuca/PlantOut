@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carnivora
   m_EditorClassIdentifier: Assembly-CSharp::PlantData3D
   plantName: Carnivora
-  description: Planta carnivora
+  description: Una planta con hambre de pelea, cuidado no te escupa.
   estadisticas: 
   bagPrefab: {fileID: 2482162285209372021, guid: 56f47e39b32213e46a2dc7a721100cb9, type: 3}
   frontLabelTexture: {fileID: 2800000, guid: 5fa152c140b0d3940a6829098890a673, type: 3}
@@ -29,3 +29,4 @@ MonoBehaviour:
     - {fileID: -1428079781, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
     - {fileID: 788321507, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
   plantPrefab: {fileID: 4538947174743976917, guid: 6e1152841c7dc78418d8dfd1efac04ca, type: 3}
+  disponible: 1
