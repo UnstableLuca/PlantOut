@@ -270,7 +270,8 @@ public class SpykeSkills : SkillController
         ticksFired = 0;
         totalTicks = Mathf.Max(1, Mathf.RoundToInt(ultimateDuration / ultimateTickInterval));
         tickDamage = ultimateDamage / totalTicks;
-
+        
+        fighter.ResetCombatTriggers();
         fighter.PlayAnimation(ultimateTrigger);
         SetArmLayersWeight(0f);
         UltimateChanged?.Invoke(true);
@@ -327,6 +328,7 @@ public class SpykeSkills : SkillController
 
     public override void ResetState()
     {
+        if (phase == Phase.Ultimate) fighter.PlayAnimation(ultimateEndTrigger);
         phase = Phase.Idle;
         fighter.EndChannel();
 

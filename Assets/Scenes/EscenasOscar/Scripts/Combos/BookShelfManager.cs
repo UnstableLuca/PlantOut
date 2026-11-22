@@ -34,6 +34,8 @@ public class BookShelfManager : MonoBehaviour
 
     [Header("Canvas de Salida")]
     public GameObject canvasSalirEstanteria;
+    [Tooltip("Desmarcado: no se puede abrir ningún libro (todos salen con candado)")]
+    public bool permitirAbrirLibros = false;
     [Header("Libros bloqueados")]
     [Tooltip("UI de candado que se enseña al señalar en la balda el libro de una planta bloqueada (opcional)")]
     public GameObject candadoLibroUI;
@@ -705,6 +707,8 @@ public class BookShelfManager : MonoBehaviour
     }
     private bool LibroBloqueado(int indice)
     {
+        if (!permitirAbrirLibros) return true;
+
         return bookControllers != null && indice >= 0 && indice < bookControllers.Length &&
                bookControllers[indice] != null && bookControllers[indice].Bloqueado;
     }

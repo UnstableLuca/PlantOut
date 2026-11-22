@@ -21,6 +21,9 @@ public class Fighter : MonoBehaviour, IFighter
     [Header("Barra de energía")]
     [SerializeField, Min(1)] int maxSkillUses = 5;
     [SerializeField, Range(0f, 5f)] float skillBar = 0f;
+    [Header("Animacion de golpe")]
+    [Tooltip("Tiempo minimo entre dos animaciones de golpe (evita que los ticks de una ulti la reinicien cada 0,1 s)")]
+    [SerializeField, Min(0f)] float hitAnimCooldown = 0.3f;
 
     // Acciones Base (Inyectadas por PlantCharacterModule desde el prefab hijo)
     private PlayerAction meleeAction;
@@ -51,6 +54,8 @@ public class Fighter : MonoBehaviour, IFighter
     private float stunTimer = 0f;
     private float slowTimer = 0f;
     private float actionSpeed = 1f;
+
+    private float nextHitAnimTime;
 
     private float stunDuration;
     private float slowDuration;
@@ -191,6 +196,7 @@ public class Fighter : MonoBehaviour, IFighter
         // Si tiene encima el enjambre de Maxilón, pulsar el botón indicado quita bichos
         if (hasSwarm && kind == swarmShakeKind)
         {
+            swarmBugsRemaining -= swarmRemovePerPress;
             if (swarmBugsRemaining <= 0)
             {
                 ClearSwarm();
@@ -412,6 +418,22 @@ public class Fighter : MonoBehaviour, IFighter
             CharacterAnimator.SetTrigger(trigger);
         }
     }
+    void PlayHitReaction(bool force)
+    {
+        if (CharacterAnimator == null) return;
+        if (!force && Time.time < nextHitAnimTime) return;   // golpes muy seguidos: no reiniciar la animacion
+
+        nextHitAnimTime = Time.time + hitAnimCooldown;
+        CharacterAnimator.SetTrigger("Hit");
+    }
+
+    public void ResetCombatTriggers()
+    {
+        if (CharacterAnimator == null) return;
+        CharacterAnimator.ResetTrigger("Hit");
+        CharacterAnimator.ResetTrigger("Melee");
+        CharacterAnimator.ResetTrigger("Ranged");
+    }
 
     public BlockResult ReceiveHit(in HitData hit)
     {
@@ -453,6 +475,7 @@ public class Fighter : MonoBehaviour, IFighter
         if (result == BlockResult.None)
         {
             bool hasSuperArmor = skillController != null && skillController.SuperArmor;
+            bool interrupted = false;
 
             if (hit.Interrupts && !hasSuperArmor)
             {
@@ -460,11 +483,13 @@ public class Fighter : MonoBehaviour, IFighter
                 {
                     InterruptCurrentAction();
                     state = FighterState.Idle;
+                    interrupted = true;
                 }
                 else if (state == FighterState.Channeling)
                 {
                     skillController?.OnChannelInterrupted();
                     state = FighterState.Idle;
+                    interrupted = true;
                 }
             }
 
@@ -472,9 +497,10 @@ public class Fighter : MonoBehaviour, IFighter
             {
                 Stun(hit.Hitstun);
             }
-            else if (!hasSuperArmor && finalDamage > 0f && CharacterAnimator != null)
+            else if (!hasSuperArmor && finalDamage > 0f)
             {
-                CharacterAnimator.SetTrigger("Hit");
+                // Si se ha cortado un ataque, la animacion de golpe sale siempre para cancelarlo
+                PlayHitReaction(interrupted);
             }
         }
 

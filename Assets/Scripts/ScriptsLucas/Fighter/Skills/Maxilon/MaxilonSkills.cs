@@ -112,6 +112,8 @@ public class MaxilonSkills : SkillController
 
     public override Transform BugCatchPoint =>
         mouthPoint != null ? mouthPoint : (fighter != null ? fighter.ProjectileOrigin : null);
+    
+    public override bool SuperArmor => phase == Phase.UltimateWindup;
     #endregion
 
     #region Awake
@@ -451,6 +453,7 @@ public class MaxilonSkills : SkillController
 
         phase = Phase.UltimateWindup;
         timer = ultimateWindup;
+        fighter.ResetCombatTriggers();
         Trigger(ultimateTrigger);
         SetUltimateHidden(true);
         showHiddenAt = Time.time + hiddenDuringUltimateTime;
