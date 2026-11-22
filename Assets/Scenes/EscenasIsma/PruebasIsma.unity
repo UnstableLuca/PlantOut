@@ -30486,6 +30486,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: a8a3c7f6b9a6c8542a2cc94803267ffa, type: 2}
     - target: {fileID: 3038404724397922779, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: a2770517666c60a4ca494e1c773b8543, type: 2}
+    - target: {fileID: 3038404724397922779, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: textoNombreDerecha
       value: 
       objectReference: {fileID: 421974722}
@@ -30613,6 +30617,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a8a3c7f6b9a6c8542a2cc94803267ffa, type: 2}
+    - target: {fileID: 3909361340502158304, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: 6965a4a515bbf064396622c5ea41849c, type: 2}
     - target: {fileID: 4057994480769301502, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: paginas.Array.data[0].tituloCaraDerecha
       value: MELEE
@@ -30665,6 +30673,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dfed05a1b5a7b2141b1233622b394e66, type: 2}
+    - target: {fileID: 5132698621034904256, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: c316466564d6e8c4995030a5a77e16a4, type: 2}
     - target: {fileID: 5132698621034904256, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -30754,6 +30766,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: dfed05a1b5a7b2141b1233622b394e66, type: 2}
     - target: {fileID: 6144816349951652046, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b74127ba55a0894c85f51d3327d14c7, type: 2}
+    - target: {fileID: 6144816349951652046, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: textoNombreDerecha
       value: 
       objectReference: {fileID: 421974722}
@@ -30833,6 +30849,10 @@ PrefabInstance:
       propertyPath: paginas.Array.data[2].descripcionCaraIzquierda
       value: ' 1 - 4 CARGAS'
       objectReference: {fileID: 0}
+    - target: {fileID: 6170796721693690490, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: 88813278b055b93449ef79bef0e1585b, type: 2}
     - target: {fileID: 6170796721693690490, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: textoNombreDerecha
       value: 
@@ -30918,6 +30938,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7001715664751725045, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
+      propertyPath: planta
+      value: 
+      objectReference: {fileID: 11400000, guid: 84c09380f9bde1d4c8880878d1541a5f, type: 2}
+    - target: {fileID: 7001715664751725045, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: textoNombreDerecha
       value: 
       objectReference: {fileID: 421974722}
@@ -30999,7 +31023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7834528816206123056, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -512.9209
+      value: -512.92084
       objectReference: {fileID: 0}
     - target: {fileID: 7834528816206123056, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31007,7 +31031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7834528816206123056, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 68.78521
+      value: 68.785194
       objectReference: {fileID: 0}
     - target: {fileID: 7834528816206123056, guid: 2d27afa64c4fc38449bae919791799d0, type: 3}
       propertyPath: m_LocalRotation.w

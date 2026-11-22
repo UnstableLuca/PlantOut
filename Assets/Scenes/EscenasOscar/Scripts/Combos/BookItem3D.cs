@@ -60,6 +60,12 @@ public class BookItem3D : MonoBehaviour
     private bool modoControlRecibidoDelManager = false;
     private int tokenFade = 0;
 
+    [Header("Planta del libro")]
+    [Tooltip("Planta a la que pertenece este libro. Si esa planta no se puede seleccionar, el libro no se puede abrir. Vacío = siempre se puede leer")]
+    public PlantData3D planta;
+
+    public bool Bloqueado => planta != null && !planta.EsSeleccionable;
+
     private BookShelfManager shelfManagerRef;
 
     public int PaginaActual => paginaActual;

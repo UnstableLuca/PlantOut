@@ -34,6 +34,9 @@ public class BookShelfManager : MonoBehaviour
 
     [Header("Canvas de Salida")]
     public GameObject canvasSalirEstanteria;
+    [Header("Libros bloqueados")]
+    [Tooltip("UI de candado que se enseña al señalar en la balda el libro de una planta bloqueada (opcional)")]
+    public GameObject candadoLibroUI;
 
     [Header("Animator Triggers")]
     public string triggerAbrir = "Abrir";
@@ -89,6 +92,8 @@ public class BookShelfManager : MonoBehaviour
 
     private void Update()
     {
+        ActualizarCandadoLibro();
+
         if (!sistemaIniciado) return;
 
         bool mandoActualConectado = UsarMandoActual;
@@ -600,7 +605,7 @@ public class BookShelfManager : MonoBehaviour
 
     private IEnumerator SecuenciaMoverYAbrirEnMesa()
     {
-        if (spawnPointMesa == null || !HayLibroActual()) yield break;
+        if (spawnPointMesa == null || !HayLibroActual() || LibroBloqueado(currentIndex)) yield break;
 
         enTransicion = true;
         enMesa = true;
@@ -697,6 +702,19 @@ public class BookShelfManager : MonoBehaviour
         enMesa = false;
         enTransicion = false;
         UpdateShelfPositions();
+    }
+    private bool LibroBloqueado(int indice)
+    {
+        return bookControllers != null && indice >= 0 && indice < bookControllers.Length &&
+               bookControllers[indice] != null && bookControllers[indice].Bloqueado;
+    }
+
+    private void ActualizarCandadoLibro()
+    {
+        if (candadoLibroUI == null) return;
+
+        bool mostrar = sistemaIniciado && !enMesa && LibroBloqueado(currentIndex);
+        if (candadoLibroUI.activeSelf != mostrar) candadoLibroUI.SetActive(mostrar);
     }
 
     private bool HayLibroActual()

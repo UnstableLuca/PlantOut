@@ -66,6 +66,10 @@ public class MaxilonSkills : SkillController
     [SerializeField] AttackKind swarmShakeButton = AttackKind.Melee;
     [Tooltip("Bichos que se quita el rival por pulsacion")]
     [SerializeField, Min(1)] int bugsRemovedPerPress = 1;
+    [Tooltip("Se ocultan durante la ultimate (p. ej. las babas)")]
+    [SerializeField] Renderer[] hideDuringUltimate;
+    [Tooltip("Segundos que siguen ocultos desde que empieza la ultimate")]
+    [SerializeField, Min(0f)] float hiddenDuringUltimateTime = 1.2f;
 
     [Header("Animator (vacio = no se usa)")]
     [Tooltip("Si se deja vacio busca el Animator en los hijos")]
@@ -87,6 +91,7 @@ public class MaxilonSkills : SkillController
     int level;
     float holdTimer;
     float timer;
+    float showHiddenAt = -1f;
 
     bool hunting;
     bool exitHolding;
@@ -211,6 +216,12 @@ public class MaxilonSkills : SkillController
     void Update()
     {
         if (fighter == null) return;
+
+        if (showHiddenAt > 0f && Time.time >= showHiddenAt)
+        {
+            showHiddenAt = -1f;
+            SetUltimateHidden(false);
+        }
 
         float dt = Time.deltaTime * fighter.ActionSpeed;
 
@@ -441,6 +452,8 @@ public class MaxilonSkills : SkillController
         phase = Phase.UltimateWindup;
         timer = ultimateWindup;
         Trigger(ultimateTrigger);
+        SetUltimateHidden(true);
+        showHiddenAt = Time.time + hiddenDuringUltimateTime;
     }
 
     void LaunchBall()
@@ -484,6 +497,14 @@ public class MaxilonSkills : SkillController
         level = 0;
         summonBlockedUntil = 0f;
         SetCharging(false);
+        showHiddenAt = -1f;
+        SetUltimateHidden(false);
+    }
+    void SetUltimateHidden(bool hidden)
+    {
+        if (hideDuringUltimate == null) return;
+        foreach (Renderer r in hideDuringUltimate)
+            if (r != null) r.enabled = !hidden;
     }
 
     void SetCloudVisuals(bool on)

@@ -4623,7 +4623,11 @@ MonoBehaviour:
   cloudVisuals: []
   exitHuntHold: 0.5
   barPerBug: 1
-  attractInterval: 0.5
+  crossSpeed: 4
+  crossIntervalMin: 1
+  crossIntervalMax: 3
+  crossMargin: 0.8
+  crossMaxAngle: 30
   spitPrefab: {fileID: 5626363036309696205, guid: acdbef568f6580140a18a828f566c23d, type: 3}
   mouthPoint: {fileID: 1527515700581362354}
   spitSpeed: 25
@@ -4637,7 +4641,7 @@ MonoBehaviour:
   - 4
   spitDamage: 0
   spitLockTime: 0.4
-  giantBallPrefab: {fileID: 0}
+  giantBallPrefab: {fileID: 7182989977347955828, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
   ballSpeed: 15
   ultimateWindup: 0.8
   swarmBugs: 10
@@ -4645,6 +4649,9 @@ MonoBehaviour:
   swarmDuration: 10
   swarmShakeButton: 0
   bugsRemovedPerPress: 1
+  hideDuringUltimate:
+  - {fileID: 6845750033163156825}
+  hiddenDuringUltimateTime: 1.2
   animator: {fileID: 7005454192877239945}
   huntingParameter: Hunting
   chargingParameter: Charging

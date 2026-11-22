@@ -1280,7 +1280,7 @@ MonoBehaviour:
   bugSpawner: {fileID: 871050815}
   playerLeft: {fileID: 1400611812}
   playerRight: {fileID: 1179532890}
-  matchDuration: 15
+  matchDuration: 300
   tieRule: 1
   timerText: {fileID: 0}
 --- !u!224 &628997031 stripped
@@ -2028,8 +2028,8 @@ Transform:
   m_LocalScale: {x: 51.13, y: 39.733635, z: 51.13}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 966518140}
   - {fileID: 1385616138}
+  - {fileID: 966518140}
   m_Father: {fileID: 1783434099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915874279
@@ -2110,9 +2110,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966518139}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.37, z: 0}
-  m_LocalScale: {x: 1, y: 3.2433, z: 1}
+  m_LocalScale: {x: 1, y: 3.2433004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 906781623}
@@ -4434,7 +4434,11 @@ MonoBehaviour:
   victoryRoot: {fileID: 915874279}
   winnerPlaceholder: {fileID: 95257199}
   loserPlaceholder: {fileID: 966518140}
+  winnerFollow: {fileID: 7409706581842339974}
+  loserFollow: {fileID: 1385616138}
   modelRotation: {x: 0, y: 180, z: 0}
+  winnerRotation: {x: 0, y: 0, z: 0}
+  loserRotation: {x: 0, y: -65, z: 0}
   modelScale: 30
   positionOffset: {x: 0, y: 0, z: 0}
   hideStem: 1
@@ -4442,6 +4446,8 @@ MonoBehaviour:
   loserText: {fileID: 464779709}
   showPlantNames: 1
   drawText: Empate
+  winnerNameBox: {fileID: 1340113016}
+  loserNameBox: {fileID: 472365621}
   hideOnVictory:
   - {fileID: 1935748998}
   menuSceneName: PruebasIsma
@@ -20095,6 +20101,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4498675450230379466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4551046337107043326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2391896888585282556, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_Name
+      value: bolaBichos
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25421.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 178.4253
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -55.57495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060874485156329798, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d91b13747f587fd428a3cd09b76407cc, type: 3}
 --- !u!23 &4560006519975926285
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34065,3 +34128,4 @@ SceneRoots:
   - {fileID: 1814237985}
   - {fileID: 1945345407}
   - {fileID: 6551451718287649531}
+  - {fileID: 4551046337107043326}
