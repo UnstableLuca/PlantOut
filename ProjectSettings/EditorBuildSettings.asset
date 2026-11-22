@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/CP/Enfermer\xEDa.unity"
     guid: f1fbf3ba24e8ff54d9ab72a14871da26
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EscenasIsma/PruebaShader.unity
     guid: 2efcb6ce75698c84780c7ebc0ff3804c
   - enabled: 1
     path: Assets/Scenes/EscenasIsma/PruebasIsma.unity
     guid: 9480e45a3bb653349a9fcceefbc55530
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EscenasLucas/PruebasLucas.unity
     guid: cfc9f97dea028404299e96fd9e333007
   - enabled: 1

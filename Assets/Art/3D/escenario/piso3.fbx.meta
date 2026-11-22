@@ -3,7 +3,127 @@ guid: 0f0334ed504bd0f41900712afbaa676e
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO.001
+    second: {fileID: 2100000, guid: 86169ed8f2a4b3440a865c213a3c6fac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACK.002
+    second: {fileID: 2100000, guid: e78d22dc912489244bcd6b0f446bdf67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS.002
+    second: {fileID: 2100000, guid: 9a00c59575aa7824fb6e80b545cce911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS.002
+    second: {fileID: 2100000, guid: 7a726918edf61164e8391db6c2f9e438, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LATERAL.002
+    second: {fileID: 2100000, guid: 851efed4c4267ee47bb6775bc3bde535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 62ab15aaeed68ec44928cbe716567901, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: ab6da4ce24e78ae4f9c6a37ecf9d024b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: bbc3776a0e0f0d14ea1c3de44b0589cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: bbc791f18bd4f564b94c84a6de635010, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: db1c9f32449e8184ba159f8c0c8b8368, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 73a1cfdc3031acd4ea7a91d089c6dcf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 6b0d4cb05e0974e49a0ffcb3bc640433, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: bd79ecfbf3ba8604c977b2d8b7ca2453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: b8f2d71a357ccbb44be9684551222042, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: 37dc2ef9070e26c4382089b6a4b1de3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.021
+    second: {fileID: 2100000, guid: 1fc05a015e9e4fc4093b4d193ff040da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubo_5.001
+    second: {fileID: 2100000, guid: f4a01741be0f29944a297eba396a1e84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arcos
+    second: {fileID: 2100000, guid: 96e5b8373f677a6459bd1d32452a4215, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base
+    second: {fileID: 2100000, guid: 108ed28af6be8a841a7d6d9d8af7dab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pelo.001
+    second: {fileID: 2100000, guid: 02b308fb3d4440e468daf8215492645d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soportes
+    second: {fileID: 2100000, guid: 52b5a15d882f800469b36d05f5575011, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tallo3_002
+    second: {fileID: 2100000, guid: ad13a5af467c17d48adbf47241dde49c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tierraGrande1
+    second: {fileID: 2100000, guid: e40d445c64dd35745a3399c11394d4c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ventanales
+    second: {fileID: 2100000, guid: c503ed4664a5ef24fb008e775e77e06f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
