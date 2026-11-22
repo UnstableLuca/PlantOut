@@ -3,7 +3,112 @@ guid: bb55d55c3a2338b4d8305ba864915b7e
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO.001
+    second: {fileID: 2100000, guid: c8601a3119b7315479cb12e7265bee66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACK.002
+    second: {fileID: 2100000, guid: 6956bf1bc46271943ac5156e874a2353, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS.002
+    second: {fileID: 2100000, guid: bfdc26f9e96df214a8e9136e66115ce4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS.002
+    second: {fileID: 2100000, guid: 7e0b491741d76b8449c0bb5b8ce5d219, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LATERAL.002
+    second: {fileID: 2100000, guid: 96a3c0da601194244b272b11d58e8ca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 60fd7dd200c944c4a8596aa6b6f2388a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 67884d409f6986947b7a260539c72bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 108fe86a522f83a46a7c1c5483b1ee24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: bcaa14162156f474fbc18ffee0a11e61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 0edc24b8eb48e7143949e64c518f6b0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 0c3ec37ab13510b44a713a6640070a36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: a1d74ab50cd0acf48bcfdd4de40674d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: d36abc912c82ee640b8bd0a8e84465d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubo_5.001
+    second: {fileID: 2100000, guid: 876eda2a78ee9a945aff422a974d5ab6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arcos
+    second: {fileID: 2100000, guid: 6da89c4e7bd4deb4f97e6f4f6c86ea7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base
+    second: {fileID: 2100000, guid: 59cbd2475cd74f14a97eac5e39d08c9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pelo.001
+    second: {fileID: 2100000, guid: 3818c5a8a96de034ab9cb1388fc72e78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soportes
+    second: {fileID: 2100000, guid: 388c2dbd62ee47c44be60819e7eeae4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tallo3_002
+    second: {fileID: 2100000, guid: a49f6cea33c33a344a9e7c862e3040d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tierraGrande1
+    second: {fileID: 2100000, guid: cf9e3edb67099394d8d5fbc9d44e16d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ventanales
+    second: {fileID: 2100000, guid: ff02b877a72479748a5bf08308403419, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
