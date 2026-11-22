@@ -32,5 +32,10 @@ public class PlantData3D : ScriptableObject
     public ComboVisual[] combosVisuales;
 
     [Header("Prefab de Combate / Juego")]
-    public GameObject plantPrefab; 
+    public GameObject plantPrefab;
+    [Header("Disponible en la seleccion")]
+    [Tooltip("Desmarcar para bloquear la planta aunque tenga prefab")]
+    public bool disponible = true; public bool EsSeleccionable =>
+        disponible && plantPrefab != null && plantPrefab.GetComponentInChildren<PlantCharacterModule>(true) != null;
 }
+

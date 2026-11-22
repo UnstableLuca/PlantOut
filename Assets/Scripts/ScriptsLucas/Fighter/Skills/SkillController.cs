@@ -14,6 +14,7 @@ public class SkillController : MonoBehaviour
     public virtual bool SuperArmor => false;
 
     public virtual bool AllowsBarGain => true;
+    public virtual Transform BugCatchPoint => null;
 
     public virtual void OnSkillPressed() { }
     public virtual void OnSkillReleased() { }

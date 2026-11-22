@@ -17,7 +17,7 @@ MonoBehaviour:
   recovery: 0.2
   animationTrigger: Ranged
   kind: 1
-  damage: 10
+  damage: 15
   hitstun: 0
   canTargetBugs: 1
   projectilePrefab: {fileID: 0}

@@ -77,7 +77,11 @@ public class ShelfManager : MonoBehaviour
 
     [Header("Combate")]
     public string nombreEscenaCombate = "cocos";
-
+    [Header("Plantas disponibles")]
+    [Tooltip("true: al moverse por la estantería se saltan las plantas no terminadas. false: se ven pero no se pueden confirmar")]
+    public bool saltarNoDisponibles = true;
+    [Tooltip("Texto de la descripción en las plantas bloqueadas (solo si no se saltan)")]
+    public string textoBloqueada = "Próximamente";
     private int turnoJugador = 1;
     private int seleccionJugador1 = -1;
     private int seleccionJugador2 = -1;
@@ -149,6 +153,7 @@ public class ShelfManager : MonoBehaviour
         {
             plants[i] = shelfSlotsData[i].plantData;
         }
+        currentIndex = PrimerIndiceDisponible();
     }
 
     private void ForcedInstantPositionForStart()
@@ -340,7 +345,7 @@ public class ShelfManager : MonoBehaviour
             bagControllers[currentIndex].ForceDeselect();
         }
 
-        currentIndex = (currentIndex + 1) % plants.Length;
+        currentIndex = BuscarIndice(currentIndex, 1);
         UpdateUIAndStates();
     }
 
@@ -354,29 +359,61 @@ public class ShelfManager : MonoBehaviour
             bagControllers[currentIndex].ForceDeselect();
         }
 
-        currentIndex = (currentIndex - 1 + plants.Length) % plants.Length;
+        currentIndex = BuscarIndice(currentIndex, -1);
         UpdateUIAndStates();
     }
 
     private void UpdateUIAndStates()
     {
         PlantData3D currentPlant = plants[currentIndex];
+        if (currentPlant == null) return;
+
+        bool seleccionable = EsSeleccionable(currentIndex);
+        string descripcion = !seleccionable && !string.IsNullOrEmpty(textoBloqueada)
+            ? textoBloqueada
+            : currentPlant.description;
 
         if (turnoJugador == 1)
         {
             if (txtPlantNameJ1 != null) txtPlantNameJ1.text = currentPlant.plantName;
-            if (txtDescriptionJ1 != null) txtDescriptionJ1.text = currentPlant.description;
+            if (txtDescriptionJ1 != null) txtDescriptionJ1.text = descripcion;
+            if (botonConfirmarJ1 != null && sistemaIniciado) botonConfirmarJ1.interactable = seleccionable;
 
             GenerarCombosVisuales(currentPlant, contenedorCombosJ1);
         }
         else if (turnoJugador == 2)
         {
             if (txtPlantNameJ2 != null) txtPlantNameJ2.text = currentPlant.plantName;
-            if (txtDescriptionJ2 != null) txtDescriptionJ2.text = currentPlant.description;
+            if (txtDescriptionJ2 != null) txtDescriptionJ2.text = descripcion;
+            if (botonConfirmarJ2 != null) botonConfirmarJ2.interactable = seleccionable;
 
             GenerarCombosVisuales(currentPlant, contenedorCombosJ2);
         }
     }
+    private bool EsSeleccionable(int index)
+    {
+        return plants != null && index >= 0 && index < plants.Length
+            && plants[index] != null && plants[index].EsSeleccionable;
+    }
+
+    private int BuscarIndice(int desde, int paso)
+    {
+        int n = plants.Length;
+        for (int i = 1; i <= n; i++)
+        {
+            int idx = ((desde + paso * i) % n + n) % n;
+            if (!saltarNoDisponibles || EsSeleccionable(idx)) return idx;
+        }
+        return desde;
+    }
+
+    private int PrimerIndiceDisponible()
+    {
+        if (plants == null || plants.Length == 0) return 0;
+        if (!saltarNoDisponibles || EsSeleccionable(0)) return 0;
+        return BuscarIndice(0, 1);
+    }
+
 
     private void UpdateShelfPositions()
     {
@@ -403,6 +440,7 @@ public class ShelfManager : MonoBehaviour
     {
         if (turnoJugador == 1)
         {
+            if (!EsSeleccionable(currentIndex)) return;
             seleccionJugador1 = currentIndex;
 
             if (plants[seleccionJugador1] != null)
@@ -477,6 +515,7 @@ public class ShelfManager : MonoBehaviour
     {
         if (turnoJugador == 2 && !estaDescartando && !enPantallaVS && !enTransicion)
         {
+            if (!EsSeleccionable(currentIndex)) return;
             seleccionJugador2 = currentIndex;
 
             if (plants[seleccionJugador2] != null)
@@ -577,7 +616,7 @@ public class ShelfManager : MonoBehaviour
         }
 
         turnoJugador = 1;
-        currentIndex = 0;
+        currentIndex = PrimerIndiceDisponible();
         seleccionJugador1 = -1;
         seleccionJugador2 = -1;
         estaDescartando = false;

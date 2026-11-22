@@ -96,6 +96,8 @@ public class Fighter : MonoBehaviour, IFighter
     public float SkillBar => skillBar;
     public float ActionSpeed => actionSpeed;
 
+    public Transform BugCatchPoint => skillController != null ? skillController.BugCatchPoint : null;
+
     public bool CanAct =>
         inputEnabled &&
         state == FighterState.Idle;
@@ -189,11 +191,11 @@ public class Fighter : MonoBehaviour, IFighter
         // Si tiene encima el enjambre de Maxilón, pulsar el botón indicado quita bichos
         if (hasSwarm && kind == swarmShakeKind)
         {
-            swarmBugsRemaining -= swarmRemovePerPress;
             if (swarmBugsRemaining <= 0)
             {
                 ClearSwarm();
             }
+            return;
         }
 
         // Dar prioridad a interceptaciones (ej: Maxilón comiendo nubes en modo caza)

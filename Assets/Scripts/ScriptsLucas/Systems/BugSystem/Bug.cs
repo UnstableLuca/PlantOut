@@ -36,15 +36,17 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     [Tooltip("Puntos que se lleva quien lo mata (los reparte el BugSpawner)")]
     public float killPoints = 5f;
     [SerializeField] float deathDelay = 0.2f;
+    [Tooltip("Velocidad al volar a la boca de la planta que se lo come")]
+    [SerializeField] float catchSpeed = 14f;
 
     [Header("Visual (opcional)")]
     [Tooltip("Parametros: bool Telegraph; triggers Swoop, Hurt, Die")]
     [SerializeField] Animator animator;
 
-    enum BugState { Arriving, Idle, Telegraph, Swoop, Stunned, Dead }
+    enum BugState { Arriving, Idle, Telegraph, Swoop, Stunned, Crossing, Dead }
 
     private Outline outline;
-    
+
     BugState state = BugState.Arriving;
     Fighter target;
     AttackSide side;
@@ -57,6 +59,18 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
     double vulnerableUntil;
     bool flashOn;
 
+    // Pasada por una nube (modo caza de Maxilon)
+    Vector3 crossFrom;
+    Vector3 crossTo;
+    float crossSpeed;
+    int crossStage;
+
+    // Vuelo a la boca al morir
+    Transform catchTarget;
+    bool flyingToCatch;
+    Vector3 catchStartScale;
+    float catchStartDistance;
+
     public event Action<Bug> TelegraphStarted;
 
     public event Action<Bug, IDamageable> Died;
@@ -67,6 +81,9 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     public bool CanBeTargeted =>
         (state == BugState.Telegraph || state == BugState.Swoop) && Time.timeAsDouble <= vulnerableUntil;
+
+    /// <summary>True si esta flotando tranquilo y se le puede mandar a atravesar una nube.</summary>
+    public bool CanCross => state == BugState.Idle;
 
     public void Init(Fighter targetPlant, AttackSide bugSide, Vector3 hoverPosition, Vector3 strikePosition)
     {
@@ -82,7 +99,13 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     void Update()
     {
-        if (state == BugState.Dead) return;
+        float dt = Time.deltaTime;
+
+        if (state == BugState.Dead)
+        {
+            if (flyingToCatch) FlyToCatch(dt);
+            return;
+        }
 
         if (target == null)   // la planta ya no existe (fin de ronda, escena descargada)
         {
@@ -90,7 +113,6 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
             return;
         }
 
-        float dt = Time.deltaTime;
         stateTime += dt;
 
         switch (state)
@@ -127,6 +149,21 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
                 timer -= dt;
                 if (timer <= 0f) BeginIdle();
                 break;
+
+            case BugState.Crossing:
+                {
+                    // Etapa 0: va a la entrada de la nube. Etapa 1: la atraviesa hasta la salida
+                    Vector3 goal = crossStage == 0 ? crossFrom : crossTo;
+                    float speed = crossStage == 0 ? hoverSpeed : crossSpeed;
+                    transform.position = Vector3.MoveTowards(transform.position, goal, speed * dt);
+
+                    if ((transform.position - goal).sqrMagnitude < 0.0001f)
+                    {
+                        if (crossStage == 0) crossStage = 1;
+                        else BeginIdle();   // vuelve flotando a su sitio
+                    }
+                    break;
+                }
         }
     }
 
@@ -136,10 +173,24 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
     public void ResetHoverPoint() => hoverPos = homeHoverPos;
 
+    /// <summary>Atraviesa una nube de 'from' a 'to'. Solo funciona si el bicho esta en Idle.</summary>
+    public bool CrossThrough(Vector3 from, Vector3 to, float speed)
+    {
+        if (state != BugState.Idle) return false;
+
+        state = BugState.Crossing;
+        stateTime = 0f;
+        crossFrom = from;
+        crossTo = to;
+        crossSpeed = Mathf.Max(0.1f, speed);
+        crossStage = 0;
+        return true;
+    }
+
     public void Eat(Fighter eater)
     {
         if (state == BugState.Dead) return;
-        Die(eater);
+        Die(eater, eater != null ? eater.BugCatchPoint : null);
     }
 
     void BeginIdle()
@@ -216,11 +267,15 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
         // Solo lo puede matar la planta que tiene al lado (a la que ataca)
         if (!ReferenceEquals(hit.Source, target)) return BlockResult.Ignored;
 
-        Die(hit.Source);
+        Transform mouth = hit.Kind == AttackKind.Ranged && hit.Source is Fighter shooter
+            ? shooter.BugCatchPoint
+            : null;
+
+        Die(hit.Source, mouth);
         return BlockResult.None;
     }
 
-    void Die(IDamageable killer)
+    void Die(IDamageable killer, Transform catchPoint = null)
     {
         state = BugState.Dead;
         SetFlash(false);
@@ -228,7 +283,34 @@ public class Bug : MonoBehaviour, IDamageable, IShootable
 
         target?.UnregisterBug(this);
         Died?.Invoke(this, killer);
-        Destroy(gameObject, deathDelay);
+
+        if (catchPoint != null)
+        {
+            catchTarget = catchPoint;
+            flyingToCatch = true;
+            catchStartScale = transform.localScale;
+            catchStartDistance = Mathf.Max(0.01f, Vector3.Distance(transform.position, catchPoint.position));
+            Destroy(gameObject, 3f);
+        }
+        else
+        {
+            Destroy(gameObject, deathDelay);
+        }
+    }
+
+    void FlyToCatch(float dt)
+    {
+        if (catchTarget == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, catchTarget.position, catchSpeed * dt);
+        float distance = Vector3.Distance(transform.position, catchTarget.position);
+        transform.localScale = catchStartScale * Mathf.Clamp01(distance / catchStartDistance);
+
+        if (distance < 0.05f) Destroy(gameObject);
     }
 
     void OnDestroy()

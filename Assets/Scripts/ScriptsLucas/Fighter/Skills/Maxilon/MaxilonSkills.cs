@@ -27,13 +27,22 @@ public class MaxilonSkills : SkillController
     [SerializeField, Min(0.1f)] float exitHuntHold = 0.5f;
     [Tooltip("Cargas que da cada bicho comido")]
     [SerializeField, Min(0f)] float barPerBug = 1f;
-    [Tooltip("Cada cuanto se manda a los bichos nuevos a una nube")]
-    [SerializeField, Min(0.1f)] float attractInterval = 0.5f;
+
+    [Header("Modo caza: pasadas de los bichos")]
+    [Tooltip("Velocidad a la que atraviesan la nube (mas lento = mas facil comerselos)")]
+    [SerializeField, Min(0.1f)] float crossSpeed = 4f;
+    [Tooltip("Segundos entre pasadas de cada bicho (minimo y maximo)")]
+    [SerializeField, Min(0.1f)] float crossIntervalMin = 1f;
+    [SerializeField, Min(0.1f)] float crossIntervalMax = 3f;
+    [Tooltip("Distancia fuera de la nube donde empieza y acaba la pasada")]
+    [SerializeField, Min(0f)] float crossMargin = 0.8f;
+    [Tooltip("Inclinacion maxima de la pasada respecto a la horizontal (grados)")]
+    [SerializeField, Range(0f, 80f)] float crossMaxAngle = 30f;
 
     [Header("Escupitajo (1-4 cargas)")]
     [Tooltip("Prefab del escupitajo (con el componente Projectile). Vacio = efecto instantaneo")]
     [SerializeField] Projectile spitPrefab;
-    [Tooltip("Boca de Maxilon. Vacio = el Projectile Origin del Fighter")]
+    [Tooltip("Boca de Maxilon. Vacio = el Projectile Origin del Fighter. Tambien es donde vuelan los bichos que se come")]
     [SerializeField] Transform mouthPoint;
     [SerializeField] float spitSpeed = 25f;
     [SerializeField, Min(1)] int maxLevels = 4;
@@ -82,20 +91,22 @@ public class MaxilonSkills : SkillController
     bool hunting;
     bool exitHolding;
     float exitTimer;
-    float attractTimer;
     float summonBlockedUntil;   // Time.time
 
     readonly List<IDamageable> bugBuffer = new List<IDamageable>();
-    readonly Dictionary<Bug, int> assigned = new Dictionary<Bug, int>();   // bicho -> nube a la que va
+    readonly Dictionary<Bug, float> nextCross = new Dictionary<Bug, float>();   // bicho -> cuando hace su proxima pasada
     readonly List<Bug> deadBuffer = new List<Bug>();
 
-    // Estado publico (UI) 
+    // Estado publico (UI)
 
     public bool Hunting => hunting;
     public int Level => level;
 
     public event Action<bool> HuntingChanged;
     public event Action<int> BugsEaten;
+
+    public override Transform BugCatchPoint =>
+        mouthPoint != null ? mouthPoint : (fighter != null ? fighter.ProjectileOrigin : null);
     #endregion
 
     #region Awake
@@ -137,7 +148,7 @@ public class MaxilonSkills : SkillController
             return;
         }
 
-        // 1-4 cargas: empieza a mantener. Si sueltas antes del primer nivel, es la invocacion.
+        // 1-4 cargas: empieza a mantener para cargar el escupitajo.
         if (!fighter.BeginChannel()) return;
 
         phase = Phase.Holding;
@@ -165,15 +176,14 @@ public class MaxilonSkills : SkillController
         }
         else
         {
-            EndPhase();      // toque rapido: invocacion
-            TrySummon();
+            EndPhase();      
         }
     }
 
     public override bool InterceptAttack(AttackKind kind)
     {
         if (!hunting) return false;
-        EatCloud(kind == AttackKind.Melee ? 0 : 1);
+        EatCloud(SideCloudIndex(towardRival: kind == AttackKind.Melee));
         return true;
     }
 
@@ -238,12 +248,7 @@ public class MaxilonSkills : SkillController
 
         if (hunting)
         {
-            attractTimer -= Time.deltaTime;
-            if (attractTimer <= 0f)
-            {
-                attractTimer = attractInterval;
-                AttractBugs();
-            }
+            ScheduleCrossings();
 
             if (exitHolding)
             {
@@ -291,7 +296,7 @@ public class MaxilonSkills : SkillController
     {
         hunting = true;
         exitHolding = false;
-        attractTimer = 0f;
+        nextCross.Clear();
         SetCloudVisuals(true);
         SetBool(huntingParameter, true);
         HuntingChanged?.Invoke(true);
@@ -301,11 +306,7 @@ public class MaxilonSkills : SkillController
     {
         hunting = false;
         exitHolding = false;
-
-        // Los bichos vuelven a flotar en su sitio de siempre
-        foreach (var kv in assigned)
-            if (kv.Key != null) kv.Key.ResetHoverPoint();
-        assigned.Clear();
+        nextCross.Clear();   // los que esten a mitad de pasada la terminan y vuelven a su sitio
 
         SetCloudVisuals(false);
         SetBool(huntingParameter, false);
@@ -313,37 +314,62 @@ public class MaxilonSkills : SkillController
     }
 
     Transform CloudAt(int index) => index == 0 ? cloudLeft : index == 1 ? cloudRight : cloudTop;
-
-    void AttractBugs()
+    int SideCloudIndex(bool towardRival)
     {
-        // Olvida los que ya no existen
+        if (cloudLeft == null) return 1;
+        if (cloudRight == null) return 0;
+
+        float me = fighter.transform.position.x;
+        float rivalDir = fighter.Rival != null
+            ? Mathf.Sign(fighter.Rival.transform.position.x - me)
+            : (fighter.isLeftPlayer ? 1f : -1f);
+
+        bool leftCloudTowardRival = Mathf.Sign(cloudLeft.position.x - me) == rivalDir;
+        return leftCloudTowardRival == towardRival ? 0 : 1;
+    }
+
+    Transform RandomCloud()
+    {
+        int start = UnityEngine.Random.Range(0, 3);
+        for (int i = 0; i < 3; i++)
+        {
+            Transform cloud = CloudAt((start + i) % 3);
+            if (cloud != null) return cloud;
+        }
+        return null;
+    }
+
+    void ScheduleCrossings()
+    {
+        // Olvida los bichos que ya no existen
         deadBuffer.Clear();
-        foreach (var kv in assigned) if (kv.Key == null) deadBuffer.Add(kv.Key);
-        foreach (var dead in deadBuffer) assigned.Remove(dead);
+        foreach (var kv in nextCross) if (kv.Key == null) deadBuffer.Add(kv.Key);
+        foreach (var dead in deadBuffer) nextCross.Remove(dead);
 
         fighter.CollectBugs(bugBuffer);
         foreach (var d in bugBuffer)
         {
-            if (!(d is Bug bug) || assigned.ContainsKey(bug)) continue;
+            if (!(d is Bug bug) || bug == null || !bug.CanCross) continue;
 
-            int idx = LeastCrowdedCloud();
-            Transform cloud = CloudAt(idx);
-            if (cloud == null) continue;
+            if (!nextCross.TryGetValue(bug, out float at))
+            {
+                // Bicho nuevo: su primera pasada llega pronto
+                nextCross[bug] = Time.time + UnityEngine.Random.Range(0f, crossIntervalMin);
+                continue;
+            }
+            if (Time.time < at) continue;
 
-            bug.SetHoverPoint(cloud.position);
-            assigned[bug] = idx;
+            Transform cloud = RandomCloud();
+            if (cloud == null) return;
+
+            // Linea casi horizontal que atraviesa la nube por el centro
+            Vector3 dir = UnityEngine.Random.value < 0.5f ? Vector3.right : Vector3.left;
+            dir = Quaternion.Euler(0f, 0f, UnityEngine.Random.Range(-crossMaxAngle, crossMaxAngle)) * dir;
+            float reach = cloudRadius + crossMargin;
+
+            if (bug.CrossThrough(cloud.position - dir * reach, cloud.position + dir * reach, crossSpeed))
+                nextCross[bug] = Time.time + UnityEngine.Random.Range(crossIntervalMin, Mathf.Max(crossIntervalMin, crossIntervalMax));
         }
-    }
-
-    int LeastCrowdedCloud()
-    {
-        var counts = new int[3];
-        foreach (var kv in assigned) counts[kv.Value]++;
-
-        int best = 0;
-        for (int i = 1; i < 3; i++)
-            if (CloudAt(i) != null && (CloudAt(best) == null || counts[i] < counts[best])) best = i;
-        return best;
     }
 
     void EatCloud(int index)
@@ -362,8 +388,8 @@ public class MaxilonSkills : SkillController
             if (!(d is Bug bug) || bug == null) continue;
             if ((bug.transform.position - cloud.position).sqrMagnitude > sqrRadius) continue;
 
-            assigned.Remove(bug);
-            bug.Eat(fighter);
+            nextCross.Remove(bug);
+            bug.Eat(fighter);   // vuela a la boca
             eaten++;
         }
 

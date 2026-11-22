@@ -17,7 +17,7 @@ MonoBehaviour:
   recovery: 0.2
   animationTrigger: Melee
   kind: 0
-  damage: 10
+  damage: 15
   hitstun: 0
   canTargetBugs: 0
   projectilePrefab: {fileID: 0}
