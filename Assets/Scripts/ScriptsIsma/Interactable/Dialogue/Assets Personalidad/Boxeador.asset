@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boxeador
   m_EditorClassIdentifier: Assembly-CSharp::DialoguePersonalityAsset
   personalityName: Boxeador
-  textBackground: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  textBackground: {fileID: 21300000, guid: 493f14d2424e6614ca50377c7eba1b1b, type: 3}
   textSpeed: 0.075
   basePitch: 0.95
   typingSounds:
