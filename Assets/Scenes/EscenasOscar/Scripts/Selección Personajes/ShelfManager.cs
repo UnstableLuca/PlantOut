@@ -82,6 +82,8 @@ public class ShelfManager : MonoBehaviour
     public bool saltarNoDisponibles = true;
     [Tooltip("Texto de la descripción en las plantas bloqueadas (solo si no se saltan)")]
     public string textoBloqueada = "Próximamente";
+    [Tooltip("UI de candado que se enseña al mirar una planta bloqueada")]
+    public GameObject candadoUI;
     private int turnoJugador = 1;
     private int seleccionJugador1 = -1;
     private int seleccionJugador2 = -1;
@@ -194,6 +196,8 @@ public class ShelfManager : MonoBehaviour
         }
 
         ForcedInstantPosition();
+
+        UpdateUIAndStates();
 
         if (vcamBalda != null) vcamBalda.Priority = 20;
 
@@ -389,6 +393,8 @@ public class ShelfManager : MonoBehaviour
 
             GenerarCombosVisuales(currentPlant, contenedorCombosJ2);
         }
+
+        MostrarCandado(sistemaIniciado && (turnoJugador == 1 || turnoJugador == 2) && !seleccionable);
     }
     private bool EsSeleccionable(int index)
     {
@@ -409,11 +415,15 @@ public class ShelfManager : MonoBehaviour
 
     private int PrimerIndiceDisponible()
     {
-        if (plants == null || plants.Length == 0) return 0;
-        if (!saltarNoDisponibles || EsSeleccionable(0)) return 0;
-        return BuscarIndice(0, 1);
+        if (plants == null) return 0;
+        for (int i = 0; i < plants.Length; i++)
+            if (EsSeleccionable(i)) return i;
+        return 0;  
     }
-
+    private void MostrarCandado(bool visible)
+    {
+        if (candadoUI != null && candadoUI.activeSelf != visible) candadoUI.SetActive(visible);
+    }
 
     private void UpdateShelfPositions()
     {
