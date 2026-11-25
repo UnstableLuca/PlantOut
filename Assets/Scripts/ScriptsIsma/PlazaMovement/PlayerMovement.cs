@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float cameraRadius = 10.0f;
     [SerializeField] private float cameraHeightOffset = 5.0f;
 
-    [SerializeField] private float cameraDistance = 6.0f;     
-
     [Header("Movimiento del Jugador")]
     [SerializeField] private float maxSpeed = 8.0f;
     [SerializeField] private float acceleration = 25.0f;
@@ -145,15 +143,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // -- CAMARA --
-        Vector3 playerPos = transform.position;
+        Vector3 playerOffset = transform.position - greenhouseCenter.position;
+        float realPlayerAngleRad = Mathf.Atan2(playerOffset.z, playerOffset.x);
 
-        Vector3 toCenter = greenhouseCenter.position - playerPos;
-        toCenter.y = 0f;
-        if (toCenter.sqrMagnitude < 0.0001f) toCenter = -transform.forward;
-        toCenter.Normalize();
+        float cameraRad = realPlayerAngleRad + Mathf.PI;
 
-        mainCamera.position = playerPos + toCenter * cameraDistance + Vector3.up * cameraHeightOffset;
-        mainCamera.LookAt(playerPos + Vector3.up * 1.0f);
+        Vector3 cameraPos = new Vector3(
+            greenhouseCenter.position.x + Mathf.Cos(cameraRad) * cameraRadius,
+            transform.position.y + cameraHeightOffset,
+            greenhouseCenter.position.z + Mathf.Sin(cameraRad) * cameraRadius
+        );
+
+        mainCamera.position = cameraPos;
+
+        Vector3 cameraTarget = new Vector3(greenhouseCenter.position.x, transform.position.y + 1.0f, greenhouseCenter.position.z);
+        mainCamera.LookAt(cameraTarget);
 
         // Animate
         Animate();
