@@ -21,6 +21,8 @@ namespace AI.Core
         [SerializeField] protected float moveSpeed = 3f;
         [SerializeField] protected float arriveDistance = 0.3f;
 
+        private Animator animator;
+
         protected StateMachine Fsm { get; private set; }
         public string CurrentStateName => Fsm?.Current?.Name ?? "-";
 
@@ -34,6 +36,7 @@ namespace AI.Core
 
         protected virtual void Start()
         {
+            animator = GetComponentInChildren<Animator>();
             Fsm = new StateMachine();
             Fsm.StateChanged += OnStateChanged;
             BuildStateMachine(Fsm);
@@ -59,6 +62,7 @@ namespace AI.Core
 
             Fsm.UpdateState();
             UpdateManualMovement();
+            animator.SetFloat("Speed", navAgent.velocity.magnitude);
         }
 
         protected virtual void OnStateChanged(State from, State to, Perception reason)

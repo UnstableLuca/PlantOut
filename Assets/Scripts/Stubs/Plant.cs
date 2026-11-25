@@ -24,5 +24,6 @@ public class Plant : MonoBehaviour
     {
         // Aquí: pagar, irse de la tienda, destruirse, etc.
         Debug.Log($"{name} ha sido curada.", this);
+        Destroy(gameObject);
     }
 }
