@@ -9,46 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: 2af6c43fd91469f4da8ca2883518595d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: f1f462ab11b6a17449b5d879f80541d8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasAmarilla
-    second: {fileID: 2100000, guid: b96bed77099e97d41b5ac2bd3c74f861, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasAzul
-    second: {fileID: 2100000, guid: 21be36c06cd3ded4795b424cbd0ac155, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasMorada
-    second: {fileID: 2100000, guid: 958f13c62b818e1439fbf01d10990263, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasNaranja
-    second: {fileID: 2100000, guid: 52d01bab8ad31d44ebbca33cf3f85b19, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasRoja
-    second: {fileID: 2100000, guid: 86e72e487e9408c4d8645e9c0724d997, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bolsaSemillasRosa
-    second: {fileID: 2100000, guid: bd487728d6e7847438097b96507b405e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: enreda
-    second: {fileID: 2100000, guid: 7067c25a6c85e0c429716852ba02617b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
