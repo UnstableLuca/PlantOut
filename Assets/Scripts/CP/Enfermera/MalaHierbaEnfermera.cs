@@ -20,6 +20,8 @@ public class MalaHierbaEnfermera : AIAgent
 
     public Bed CamillaActual { get; private set; }
 
+    private Vector3 posicionRecepcion;
+
     protected override void BuildStateMachine(StateMachine fsm)
     {
         // ---------- Percepciones (Pull) — tabla de percepciones ----------
@@ -44,19 +46,21 @@ public class MalaHierbaEnfermera : AIAgent
 
         fsm.SetInitialState(esperar);
     }
+    protected override void Awake()
+    {
+        base.Awake();
+        if (pharmacy == null) pharmacy = FindAnyObjectByType<Pharmacy>(); // Unity 2022 o anterior: FindObjectOfType<Pharmacy>()
+        posicionRecepcion = puntoRecepcion != null ? puntoRecepcion.position : transform.position;
+    }
 
     //ACCIONES
-    public void IrARecepcion()
-    {
-        if (puntoRecepcion != null) MoveTo(puntoRecepcion.position);
-        else StopMoving();
-    }
+
+    public void IrARecepcion() => MoveTo(posicionRecepcion);
 
     public bool AtenderPaciente()
     {
         if (pharmacy.clients.Count == 0 || pharmacy.emptyBeds.Count == 0) return false;
 
-        // Utility System: elegimos la camilla con mayor puntuación
         if (!UtilitySelector.TrySelectBest(pharmacy.emptyBeds, PuntuarCamilla, out Bed camilla))
             return false;
 
