@@ -7121,6 +7121,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7111041445662481212}
     m_Modifications:
+    - target: {fileID: 228863029571747725, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c960df83081808f4fb37ff6897a18e14, type: 2}
     - target: {fileID: 1836514021808183938, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_Name
       value: GameObject
@@ -7144,6 +7148,18 @@ PrefabInstance:
     - target: {fileID: 6278992290056424276, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_LocalPosition.y
       value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.06
       objectReference: {fileID: 0}
     - target: {fileID: 6684736811321534707, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_LocalPosition.y
