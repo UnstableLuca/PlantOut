@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: e3a77dae9189c804493784d31f062e08
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO.001
+    second: {fileID: 2100000, guid: 2603f022576e87044b171272db8a0df5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACK.002
+    second: {fileID: 2100000, guid: 78fe10d94f01c9a4ba38343608880488, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS.002
+    second: {fileID: 2100000, guid: 390b429279272f349b69e7b87ad46f06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS.002
+    second: {fileID: 2100000, guid: 74e731254e188384d8377126d57a64a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FrontColor
+    second: {fileID: 2100000, guid: aa8ae17d12d09454d871b67ae211bbe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LATERAL.002
+    second: {fileID: 2100000, guid: 4a73f6f1eb43a684bbad96543e27fbd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: ce3f49e00069f8241851590b6694e40a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 813a2f6b944ead646b63ebd2a3f745c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: cae5439383bb5a0489e90cc088e13467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: c6ec317fc77e80d4db3ae651e60f173b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: af87716fff21e4e4788d321f04bda19e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: a285066f0d464fc4e9b97b275aa798d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pelo.001
+    second: {fileID: 2100000, guid: b79baf8a534c05244b56eaf3513c663d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO_BaseColor
+    second: {fileID: 2800000, guid: 8ae1a95c1b81f33469c88a084c475ed8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO_Metallic
+    second: {fileID: 2800000, guid: e9c2d343d8a24d9408a1ae7386b3ed2c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO_Normal
+    second: {fileID: 2800000, guid: ac6049f809c9e154fad44d755c9c4920, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ARRIBAABAJO_Roughness
+    second: {fileID: 2800000, guid: ceb866e49f0529a44920f20851f83af2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS_BaseColor
+    second: {fileID: 2800000, guid: 3dc115502272e0d448fe45b69afb5b6b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS_Metallic
+    second: {fileID: 2800000, guid: 4c9719f6070997b4399ab1ea5379e4bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS_Normal
+    second: {fileID: 2800000, guid: 3ddc8762a881f7e44af5df9c7a51cc45, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BACKTABLAS_Roughness
+    second: {fileID: 2800000, guid: ab24e7abc6eb1c44fa56a69dbdc29db7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS_BaseColor
+    second: {fileID: 2800000, guid: 304ddfb5b4909aa489fc7c677c1c23f1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS_Metallic
+    second: {fileID: 2800000, guid: c6abc86a07940124c86ea30036e11794, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS_Normal
+    second: {fileID: 2800000, guid: 6dd65a6a8fcdbcf49b6eb8dbc957749b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ESQUINAS_Roughness
+    second: {fileID: 2800000, guid: 3bfe850cabce0f34cab0cc9c911494b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LATERAL_BaseColor
+    second: {fileID: 2800000, guid: 3a3a04cae5b9e1f4e8797dd8c9adaa60, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LATERAL_Metallic
+    second: {fileID: 2800000, guid: 7db88a69a78f580478ba647aa2abc0c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LATERAL_Normal
+    second: {fileID: 2800000, guid: 31adafbdda9370c48a881bb900a6eb7c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: LATERAL_Roughness
+    second: {fileID: 2800000, guid: 604bbba88da3cb642bdadabe35dd54ba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: centro_BaseColor
+    second: {fileID: 2800000, guid: 93a9e5a0f79b1b241ae55a9bcba0caa5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: centro_Metallic
+    second: {fileID: 2800000, guid: 98a9d54e2ca7cca4590da5f345b4d001, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: centro_Normal
+    second: {fileID: 2800000, guid: 97114e69dc213074289c38a5f8b1e699, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: centro_Roughness
+    second: {fileID: 2800000, guid: fbc5a7377d7f6b54895dd36897cf6b36, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanteria_BaseColor
+    second: {fileID: 2800000, guid: 2f86604fe2633f44e8b81248d6830576, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanteria_Metallic
+    second: {fileID: 2800000, guid: 18ef4621c793c2245a3dabb881afd33f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanteria_Normal
+    second: {fileID: 2800000, guid: 5cb15df7795658440bbf9164e325b6ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanteria_Roughness
+    second: {fileID: 2800000, guid: f1664ded8499b0f43a40912798cb1dee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maderas_BaseColor
+    second: {fileID: 2800000, guid: a7704f5d6af09734ea11560b050e0adf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maderas_Metallic
+    second: {fileID: 2800000, guid: 60869dcc64b007541a3006f820212fda, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maderas_Normal
+    second: {fileID: 2800000, guid: 4c1a1732effc72b42bcc5e6b5e3e2ce6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maderas_Roughness
+    second: {fileID: 2800000, guid: 39b329105ca41ac409600bce36eb24b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo.001_BaseColor
+    second: {fileID: 2800000, guid: a45e7a535e079e945b221cc196ecb9a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo.001_Metallic
+    second: {fileID: 2800000, guid: d4da7e87c2dacbd4685cc651f793fd22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo.001_Normal
+    second: {fileID: 2800000, guid: 91c92be209ab1af4d9050d8ab22bcb3b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pelo.001_Roughness
+    second: {fileID: 2800000, guid: 08b7ca92bccb0164eab092a055f113f7, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
