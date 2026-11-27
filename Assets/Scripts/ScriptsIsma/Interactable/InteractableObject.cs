@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Outline))]
 public class InteractableObject : MonoBehaviour
 {
     [Header("Ajustes")]

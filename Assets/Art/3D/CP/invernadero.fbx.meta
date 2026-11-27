@@ -18,37 +18,37 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial_Alpha
-    second: {fileID: 2800000, guid: ad2af6e0f97412f4d98aede634d0a569, type: 3}
+    second: {fileID: 2800000, guid: aaad9c0b67f80bf4997bdad689458aac, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial_BaseColor
-    second: {fileID: 2800000, guid: a3846da4a36116c438e4cd6012fd2d17, type: 3}
+    second: {fileID: 2800000, guid: d950d603df6811547a995a59faed0f20, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial_Metallic
-    second: {fileID: 2800000, guid: f284a2bcbc575ba4ca511243a902ce49, type: 3}
+    second: {fileID: 2800000, guid: 85bd64c0b417c0c4bb25dc49cc69d7d6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial_Normal
-    second: {fileID: 2800000, guid: a81788b6e5692104ca76943f93c59e81, type: 3}
+    second: {fileID: 2800000, guid: 16dcb19cc0797464692c2f122b01ea2b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DefaultMaterial_Roughness
-    second: {fileID: 2800000, guid: 1f7d3970929a5ee4baaaf5b2185236c3, type: 3}
+    second: {fileID: 2800000, guid: 8576694d19334b848ae157704ea94073, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: diffuse_cultivo
-    second: {fileID: 2800000, guid: 0aadb698dfef4874e8e0f14ee632dcdd, type: 3}
+    second: {fileID: 2800000, guid: a24b5dd87c7edf14d8f48a330e039e5e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: normal_cultivo
-    second: {fileID: 2800000, guid: 842c8ba6d71527c4d9097ba667779063, type: 3}
+    second: {fileID: 2800000, guid: 51cac4f5dbc81d348a7828be5a1b760c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

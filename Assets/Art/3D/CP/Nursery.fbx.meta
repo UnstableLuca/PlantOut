@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3a77dae9189c804493784d31f062e08
+guid: 4cee4cdd640121c45b0587461cf13f53
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
@@ -73,162 +73,162 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ARRIBAABAJO_BaseColor
-    second: {fileID: 2800000, guid: 8ae1a95c1b81f33469c88a084c475ed8, type: 3}
+    second: {fileID: 2800000, guid: b186c4affc5f8aa4a9794b918ee4302c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ARRIBAABAJO_Metallic
-    second: {fileID: 2800000, guid: e9c2d343d8a24d9408a1ae7386b3ed2c, type: 3}
+    second: {fileID: 2800000, guid: 54dae07f206179a45bea518f81767cea, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ARRIBAABAJO_Normal
-    second: {fileID: 2800000, guid: ac6049f809c9e154fad44d755c9c4920, type: 3}
+    second: {fileID: 2800000, guid: 13b5948b9f4a82d4984d9f2a459627db, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ARRIBAABAJO_Roughness
-    second: {fileID: 2800000, guid: ceb866e49f0529a44920f20851f83af2, type: 3}
+    second: {fileID: 2800000, guid: 0064742608f4f9e45904d19c54353064, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BACKTABLAS_BaseColor
-    second: {fileID: 2800000, guid: 3dc115502272e0d448fe45b69afb5b6b, type: 3}
+    second: {fileID: 2800000, guid: 3d676e72947912449b111ad43d42f591, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BACKTABLAS_Metallic
-    second: {fileID: 2800000, guid: 4c9719f6070997b4399ab1ea5379e4bd, type: 3}
+    second: {fileID: 2800000, guid: 027d69ffc84104043bfd375cd97ecad1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BACKTABLAS_Normal
-    second: {fileID: 2800000, guid: 3ddc8762a881f7e44af5df9c7a51cc45, type: 3}
+    second: {fileID: 2800000, guid: 1adc33d087d0e0d43890778fa71c802c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: BACKTABLAS_Roughness
-    second: {fileID: 2800000, guid: ab24e7abc6eb1c44fa56a69dbdc29db7, type: 3}
+    second: {fileID: 2800000, guid: 61948ee448885ec4e9c4cda4a6f20066, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ESQUINAS_BaseColor
-    second: {fileID: 2800000, guid: 304ddfb5b4909aa489fc7c677c1c23f1, type: 3}
+    second: {fileID: 2800000, guid: 66b32e7ded1c82e45bfd3a3663dca162, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ESQUINAS_Metallic
-    second: {fileID: 2800000, guid: c6abc86a07940124c86ea30036e11794, type: 3}
+    second: {fileID: 2800000, guid: 464a6395c86ae894e83db2a998351626, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ESQUINAS_Normal
-    second: {fileID: 2800000, guid: 6dd65a6a8fcdbcf49b6eb8dbc957749b, type: 3}
+    second: {fileID: 2800000, guid: 9ad46c24f4b9b604b8c78bf8138654a6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ESQUINAS_Roughness
-    second: {fileID: 2800000, guid: 3bfe850cabce0f34cab0cc9c911494b9, type: 3}
+    second: {fileID: 2800000, guid: 9428c03ebba7fdf4f9d751f08e18d796, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: LATERAL_BaseColor
-    second: {fileID: 2800000, guid: 3a3a04cae5b9e1f4e8797dd8c9adaa60, type: 3}
+    second: {fileID: 2800000, guid: 0338e2e92b49e99439490fa8b908acae, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: LATERAL_Metallic
-    second: {fileID: 2800000, guid: 7db88a69a78f580478ba647aa2abc0c2, type: 3}
+    second: {fileID: 2800000, guid: 232f01902bd835745a5f1d3d9e147388, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: LATERAL_Normal
-    second: {fileID: 2800000, guid: 31adafbdda9370c48a881bb900a6eb7c, type: 3}
+    second: {fileID: 2800000, guid: 85dbe4722bd78da4baf0de6de497da1b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: LATERAL_Roughness
-    second: {fileID: 2800000, guid: 604bbba88da3cb642bdadabe35dd54ba, type: 3}
+    second: {fileID: 2800000, guid: 449d0e8f5abc8484588f70750c784089, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: centro_BaseColor
-    second: {fileID: 2800000, guid: 93a9e5a0f79b1b241ae55a9bcba0caa5, type: 3}
+    second: {fileID: 2800000, guid: e8a96320729f5944c8b01be39cf5ce05, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: centro_Metallic
-    second: {fileID: 2800000, guid: 98a9d54e2ca7cca4590da5f345b4d001, type: 3}
+    second: {fileID: 2800000, guid: 34d86d986b104954ea09d0e5c7a4805a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: centro_Normal
-    second: {fileID: 2800000, guid: 97114e69dc213074289c38a5f8b1e699, type: 3}
+    second: {fileID: 2800000, guid: c5ed6e1dd9c5c3b41b87c7ed1b6d4c14, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: centro_Roughness
-    second: {fileID: 2800000, guid: fbc5a7377d7f6b54895dd36897cf6b36, type: 3}
+    second: {fileID: 2800000, guid: 50902d70b84f04b46b9496f90473c343, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: estanteria_BaseColor
-    second: {fileID: 2800000, guid: 2f86604fe2633f44e8b81248d6830576, type: 3}
+    second: {fileID: 2800000, guid: e5d5e685de568bc4bb39d854673e5401, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: estanteria_Metallic
-    second: {fileID: 2800000, guid: 18ef4621c793c2245a3dabb881afd33f, type: 3}
+    second: {fileID: 2800000, guid: 91d0ff3b970b75646bf6abbcc0afa9f1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: estanteria_Normal
-    second: {fileID: 2800000, guid: 5cb15df7795658440bbf9164e325b6ea, type: 3}
+    second: {fileID: 2800000, guid: 99fcfdcbc8da8074a84408177405c7a0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: estanteria_Roughness
-    second: {fileID: 2800000, guid: f1664ded8499b0f43a40912798cb1dee, type: 3}
+    second: {fileID: 2800000, guid: 7ddb93edac835e94c8db87495e6da922, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: maderas_BaseColor
-    second: {fileID: 2800000, guid: a7704f5d6af09734ea11560b050e0adf, type: 3}
+    second: {fileID: 2800000, guid: e2999ba7b0f160e4c95879345435a8ec, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: maderas_Metallic
-    second: {fileID: 2800000, guid: 60869dcc64b007541a3006f820212fda, type: 3}
+    second: {fileID: 2800000, guid: 209fd9f5883e70140b9d5450db827fdb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: maderas_Normal
-    second: {fileID: 2800000, guid: 4c1a1732effc72b42bcc5e6b5e3e2ce6, type: 3}
+    second: {fileID: 2800000, guid: b04e1419c22258646be3c23d75dcd133, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: maderas_Roughness
-    second: {fileID: 2800000, guid: 39b329105ca41ac409600bce36eb24b7, type: 3}
+    second: {fileID: 2800000, guid: e3244b49ebd4d7a45a2320b1b198bc54, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: pelo.001_BaseColor
-    second: {fileID: 2800000, guid: a45e7a535e079e945b221cc196ecb9a5, type: 3}
+    second: {fileID: 2800000, guid: 6f463c76feffde44fbb4da306167b44e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: pelo.001_Metallic
-    second: {fileID: 2800000, guid: d4da7e87c2dacbd4685cc651f793fd22, type: 3}
+    second: {fileID: 2800000, guid: a0990fdec00db0e47bd651b4715510ab, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: pelo.001_Normal
-    second: {fileID: 2800000, guid: 91c92be209ab1af4d9050d8ab22bcb3b, type: 3}
+    second: {fileID: 2800000, guid: 6a3b3bb84355dbe4bbcba624c1e8bcdd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: pelo.001_Roughness
-    second: {fileID: 2800000, guid: 08b7ca92bccb0164eab092a055f113f7, type: 3}
+    second: {fileID: 2800000, guid: 2d210ba81d61fb34bbbb966fc2ad359e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
