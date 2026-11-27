@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,9 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private bool lockPlayerMovement = true;
     [SerializeField] private bool fadePlayerModel = true;
 
+    [Header("Prioridad")]
+    [SerializeField] private int interactionPriority = 0;
+
     [Header("Información")]
     [SerializeField] private CinemachineCamera dialogueCamera;
     [SerializeField] private DialogueAsset dialogueAsset;
@@ -20,8 +24,22 @@ public class InteractableObject : MonoBehaviour
     [Header("Interacción")]
     [SerializeField] private UnityEvent onInteract;
 
+    private static readonly List<InteractableObject> all = new List<InteractableObject>();
+    private static InteractableObject currentTarget;   
+    private static bool anyInteracting;                // bloqueo del resto
+    private static int lastEvaluatedFrame = -1;
+    private const float SwitchHysteresis = 0.5f;       // evitar paerpadeo
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        all.Clear();
+        currentTarget = null;
+        anyInteracting = false;
+        lastEvaluatedFrame = -1;
+    }
+
     private Outline outline;
-    private bool playerIsNearby = false;
     private bool isInteracting = false;
     private PlayerMovement currentPlayer;
     private Transform playerTransform;
@@ -35,15 +53,20 @@ public class InteractableObject : MonoBehaviour
         if (outline != null) outline.enabled = false;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.GetComponent<Transform>();
-        currentPlayer = player.GetComponent<PlayerMovement>();
-        playerRenderers = player.GetComponentsInChildren<Renderer>();
+        if (player != null)
+        {
+            playerTransform = player.GetComponent<Transform>();
+            currentPlayer = player.GetComponent<PlayerMovement>();
+            playerRenderers = player.GetComponentsInChildren<Renderer>();
+        }
 
         inputActions = new InputActions();
     }
 
     private void OnEnable()
     {
+        all.Add(this);
+
         inputActions.Plaza.Enable();
         inputActions.Plaza.Interact.performed += OnInteractPressed;
     }
@@ -52,19 +75,30 @@ public class InteractableObject : MonoBehaviour
     {
         inputActions.Plaza.Interact.performed -= OnInteractPressed;
         inputActions.Plaza.Disable();
+
+        all.Remove(this);
+        if (currentTarget == this) currentTarget = null;
+
+        if (isInteracting)
+        {
+            isInteracting = false;
+            anyInteracting = false;
+        }
     }
 
     private void OnInteractPressed(InputAction.CallbackContext context)
     {
-        if (playerIsNearby && !isInteracting)
-        {
-            StartCoroutine(StartInteractionSequence());
-        }
+        if (currentTarget != this || anyInteracting || isInteracting) return;
+
+        if (PlazaManager.Instance != null && PlazaManager.Instance.CurrentState != GameState.PlazaGameplay) return;
+
+        StartCoroutine(StartInteractionSequence());
     }
 
     private IEnumerator StartInteractionSequence()
     {
         isInteracting = true;
+        anyInteracting = true;
 
         if (outline != null) outline.enabled = false;
 
@@ -98,8 +132,7 @@ public class InteractableObject : MonoBehaviour
         }
 
         isInteracting = false;
-
-        if (playerIsNearby && outline != null) outline.enabled = true;
+        anyInteracting = false; 
     }
 
     private IEnumerator FadePlayerRoutine(float startAlpha, float targetAlpha)
@@ -132,21 +165,66 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
+    private float DistanceToPlayer()
+    {
+        if (playerTransform == null) return float.MaxValue;
+        return Vector3.Distance(transform.position, playerTransform.position);
+    }
+    private static void EvaluateTarget()
+    {
+        if (anyInteracting) return;
+
+        InteractableObject best = null;
+        float bestDist = float.MaxValue;
+
+        foreach (InteractableObject item in all)
+        {
+            if (item == null || !item.isActiveAndEnabled) continue;
+
+            float d = item.DistanceToPlayer();
+            if (d > item.interactionDistance) continue;
+
+            bool wins = best == null
+                || item.interactionPriority > best.interactionPriority
+                || (item.interactionPriority == best.interactionPriority && d < bestDist);
+
+            if (wins)
+            {
+                best = item;
+                bestDist = d;
+            }
+        }
+
+        
+        if (currentTarget != null && best != null && currentTarget != best && currentTarget.isActiveAndEnabled)
+        {
+            float currentDist = currentTarget.DistanceToPlayer();
+            if (currentDist <= currentTarget.interactionDistance
+                && currentTarget.interactionPriority == best.interactionPriority
+                && currentDist <= bestDist + SwitchHysteresis)
+            {
+                best = currentTarget;
+            }
+        }
+
+        currentTarget = best;
+    }
+
     private void Update()
     {
-        if (playerTransform == null || isInteracting) return;
+        if (playerTransform == null) return;
 
-        float distance = Vector3.Distance(transform.position, playerTransform.position);
-
-        bool previousState = playerIsNearby;
-        playerIsNearby = distance <= interactionDistance;
-
-        if (playerIsNearby != previousState)
+        if (lastEvaluatedFrame != Time.frameCount)
         {
-            if (outline != null)
-            {
-                outline.enabled = playerIsNearby;
-            }
+            lastEvaluatedFrame = Time.frameCount;
+            EvaluateTarget();
+        }
+
+        bool isTarget = currentTarget == this && !anyInteracting;
+
+        if (outline != null && outline.enabled != isTarget)
+        {
+            outline.enabled = isTarget;
         }
     }
 }
