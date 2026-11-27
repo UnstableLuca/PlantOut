@@ -57,6 +57,13 @@ public class MalaHierbaEnfermera : AIAgent
 
     public void IrARecepcion() => MoveTo(posicionRecepcion);
 
+    public void AsignarRecepcion(Transform punto)
+    {
+        if (punto == null) return;
+        puntoRecepcion = punto;
+        posicionRecepcion = punto.position;
+    }
+
     public bool AtenderPaciente()
     {
         if (pharmacy.clients.Count == 0 || pharmacy.emptyBeds.Count == 0) return false;
