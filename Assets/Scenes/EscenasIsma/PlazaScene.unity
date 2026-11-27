@@ -4125,7 +4125,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4151,8 +4151,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002801128}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.42562273, z: 0, w: 0.9049008}
-  m_LocalPosition: {x: -12.864406, y: 3.0261729, z: 9.284512}
+  m_LocalRotation: {x: -0.45598373, y: -0.5404404, z: 0.54044086, w: -0.45598993}
+  m_LocalPosition: {x: -1.11, y: 103.1, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4367,6 +4367,7 @@ MonoBehaviour:
   interactionDistance: 4
   lockPlayerMovement: 1
   fadePlayerModel: 1
+  interactionPriority: 1
   dialogueCamera: {fileID: 1867083593}
   dialogueAsset: {fileID: 11400000, guid: f49dbd360abb7864b80508ed9b16081d, type: 2}
   onInteract:
@@ -5146,6 +5147,7 @@ MonoBehaviour:
   interactionDistance: 4
   lockPlayerMovement: 1
   fadePlayerModel: 1
+  interactionPriority: 1
   dialogueCamera: {fileID: 553542113}
   dialogueAsset: {fileID: 11400000, guid: f9e220b479afb404f80372f56beeeb07, type: 2}
   onInteract:
@@ -7121,6 +7123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7111041445662481212}
     m_Modifications:
+    - target: {fileID: 228863029571747725, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c960df83081808f4fb37ff6897a18e14, type: 2}
     - target: {fileID: 1836514021808183938, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_Name
       value: GameObject
@@ -7144,6 +7150,18 @@ PrefabInstance:
     - target: {fileID: 6278992290056424276, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_LocalPosition.y
       value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610885467956070184, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.06
       objectReference: {fileID: 0}
     - target: {fileID: 6684736811321534707, guid: eb137324a0f835f4a94d6193ecb4ee31, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9958,6 +9976,7 @@ MonoBehaviour:
   interactionDistance: 4
   lockPlayerMovement: 1
   fadePlayerModel: 1
+  interactionPriority: 1
   dialogueCamera: {fileID: 3018014168398935670}
   dialogueAsset: {fileID: 0}
   onInteract:
@@ -20148,8 +20167,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6004953667648585142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.4631712, z: 0, w: 0.88626885}
-  m_LocalPosition: {x: -30.440456, y: -0.47876716, z: 16.933023}
+  m_LocalRotation: {x: -0.47823182, y: -0.520856, z: 0.52085674, w: -0.478238}
+  m_LocalPosition: {x: -18.00008, y: 99.59506, z: 9.263353}
   m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30735,6 +30754,7 @@ MonoBehaviour:
   interactionDistance: 7.11
   lockPlayerMovement: 1
   fadePlayerModel: 1
+  interactionPriority: 0
   dialogueCamera: {fileID: 4057029875445782871}
   dialogueAsset: {fileID: 0}
   onInteract:
@@ -58781,8 +58801,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5821473171116879374}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.4256227, z: 0, w: 0.9049007}
-  m_LocalPosition: {x: -525.7853, y: 3.0261621, z: 88.5097}
+  m_LocalRotation: {x: -0.45598373, y: -0.5404404, z: 0.54044086, w: -0.45598993}
+  m_LocalPosition: {x: -514.0309, y: 103.09998, z: 79.8252}
   m_LocalScale: {x: 2.316173, y: 2.3161728, z: 2.316173}
   m_ConstrainProportionsScale: 0
   m_Children: []
