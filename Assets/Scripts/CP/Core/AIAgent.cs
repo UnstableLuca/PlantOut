@@ -62,7 +62,9 @@ namespace AI.Core
 
             Fsm.UpdateState();
             UpdateManualMovement();
-            animator.SetFloat("Speed", navAgent.velocity.magnitude);
+
+            if (animator != null)
+                animator.SetFloat("Speed", navAgent.velocity.magnitude);
         }
 
         protected virtual void OnStateChanged(State from, State to, Perception reason)

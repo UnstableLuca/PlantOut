@@ -1,6 +1,5 @@
 using AI.Core;
 using UnityEngine;
-using static UnityEditor.Rendering.InspectorCurveEditor;
 
 public class MalaHierbaEnfermera : AIAgent
 {
