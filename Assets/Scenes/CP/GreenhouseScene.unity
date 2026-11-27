@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.24056602, g: 0.5735769, b: 1, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &30715866 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1075234682076652571, guid: 5d11d054ffa530d46b95b596e3f0a90d, type: 3}
+  m_PrefabInstance: {fileID: 1993941869478518751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65045009
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +701,72 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &700410031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700410033}
+  - component: {fileID: 700410032}
+  m_Layer: 0
+  m_Name: EnfermeraTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &700410032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700410031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea59e2acd2108e64aaa8b94b9abd4d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnfermeraTester
+  pharmacy: {fileID: 919132148330406005}
+  enfermera: {fileID: 8373096887499445968}
+  plantillaPaciente: {fileID: 3938733408893560077, guid: 6a726839350c4ed468dc9030eecf19b7, type: 3}
+  colorAleatorio: 1
+  saturacion: {x: 0.6, y: 1}
+  brillo: {x: 0.7, y: 1}
+  puntoCola: {fileID: 1783987929}
+  separacionCola: {x: 0, y: 0, z: -1.2}
+  teclaSpawn: 30
+  saludInicial: {x: 10, y: 60}
+  maxEnfermeras: 2
+  teclaEnfermera: 28
+  puntosRecepcionExtra:
+  - {fileID: 30715866}
+  mostrarPanel: 1
+  "tama\xF1oFuente": 22
+  anchoPanel: 460
+--- !u!4 &700410033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700410031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.29617, y: 0, z: -1.99781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &764295475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6453815255265949630, guid: 5d11d054ffa530d46b95b596e3f0a90d, type: 3}
+  m_PrefabInstance: {fileID: 1993941869478518751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361574244
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +961,37 @@ Transform:
   - {fileID: 2010924837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1783987928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783987929}
+  m_Layer: 0
+  m_Name: Queue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783987929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783987928}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.3, y: 0.73, z: -8.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2010924836
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1070,7 @@ GameObject:
   - component: {fileID: 2055859459}
   - component: {fileID: 2055859458}
   - component: {fileID: 2055859461}
+  - component: {fileID: 2055859462}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1093,6 +1196,27 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &2055859462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055859457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a8750e12520b94ca2ce80a97faee41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController_CP
+  velocidad: 10
+  multiplicadorRapido: 2.5
+  escalarConAltura: 1
+  velocidadGiro: -45
+  alturaSuelo: 0
+  pasoZoom: 2
+  suavizadoZoom: 10
+  alturaMin: 2
+  alturaMax: 25
 --- !u!4 &1750933580840535
 Transform:
   m_ObjectHideFlags: 0
@@ -12833,8 +12957,8 @@ MonoBehaviour:
   navAgent: {fileID: 1397994413717148308}
   moveSpeed: 3
   arriveDistance: 0.3
-  pharmacy: {fileID: 5437213819825758015}
-  puntoRecepcion: {fileID: 5340190895484602666}
+  pharmacy: {fileID: 919132148330406005}
+  puntoRecepcion: {fileID: 764295475}
   velocidadCuracion: 10
   distanciaMaxCamilla: 20
 --- !u!4 &8378685884775905124
@@ -13845,3 +13969,5 @@ SceneRoots:
   - {fileID: 4782124183292975266}
   - {fileID: 1993941869478518751}
   - {fileID: 90629419}
+  - {fileID: 700410033}
+  - {fileID: 1783987929}

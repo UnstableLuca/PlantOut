@@ -36,6 +36,11 @@ public class EnfermeraTester : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private bool mostrarPanel = true;
+    [SerializeField, Range(10, 40)] private int tamañoFuente = 22;
+    [SerializeField] private float anchoPanel = 460f;
+
+    private GUIStyle estiloTitulo, estiloTexto, estiloBoton, estiloCaja;
+    private int fuenteEstilos = -1;
 
 
 
@@ -132,41 +137,57 @@ public class EnfermeraTester : MonoBehaviour
             if (p != null) p.transform.position = origenCola + separacionCola * i++;
     }
 
+    private void PrepararEstilos()
+    {
+        if (estiloTexto != null && fuenteEstilos == tamañoFuente) return;
+        fuenteEstilos = tamañoFuente;
+
+        estiloTexto = new GUIStyle(GUI.skin.label) { fontSize = tamañoFuente };
+        estiloTitulo = new GUIStyle(estiloTexto) { fontSize = Mathf.RoundToInt(tamañoFuente * 1.2f), fontStyle = FontStyle.Bold };
+        estiloBoton = new GUIStyle(GUI.skin.button) { fontSize = tamañoFuente, fixedHeight = tamañoFuente * 2f };
+
+        int pad = Mathf.RoundToInt(tamañoFuente * 0.6f);
+        estiloCaja = new GUIStyle(GUI.skin.box) { padding = new RectOffset(pad, pad, pad, pad) };
+    }
+
     private void OnGUI()
     {
         if (!mostrarPanel || pharmacy == null) return;
+        PrepararEstilos();
 
         int atendidos = 0;
         foreach (var s in spawneados) if (s == null) atendidos++;
 
-        // Área invisible y alta; la caja de dentro se ajusta sola al contenido.
-        GUILayout.BeginArea(new Rect(10, 10, 320, Screen.height - 20));
-        GUILayout.BeginVertical(GUI.skin.box);
+        GUILayout.BeginArea(new Rect(10, 10, anchoPanel, Screen.height - 20));
+        GUILayout.BeginVertical(estiloCaja);
 
-        GUILayout.Label("MALA HIERBA ENFERMERA");
+        GUILayout.Label("MALA HIERBA ENFERMERA", estiloTitulo);
+        GUILayout.Space(tamañoFuente * 0.3f);
 
         foreach (var e in enfermeras)
         {
             if (e == null) continue;
             Plant actual = e.PacienteActual;
-            GUILayout.Label($"{e.name}: {e.CurrentStateName}");
+            GUILayout.Label($"{e.name}: {e.CurrentStateName}", estiloTexto);
             GUILayout.Label(actual != null
                 ? $"    {actual.name}   {actual.salud:0}/{actual.saludMax:0}"
-                : "    Paciente: -");
+                : "    Paciente: -", estiloTexto);
         }
 
-        GUILayout.Label($"Cola: {pharmacy.clients.Count}    Camillas libres: {pharmacy.emptyBeds.Count}/{totalCamillas}");
-        GUILayout.Label($"Atendidos: {atendidos}/{spawneados.Count}");
+        GUILayout.Space(tamañoFuente * 0.3f);
+        GUILayout.Label($"Cola: {pharmacy.clients.Count}    Camillas libres: {pharmacy.emptyBeds.Count}/{totalCamillas}", estiloTexto);
+        GUILayout.Label($"Atendidos: {atendidos}/{spawneados.Count}", estiloTexto);
+        GUILayout.Space(tamañoFuente * 0.3f);
 
-        if (GUILayout.Button($"Nuevo paciente ({teclaSpawn})")) SpawnPaciente();
-        if (GUILayout.Button("5 pacientes")) SpawnCinco();
+        if (GUILayout.Button($"Nuevo paciente ({teclaSpawn})", estiloBoton)) SpawnPaciente();
+        if (GUILayout.Button("5 pacientes", estiloBoton)) SpawnCinco();
 
         bool puedeAñadir = enfermeras.Count < maxEnfermeras;
         GUI.enabled = puedeAñadir;
         string textoEnfermera = puedeAñadir
             ? $"Nueva enfermera ({teclaEnfermera})  {enfermeras.Count}/{maxEnfermeras}"
             : $"Enfermeras al máximo  {enfermeras.Count}/{maxEnfermeras}";
-        if (GUILayout.Button(textoEnfermera)) SpawnEnfermera();
+        if (GUILayout.Button(textoEnfermera, estiloBoton)) SpawnEnfermera();
         GUI.enabled = true;
 
         GUILayout.EndVertical();

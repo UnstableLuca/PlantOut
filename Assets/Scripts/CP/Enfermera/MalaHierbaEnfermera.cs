@@ -22,6 +22,7 @@ public class MalaHierbaEnfermera : AIAgent
 
     private Vector3 posicionRecepcion;
 
+
     protected override void BuildStateMachine(StateMachine fsm)
     {
         // ---------- Percepciones (Pull) — tabla de percepciones ----------
@@ -82,7 +83,11 @@ public class MalaHierbaEnfermera : AIAgent
     public void CurarPaso()
     {
         if (PacienteActual != null)
+        {
+            if(animator != null)
+                animator.SetBool("Interacting", true);
             PacienteActual.Curar(velocidadCuracion * Time.deltaTime);
+        }
     }
 
     public void FinalizarAtencion()
@@ -92,6 +97,9 @@ public class MalaHierbaEnfermera : AIAgent
 
         if (PacienteActual != null)
             PacienteActual.DarAlta();
+        
+        if (animator != null)
+            animator.SetBool("Interacting", false);
 
         PacienteActual = null;
         CamillaActual = null;

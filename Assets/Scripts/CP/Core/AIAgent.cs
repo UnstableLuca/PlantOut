@@ -21,7 +21,7 @@ namespace AI.Core
         [SerializeField] protected float moveSpeed = 3f;
         [SerializeField] protected float arriveDistance = 0.3f;
 
-        private Animator animator;
+        [HideInInspector] protected Animator animator;
 
         protected StateMachine Fsm { get; private set; }
         public string CurrentStateName => Fsm?.Current?.Name ?? "-";
